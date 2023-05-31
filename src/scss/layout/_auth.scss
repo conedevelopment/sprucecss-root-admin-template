@@ -1,0 +1,82 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.l-auth {
+  &__inner {
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-block-size: 100vh;
+    text-align: center;
+
+    @include breakpoint('md') {
+      align-items: center;
+      flex-direction: row;
+      text-align: start;
+    }
+  }
+
+  &__sidebar {
+    display: none;
+
+    @include breakpoint('md') {
+      background-image: url('https://images.unsplash.com/photo-1520262494112-9fe481d36ec3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80');
+      background-position: center;
+      background-size: cover;
+      block-size: 100%;
+      display: block;
+      inline-size: 50%;
+      inset-block: 0;
+      inset-inline: 50% auto;
+      padding: spacer('l');
+      position: fixed;
+    }
+  }
+
+  &__form {
+    align-items: center;
+    block-size: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: spacer('l');
+    justify-content: center;
+    padding-block: spacer('l');
+    padding-inline: spacer-clamp('m', 'l');
+
+    @include breakpoint('md') {
+      inline-size: 50%;
+      margin-inline-start: 0;
+      min-block-size: 100vh;
+    }
+  }
+
+  &__logo {
+    align-self: center;
+    block-size: 4rem;
+    display: inline-flex;
+
+    @include breakpoint('md') {
+      align-self: flex-start;
+    }
+
+    img {
+      block-size: 100%;
+      inline-size: auto;
+    }
+  }
+
+  &__footer {
+    inline-size: 100%;
+
+    p {
+      margin-block: 0;
+    }
+  }
+
+  .auth-form {
+    max-inline-size: 25rem;
+
+    @include breakpoint('md') {
+      padding-block-end: spacer('m');
+    }
+  }
+}

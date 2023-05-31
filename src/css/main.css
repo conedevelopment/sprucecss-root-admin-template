@@ -351,24 +351,24 @@ template {
 
 :root {
   --spruce-x-11ty-base-color-background: hsl(0, 0%, 100%);
-  --spruce-x-11ty-base-color-blockquote-border: hsl(262, 71%, 49%);
+  --spruce-x-11ty-base-color-blockquote-border: hsl(214, 98%, 49%);
   --spruce-x-11ty-base-color-border: hsl(215, 63%, 93%);
-  --spruce-x-11ty-base-color-code-background: #f6f2fd;
+  --spruce-x-11ty-base-color-code-background: #f0f6ff;
   --spruce-x-11ty-base-color-code-foreground: hsl(205, 100%, 2%);
   --spruce-x-11ty-base-color-heading: hsl(205, 100%, 2%);
-  --spruce-x-11ty-base-color-link: hsl(262, 71%, 49%);
-  --spruce-x-11ty-base-color-link-hover: #511dab;
+  --spruce-x-11ty-base-color-link: hsl(214, 98%, 49%);
+  --spruce-x-11ty-base-color-link-hover: #0257c6;
   --spruce-x-11ty-base-color-mark-background: hsl(50, 100%, 80%);
   --spruce-x-11ty-base-color-mark-foreground: hsl(205, 100%, 2%);
-  --spruce-x-11ty-base-color-marker: hsl(262, 71%, 49%);
-  --spruce-x-11ty-base-color-primary: hsl(262, 71%, 49%);
+  --spruce-x-11ty-base-color-marker: hsl(214, 98%, 49%);
+  --spruce-x-11ty-base-color-primary: hsl(214, 98%, 49%);
   --spruce-x-11ty-base-color-secondary: hsl(227, 92%, 55%);
   --spruce-x-11ty-base-color-text: hsl(208, 9%, 42%);
 }
 
 :root {
-  --spruce-x-11ty-btn-color-primary-background: hsl(262, 71%, 49%);
-  --spruce-x-11ty-btn-color-primary-background-hover: #511daa;
+  --spruce-x-11ty-btn-color-primary-background: hsl(214, 98%, 49%);
+  --spruce-x-11ty-btn-color-primary-background-hover: #0256c5;
   --spruce-x-11ty-btn-color-primary-foreground: hsl(0, 0%, 100%);
   --spruce-x-11ty-btn-color-secondary-background: hsl(227, 92%, 55%);
   --spruce-x-11ty-btn-color-secondary-background-hover: #0937dc;
@@ -385,19 +385,19 @@ template {
   --spruce-x-11ty-form-color-background-disabled: hsl(0, 0%, 95%);
   --spruce-x-11ty-form-color-border: hsl(260, 4%, 70%);
   --spruce-x-11ty-form-color-border-disabled: hsl(215, 63%, 93%);
-  --spruce-x-11ty-form-color-border-focus: hsl(262, 71%, 49%);
-  --spruce-x-11ty-form-color-check-background: hsl(262, 71%, 49%);
-  --spruce-x-11ty-form-color-check-focus-ring: hsl(262, 71%, 49%);
+  --spruce-x-11ty-form-color-border-focus: hsl(214, 98%, 49%);
+  --spruce-x-11ty-form-color-check-background: hsl(214, 98%, 49%);
+  --spruce-x-11ty-form-color-check-focus-ring: hsl(214, 98%, 49%);
   --spruce-x-11ty-form-color-check-foreground: hsl(0, 0%, 100%);
   --spruce-x-11ty-form-color-invalid: hsl(0, 71%, 51%);
   --spruce-x-11ty-form-color-invalid-focus-ring: rgba(219, 41, 41, 0.25);
   --spruce-x-11ty-form-color-label: hsl(205, 100%, 2%);
   --spruce-x-11ty-form-color-legend: hsl(205, 100%, 2%);
   --spruce-x-11ty-form-color-placeholder: hsl(208, 7%, 40%);
-  --spruce-x-11ty-form-color-range-thumb-background: hsl(262, 71%, 49%);
-  --spruce-x-11ty-form-color-range-thumb-focus-ring: hsl(262, 71%, 49%);
+  --spruce-x-11ty-form-color-range-thumb-background: hsl(214, 98%, 49%);
+  --spruce-x-11ty-form-color-range-thumb-focus-ring: hsl(214, 98%, 49%);
   --spruce-x-11ty-form-color-range-track-background: hsl(215, 63%, 93%);
-  --spruce-x-11ty-form-color-ring-focus: rgba(101, 36, 214, 0.25);
+  --spruce-x-11ty-form-color-ring-focus: rgba(2, 109, 247, 0.25);
   --spruce-x-11ty-form-color-select-foreground: hsl(205, 100%, 2%);
   --spruce-x-11ty-form-color-text: hsl(208, 9%, 42%);
   --spruce-x-11ty-form-color-valid: hsl(150, 100%, 33%);
@@ -406,7 +406,7 @@ template {
 
 :root {
   --spruce-x-11ty-selection-color-foreground: hsl(0, 0%, 100%);
-  --spruce-x-11ty-selection-color-background: hsl(262, 71%, 49%);
+  --spruce-x-11ty-selection-color-background: hsl(214, 98%, 49%);
 }
 
 :root {
@@ -1520,6 +1520,83 @@ legend {
   --inline-size: 50rem;
 }
 
+.l-auth__inner {
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vh;
+  text-align: center;
+}
+@media (min-width: 64em) {
+  .l-auth__inner {
+    align-items: center;
+    flex-direction: row;
+    text-align: start;
+  }
+}
+.l-auth__sidebar {
+  display: none;
+}
+@media (min-width: 64em) {
+  .l-auth__sidebar {
+    background-image: url("https://images.unsplash.com/photo-1520262494112-9fe481d36ec3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80");
+    background-position: center;
+    background-size: cover;
+    block-size: 100%;
+    display: block;
+    inline-size: 50%;
+    inset-block: 0;
+    inset-inline: 50% auto;
+    padding: 3rem;
+    position: fixed;
+  }
+}
+.l-auth__form {
+  align-items: center;
+  block-size: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  padding-block: 3rem;
+  padding-inline: clamp(1.5rem, 5vw, 3rem);
+}
+@media (min-width: 64em) {
+  .l-auth__form {
+    inline-size: 50%;
+    margin-inline-start: 0;
+    min-block-size: 100vh;
+  }
+}
+.l-auth__logo {
+  align-self: center;
+  block-size: 4rem;
+  display: inline-flex;
+}
+@media (min-width: 64em) {
+  .l-auth__logo {
+    align-self: flex-start;
+  }
+}
+.l-auth__logo img {
+  block-size: 100%;
+  inline-size: auto;
+}
+.l-auth__footer {
+  inline-size: 100%;
+}
+.l-auth__footer p {
+  margin-block: 0;
+}
+.l-auth .auth-form {
+  max-inline-size: 25rem;
+}
+@media (min-width: 64em) {
+  .l-auth .auth-form {
+    padding-block-end: 1.5rem;
+  }
+}
+
 .l-post {
   padding-block: var(--spruce-x-11ty-section-gap);
 }
@@ -1611,6 +1688,30 @@ legend {
   block-size: var(--dimension);
   color: var(--spruce-x-11ty-navigation-color-arrow);
   inline-size: var(--dimension);
+}
+
+.auth-form {
+  margin-block: auto;
+}
+.auth-form > * {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+.auth-form > * + * {
+  margin-block-start: 1rem;
+}
+
+.form-group-stack > * {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+.form-group-stack > * + * {
+  margin-block-start: 1rem;
+}
+
+.form-label--space-between {
+  display: flex;
+  justify-content: space-between;
 }
 
 .theme-switcher {

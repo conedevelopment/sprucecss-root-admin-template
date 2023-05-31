@@ -14,13 +14,10 @@
     </head>
     <body>
         <a class="btn btn--primary skip-link" href="#content">Skip to content</a>
-        {% include "partial/header.html" %}
 
         <main id="content">
             {% block content %}{% endblock %}
         </main>
-
-        {% include "partial/footer.html" %}
 
         <script src="/js/theme-change-assets.js?{{ assetHash }}" defer></script>
         <script src="/js/navigation.js?{{ assetHash }}" defer></script>

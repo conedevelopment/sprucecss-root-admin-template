@@ -1,0 +1,24 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+    <main class="l-auth">
+        <div class="l-auth__inner">
+            <div class="l-auth__form">
+                <a class="l-auth__logo" href="#">
+                    <img
+                        src="https://ui.sprucecss.com/img/cone-made-logo-dark.svg"
+                        alt="Cone Made"
+                        data-theme-mode="data-theme-mode"
+                        data-light-asset="https://ui.sprucecss.com/img/cone-made-logo-dark.svg"
+                        data-dark-asset="https://ui.sprucecss.com/img/cone-made-logo-light.svg"
+                    />
+                </a>
+                {{ content | safe }}
+                <div class="l-auth__footer">
+                    <p>Not a member? <a href="#">Sign up</a></p>
+                </div>
+            </div>
+            <div class="l-auth__sidebar"></div>
+        </div>
+    </main>
+{% endblock %}

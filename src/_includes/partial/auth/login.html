@@ -1,0 +1,62 @@
+<div class="auth-form">
+    <h1 class="auth-form__title">Welcome back</h1>
+    <p>
+        Donec quis magna sed dolor blandit facilisis ut sed velit.
+        Pellentesque a malesuada nisl.
+    </p>
+    <form method="POST" action="#">
+        <div class="form-group-stack">
+            <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input
+                    class="form-control form-control--lg"
+                    id="email"
+                    type="text"
+                    name="email"
+                    required="required"
+                    autocomplete="off"
+                    autofocus="autofocus"
+                />
+            </div>
+            <div class="form-group">
+                <label
+                    class="form-label form-label--space-between"
+                    for="password"
+                    >Password <a href="#">Forgot password?</a>
+                </label>
+                <input
+                    class="form-control form-control--lg"
+                    id="password"
+                    type="password"
+                    name="password"
+                    required="required"
+                    autocomplete="off"
+                />
+            </div>
+            <div class="form-group">
+                <label
+                    class="form-check form-check--lg"
+                    for="remember"
+                >
+                    <input
+                        class="form-check__control"
+                        id="remember"
+                        type="checkbox"
+                        name="remember"
+                    />
+                    <span class="form-label form-check__label"
+                        >Remember me</span
+                    >
+                </label>
+            </div>
+            <div class="form-group">
+                <button
+                    class="btn btn--primary btn--lg btn--block"
+                    type="submit"
+                >
+                    Login
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
