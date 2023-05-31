@@ -37,6 +37,9 @@
   ),
   $color-primary: hsl(214deg 98% 49%),
   $dark-colors: dark.$colors,
+  $display: (
+    'border-radius-sm': 0.5rem,
+  ),
   $form-label: (
     'font-family': #{'Manrope', sans-serif},
     'font-weight': 500,

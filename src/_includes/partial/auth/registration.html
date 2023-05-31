@@ -1,0 +1,95 @@
+<div class="auth-form">
+    <h1 class="auth-form__title">Registration</h1>
+    <p>Enter your details and register.</p>
+    <form method="POST" action="#">
+        <div class="form-group-stack">
+            <div class="social-logins">
+                <button class="btn btn--outline-dark btn--lg btn--icon btn--block">
+                    {% svgIcon './src/img/icon/google.svg', 'btn__icon' %} Sign up with Google
+                </button>
+                <button class="btn btn--outline-dark btn--lg btn--icon btn--block">
+                    {% svgIcon './src/img/icon/apple.svg', 'btn__icon' %} Sign up with Apple ID
+                </button>
+            </div>
+            <span class="or-separator" aria-hidden="true">or</span>
+            <div class="form-group">
+                <label class="form-label" for="your-name">Name</label>
+                <input
+                    class="form-control form-control--lg"
+                    id="your-name"
+                    type="text"
+                    name="your-name"
+                    required="required"
+                    autocomplete="off"
+                />
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input
+                    class="form-control form-control--lg"
+                    id="email"
+                    type="email"
+                    name="email"
+                    required="required"
+                    autocomplete="off"
+                />
+            </div>
+            <div class="form-row--mixed">
+                <div class="form-group">
+                    <label
+                        class="form-label"
+                        for="password"
+                        >Password
+                    </label>
+                    <input
+                        class="form-control form-control--lg"
+                        id="password"
+                        type="password"
+                        name="password"
+                        required="required"
+                        autocomplete="off"
+                    />
+                </div>
+                <div class="form-group">
+                    <label
+                        class="form-label"
+                        for="password"
+                        >Confirm Password
+                    </label>
+                    <input
+                        class="form-control form-control--lg"
+                        id="password"
+                        type="password"
+                        name="password"
+                        required="required"
+                        autocomplete="off"
+                    />
+                </div>
+            </div>
+            <div class="form-group">
+                <label
+                    class="form-check form-check--lg"
+                    for="remember"
+                >
+                    <input
+                        class="form-check__control"
+                        id="remember"
+                        type="checkbox"
+                        name="remember"
+                    />
+                    <span class="form-label form-check__label"
+                        >I aggree with the <a href="#">User Agreement</a> and <a href="#">Privacy Policy</a></span
+                    >
+                </label>
+            </div>
+            <div class="form-group">
+                <button
+                    class="btn btn--primary btn--lg btn--block"
+                    type="submit"
+                >
+                    Sign Up
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
