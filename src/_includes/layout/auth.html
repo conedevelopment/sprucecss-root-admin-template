@@ -1,16 +1,16 @@
 {% extends "layout/base.html" %}
 
 {% block content %}
-    <main class="l-auth">
+    <main id="content" class="l-auth">
         <div class="l-auth__inner">
             <div class="l-auth__form">
-                <a class="l-auth__logo" href="#">
+                <a class="l-auth__logo" href="/">
                     <img
-                        src="https://ui.sprucecss.com/img/cone-made-logo-dark.svg"
-                        alt="Cone Made"
+                        src="/img/root-logo-dark.svg"
+                        alt="Root"
                         data-theme-mode="data-theme-mode"
-                        data-light-asset="https://ui.sprucecss.com/img/cone-made-logo-dark.svg"
-                        data-dark-asset="https://ui.sprucecss.com/img/cone-made-logo-light.svg"
+                        data-light-asset="/img/root-logo-dark.svg"
+                        data-dark-asset="/img/root-logo-light.svg"
                     />
                 </a>
                 {{ content | safe }}

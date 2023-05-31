@@ -5,8 +5,13 @@
     'font-family': #{'Manrope', sans-serif},
     'font-weight': 600,
   ),
+  $btn-lg: (
+    'font-size': 1rem,
+  ),
   $colors: (
     'btn': (
+      'dark-background': hsl(240deg 8% 10%),
+      'dark-foreground': hsl(0deg 0% 100%),
       'pagination-background': hsl(263deg 40% 96%),
       'pagination-background-hover': hsl(262deg 71% 49%),
       'pagination-focus-ring': hsl(262deg 71% 49%),
@@ -32,8 +37,12 @@
   ),
   $color-primary: hsl(214deg 98% 49%),
   $dark-colors: dark.$colors,
+  $form-label: (
+    'font-family': #{'Manrope', sans-serif},
+    'font-weight': 500,
+  ),
   $settings: (
-    'prefix': 'spruce-x-11ty'
+    'prefix': 'root',
   ),
   $typography: (
     'font-family-base': #{'Open Sans', sans-serif},

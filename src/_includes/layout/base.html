@@ -15,9 +15,7 @@
     <body>
         <a class="btn btn--primary skip-link" href="#content">Skip to content</a>
 
-        <main id="content">
-            {% block content %}{% endblock %}
-        </main>
+        {% block content %}{% endblock %}
 
         <script src="/js/theme-change-assets.js?{{ assetHash }}" defer></script>
         <script src="/js/navigation.js?{{ assetHash }}" defer></script>

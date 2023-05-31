@@ -1,11 +1,19 @@
 <div class="auth-form">
-    <h1 class="auth-form__title">Welcome back</h1>
-    <p>
-        Donec quis magna sed dolor blandit facilisis ut sed velit.
-        Pellentesque a malesuada nisl.
-    </p>
+    <h1 class="auth-form__title">Login</h1>
+    <p>Hey there, welcome back!</p>
     <form method="POST" action="#">
         <div class="form-group-stack">
+            <div class="social-logins">
+                <button class="btn btn--outline-primary btn--lg btn--icon btn--block">
+                    {% svgIcon './src/img/icon/google.svg', 'btn__icon' %}
+                    Sign up with Google
+                </button>
+                <button class="btn btn--outline-primary btn--lg btn--icon btn--block">
+                    {% svgIcon './src/img/icon/apple.svg', 'btn__icon' %}
+                    Sign up with Apple ID
+                </button>
+            </div>
+            <span class="or-separator" aria-hidden="true">or</span>
             <div class="form-group">
                 <label class="form-label" for="email">Email</label>
                 <input

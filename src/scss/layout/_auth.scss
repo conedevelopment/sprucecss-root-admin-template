@@ -19,15 +19,15 @@
     display: none;
 
     @include breakpoint('md') {
-      background-image: url('https://images.unsplash.com/photo-1520262494112-9fe481d36ec3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80');
+      background-image: url('/img/auth-background.png');
       background-position: center;
       background-size: cover;
-      block-size: 100%;
-      display: block;
-      inline-size: 50%;
-      inset-block: 0;
-      inset-inline: 50% auto;
-      padding: spacer('l');
+      border-radius: 2rem;
+      block-size: calc(100% - 2 * #{spacer('l')});
+      display: flex;
+      inline-size: calc(50% - #{spacer('l')});
+      inset-block: spacer('l');
+      inset-inline: 50% spacer('l');
       position: fixed;
     }
   }
@@ -51,7 +51,7 @@
 
   &__logo {
     align-self: center;
-    block-size: 4rem;
+    block-size: 1.5rem;
     display: inline-flex;
 
     @include breakpoint('md') {
@@ -73,6 +73,7 @@
   }
 
   .auth-form {
+    inline-size: 100%;
     max-inline-size: 25rem;
 
     @include breakpoint('md') {
