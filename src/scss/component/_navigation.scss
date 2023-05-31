@@ -1,0 +1,72 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.site-navigation {
+  --inset-block-start: 6rem;
+  font-family: config('font-family-heading', $typography);
+
+  &__btn {
+    @include breakpoint('md') {
+      display: none;
+    }
+
+    &[aria-expanded='true'] + ul {
+      display: flex;
+    }
+  }
+
+  ul {
+    background-color: color('background');
+    display: none;
+    flex-direction: column;
+    gap: spacer('s');
+    inset: var(--inset-block-start) 0 auto 0;
+    list-style: none;
+    margin: 0;
+    padding-block: spacer('m');
+    padding-inline: spacer-clamp('m', 'l');
+    position: absolute;
+
+    @include breakpoint('md') {
+      align-items: center;
+      background-color: transparent;
+      display: flex !important;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: spacer('m');
+      inset: auto;
+      padding: 0;
+      position: relative;
+    }
+
+    @include breakpoint('lg') {
+      gap: spacer('l');
+    }
+  }
+
+  li {
+    margin-block: 0;
+  }
+
+  a {
+    align-items: center;
+    color: color('heading');
+    display: flex;
+    gap: spacer('xs');
+    text-decoration: none;
+
+    &:hover {
+      color: color('primary');
+    }
+
+    &[aria-current='page'] {
+      font-weight: 700;
+    }
+
+    svg {
+      --dimension: 0.65em;
+      block-size: var(--dimension);
+      color: color('arrow', 'navigation');
+      inline-size: var(--dimension);
+    }
+  }
+}

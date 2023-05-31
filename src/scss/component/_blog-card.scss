@@ -1,0 +1,27 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.blog-card {
+  @include layout-stack('xs');
+
+  &__title {
+    font-family: config('font-family-base', $typography);
+  }
+
+  &__link {
+    color: color('heading');
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: color('heading');
+    }
+  }
+
+  &__meta {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: config('font-family-heading', $typography);
+    gap: spacer('m');
+  }
+}

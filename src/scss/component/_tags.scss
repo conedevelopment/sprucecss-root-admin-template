@@ -1,0 +1,13 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.tags {
+  @include clear-list;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: spacer('s');
+
+  > * + * {
+    margin-block-start: 0;
+  }
+}

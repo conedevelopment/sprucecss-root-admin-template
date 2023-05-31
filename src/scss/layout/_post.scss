@@ -1,0 +1,22 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.l-post {
+  padding-block: get-css-variable(--section-gap);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: spacer('l');
+  }
+
+  &__list {
+    @include clear-list;
+    margin-block-start: spacer('l');
+
+    > * + * {
+      border-block-start: 1px dashed color('border');
+      margin-block-start: spacer('m');
+      padding-block-start: spacer('m');
+    }
+  }
+}

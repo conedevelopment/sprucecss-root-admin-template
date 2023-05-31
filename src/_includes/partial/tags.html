@@ -1,0 +1,10 @@
+{% if tags %}
+  <p class="sr-only" id="tags-desc">This post is tagged with:</p>
+  <ul class="tags" aria-describedby="tags-desc">
+    {% for tag in tags %}
+      <li>
+        <a href="/tag/{{ tag | slug }}/">#{{ tag | replace(' ', '') }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

@@ -1,0 +1,16 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+    <div class="l-post">
+        <div class="container">
+            <div class="l-post__inner">
+                {% set postHeadingTitle = title %}
+                {% include "partial/post-heading.html" %}
+                <div class="post-content">
+                    {{ content | safe }}
+                    {% include "partial/contact-form.html" %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

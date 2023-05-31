@@ -1,0 +1,14 @@
+@forward 'config';
+@forward 'layout';
+@forward 'component';
+@forward 'section';
+@forward 'helper';
+
+
+@use 'sprucecss/scss/spruce' as *;
+
+:root {
+  @include set-css-variable((
+    --section-gap: spacer-clamp('xl', 'xxl')
+  ));
+}

@@ -1,0 +1,28 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb-base"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "globals": {
+    "google": true
+  },
+  "ignorePatterns": [
+    "assets/js/fancybox.js",
+    "assets/js/scripts.js",
+    "assets/js/tinymce-shortcode.js",
+    "assets/js/asp-ajax.js",
+    "assets/js/decree-search.js"
+  ],
+  "rules": {
+    "no-param-reassign": 0,
+    "no-shadow": "off",
+    "no-new": "off"
+  }
+}

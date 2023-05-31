@@ -1,0 +1,14 @@
+<div class="post-heading">
+    <div class="post-heading__inner">
+        <h1 class="post-heading__title">{{ title }}</h1>
+        {% if showMeta %}
+            <div class="post-heading__meta">
+                {% include "partial/tags.html" %}
+                <span>
+                    <span class="sr-only">Posted on</span>
+                    <time datetime="{{ date | w3DateFilter }}">{{ date | dateFilter('en') }}</time>
+                </span>
+            </div>
+        {% endif %}
+    </div>
+</div>

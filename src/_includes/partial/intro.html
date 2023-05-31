@@ -1,0 +1,67 @@
+<div class="intro">
+    <div class="container container--narrow">
+        <div class="intro__inner">
+            <div class="intro__caption">
+                <h1 class="intro__title">{{ intro.title }}</h1>
+                <p class="intro__description">{{ intro.description }}</p>
+            </div>
+            <div class="accordion-list accordion-list--boxed">
+                <div class="accordion-card accordion-card--box">
+                    <h2 class="accordion-card__title">Getting Started</h2>
+                    <div class="accordion-card__content">
+                        <p>We use <code>eleventy --serve</code> and compile Sass with sass-cli with npm scripts.</p>
+
+                        <h3 class="h4">1. Clone the repository.</h3>
+
+                        <h3 class="h4">2. Install the dependencies.</h3>
+
+                        <p>In the <code>package.json</code> file, you will find all of the dependencies (and scripts) to install them using the following command:</p>
+
+                        {% highlight "shell" %}
+                        npm install
+                        {% endhighlight %}
+
+                        <h3 class="h4">3. Run the development mode</h3>
+
+                        <p>To run the development mode, use the <code>npm script</code>.   This script will also watch for changes.</p>
+
+                        {% highlight "shell" %}
+                        npm start
+                        {% endhighlight %}
+
+                        <h3 class="h4">4. Run the production mode</h3>
+
+                        <p>Before you go live, you should use the production script to compress the Sass files.</p>
+
+                        {% highlight "shell" %}
+                        npm run prod
+                        {% endhighlight %}
+                    </div>
+                </div>
+                <div class="accordion-card accordion-card--box">
+                    <h2 class="accordion-card__title">What's Included</h2>
+                    <div class="accordion-card__content">
+                        <ul>
+                            <li>A blog list, tag, and single page.</li>
+                            <li>A contact form styling with a basic form, but the sending is not processed.
+                            <li>Generic page template.</li>
+                            <li>Metadata at the header.</li>
+                            <li>Syntax highlighting.</li>
+                            <li>svgIcon shortcode for inline SVG icons.</li>
+                            <li>Minified HTML on production.</li>
+                            <li>Theme switcher to dark mode.</li>
+                            <li>Sass processing.</li>
+                            <li>Styelint and Eslint scripts.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-card accordion-card--box">
+                    <h2 class="accordion-card__title">Dark Mode</h2>
+                    <div class="accordion-card__content">
+                        <p>To know more about the dark mode, please visit <a href="https://sprucecss.com/docs/customization/themes/">Spruce CSS's related documentation page</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

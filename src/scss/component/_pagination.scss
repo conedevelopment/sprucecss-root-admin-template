@@ -1,0 +1,35 @@
+@use 'sprucecss/scss/spruce' as *;
+
+@include generate-btn(
+  '.pagination a',
+  null,
+  false,
+  true
+);
+
+.pagination {
+  @include clear-list;
+  display: flex;
+  flex-wrap: wrap;
+  gap: spacer('s');
+  justify-content: center;
+  margin-block-start: spacer('l');
+
+  > * + * {
+    margin-block-start: 0;
+  }
+
+  a {
+    @include btn-variant('pagination');
+
+    &[aria-current="page"] {
+      background: color('pagination-background-hover', 'btn');
+      border-color: color('pagination-background-hover', 'btn');
+      color: color('pagination-foreground-hover', 'btn');
+    }
+
+    &--sm {
+      min-inline-size: 1.75rem;
+    }
+  }
+}

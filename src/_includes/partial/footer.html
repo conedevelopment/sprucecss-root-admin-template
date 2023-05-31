@@ -1,0 +1,55 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="site-footer__top">
+            <div class="site-footer__col">
+                <a class="site-footer__logo" href="/">
+                    <img
+                        src="/img/cone-made-logo-dark.svg"
+                        alt="Cone Made"
+                        width="72"
+                        height="72"
+                        data-theme-mode="data-theme-mode"
+                        data-light-asset="/img/cone-made-logo-dark.svg"
+                        data-dark-asset="/img/cone-made-logo-light.svg"
+                    />
+                </a>
+            </div>
+            {% for block in navigation.footer %}
+            <div class="site-footer__col">
+                <h3 class="site-footer__title" id="site-footer-title-{{ block.title | slugify }}">
+                    {{ block.title }}
+                </h3>
+
+                <ul
+                    class="site-footer__navigation"
+                    aria-labelledby="site-footer-title-{{ block.title | slugify }}"
+                >
+                    {% for item in block.items %}
+                    <li>
+                        <a
+                            href="{{ item.url }}"
+                            {{ helpers.getLinkActiveState(item.url, page.url) | safe }}
+                            {% if item.external %}
+                                target="_blank"
+                                rel="noopener"
+                            {% endif %}
+                        >
+                            {{ item.caption }}
+                            {% if item.external %}
+                                <span class="sr-only">Open in new window</span>
+                                {% svgIcon './src/img/icon/arrow-outward.svg', 'btn__icon' %}
+                            {% endif %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="site-footer__bottom">
+            <p class="site-footer__copyright">
+                © {{ global.year() }} Cone Made - Some rights are reserved.
+            </p>
+        </div>
+    </div>
+</footer>

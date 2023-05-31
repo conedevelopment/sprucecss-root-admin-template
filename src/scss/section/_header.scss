@@ -1,0 +1,60 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.site-header {
+  position: relative;
+
+  &__inner {
+    --block-size: 6rem;
+    align-items: center;
+    block-size: var(--block-size);
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacer-clamp('s', 'l');
+    justify-content: space-between;
+  }
+
+  &__column {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    gap: spacer-clamp('s', 'l');
+  }
+
+  &__actions {
+    align-items: center;
+    display: flex;
+    gap: spacer-clamp('s', 'm');
+  }
+
+  &__logo {
+    --dimension: 4rem;
+    block-size: var(--dimension);
+    display: inline-flex;
+    inline-size: var(--dimension);
+  }
+
+  &__email {
+    display: none;
+    text-decoration: none;
+
+    @include breakpoint('sm') {
+      display: inline-block;
+    }
+  }
+
+  &__navigation {
+    margin-inline-start: auto;
+
+    @include breakpoint('md') {
+      margin-inline-start: 0;
+    }
+
+    ul {
+      border-block-start: 1px solid color('border');
+
+      @include breakpoint('sm') {
+        border-block: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@use 'dark-colors' as dark;
+
+@use 'sprucecss/scss/spruce' with (
+  $btn: (
+    'font-family': #{'Manrope', sans-serif},
+    'font-weight': 600,
+  ),
+  $colors: (
+    'btn': (
+      'pagination-background': hsl(263deg 40% 96%),
+      'pagination-background-hover': hsl(262deg 71% 49%),
+      'pagination-focus-ring': hsl(262deg 71% 49%),
+      'pagination-foreground': hsl(262deg 71% 49%),
+      'pagination-foreground-hover': hsl(0deg 0% 100%),
+    ),
+    'navigation': (
+      'arrow': hsl(0deg 0% 0% / 15%),
+    ),
+    'prism': (
+      'color': hsl(243deg 14% 29%),
+      'background': hsl(0deg 0% 98%),
+      'comment': hsl(225deg 14% 46%),
+      'punctuation': hsl(279deg 50% 53%),
+      'namespace': hsl(173deg 100% 24%),
+      'deleted': hsl(1deg 83% 63% / 56%),
+      'boolean': hsl(0deg 44% 53%),
+      'number': hsl(315deg 90% 35%),
+      'constant': hsl(221deg 57% 52%),
+      'class-name': hsl(0deg 0% 7%),
+      'regex': hsl(1deg 48% 59%),
+    ),
+  ),
+  $dark-colors: dark.$colors,
+  $settings: (
+    'prefix': 'spruce-x-11ty'
+  ),
+  $typography: (
+    'font-family-base': #{'Open Sans', sans-serif},
+    'font-family-heading': #{'Manrope', sans-serif},
+  ),
+);

@@ -1,0 +1,26 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.post-heading {
+  text-align: center;
+
+  &__inner {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: spacer('m');
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: responsive-font-size(4.5rem, 35, '5vw + 1rem');
+    margin-block: 0;
+  }
+
+  &__meta {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacer('xs') spacer('m');
+    justify-content: center;
+  }
+}

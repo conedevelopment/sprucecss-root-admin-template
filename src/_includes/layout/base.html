@@ -1,0 +1,30 @@
+{% set assetHash = global.random() %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="/js/theme-detection.js?{{ assetHash }}"></script>
+        {% include "partial/preload.html" %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml" />
+        {% include "partial/meta.html" %}
+        <link rel="stylesheet" href="/css/main.css?{{ assetHash }}">
+    </head>
+    <body>
+        <a class="btn btn--primary skip-link" href="#content">Skip to content</a>
+        {% include "partial/header.html" %}
+
+        <main id="content">
+            {% block content %}{% endblock %}
+        </main>
+
+        {% include "partial/footer.html" %}
+
+        <script src="/js/theme-change-assets.js?{{ assetHash }}" defer></script>
+        <script src="/js/navigation.js?{{ assetHash }}" defer></script>
+        <script src="/js/accordion-card.js?{{ assetHash }}" defer></script>
+        <script src="/js/theme-switcher.js?{{ assetHash }}" defer></script>
+    </body>
+</html>

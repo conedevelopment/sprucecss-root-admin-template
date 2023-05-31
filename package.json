@@ -1,0 +1,48 @@
+{
+  "name": "sprucecss-eleventy-starter",
+  "version": "1.0.2",
+  "author": "Cone (https://sprucecss.com)",
+  "babel": {
+    "presets": [
+      "latest"
+    ]
+  },
+  "main": ".eleventy.js",
+  "scripts": {
+    "delete:dist": "del-cli --force dist",
+    "eleventy:dev": "npx eleventy --serve",
+    "eleventy:prod": "npx eleventy",
+    "js:lint": "npx eslint \"src/js/**\"",
+    "js:lint:fix": "npx eslint \"src/js/**\" --fix",
+    "prod": "npm-run-all delete:dist eleventy:prod sass:prod",
+    "sass:dev": "sass --load-path=node_modules --watch --no-source-map --update --style=expanded src/scss:src/css",
+    "sass:lint:fix": "stylelint src/scss/**/*.scss --fix",
+    "sass:lint": "stylelint src/scss/**/*.scss",
+    "sass:prod": "sass --load-path=node_modules --no-source-map --style=compressed src/scss:src/css",
+    "start": "npm-run-all --parallel eleventy:dev sass:dev"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^3.1.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "del-cli": "^5.0.0",
+    "dotenv": "^16.1.1",
+    "eslint": "^8.41.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "himalaya": "^1.1.0",
+    "html-minifier": "^4.0.0",
+    "moment": "^2.29.4",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.62.1",
+    "sprucecss": "^2.1.0",
+    "stylelint": "^15.6.2",
+    "stylelint-config-sass-guidelines": "^10.0.0",
+    "stylelint-order": "^6.0.3"
+  },
+  "engines": {
+    "node": "^18.12",
+    "npm": "^9.2",
+    "yarn": "please-use-npm"
+  }
+}
