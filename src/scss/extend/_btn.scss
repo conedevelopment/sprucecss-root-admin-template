@@ -2,4 +2,11 @@
 
 .btn--outline-dark {
   @include btn-variant-outline('dark');
+  color: color('heading');
+
+  &:hover,
+  &:focus {
+    background-color: color('heading');
+    border-color: color('heading');
+  }
 }

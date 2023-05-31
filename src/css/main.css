@@ -24,7 +24,7 @@
   font-family: "Manrope";
   font-style: normal;
   font-weight: 700;
-  src: url("../../font/manrope-v14-latin-700.woff2") format("woff2");
+  src: url("../../font/manrope-v14-latin-800.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
@@ -380,7 +380,7 @@ template {
   --root-btn-color-secondary-background: hsl(227, 92%, 55%);
   --root-btn-color-secondary-background-hover: #0937dc;
   --root-btn-color-secondary-foreground: hsl(0, 0%, 100%);
-  --root-btn-color-dark-background: hsl(240, 8%, 10%);
+  --root-btn-color-dark-background: hsl(260, 4%, 70%);
   --root-btn-color-dark-foreground: hsl(0, 0%, 100%);
   --root-btn-color-pagination-background: hsl(263, 40%, 96%);
   --root-btn-color-pagination-background-hover: hsl(262, 71%, 49%);
@@ -2331,6 +2331,7 @@ pre[class*=language-] {
   background-color: transparent;
   border-color: var(--root-btn-color-dark-background);
   color: var(--root-btn-color-dark-background);
+  color: var(--root-base-color-heading);
 }
 .btn--outline-dark:focus-visible {
   outline: 2px solid var(--root-btn-color-dark-background);
@@ -2339,6 +2340,10 @@ pre[class*=language-] {
 .btn--outline-dark:hover {
   background-color: var(--root-btn-color-dark-background);
   color: var(--root-btn-color-dark-foreground);
+}
+.btn--outline-dark:hover, .btn--outline-dark:focus {
+  background-color: var(--root-base-color-heading);
+  border-color: var(--root-base-color-heading);
 }
 
 .m-block\:0 {
