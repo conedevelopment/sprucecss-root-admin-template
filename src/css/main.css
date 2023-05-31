@@ -1546,19 +1546,21 @@ legend {
   }
 }
 .l-auth__sidebar {
-  display: none;
+  background-image: url("/img/auth-background.png");
+  background-position: center;
+  background-size: cover;
+  border-radius: 2rem;
+  margin-block-end: clamp(1.5rem, 5vw, 3rem);
+  margin-inline: clamp(1.5rem, 5vw, 3rem);
+  min-block-size: 10rem;
 }
 @media (min-width: 64em) {
   .l-auth__sidebar {
-    background-image: url("/img/auth-background.png");
-    background-position: center;
-    background-size: cover;
-    border-radius: 2rem;
     block-size: calc(100% - 2 * 3rem);
-    display: flex;
     inline-size: calc(50% - 3rem);
     inset-block: 3rem;
     inset-inline: 50% 3rem;
+    margin: 0;
     position: fixed;
   }
 }
@@ -1712,12 +1714,17 @@ legend {
 .auth-form > * + * {
   margin-block-start: 1rem;
 }
+.auth-form .or-separator {
+  margin-block-start: 1.5rem;
+}
 
-.form-group-stack > * {
+.form-group-stack > *,
+.social-logins > * {
   margin-block-end: 0;
   margin-block-start: 0;
 }
-.form-group-stack > * + * {
+.form-group-stack > * + *,
+.social-logins > * + * {
   margin-block-start: 1rem;
 }
 
@@ -2318,6 +2325,20 @@ pre[class*=language-] {
 }
 .site-footer__copyright {
   margin-block: 0;
+}
+
+.btn--outline-dark {
+  background-color: transparent;
+  border-color: var(--root-btn-color-dark-background);
+  color: var(--root-btn-color-dark-background);
+}
+.btn--outline-dark:focus-visible {
+  outline: 2px solid var(--root-btn-color-dark-background);
+  outline-offset: 2px;
+}
+.btn--outline-dark:hover {
+  background-color: var(--root-btn-color-dark-background);
+  color: var(--root-btn-color-dark-foreground);
 }
 
 .m-block\:0 {

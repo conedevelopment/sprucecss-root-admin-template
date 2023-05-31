@@ -16,18 +16,20 @@
   }
 
   &__sidebar {
-    display: none;
+    background-image: url('/img/auth-background.png');
+    background-position: center;
+    background-size: cover;
+    border-radius: 2rem;
+    margin-block-end: spacer-clamp('m', 'l');
+    margin-inline: spacer-clamp('m', 'l');
+    min-block-size: 10rem;
 
     @include breakpoint('md') {
-      background-image: url('/img/auth-background.png');
-      background-position: center;
-      background-size: cover;
-      border-radius: 2rem;
       block-size: calc(100% - 2 * #{spacer('l')});
-      display: flex;
       inline-size: calc(50% - #{spacer('l')});
       inset-block: spacer('l');
       inset-inline: 50% spacer('l');
+      margin: 0;
       position: fixed;
     }
   }

@@ -3,9 +3,14 @@
 .auth-form {
   @include layout-stack('s');
   margin-block: auto;
+
+  .or-separator {
+    margin-block-start: spacer('m');
+  }
 }
 
-.form-group-stack {
+.form-group-stack,
+.social-logins {
   @include layout-stack('s');
 }
 

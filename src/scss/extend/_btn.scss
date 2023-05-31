@@ -1,5 +1,5 @@
 @use 'sprucecss/scss/spruce' as *;
 
-.btn--dark {
-
+.btn--outline-dark {
+  @include btn-variant-outline('dark');
 }
