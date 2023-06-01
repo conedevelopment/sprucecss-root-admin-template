@@ -9,12 +9,11 @@
     'font-size': 1rem,
   ),
   $colors: (
-    'base': (
-      // 'background': #F4F6F9,
-    ),
     'btn': (
       'dark-background': hsl(260deg 4% 70%),
+      'dark-background-hover': hsl(205deg 100% 2%),
       'dark-foreground': hsl(0deg 0% 100%),
+      'dark-foreground-outline': hsl(205deg 100% 2%),
       'pagination-background': hsl(263deg 40% 96%),
       'pagination-background-hover': hsl(262deg 71% 49%),
       'pagination-focus-ring': hsl(262deg 71% 49%),
@@ -23,6 +22,9 @@
     ),
     'navigation': (
       'arrow': hsl(0deg 0% 0% / 15%),
+    ),
+    'search': (
+      'icon': hsl(229deg 26% 48% / 25%),
     ),
     'prism': (
       'color': hsl(243deg 14% 29%),
@@ -43,15 +45,18 @@
   $display: (
     'border-radius-sm': 0.45rem,
   ),
+  $form-control-sm: (
+    'padding': 0.1em 0,
+  ),
   $form-label: (
     'font-family': #{'Manrope', sans-serif},
     'font-weight': 500,
   ),
-  $settings: (
-    'prefix': 'root',
-  ),
   $typography: (
     'font-family-base': #{'Open Sans', sans-serif},
     'font-family-heading': #{'Manrope', sans-serif},
+  ),
+  $settings: (
+    'css-custom-properties': true,
   ),
 );

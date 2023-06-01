@@ -1,15 +1,28 @@
 @use 'sprucecss/scss/spruce' as *;
 
-.sidebar {
+.app-sidebar {
   block-size: 100%;
   border-inline-end: 1px solid color('border');
   display: flex;
   flex-direction: column;
   gap: spacer('m');
-  padding: spacer('l');
+  padding-block: 0 spacer('m');
+  padding-inline: spacer('m');
+
+  &__logo {
+    block-size: 1.25rem;
+    display: inline-flex;
+  }
+
+  &__header {
+    align-items: center;
+    display: flex;
+    block-size: get-css-variable(--app-header-block-size);
+  }
 
   &__footer {
     align-items: center;
+    border-block-start: 1px solid color('border');
     display: flex;
     justify-content: space-between;
   }

@@ -1,16 +1,22 @@
 @use 'sprucecss/scss/spruce' as *;
 
-.site-header {
-  position: relative;
+.app-header {
+  background-color: hsl(0deg 0% 100% / 90%);
+  border-block-end: 1px solid color('border');
+  position: sticky;
+  inset-block-start: 0;
+  backdrop-filter: saturate(180%) blur(.25rem);
+  inset-block-start: 0;
+  position: sticky;
 
   &__inner {
-    --block-size: 6rem;
     align-items: center;
-    block-size: var(--block-size);
+    block-size: get-css-variable(--app-header-block-size);
     display: flex;
     flex-wrap: wrap;
     gap: spacer-clamp('s', 'l');
     justify-content: space-between;
+    margin-inline: get-css-variable(--container-gap);
   }
 
   &__column {

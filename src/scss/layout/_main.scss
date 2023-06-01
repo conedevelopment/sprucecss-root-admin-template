@@ -5,13 +5,18 @@
   position: relative;
 
   &__sidebar {
-    inline-size: 24rem;
+    inline-size: get-css-variable(--app-sidebar-inline-size);
     inset: 0 auto 0 0;
     position: fixed;
   }
 
   &__body {
-    inline-size: calc(100% - 24rem);
-    margin-inline-start: 24rem;
+    background-color: #f7fafd;
+    inline-size: calc(100% - #{get-css-variable(--app-sidebar-inline-size)});
+    margin-inline-start: get-css-variable(--app-sidebar-inline-size);
+  }
+
+  &__header {
+    background-color: color('background');
   }
 }

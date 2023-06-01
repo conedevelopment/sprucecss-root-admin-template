@@ -2,7 +2,7 @@
 
 .container {
   --inline-size: #{config('container-inline-size', $layout)};
-  --gap: #{spacer-clamp(m, l)};
+  --gap: #{get-css-variable(--container-gap)};
 
   @include layout-center(
     var(--gap),

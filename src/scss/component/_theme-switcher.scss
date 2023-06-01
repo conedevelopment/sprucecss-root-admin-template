@@ -17,16 +17,17 @@
     justify-content: center;
     pointer-events: none;
     position: absolute;
-    inline-size: 2em;
+    inline-size: 1.75em;
 
     svg {
       display: none;
-      block-size: 0.85em;
-      inline-size: 0.85em;
+      block-size: 0.75em;
+      inline-size: 0.75em;
     }
   }
 
   &__select {
-    padding-inline-start: 2em;
+    font-size: config('font-size-sm', $typography);
+    padding-inline-start: 1.75em;
   }
 }

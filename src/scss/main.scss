@@ -9,6 +9,8 @@
 
 :root {
   @include set-css-variable((
-    --section-gap: spacer-clamp('xl', 'xxl')
+    --app-sidebar-inline-size: 20rem,
+    --app-header-block-size: 4.5rem,
+    --container-gap: spacer-clamp('m', 'l')
   ));
 }
