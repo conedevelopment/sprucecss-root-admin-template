@@ -46,7 +46,7 @@
     'border-radius-sm': 0.45rem,
   ),
   $form-control-sm: (
-    'padding': 0.1em 0,
+    'padding': 0.25em 0,
   ),
   $form-label: (
     'font-family': #{'Manrope', sans-serif},
@@ -55,6 +55,7 @@
   $typography: (
     'font-family-base': #{'Open Sans', sans-serif},
     'font-family-heading': #{'Manrope', sans-serif},
+    'font-size-base': 0.938rem,
   ),
   $settings: (
     'css-custom-properties': true,

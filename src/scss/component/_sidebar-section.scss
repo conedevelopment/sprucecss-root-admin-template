@@ -8,14 +8,16 @@
   }
 
   &__title {
+    align-items: center;
     color: color('heading');
+    display: flex;
     font-size: config('font-size-base', $typography);
+    justify-content: space-between;
     margin-block: 0;
   }
 
   &__navigation {
     border-inline-start: 1px solid color('border');
-    font-size: 1rem;
     margin-block-start: 1rem;
     padding-inline-start: 1rem;
 

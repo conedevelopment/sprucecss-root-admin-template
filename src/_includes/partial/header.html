@@ -1,10 +1,7 @@
 <header class="app-header">
     <div class="app-header__inner">
+        {% include "partial/search-toggle.html" %}
         <div class="app-header__actions">
-            {% include "partial/search-toggle.html" %}
-            <button class="btn btn--primary btn--icon">
-                {% svgIcon './src/img/icon/arrow-outward.svg', 'btn__icon' %}
-            </button>
             {% include "partial/user-menu.html" %}
         </div>
     </div>

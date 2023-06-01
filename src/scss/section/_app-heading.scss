@@ -1,18 +1,15 @@
 @use 'sprucecss/scss/spruce' as *;
 
 .app-heading {
-  text-align: center;
+  padding-block: spacer-clamp('m', 'l');
 
   &__inner {
-    align-items: center;
     display: flex;
     flex-direction: column;
-    gap: spacer('m');
-    justify-content: center;
+    gap: spacer('s');
   }
 
   &__title {
-    font-size: responsive-font-size(4.5rem, 35, '5vw + 1rem');
     margin-block: 0;
   }
 
@@ -21,6 +18,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: spacer('xs') spacer('m');
-    justify-content: center;
+
+    > * {
+      margin-block: 0;
+    }
   }
 }

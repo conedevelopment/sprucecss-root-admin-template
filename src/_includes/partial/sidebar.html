@@ -11,41 +11,13 @@
         </a>
     </div>
     <div class="app-sidebar__body">
-        <div class="sidebar-section sidebar-section--navigation">
-            <h3 class="sidebar-section__title">Navigation</h3>
-            <nav class="sidebar-section__navigation">
-                <ul>
-                    <li><a href="/faq/">FAQ</a></li>
-                    <li><a href="/changelog/">Changelog</a></li>
-                    <li>
-                        <a
-                            href="https://sprucecss.com"
-                            target="_blank"
-                            rel="noopener"
-                            >Spruce CSS
-                            <span class="sr-only">Open in new window</span>
-                            <svg
-                                aria-hidden="true"
-                                focusable="false"
-                                role="img"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                style="fill: currentColor"
-                                width="24"
-                                height="24"
-                                class="btn__icon"
-                            >
-                                <path
-                                    d="M1.111,1.907c0,1.049 0.858,1.908 1.907,1.908l14.478,-0l-16.938,16.938c-0.744,0.744 -0.744,1.945 -0,2.689c0.744,0.744 1.945,0.744 2.689,0l16.938,-16.938l0,14.478c0,1.049 0.859,1.907 1.908,1.907c1.049,-0 1.907,-0.858 1.907,-1.907l0,-19.075c0,-1.049 -0.858,-1.907 -1.907,-1.907l-19.075,0c-1.049,0 -1.907,0.858 -1.907,1.907Z"
-                                ></path></svg
-                        ></a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
         <div class="sidebar-section">
-            <h3 class="sidebar-section__title">Getting Started</h3>
+            <h3 class="sidebar-section__title">
+                Getting Started
+                <button class="btn btn--primary btn--sm btn--icon">
+                    {% svgIcon './src/img/icon/expand-more.svg', 'btn__icon' %}
+                </button>
+            </h3>
             <nav class="sidebar-section__navigation">
                 <ul>
                     <li>
@@ -74,7 +46,7 @@
             </nav>
         </div>
     </div>
-    <div class="sidebar__footer">
+    <div class="app-sidebar__footer">
         {% include "partial/theme-switcher.html" %}
     </div>
 </aside>

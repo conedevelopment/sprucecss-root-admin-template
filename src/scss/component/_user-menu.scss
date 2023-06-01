@@ -1,1 +1,36 @@
 @use 'sprucecss/scss/spruce' as *;
+
+.user-menu {
+  display: flex;
+  gap: spacer('s');
+
+  &__avatar {
+    --dimenion: 2.5rem;
+    block-size: var(--dimenion);
+    border-radius: 50%;
+    inline-size: var(--dimenion);
+  }
+
+  &__caption {
+    font-size: config('font-size-base', $typography);
+    display: flex;
+    flex-direction: column;
+    gap: spacer('xs');
+    line-height: 1;
+  }
+
+  &__display-name {
+    color: color('heading');
+    font-weight: 700;
+  }
+
+  &__toggle {
+    @include clear-btn;
+
+    svg {
+      --dimension: 0.75rem;
+      block-size: var(--dimension);
+      inline-size: var(--dimension);
+    }
+  }
+}

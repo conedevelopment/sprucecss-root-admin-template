@@ -463,7 +463,7 @@ template {
   --spruce-font-family-base: Open Sans, sans-serif;
   --spruce-font-family-cursive: ui-monospace, Cascadia Code, Source Code Pro, Menlo, Consolas, DejaVu Sans Mono, monospace;
   --spruce-font-family-heading: Manrope, sans-serif;
-  --spruce-font-size-base: 1rem;
+  --spruce-font-size-base: 0.938rem;
   --spruce-font-size-lead: clamp(1.15rem, 2vw, 1.35rem);
   --spruce-font-size-lg: 1.125rem;
   --spruce-font-size-ratio: 1.25;
@@ -680,27 +680,27 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(2.0751953125rem, 2vw + 1rem, 2.44140625rem);
+  font-size: clamp(1.9465332031rem, 2vw + 1rem, 2.2900390625rem);
 }
 
 h2 {
-  font-size: clamp(1.66015625rem, 2vw + 1rem, 1.953125rem);
+  font-size: clamp(1.5572265625rem, 2vw + 1rem, 1.83203125rem);
 }
 
 h3 {
-  font-size: clamp(1.328125rem, 2vw + 1rem, 1.5625rem);
+  font-size: clamp(1.24578125rem, 2vw + 1rem, 1.465625rem);
 }
 
 h4 {
-  font-size: clamp(1.0625rem, 2vw + 1rem, 1.25rem);
+  font-size: clamp(0.996625rem, 2vw + 1rem, 1.1725rem);
 }
 
 h5 {
-  font-size: 1rem;
+  font-size: 0.938rem;
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: 0.938rem;
 }
 
 ul,
@@ -805,34 +805,34 @@ samp {
 }
 
 .h1 {
-  font-size: clamp(2.0751953125rem, 2vw + 1rem, 2.44140625rem);
+  font-size: clamp(1.9465332031rem, 2vw + 1rem, 2.2900390625rem);
 }
 
 .h2 {
-  font-size: clamp(1.66015625rem, 2vw + 1rem, 1.953125rem);
+  font-size: clamp(1.5572265625rem, 2vw + 1rem, 1.83203125rem);
 }
 
 .h3 {
-  font-size: clamp(1.328125rem, 2vw + 1rem, 1.5625rem);
+  font-size: clamp(1.24578125rem, 2vw + 1rem, 1.465625rem);
 }
 
 .h4 {
-  font-size: clamp(1.0625rem, 2vw + 1rem, 1.25rem);
+  font-size: clamp(0.996625rem, 2vw + 1rem, 1.1725rem);
 }
 
 .h5 {
-  font-size: 1rem;
+  font-size: 0.938rem;
 }
 
 .h6 {
-  font-size: 1rem;
+  font-size: 0.938rem;
 }
 
 .btn {
   --spruce-border-radius: 0.45rem;
   --spruce-border-width: 1px;
   --spruce-font-family: Manrope, sans-serif;
-  --spruce-font-size: 1rem;
+  --spruce-font-size: 0.938rem;
   --spruce-font-weight: 600;
   --spruce-gap: 0.5rem;
   --spruce-icon-padding: 0.75em;
@@ -982,7 +982,7 @@ samp {
   --spruce-border-radius: 0.45rem;
   --spruce-border-width: 1px;
   --spruce-font-family: Manrope, sans-serif;
-  --spruce-font-size: 1rem;
+  --spruce-font-size: 0.938rem;
   --spruce-font-weight: 600;
   --spruce-gap: 0.5rem;
   --spruce-icon-padding: 0.75em;
@@ -1076,7 +1076,7 @@ samp {
   --webkit-date-line-height: 1.375;
   --spruce-border-radius: 0.45rem;
   --spruce-border-width: 1px;
-  --spruce-font-size: 1rem;
+  --spruce-font-size: 0.938rem;
   --spruce-line-height: 1.5;
   --spruce-padding: 0.5em 0.75em;
   --spruce-textarea-block-size: 6rem;
@@ -1168,7 +1168,7 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
 .form-control--sm {
   --webkit-date-line-height: 1.36;
   --spruce-border-radius: 0.35em;
-  --spruce-padding: 0.1em 0;
+  --spruce-padding: 0.25em 0;
 }
 .form-control--sm[type=color] {
   --spruce-aspect-ratio: 1;
@@ -1220,7 +1220,7 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
 
 .form-check--sm {
   --spruce-border-radius: 0.35em;
-  --spruce-padding: 0.1em 0;
+  --spruce-padding: 0.25em 0;
 }
 .form-check--sm .form-check__control {
   font-size: var(--spruce-font-size);
@@ -1295,7 +1295,7 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
 }
 
 .form-switch--sm {
-  --spruce-font-size: 1rem;
+  --spruce-font-size: 0.938rem;
 }
 
 .form-switch__control {
@@ -1351,7 +1351,7 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
 
 fieldset {
   --spruce-gap: 1rem;
-  --spruce-legend-font-size: clamp(1rem, 5vw, 1.25rem);
+  --spruce-legend-font-size: clamp(0.938rem, 5vw, 1.1725rem);
   --spruce-legend-font-weight: 700;
   border: 0;
   margin: 0;
@@ -1658,9 +1658,11 @@ legend {
   position: relative;
 }
 .l-main__sidebar {
+  box-shadow: 0 0 3rem hsla(201.15, 72.03%, 32.71%, 0.1);
   inline-size: var(--spruce-app-sidebar-inline-size);
   inset: 0 auto 0 0;
   position: fixed;
+  z-index: 10;
 }
 .l-main__body {
   background-color: #f7fafd;
@@ -1853,7 +1855,7 @@ legend {
   padding: 0;
 }
 .accordion-card__title {
-  font-size: clamp(1.0625rem, 2vw + 1rem, 1.25rem);
+  font-size: clamp(0.996625rem, 2vw + 1rem, 1.1725rem);
   margin-block: 0;
   padding-block: 1.5rem;
 }
@@ -1911,7 +1913,7 @@ legend {
   --spruce-border-radius: 0.45rem;
   --spruce-border-width: 1px;
   --spruce-font-family: Manrope, sans-serif;
-  --spruce-font-size: 1rem;
+  --spruce-font-size: 0.938rem;
   --spruce-font-weight: 600;
   --spruce-gap: 0.5rem;
   --spruce-icon-padding: 0.75em;
@@ -2130,6 +2132,42 @@ pre[class*=language-] {
   font-style: italic;
 }
 
+.user-menu {
+  display: flex;
+  gap: 1rem;
+}
+.user-menu__avatar {
+  --dimenion: 2.5rem;
+  block-size: var(--dimenion);
+  border-radius: 50%;
+  inline-size: var(--dimenion);
+}
+.user-menu__caption {
+  font-size: var(--spruce-font-size-base);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  line-height: 1;
+}
+.user-menu__display-name {
+  color: var(--spruce-base-color-heading);
+  font-weight: 700;
+}
+.user-menu__toggle {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  outline: inherit;
+  padding: 0;
+}
+.user-menu__toggle svg {
+  --dimension: 0.75rem;
+  block-size: var(--dimension);
+  inline-size: var(--dimension);
+}
+
 .open-search {
   position: relative;
   align-items: center;
@@ -2155,13 +2193,15 @@ pre[class*=language-] {
   }
 }
 .sidebar-section__title {
+  align-items: center;
   color: var(--spruce-base-color-heading);
+  display: flex;
   font-size: var(--spruce-font-size-base);
+  justify-content: space-between;
   margin-block: 0;
 }
 .sidebar-section__navigation {
   border-inline-start: 1px solid var(--spruce-base-color-border);
-  font-size: 1rem;
   margin-block-start: 1rem;
   padding-inline-start: 1rem;
 }
@@ -2232,12 +2272,14 @@ pre[class*=language-] {
   align-items: center;
   display: flex;
   block-size: var(--spruce-app-header-block-size);
+  border-block-end: 1px solid var(--spruce-base-color-border);
 }
 .app-sidebar__footer {
   align-items: center;
   border-block-start: 1px solid var(--spruce-base-color-border);
   display: flex;
   justify-content: space-between;
+  padding-block-start: 1.5rem;
 }
 .app-sidebar__body {
   display: flex;
@@ -2330,17 +2372,14 @@ pre[class*=language-] {
 }
 
 .app-heading {
-  text-align: center;
+  padding-block: clamp(1.5rem, 5vw, 3rem);
 }
 .app-heading__inner {
-  align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  justify-content: center;
+  gap: 1rem;
 }
 .app-heading__title {
-  font-size: clamp(2.925rem, 5vw + 1rem, 4.5rem);
   margin-block: 0;
 }
 .app-heading__meta {
@@ -2348,7 +2387,9 @@ pre[class*=language-] {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1.5rem;
-  justify-content: center;
+}
+.app-heading__meta > * {
+  margin-block: 0;
 }
 
 .post-content > * {
@@ -2402,7 +2443,7 @@ pre[class*=language-] {
   inline-size: var(--dimension);
 }
 .site-footer__title {
-  font-size: clamp(1.0625rem, 2vw + 1rem, 1.25rem);
+  font-size: clamp(0.996625rem, 2vw + 1rem, 1.1725rem);
   margin-block: 0 1.5rem;
 }
 .site-footer__navigation {
