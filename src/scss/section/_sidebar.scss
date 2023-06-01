@@ -1,0 +1,32 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.sidebar {
+  block-size: 100%;
+  border-inline-end: 1px solid color('border');
+  display: flex;
+  flex-direction: column;
+  gap: spacer('m');
+  padding: spacer('l');
+
+  &__footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__body {
+    @include scrollbar(
+      $border-radius: 0.05rem
+    );
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: spacer('m');
+    max-block-size: calc(100vh - var(--dimension) - #{spacer('m')} * 3);
+    overflow-y: auto;
+
+    @include breakpoint('sm') {
+      max-block-size: initial;
+    }
+  }
+}

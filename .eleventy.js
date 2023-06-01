@@ -19,9 +19,11 @@ module.exports = config => {
   config.addPassthroughCopy('./src/js/**');
   config.addPassthroughCopy('./src/font/**');
 
+  /*
   config.addCollection('blog', collection => {
     return [...collection.getFilteredByGlob('./src/posts/*.md')];
   });
+  */
 
   config.addNunjucksAsyncShortcode('svgIcon', async (src, cls) => {
     const metadata = await Image(src, {

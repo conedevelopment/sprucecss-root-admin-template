@@ -1,0 +1,14 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+    <main id="content" class="l-main">
+        <div class="l-main__sidebar">
+            {% include "partial/sidebar.html" %}
+        </div>
+        <div class="l-main__body">
+            {% include "partial/header.html" %}
+            <div style="height: 4000px;"></div>
+            {% include "partial/footer.html" %}
+        </div>
+    </main>
+{% endblock %}

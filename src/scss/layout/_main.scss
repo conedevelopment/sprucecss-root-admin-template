@@ -1,0 +1,17 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.l-main {
+  display: flex;
+  position: relative;
+
+  &__sidebar {
+    inline-size: 24rem;
+    inset: 0 auto 0 0;
+    position: fixed;
+  }
+
+  &__body {
+    inline-size: calc(100% - 24rem);
+    margin-inline-start: 24rem;
+  }
+}

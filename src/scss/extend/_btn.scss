@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use 'sprucecss/scss/spruce' as *;
 
 .btn--outline-dark {
@@ -9,4 +10,10 @@
     background-color: color('heading');
     border-color: color('heading');
   }
+}
+
+.btn--shadow-primary {
+  $color: color.adjust(color('primary', $only-color: true), $lightness: 35%);
+  box-shadow: 0 0.55rem 1rem -0.2rem $color,
+              0 0.15rem 0.35rem -0.185rem $color;
 }

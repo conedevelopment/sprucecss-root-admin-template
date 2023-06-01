@@ -9,6 +9,9 @@
     'font-size': 1rem,
   ),
   $colors: (
+    'base': (
+      // 'background': #F4F6F9,
+    ),
     'btn': (
       'dark-background': hsl(260deg 4% 70%),
       'dark-foreground': hsl(0deg 0% 100%),
@@ -38,7 +41,7 @@
   $color-primary: hsl(214deg 98% 49%),
   $dark-colors: dark.$colors,
   $display: (
-    'border-radius-sm': 0.5rem,
+    'border-radius-sm': 0.45rem,
   ),
   $form-label: (
     'font-family': #{'Manrope', sans-serif},
