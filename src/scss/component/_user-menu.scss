@@ -1,11 +1,12 @@
 @use 'sprucecss/scss/spruce' as *;
 
 .user-menu {
+  align-items: center;
   display: flex;
   gap: spacer('s');
 
   &__avatar {
-    --dimenion: 2.5rem;
+    --dimenion: 2.1rem;
     block-size: var(--dimenion);
     border-radius: 50%;
     inline-size: var(--dimenion);
@@ -15,8 +16,12 @@
     font-size: config('font-size-base', $typography);
     display: flex;
     flex-direction: column;
-    gap: spacer('xs');
+    gap: spacer('xxs');
     line-height: 1;
+  }
+
+  &__role {
+    font-size: config('font-size-sm', $typography);
   }
 
   &__display-name {

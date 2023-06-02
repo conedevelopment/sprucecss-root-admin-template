@@ -19,6 +19,7 @@
     display: flex;
     block-size: get-css-variable(--app-header-block-size);
     border-block-end: 1px solid color('border');
+    justify-content: space-between;
   }
 
   &__footer {

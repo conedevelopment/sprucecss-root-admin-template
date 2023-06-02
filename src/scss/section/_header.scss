@@ -8,6 +8,7 @@
   backdrop-filter: saturate(180%) blur(.25rem);
   inset-block-start: 0;
   position: sticky;
+  z-index: 15;
 
   &__inner {
     align-items: center;

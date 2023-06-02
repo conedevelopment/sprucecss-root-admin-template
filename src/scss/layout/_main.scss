@@ -5,7 +5,7 @@
   position: relative;
 
   &__sidebar {
-    box-shadow: 0 0 3rem hsl(201.15deg 72.03% 32.71% / 10%);
+    box-shadow: 0 0 spacer('s') hsl(201.15deg 72.03% 32.71% / 10%);
     inline-size: get-css-variable(--app-sidebar-inline-size);
     inset: 0 auto 0 0;
     position: fixed;
@@ -15,6 +15,7 @@
   &__body {
     background-color: #f7fafd;
     inline-size: calc(100% - #{get-css-variable(--app-sidebar-inline-size)});
+    min-block-size: 100lvh;
     margin-inline-start: get-css-variable(--app-sidebar-inline-size);
   }
 

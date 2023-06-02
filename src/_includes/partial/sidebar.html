@@ -9,12 +9,13 @@
                 data-dark-asset="/img/root-logo-light.svg"
             />
         </a>
+        {% include "partial/search-toggle.html" %}
     </div>
     <div class="app-sidebar__body">
         <div class="sidebar-section">
             <h3 class="sidebar-section__title">
                 Getting Started
-                <button class="btn btn--primary btn--sm btn--icon">
+                <button class="btn btn--dark btn--sm btn--icon">
                     {% svgIcon './src/img/icon/expand-more.svg', 'btn__icon' %}
                 </button>
             </h3>

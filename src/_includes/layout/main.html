@@ -18,7 +18,51 @@
                 </div>
             </div>
             <div class="container">
-                <div style="background-color: #efefef; block-size: 4000px;"></div>
+                <div class="app-body">
+                    <div class="app-body__row">
+                        <div class="card">
+                            <div class="card__header">
+                                <h2 class="card__title">Sales</h2>
+                            </div>
+                            <div class="card__body">
+                                <div id="chart-area"></div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__header">
+                                <h2 class="card__title">Active users</h2>
+                            </div>
+                            <div class="card__body">
+                                <div id="chart-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__header">
+                            <h2 class="card__title">Products</h2>
+                        </div>
+                        <div class="card__body">
+                            <table class="table table--striped table--hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Number</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for product in products %}
+                                    <tr>
+                                        <td>{{ product.id }}</td>
+                                        <td>{{ product.name }}</td>
+                                        <td>{{ product.number }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
             {% include "partial/footer.html" %}
         </div>

@@ -11,7 +11,8 @@
     "sourceType": "module"
   },
   "globals": {
-    "google": true
+    "google": true,
+    "ApexCharts": true
   },
   "ignorePatterns": [
     "assets/js/fancybox.js",

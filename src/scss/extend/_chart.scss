@@ -1,0 +1,11 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.apexcharts-text {
+  fill: color('text');
+}
+
+.apexcharts-xaxis-tick,
+.apexcharts-gridline,
+.apexcharts-grid-borders line:last-child {
+  stroke: color('border');
+}

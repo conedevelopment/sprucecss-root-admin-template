@@ -1,6 +1,10 @@
 @use 'sass:color';
 @use 'sprucecss/scss/spruce' as *;
 
+.btn--dark {
+  @include btn-variant('dark');
+}
+
 .btn--outline-dark {
   @include btn-variant-outline('dark');
 }
