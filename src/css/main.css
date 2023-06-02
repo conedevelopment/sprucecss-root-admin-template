@@ -371,6 +371,7 @@ template {
   --spruce-base-color-primary: hsl(214, 98%, 49%);
   --spruce-base-color-secondary: hsl(227, 92%, 55%);
   --spruce-base-color-text: hsl(208, 9%, 42%);
+  --spruce-base-color-primary-lightest: hsl(210, 60%, 98%);
 }
 
 :root {
@@ -2223,9 +2224,7 @@ pre[class*=language-] {
   margin-block: 0;
 }
 .sidebar-section__navigation {
-  border-inline-start: 1px solid var(--spruce-base-color-border);
   margin-block-start: 1rem;
-  padding-inline-start: 1rem;
 }
 .sidebar-section__navigation ul {
   list-style: none;
@@ -2235,30 +2234,34 @@ pre[class*=language-] {
 .sidebar-section__navigation a {
   align-items: center;
   color: var(--spruce-base-color-text);
-  display: inline-flex;
-  gap: 0.5rem;
+  display: flex;
+  gap: 0.75em;
+  padding-block: 0.35em;
   text-decoration: none;
 }
+.sidebar-section__navigation a:hover {
+  background-color: var(--spruce-base-color-primary-lightest);
+}
 .sidebar-section__navigation a[aria-current=page] {
-  color: var(--spruce-base-color-heading);
-  font-weight: 700;
+  color: hsl(0, 0%, 100%);
   position: relative;
 }
 .sidebar-section__navigation a[aria-current=page]::before {
   background-color: var(--spruce-base-color-primary);
-  border-end-end-radius: var(--spruce-border-radius-sm);
-  border-start-end-radius: var(--spruce-border-radius-sm);
-  bottom: 0;
+  border-radius: var(--spruce-border-radius-sm);
   content: "";
-  inline-size: 0.3rem;
-  inset-block-start: 0;
-  inset-inline-start: -1rem;
+  inset-block: 0;
+  inset-inline: -0.75rem -0.35em;
   position: absolute;
+  z-index: -1;
+}
+.sidebar-section__navigation a[aria-current=page] svg {
+  color: hsl(0, 0%, 100%);
 }
 .sidebar-section__navigation a svg {
-  --dimension: 0.65em;
+  --dimension: 1.15em;
   block-size: var(--dimension);
-  color: var(--spruce-navigation-color-arrow);
+  color: var(--spruce-base-color-primary);
   inline-size: var(--dimension);
 }
 
@@ -2284,7 +2287,6 @@ pre[class*=language-] {
   flex-direction: column;
   gap: 1.5rem;
   padding-block: 0 1.5rem;
-  padding-inline: 1.5rem;
 }
 .app-sidebar__logo {
   block-size: 1.25rem;
@@ -2296,6 +2298,7 @@ pre[class*=language-] {
   block-size: var(--spruce-app-header-block-size);
   border-block-end: 1px solid var(--spruce-base-color-border);
   justify-content: space-between;
+  padding-inline: 1.5rem;
 }
 .app-sidebar__footer {
   align-items: center;
@@ -2303,6 +2306,7 @@ pre[class*=language-] {
   display: flex;
   justify-content: space-between;
   padding-block-start: 1.5rem;
+  padding-inline: 1.5rem;
 }
 .app-sidebar__body {
   display: flex;
@@ -2311,6 +2315,7 @@ pre[class*=language-] {
   gap: 1.5rem;
   max-block-size: calc(100vh - var(--dimension) - 1.5rem * 3);
   overflow-y: auto;
+  padding-inline: 1.5rem;
 }
 .app-sidebar__body::-webkit-scrollbar {
   block-size: 0.5rem;

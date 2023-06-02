@@ -33,69 +33,52 @@
   };
 
   const optionsBar = {
-    series: [
-      {
-        name: 'Q1 Budget',
-        group: 'budget',
-        data: [44000, 55000, 41000],
-      },
-      {
-        name: 'Q1 Actual',
-        group: 'actual',
-        data: [48000, 50000, 40000],
-      },
-      {
-        name: 'Q2 Budget',
-        group: 'budget',
-        data: [13000, 36000, 20000],
-      },
-      {
-        name: 'Q2 Actual',
-        group: 'actual',
-        data: [20000, 40000, 25000],
-      },
-    ],
+    series: [{
+      name: 'Net Profit',
+      data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
+    }, {
+      name: 'Revenue',
+      data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
+    }],
     chart: {
       type: 'bar',
       height: 350,
-      stacked: true,
       toolbar: {
         show: false,
       },
     },
-    stroke: {
-      width: 0,
-    },
-    dataLabels: {
-      formatter: (val) => `${val / 1000}K`,
-    },
     plotOptions: {
       bar: {
         horizontal: false,
+        columnWidth: '55%',
+        endingShape: 'rounded',
       },
     },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ['transparent'],
+    },
     xaxis: {
-      categories: [
-        'Online advertising',
-        'Sales Training',
-        'Print advertising',
-        'Catalogs',
-        'Meetings',
-        'Public relations',
-      ],
+      categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+    },
+    yaxis: {
+      title: {
+        text: '$ (thousands)',
+      },
     },
     fill: {
       opacity: 1,
     },
-    colors: ['#80c7fd', '#008FFB', '#80f1cb', '#00E396'],
-    yaxis: {
-      labels: {
-        formatter: (val) => `${val / 1000}K`,
+    tooltip: {
+      y: {
+        formatter(val) {
+          return `$ ${val} thousands`;
+        },
       },
-    },
-    legend: {
-      position: 'top',
-      horizontalAlign: 'left',
     },
   };
 

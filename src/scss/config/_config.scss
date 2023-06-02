@@ -12,6 +12,9 @@ $color-primary-lightest: hsl(210deg 60% 98%);
     'font-size': 1rem,
   ),
   $colors: (
+    'base': (
+      'primary-lightest': $color-primary-lightest,
+    ),
     'btn': (
       'dark-background': hsl(260deg 4% 70%),
       'dark-background-hover': hsl(205deg 100% 2%),

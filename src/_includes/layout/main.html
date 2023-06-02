@@ -73,7 +73,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {% for product in products %}
+                                        {% set productList = products.slice(0, 6) %}
+                                        {% for product in productList %}
                                         <tr>
                                             <td>
                                                 <label class="form-check">

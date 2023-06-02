@@ -17,9 +17,7 @@
   }
 
   &__navigation {
-    border-inline-start: 1px solid color('border');
     margin-block-start: 1rem;
-    padding-inline-start: 1rem;
 
     ul {
       @include clear-list;
@@ -27,33 +25,39 @@
 
     a {
       align-items: center;
-      color: color(text);
-      display: inline-flex;
-      gap: spacer('xs');
+      color: color('text');
+      display: flex;
+      gap: 0.75em;
+      padding-block: 0.35em;
       text-decoration: none;
 
+      &:hover {
+        background-color: color('primary-lightest');
+      }
+
       &[aria-current='page'] {
-        color: color('heading');
-        font-weight: 700;
+        color: hsl(0deg 0% 100%);
         position: relative;
 
         &::before {
           background-color: color('primary');
-          border-end-end-radius: config('border-radius-sm', $display);
-          border-start-end-radius: config('border-radius-sm', $display);
-          bottom: 0;
+          border-radius: config('border-radius-sm', $display);
           content: '';
-          inline-size: 0.3rem;
-          inset-block-start: 0;
-          inset-inline-start: -1rem;
+          inset-block: 0;
+          inset-inline: -0.75rem -0.35em;
           position: absolute;
+          z-index: -1;
+        }
+
+        svg {
+          color: hsl(0deg 0% 100%);
         }
       }
 
       svg {
-        --dimension: 0.65em;
+        --dimension: 1.15em;
         block-size: var(--dimension);
-        color: color('arrow', 'navigation');
+        color: color('primary');
         inline-size: var(--dimension);
       }
     }

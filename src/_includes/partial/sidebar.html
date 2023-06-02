@@ -13,8 +13,20 @@
     </div>
     <div class="app-sidebar__body">
         <div class="sidebar-section">
+            <nav class="sidebar-section__navigation">
+                <ul>
+                    <li>
+                        <a href="#">
+                            {% svgIcon './src/img/icon/home.svg' %}
+                            Dashboard
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="sidebar-section">
             <h3 class="sidebar-section__title">
-                Getting Started
+                Shop
                 <button class="btn btn--light btn--sm btn--icon">
                     {% svgIcon './src/img/icon/chevron-down.svg', 'btn__icon' %}
                 </button>
@@ -22,27 +34,44 @@
             <nav class="sidebar-section__navigation">
                 <ul>
                     <li>
-                        <a href="/getting-started/introduction/"
-                            >Introduction</a
-                        >
+                        <a href="#" aria-current="page">
+                            {% svgIcon './src/img/icon/eye.svg' %}
+                            Products
+                        </a>
                     </li>
-                    <li><a href="/getting-started/features/">Features</a></li>
-                    <li><a href="/getting-started/structure/">Structure</a></li>
-                    <li><a href="/getting-started/setup/">Setup</a></li>
                     <li>
-                        <a href="/getting-started/content-management/"
-                            >Content Management</a
-                        >
+                        <a href="#">
+                            {% svgIcon './src/img/icon/eye.svg' %}
+                            Customers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            {% svgIcon './src/img/icon/eye.svg' %}
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            {% svgIcon './src/img/icon/eye.svg' %}
+                            Categories
+                        </a>
                     </li>
                 </ul>
             </nav>
         </div>
         <div class="sidebar-section">
-            <h3 class="sidebar-section__title">Customization</h3>
+            <h3 class="sidebar-section__title">
+                Pages
+                <button class="btn btn--light btn--sm btn--icon">
+                    {% svgIcon './src/img/icon/chevron-down.svg', 'btn__icon' %}
+                </button>
+            </h3>
             <nav class="sidebar-section__navigation">
                 <ul>
-                    <li><a href="/customization/spruce-css/">Spruce CSS</a></li>
-                    <li><a href="/customization/themes/">Themes</a></li>
+                    <li><a href="/login/">Login</a></li>
+                    <li><a href="/sign-up/">Sign Up</a></li>
+                    <li><a href="/password-reset/">Password Reset</a></li>
                 </ul>
             </nav>
         </div>
