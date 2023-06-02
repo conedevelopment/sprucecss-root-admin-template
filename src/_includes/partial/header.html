@@ -1,6 +1,11 @@
 <header class="app-header">
     <div class="app-header__inner">
-        {% include "partial/breadcrumb-list.html" %}
+        <div class="app-header__column">
+            <a href="#" class="btn btn--light btn--icon">
+                {% svgIcon './src/img/icon/menu.svg', 'btn__icon' %}
+            </a>
+            {% include "partial/breadcrumb-list.html" %}
+        </div>
         <div class="app-header__actions">
             {% include "partial/user-menu.html" %}
         </div>

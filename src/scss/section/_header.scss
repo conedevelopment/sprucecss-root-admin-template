@@ -1,7 +1,7 @@
 @use 'sprucecss/scss/spruce' as *;
 
 .app-header {
-  background-color: hsl(0deg 0% 100% / 90%);
+  background-color: hsl(0deg 0% 100% / 95%);
   border-block-end: 1px solid color('border');
   position: sticky;
   inset-block-start: 0;
@@ -24,7 +24,7 @@
     align-items: center;
     display: flex;
     flex-grow: 1;
-    gap: spacer-clamp('s', 'l');
+    gap: spacer-clamp('s', 'm');
   }
 
   &__actions {

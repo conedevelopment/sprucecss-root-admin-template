@@ -1,0 +1,24 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.data-table {
+  &__image {
+    --dimension: 2.25rem;
+    width: var(--dimension);
+    height: var(--dimension);
+    border-radius: 50%;
+  }
+
+  &__actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacer('xs');
+    justify-content: end;
+  }
+
+  &__footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+}

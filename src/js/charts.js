@@ -19,7 +19,7 @@
     },
     stroke: {
       curve: 'smooth',
-      width: 3,
+      width: 2,
     },
     xaxis: {
       type: 'datetime',
@@ -37,22 +37,22 @@
       {
         name: 'Q1 Budget',
         group: 'budget',
-        data: [44000, 55000, 41000, 67000],
+        data: [44000, 55000, 41000],
       },
       {
         name: 'Q1 Actual',
         group: 'actual',
-        data: [48000, 50000, 40000, 65000],
+        data: [48000, 50000, 40000],
       },
       {
         name: 'Q2 Budget',
         group: 'budget',
-        data: [13000, 36000, 20000, 8000],
+        data: [13000, 36000, 20000],
       },
       {
         name: 'Q2 Actual',
         group: 'actual',
-        data: [20000, 40000, 25000, 10000],
+        data: [20000, 40000, 25000],
       },
     ],
     chart: {

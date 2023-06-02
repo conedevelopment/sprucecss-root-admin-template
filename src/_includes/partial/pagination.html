@@ -1,26 +1,33 @@
-{% if pagination.href.next or pagination.href.previous %}
-  <nav aria-labelledby="pagination">
-    <h2 id="pagination" class="sr-only">Pagination</h2>
-    <ol class="pagination">
-      {% if pagination.href.previous %}
+<nav class="pagination" aria-label="Posts">
+    <h2 class="sr-only">Post Navigation</h2>
+    <ul class="pagination__links">
         <li>
-          <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" class="prev">
-            <span>{{ paginationCaptionPrev if paginationCaptionPrev else 'Previous' }}</span>
-          </a>
+            <span
+                class="btn btn--sm btn--primary-outline pagination__page-number pagination__page-number--current"
+                aria-current="page"
+                >1</span
+            >
         </li>
-      {% endif %}
-      {%- for pageEntry in pagination.pages %}
         <li>
-          <a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</a>
+            <a class="btn btn--sm btn--primary-outline pagination__page-number" href="/page/2/">2</a>
         </li>
-      {%- endfor %}
-      {% if pagination.href.next %}
         <li>
-          <a href="{{ pagination.href.next }}{{ paginationAnchor }}" class="next">
-            <span>{{ paginationCaptionNext if paginationCaptionNext else 'Next' }}</span>
-          </a>
+            <a class="btn btn--sm btn--primary-outline pagination__page-number" href="/page/3/">3</a>
         </li>
-      {% endif %}
-    </ol>
-  </nav>
-{% endif %}
+        <li>
+            <a class="btn btn--sm btn--primary-outline pagination__page-number" href="/page/4/">4</a>
+        </li>
+        <li>
+            <span
+                class="pagination__page-number pagination__page-number--disabled"
+                >...</span
+            >
+        </li>
+        <li>
+            <a class="btn btn--sm btn--primary-outline pagination__page-number" href="/page/10/">10</a>
+        </li>
+        <li>
+            <a class="btn btn--sm btn--primary-outline pagination__page-number" href="/page/2/">Next</a>
+        </li>
+    </ul>
+</nav>

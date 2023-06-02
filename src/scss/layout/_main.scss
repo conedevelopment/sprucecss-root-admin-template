@@ -13,7 +13,7 @@
   }
 
   &__body {
-    background-color: #f7fafd;
+    background-color: hsl(210deg 60% 98%);
     inline-size: calc(100% - #{get-css-variable(--app-sidebar-inline-size)});
     min-block-size: 100lvh;
     margin-inline-start: get-css-variable(--app-sidebar-inline-size);

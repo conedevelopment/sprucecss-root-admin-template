@@ -5,6 +5,10 @@
   @include btn-variant('dark');
 }
 
+.btn--light {
+  @include btn-variant('light');
+}
+
 .btn--outline-dark {
   @include btn-variant-outline('dark');
 }
