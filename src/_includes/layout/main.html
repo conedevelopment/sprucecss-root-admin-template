@@ -10,9 +10,21 @@
             <div class="app-heading">
                 <div class="container">
                     <div class="app-heading__inner">
-                        <h1 class="app-heading__title">Dashboard</h1>
-                        <div class="app-heading__meta">
-                            <p>Hey Adam, welcome back! Here is your personal dashboard.</p>
+                        <div class="app-heading__caption">
+                            <h1 class="app-heading__title">Dashboard</h1>
+                            <div class="app-heading__meta">
+                                <p>Hey Adam, welcome back! Here is your personal dashboard.</p>
+                            </div>
+                        </div>
+                        <div class="app-heading__actions">
+                            <a href="#" class="btn btn--primary btn--icon">
+                                {% svgIcon './src/img/icon/eye.svg', 'btn__icon' %}
+                                Create new
+                            </a>
+                            <a href="#" class="btn btn--primary-outline btn--icon">
+                                {% svgIcon './src/img/icon/trash.svg', 'btn__icon' %}
+                                Statistics
+                            </a>
                         </div>
                     </div>
                 </div>

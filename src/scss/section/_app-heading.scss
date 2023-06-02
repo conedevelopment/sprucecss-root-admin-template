@@ -5,8 +5,16 @@
 
   &__inner {
     display: flex;
-    flex-direction: column;
     gap: spacer('s');
+    justify-content: space-between;
+
+    &--column {
+      flex-direction: column;
+    }
+  }
+
+  &__caption {
+    @include layout-stack('xs');
   }
 
   &__title {
@@ -23,5 +31,13 @@
     > * {
       margin-block: 0;
     }
+  }
+
+  &__actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacer('s');
+    justify-content: end;
   }
 }
