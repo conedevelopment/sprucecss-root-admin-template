@@ -1,12 +1,23 @@
 <div class="theme-switcher" id="theme-switcher">
-    <span class="theme-switcher__icon">
-        {% svgIcon './src/img/icon/system-mode.svg', 'icon-system' %}
-        {% svgIcon './src/img/icon/light-mode.svg', 'icon-light' %}
-        {% svgIcon './src/img/icon/dark-mode.svg', 'icon-dark' %}
-    </span>
-    <select class="form-control form-control--sm theme-switcher__select" id="select-theme-mode" aria-label="Select a theme">
-      <option value="system">System</option>
-      <option value="light">Light</option>
-      <option value="dark">Dark</option>
-    </select>
-  </div>
+    <button
+        class="btn btn--outline-primary btn--sm btn--icon theme-switcher__system-mode"
+        aria-label="Switch to light mode"
+        data-action="light"
+    >
+        {% svgIcon './src/img/icon/system-mode.svg', 'btn__icon' %}
+    </button>
+    <button
+        class="btn btn--outline-primary btn--sm btn--icon theme-switcher__light-mode"
+        aria-label="Switch to dark mode"
+        data-action="dark"
+    >
+        {% svgIcon './src/img/icon/light-mode.svg', 'btn__icon' %}
+    </button>
+    <button
+        class="btn btn--outline-primary btn--sm btn--icon theme-switcher__dark-mode"
+        aria-label="Switch to system mode"
+        data-action="system"
+    >
+        {% svgIcon './src/img/icon/dark-mode.svg', 'btn__icon' %}
+    </button>
+</div>

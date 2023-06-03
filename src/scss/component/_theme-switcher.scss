@@ -5,29 +5,15 @@
   display: inline-flex;
   position: relative;
 
-  &[data-theme-mode='system'] .icon-system { display: inline-block; }
-  &[data-theme-mode='light'] .icon-light { display: inline-block; }
-  &[data-theme-mode='dark'] .icon-dark { display: inline-block; }
+  &[data-theme-mode='system'] &__system-mode { display: flex; }
+  &[data-theme-mode='light'] &__light-mode { display: flex; }
+  &[data-theme-mode='dark'] &__dark-mode { display: flex; }
 
-  &__icon {
-    align-items: center;
-    color: color('heading');
-    display: flex;
-    inset: 0 auto 0 0;
-    justify-content: center;
-    pointer-events: none;
-    position: absolute;
-    inline-size: 1.75em;
+  button {
+    display: none;
 
-    svg {
-      display: none;
-      block-size: 0.75em;
-      inline-size: 0.75em;
+    > * {
+      pointer-events: none;
     }
-  }
-
-  &__select {
-    font-size: config('font-size-sm', $typography);
-    padding-inline-start: 1.75em;
   }
 }

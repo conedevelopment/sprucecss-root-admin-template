@@ -1801,33 +1801,20 @@ legend {
   display: inline-flex;
   position: relative;
 }
-.theme-switcher[data-theme-mode=system] .icon-system {
-  display: inline-block;
-}
-.theme-switcher[data-theme-mode=light] .icon-light {
-  display: inline-block;
-}
-.theme-switcher[data-theme-mode=dark] .icon-dark {
-  display: inline-block;
-}
-.theme-switcher__icon {
-  align-items: center;
-  color: var(--spruce-base-color-heading);
+.theme-switcher[data-theme-mode=system] .theme-switcher__system-mode {
   display: flex;
-  inset: 0 auto 0 0;
-  justify-content: center;
-  pointer-events: none;
-  position: absolute;
-  inline-size: 1.75em;
 }
-.theme-switcher__icon svg {
+.theme-switcher[data-theme-mode=light] .theme-switcher__light-mode {
+  display: flex;
+}
+.theme-switcher[data-theme-mode=dark] .theme-switcher__dark-mode {
+  display: flex;
+}
+.theme-switcher button {
   display: none;
-  block-size: 0.75em;
-  inline-size: 0.75em;
 }
-.theme-switcher__select {
-  font-size: var(--spruce-font-size-sm);
-  padding-inline-start: 1.75em;
+.theme-switcher button > * {
+  pointer-events: none;
 }
 
 .accordion-list--boxed > * {

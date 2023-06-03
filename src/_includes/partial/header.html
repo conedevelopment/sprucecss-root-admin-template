@@ -1,9 +1,10 @@
 <header class="app-header">
     <div class="app-header__inner">
         <div class="app-header__column">
-            <a href="#" class="btn btn--primary-outline btn--sm btn--icon">
+            <button class="btn btn--outline-primary btn--sm btn--icon">
                 {% svgIcon './src/img/icon/menu-close.svg', 'btn__icon' %}
-            </a>
+            </button>
+            {% include "partial/theme-switcher.html" %}
             {% include "partial/breadcrumb-list.html" %}
         </div>
         <div class="app-header__actions">
