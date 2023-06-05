@@ -32,9 +32,28 @@
             <div class="container">
                 <div class="app-body">
                     <div class="app-body__row">
+                        <div class="widget">
+                            <div class="widget__body">
+                                <h2 class="widget__title">Customers</h2>
+                                <p class="widget__data">4,324</p>
+                            </div>
+                            <div class="widget__chart">
+                                <div id="chart-widget"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-body__row">
                         <div class="card">
                             <div class="card__header">
                                 <h2 class="card__title">Sales</h2>
+                                <div class="form-group">
+                                    <label class="form-label sr-only" for="front-end-frameworks">Front-end Frameworks</label>
+                                    <select class="form-control form-control--sm" id="front-end-frameworks">
+                                        <option value="react">Yesterday</option>
+                                        <option value="vue">Last Week</option>
+                                        <option value="svelte">Last Month</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="card__body">
                                 <div id="chart-area"></div>
@@ -46,6 +65,25 @@
                             </div>
                             <div class="card__body">
                                 <div id="chart-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-body__row">
+                        <div class="card">
+                            <div class="card__header">
+                                <h2 class="card__title">Google Map</h2>
+                            </div>
+                            <div class="card__body">
+                                <iframe
+                                    width="600"
+                                    height="450"
+                                    style="border:0"
+                                    loading="lazy"
+                                    allowfullscreen
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    src="https://www.google.com/maps/embed/v1/place?key=API_KEY
+                                        &q=Space+Needle,Seattle+WA">
+                                </iframe>
                             </div>
                         </div>
                     </div>

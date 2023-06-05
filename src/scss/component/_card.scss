@@ -1,14 +1,16 @@
 @use 'sprucecss/scss/spruce' as *;
 
 .card {
-  @include layout-stack('s');
   background-color: color('background');
   border: 1px solid color('border');
   border-radius: config('border-radius-sm', $display);
   box-shadow: 0 0 spacer('xxs') hsl(201.15deg 72.03% 32.71% / 5%);
 
   &__header {
+    align-items: center;
     border-block-end: 1px solid color('border');
+    display: flex;
+    justify-content: space-between;
     padding: spacer('s');
   }
 

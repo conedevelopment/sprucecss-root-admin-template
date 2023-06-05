@@ -1,4 +1,6 @@
 <svg
+    aria-hidden="true"
+    focusable="false"
     fill="none"
     height="24"
     stroke-linecap="round"

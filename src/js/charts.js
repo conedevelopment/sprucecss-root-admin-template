@@ -17,6 +17,10 @@
     dataLabels: {
       enabled: false,
     },
+    legend: {
+      position: 'top',
+      horizontalAlign: 'right',
+    },
     stroke: {
       curve: 'smooth',
       width: 2,
@@ -24,6 +28,9 @@
     xaxis: {
       type: 'datetime',
       categories: ['2023-05-19T00:00:00.000Z', '2023-05-19T01:30:00.000Z', '2023-05-19T02:30:00.000Z', '2023-05-19T03:30:00.000Z', '2023-05-19T04:30:00.000Z', '2023-05-19T05:30:00.000Z', '2023-05-19T06:30:00.000Z'],
+      labels: {
+        show: false,
+      },
     },
     tooltip: {
       x: {
@@ -52,10 +59,15 @@
         horizontal: false,
         columnWidth: '55%',
         endingShape: 'rounded',
+        borderRadius: 3,
       },
     },
     dataLabels: {
       enabled: false,
+    },
+    legend: {
+      position: 'top',
+      horizontalAlign: 'right',
     },
     stroke: {
       show: true,
