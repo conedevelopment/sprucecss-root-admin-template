@@ -29,7 +29,7 @@
       group: 'sparklines',
       type: 'area',
       height: 80,
-      width: 200,
+      width: '100%',
       sparkline: {
         enabled: true,
       },
@@ -53,6 +53,41 @@
       min: 0,
     },
     colors: ['#fff'],
+    tooltip: {
+      enabled: true,
+    },
+  };
+
+  const optionsWidget2 = {
+    chart: {
+      id: 'sparkline3',
+      group: 'sparklines',
+      type: 'area',
+      height: 80,
+      width: '100%',
+      sparkline: {
+        enabled: true,
+      },
+    },
+    stroke: {
+      curve: 'smooth',
+      width: 2,
+    },
+    fill: {
+      opacity: 0.75,
+    },
+    series: [{
+      name: 'Profits',
+      data: randomizeArray(sparklineData),
+    }],
+    labels: [...Array(24).keys()].map((n) => `2018-09-0${n + 1}`),
+    xaxis: {
+      type: 'datetime',
+    },
+    yaxis: {
+      min: 0,
+    },
+    colors: ['#026df7'],
     tooltip: {
       enabled: true,
     },
@@ -156,7 +191,9 @@
   const chartArea = new ApexCharts(document.querySelector('#chart-area'), optionsArea);
   const chartBar = new ApexCharts(document.querySelector('#chart-bar'), optionsBar);
   const chartWidget = new ApexCharts(document.querySelector('#chart-widget'), optionsWidget);
+  const chartWidget2 = new ApexCharts(document.querySelector('#chart-widget2'), optionsWidget2);
   chartWidget.render();
+  chartWidget2.render();
   chartArea.render();
   chartBar.render();
 })();

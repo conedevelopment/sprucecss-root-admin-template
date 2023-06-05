@@ -2114,6 +2114,9 @@ pre[class*=language-] {
 .card__body {
   padding: 1rem;
 }
+.card__body--plain {
+  padding: 0;
+}
 
 .widget {
   background-color: var(--spruce-base-color-background);
@@ -2130,7 +2133,16 @@ pre[class*=language-] {
   background-color: var(--spruce-base-color-primary);
   border: 0;
 }
-.widget--primary * {
+.widget--primary *,
+.widget--primary .widget__data {
+  color: hsl(0, 0%, 100%);
+}
+.widget--secondary {
+  background-color: var(--spruce-base-color-primary);
+  border: 0;
+}
+.widget--secondary *,
+.widget--secondary .widget__data {
   color: hsl(0, 0%, 100%);
 }
 .widget__body > * {
@@ -2147,7 +2159,11 @@ pre[class*=language-] {
 .widget__data {
   font-size: clamp(1.5572265625rem, 2vw + 1rem, 1.83203125rem);
   font-weight: 700;
+  color: var(--spruce-base-color-heading);
   line-height: var(--spruce-line-height-heading);
+}
+.widget__chart {
+  max-width: 65%;
 }
 
 .user-menu {

@@ -17,7 +17,18 @@
     background-color: color('primary');
     border: 0;
 
-    * {
+    *,
+    #{$this}__data {
+      color: hsl(0deg 0% 100%);
+    }
+  }
+
+  &--secondary {
+    background-color: color('primary');
+    border: 0;
+
+    *,
+    #{$this}__data {
       color: hsl(0deg 0% 100%);
     }
   }
@@ -34,6 +45,11 @@
   &__data {
     font-size: font-size('h2');
     font-weight: 700;
+    color: color('heading');
     line-height: config('line-height-heading', $typography);
+  }
+
+  &__chart {
+    max-width: 65%;
   }
 }
