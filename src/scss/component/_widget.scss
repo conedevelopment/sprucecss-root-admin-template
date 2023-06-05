@@ -1,0 +1,39 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.widget {
+  $this: &;
+
+  background-color: color('background');
+  border: 1px solid color('border');
+  border-radius: config('border-radius-sm', $display);
+  box-shadow: 0 0 spacer('xxs') hsl(201.15deg 72.03% 32.71% / 5%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: spacer('m');
+  gap: spacer('m');
+
+  &--primary {
+    background-color: color('primary');
+    border: 0;
+
+    * {
+      color: hsl(0deg 0% 100%);
+    }
+  }
+
+  &__body {
+    @include layout-stack('xxs');
+  }
+
+  &__title {
+    font-size: font-size('h5');
+    font-weight: 600;
+  }
+
+  &__data {
+    font-size: font-size('h2');
+    font-weight: 700;
+    line-height: config('line-height-heading', $typography);
+  }
+}

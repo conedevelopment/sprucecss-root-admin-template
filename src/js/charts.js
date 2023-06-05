@@ -1,4 +1,63 @@
 (() => {
+  const randomizeArray = function (arg) {
+    const array = arg.slice();
+    let currentIndex = array.length; let temporaryValue; let
+      randomIndex;
+
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  };
+
+  // data for the sparklines that appear below header area
+  const sparklineData = [47, 45, 54, 38, 56, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93, 53, 61, 27, 54, 43, 19, 46];
+
+  // the default colorPalette for this dashboard
+  // var colorPalette = ['#01BFD6', '#5564BE', '#F7A600', '#EDCD24', '#F74F58'];
+  const colorPalette = ['#00D8B6', '#008FFB', '#FEB019', '#FF4560', '#775DD0'];
+
+  const optionsWidget = {
+    chart: {
+      id: 'sparkline3',
+      group: 'sparklines',
+      type: 'area',
+      height: 80,
+      width: 200,
+      sparkline: {
+        enabled: true,
+      },
+    },
+    stroke: {
+      curve: 'smooth',
+      width: 2,
+    },
+    fill: {
+      opacity: 0.75,
+    },
+    series: [{
+      name: 'Profits',
+      data: randomizeArray(sparklineData),
+    }],
+    labels: [...Array(24).keys()].map((n) => `2018-09-0${n + 1}`),
+    xaxis: {
+      type: 'datetime',
+    },
+    yaxis: {
+      min: 0,
+    },
+    colors: ['#fff'],
+    tooltip: {
+      enabled: true,
+    },
+  };
+
   const optionsArea = {
     series: [{
       name: 'Yesterday',
@@ -71,7 +130,7 @@
     },
     stroke: {
       show: true,
-      width: 2,
+      width: 1,
       colors: ['transparent'],
     },
     xaxis: {
@@ -96,6 +155,8 @@
 
   const chartArea = new ApexCharts(document.querySelector('#chart-area'), optionsArea);
   const chartBar = new ApexCharts(document.querySelector('#chart-bar'), optionsBar);
+  const chartWidget = new ApexCharts(document.querySelector('#chart-widget'), optionsWidget);
+  chartWidget.render();
   chartArea.render();
   chartBar.render();
 })();
