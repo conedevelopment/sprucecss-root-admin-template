@@ -383,10 +383,14 @@ template {
   --spruce-btn-color-secondary-background-hover: #0937dc;
   --spruce-btn-color-secondary-foreground: hsl(0, 0%, 100%);
   --spruce-btn-color-secondary-shadow: #ced8fd;
-  --spruce-btn-color-dark-background: hsl(260, 4%, 70%);
-  --spruce-btn-color-dark-background-hover: hsl(205, 100%, 2%);
+  --spruce-btn-color-dark-background: hsl(205, 100%, 2%);
+  --spruce-btn-color-dark-background-hover: hsl(205, 100%, 5%);
   --spruce-btn-color-dark-foreground: hsl(0, 0%, 100%);
-  --spruce-btn-color-dark-foreground-outline: hsl(205, 100%, 2%);
+  --spruce-btn-color-dark-outline-border: hsl(260, 4%, 70%);
+  --spruce-btn-color-dark-outline-foreground: hsl(205, 100%, 2%);
+  --spruce-btn-color-dark-outline-foreground-hover: hsl(0, 0%, 100%);
+  --spruce-btn-color-dark-outline-background-hover: hsl(205, 100%, 2%);
+  --spruce-btn-color-dark-outline-focus-ring: hsl(205, 100%, 2%);
   --spruce-btn-color-light-background: hsl(210, 60%, 98%);
   --spruce-btn-color-light-background-hover: hsl(214, 98%, 49%);
   --spruce-btn-color-light-focus-ring: hsl(214, 98%, 49%);
@@ -963,8 +967,8 @@ samp {
   outline-offset: 2px;
 }
 .btn--outline-primary:hover {
-  background-color: var(--spruce-btn-color-primary-background-hover);
-  border-color: var(--spruce-btn-color-primary-background-hover);
+  background-color: var(--spruce-btn-color-primary-background);
+  border-color: var(--spruce-btn-color-primary-background);
   color: var(--spruce-btn-color-primary-foreground);
 }
 
@@ -978,8 +982,8 @@ samp {
   outline-offset: 2px;
 }
 .btn--outline-secondary:hover {
-  background-color: var(--spruce-btn-color-secondary-background-hover);
-  border-color: var(--spruce-btn-color-secondary-background-hover);
+  background-color: var(--spruce-btn-color-secondary-background);
+  border-color: var(--spruce-btn-color-secondary-background);
   color: var(--spruce-btn-color-secondary-foreground);
 }
 
@@ -2556,17 +2560,17 @@ pre[class*=language-] {
 
 .btn--outline-dark {
   background-color: transparent;
-  border-color: var(--spruce-btn-color-dark-background);
-  color: var(--spruce-btn-color-dark-foreground-outline);
+  border-color: var(--spruce-btn-color-dark-outline-border);
+  color: var(--spruce-btn-color-dark-outline-foreground);
 }
 .btn--outline-dark:focus-visible {
-  outline: 2px solid var(--spruce-btn-color-dark-background);
+  outline: 2px solid var(--spruce-btn-color-dark-outline-focus-ring);
   outline-offset: 2px;
 }
 .btn--outline-dark:hover {
-  background-color: var(--spruce-btn-color-dark-background-hover);
-  border-color: var(--spruce-btn-color-dark-background-hover);
-  color: var(--spruce-btn-color-dark-foreground);
+  background-color: var(--spruce-btn-color-dark-outline-background-hover);
+  border-color: var(--spruce-btn-color-dark-outline-background-hover);
+  color: var(--spruce-btn-color-dark-outline-foreground-hover);
 }
 
 .apexcharts-text {

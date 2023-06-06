@@ -16,10 +16,14 @@ $color-primary-lightest: hsl(210deg 60% 98%);
       'primary-lightest': $color-primary-lightest,
     ),
     'btn': (
-      'dark-background': hsl(260deg 4% 70%),
-      'dark-background-hover': hsl(205deg 100% 2%),
+      'dark-background': hsl(205deg 100% 2%),
+      'dark-background-hover': hsl(205deg 100% 5%),
       'dark-foreground': hsl(0deg 0% 100%),
-      'dark-foreground-outline': hsl(205deg 100% 2%),
+      'dark-outline-border': hsl(260deg 4% 70%),
+      'dark-outline-foreground': hsl(205deg 100% 2%),
+      'dark-outline-foreground-hover': hsl(0deg 0% 100%),
+      'dark-outline-background-hover': hsl(205deg 100% 2%),
+      'dark-outline-focus-ring': hsl(205deg 100% 2%),
       'light-background': $color-primary-lightest,
       'light-background-hover': $color-primary,
       'light-focus-ring': $color-primary,
@@ -57,9 +61,6 @@ $color-primary-lightest: hsl(210deg 60% 98%);
   $dark-colors: dark.$colors,
   $display: (
     'border-radius-sm': 0.45rem,
-  ),
-  $form-control-sm: (
-    'padding': 0.25em 0.75em,
   ),
   $form-label: (
     'font-family': #{'Manrope', sans-serif},
