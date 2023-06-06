@@ -10,8 +10,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: spacer('m');
-  gap: spacer('m');
 
   &--primary {
     background-color: color('primary');
@@ -35,6 +33,8 @@
 
   &__body {
     @include layout-stack('xxs');
+    margin-block: spacer('m');
+    margin-inline: spacer('m') 0;
   }
 
   &__title {
@@ -51,5 +51,6 @@
 
   &__chart {
     max-width: 65%;
+    margin: spacer('m');
   }
 }

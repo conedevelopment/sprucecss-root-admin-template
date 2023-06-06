@@ -39,7 +39,14 @@
       width: 2,
     },
     fill: {
+      type: "gradient",
       opacity: 0.75,
+      gradient: {
+        shadeIntensity: 1,
+        opacityFrom: 0.75,
+        opacityTo: 0,
+        stops: [0, 100],
+      },
     },
     series: [{
       name: 'Profits',
@@ -74,7 +81,14 @@
       width: 2,
     },
     fill: {
+      type: "gradient",
       opacity: 0.75,
+      gradient: {
+        shadeIntensity: 1,
+        opacityFrom: 0.75,
+        opacityTo: 0,
+        stops: [0, 100],
+      },
     },
     series: [{
       name: 'Profits',

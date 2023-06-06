@@ -1,12 +1,6 @@
 @use 'sprucecss/scss/spruce' as *;
 
 .sidebar-section {
-  &--navigation {
-    @include breakpoint('sm') {
-      display: none;
-    }
-  }
-
   &__title {
     align-items: center;
     color: color('heading');
@@ -29,24 +23,29 @@
       display: flex;
       gap: 0.75em;
       padding-block: 0.35em;
+      position: relative;
       text-decoration: none;
 
-      &:hover {
-        background-color: color('primary-lightest');
+      &:hover:not([aria-current='page']) {
+        &::before {
+          background-color: color('primary-lightest');
+        }
+      }
+
+      &::before {
+        border-radius: config('border-radius-sm', $display);
+        content: '';
+        inset-block: 0;
+        inset-inline: -0.75rem -0.35em;
+        position: absolute;
+        z-index: -1;
       }
 
       &[aria-current='page'] {
         color: hsl(0deg 0% 100%);
-        position: relative;
 
         &::before {
           background-color: color('primary');
-          border-radius: config('border-radius-sm', $display);
-          content: '';
-          inset-block: 0;
-          inset-inline: -0.75rem -0.35em;
-          position: absolute;
-          z-index: -1;
         }
 
         svg {

@@ -1699,7 +1699,8 @@ legend {
 .l-main__sidebar {
   box-shadow: 0 0 1rem var(--spruce-main-color-shadow);
   inline-size: var(--spruce-sidebar-inline-size);
-  inset: 0 auto 0 0;
+  inset-block: 0;
+  inset-inline: 0 auto;
   position: fixed;
   z-index: 10;
 }
@@ -2163,8 +2164,6 @@ pre[class*=language-] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem;
-  gap: 1.5rem;
 }
 .widget--primary {
   background-color: var(--spruce-base-color-primary);
@@ -2181,6 +2180,10 @@ pre[class*=language-] {
 .widget--secondary .widget__body *,
 .widget--secondary .widget__data {
   color: hsl(0, 0%, 100%);
+}
+.widget__body {
+  margin-block: 1.5rem;
+  margin-inline: 1.5rem 0;
 }
 .widget__body > * {
   margin-block-end: 0;
@@ -2201,6 +2204,7 @@ pre[class*=language-] {
 }
 .widget__chart {
   max-width: 65%;
+  margin: 1.5rem;
 }
 
 .user-menu {
@@ -2281,11 +2285,6 @@ pre[class*=language-] {
   inline-size: var(--dimension);
 }
 
-@media (min-width: 48em) {
-  .sidebar-section--navigation {
-    display: none;
-  }
-}
 .sidebar-section__title {
   align-items: center;
   color: var(--spruce-base-color-heading);
@@ -2308,23 +2307,25 @@ pre[class*=language-] {
   display: flex;
   gap: 0.75em;
   padding-block: 0.35em;
+  position: relative;
   text-decoration: none;
 }
-.sidebar-section__navigation a:hover {
+.sidebar-section__navigation a:hover:not([aria-current=page])::before {
   background-color: var(--spruce-base-color-primary-lightest);
 }
-.sidebar-section__navigation a[aria-current=page] {
-  color: hsl(0, 0%, 100%);
-  position: relative;
-}
-.sidebar-section__navigation a[aria-current=page]::before {
-  background-color: var(--spruce-base-color-primary);
+.sidebar-section__navigation a::before {
   border-radius: var(--spruce-border-radius-sm);
   content: "";
   inset-block: 0;
   inset-inline: -0.75rem -0.35em;
   position: absolute;
   z-index: -1;
+}
+.sidebar-section__navigation a[aria-current=page] {
+  color: hsl(0, 0%, 100%);
+}
+.sidebar-section__navigation a[aria-current=page]::before {
+  background-color: var(--spruce-base-color-primary);
 }
 .sidebar-section__navigation a[aria-current=page] svg {
   color: hsl(0, 0%, 100%);
@@ -2426,6 +2427,9 @@ pre[class*=language-] {
   align-items: center;
   display: flex;
   gap: clamp(1rem, 5vw, 1.5rem);
+}
+.app-header__actions--secondary {
+  gap: 1rem;
 }
 .app-header__logo {
   --dimension: 4rem;

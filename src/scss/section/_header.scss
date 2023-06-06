@@ -31,6 +31,10 @@
     align-items: center;
     display: flex;
     gap: spacer-clamp('s', 'm');
+
+    &--secondary {
+      gap: spacer('s');
+    }
   }
 
   &__logo {
