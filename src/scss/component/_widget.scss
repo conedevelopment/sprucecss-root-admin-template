@@ -17,7 +17,7 @@
     background-color: color('primary');
     border: 0;
 
-    *,
+    #{$this}__body *,
     #{$this}__data {
       color: hsl(0deg 0% 100%);
     }
@@ -27,7 +27,7 @@
     background-color: color('primary');
     border: 0;
 
-    *,
+    #{$this}__body *,
     #{$this}__data {
       color: hsl(0deg 0% 100%);
     }

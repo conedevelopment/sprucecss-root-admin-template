@@ -9,7 +9,6 @@
 
 :root {
   @include set-css-variable((
-    --logo-block-size: 1.25rem,
     --sidebar-inline-size: 20rem,
     --header-block-size: 4.5rem,
     --container-gap: spacer-clamp('m', 'l')

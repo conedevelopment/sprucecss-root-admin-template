@@ -2170,7 +2170,7 @@ pre[class*=language-] {
   background-color: var(--spruce-base-color-primary);
   border: 0;
 }
-.widget--primary *,
+.widget--primary .widget__body *,
 .widget--primary .widget__data {
   color: hsl(0, 0%, 100%);
 }
@@ -2178,7 +2178,7 @@ pre[class*=language-] {
   background-color: var(--spruce-base-color-primary);
   border: 0;
 }
-.widget--secondary *,
+.widget--secondary .widget__body *,
 .widget--secondary .widget__data {
   color: hsl(0, 0%, 100%);
 }
@@ -2360,7 +2360,7 @@ pre[class*=language-] {
   padding-block: 0 1.5rem;
 }
 .app-sidebar__logo {
-  block-size: var(--spruce-logo-block-size);
+  block-size: 1.25rem;
   display: inline-flex;
 }
 .app-sidebar__header {
@@ -2579,6 +2579,12 @@ pre[class*=language-] {
   color: var(--spruce-btn-color-dark-outline-foreground-hover);
 }
 
+.apexcharts-legend-series {
+  align-items: center;
+  display: flex !important;
+  gap: 0.25rem;
+}
+
 .apexcharts-text,
 .apexcharts-legend-text {
   color: var(--spruce-base-color-text) !important;
@@ -2607,7 +2613,6 @@ pre[class*=language-] {
 }
 
 :root {
-  --spruce-logo-block-size: 1.25rem;
   --spruce-sidebar-inline-size: 20rem;
   --spruce-header-block-size: 4.5rem;
   --spruce-container-gap: clamp(1.5rem, 5vw, 3rem);

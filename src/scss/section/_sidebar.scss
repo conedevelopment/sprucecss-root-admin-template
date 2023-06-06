@@ -9,7 +9,7 @@
   padding-block: 0 spacer('m');
 
   &__logo {
-    block-size: get-css-variable(--logo-block-size);
+    block-size: 1.25rem;
     display: inline-flex;
   }
 

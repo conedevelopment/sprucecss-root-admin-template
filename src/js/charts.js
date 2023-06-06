@@ -114,6 +114,10 @@
     legend: {
       position: 'top',
       horizontalAlign: 'right',
+      markers: {
+        width: 16,
+        height: 16,
+      },
     },
     stroke: {
       curve: 'smooth',
@@ -162,6 +166,10 @@
     legend: {
       position: 'top',
       horizontalAlign: 'right',
+      markers: {
+        width: 16,
+        height: 16,
+      },
     },
     stroke: {
       show: true,
@@ -215,7 +223,11 @@
     labels: ['Accepted (188 - 56%)', 'Anonym (70 - 21%)', 'Declined (48 - 15%)', 'N/A (21 - 6%'],
     legend: {
       position: 'left',
-      offsetY: 20
+      offsetY: 20,
+      markers: {
+        width: 16,
+        height: 16,
+      },
     }
   }
 

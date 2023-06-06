@@ -1,5 +1,11 @@
 @use 'sprucecss/scss/spruce' as *;
 
+.apexcharts-legend-series {
+  align-items: center;
+  display: flex !important;
+  gap: spacer('xxs');
+}
+
 .apexcharts-text,
 .apexcharts-legend-text {
   color: color('text') !important;
