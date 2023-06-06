@@ -188,6 +188,44 @@
     },
   };
 
+  const optionDonut = {
+    chart: {
+        type: 'donut',
+        width: '100%',
+        height: 180,
+        width: 400,
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    plotOptions: {
+      pie: {
+        customScale: 1,
+        donut: {
+          size: '75%',
+        },
+        offsetY: 5,
+      },
+      stroke: {
+        colors: undefined,
+      }
+    },
+    colors: colorPalette,
+    series: [21, 23, 19, 14],
+    labels: ['Accepted (188 - 56%)', 'Anonym (70 - 21%)', 'Declined (48 - 15%)', 'N/A (21 - 6%'],
+    legend: {
+      position: 'left',
+      offsetY: 20
+    }
+  }
+
+  var donut = new ApexCharts(
+    document.querySelector("#donut"),
+    optionDonut
+  )
+  donut.render();
+
+
   const chartArea = new ApexCharts(document.querySelector('#chart-area'), optionsArea);
   const chartBar = new ApexCharts(document.querySelector('#chart-bar'), optionsBar);
   const chartWidget = new ApexCharts(document.querySelector('#chart-widget'), optionsWidget);
