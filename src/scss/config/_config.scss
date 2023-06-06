@@ -1,6 +1,7 @@
 @use 'dark-colors' as dark;
 
 $color-primary: hsl(214deg 98% 49%);
+$color-secondary: hsl(160 89% 46%);
 $color-primary-lightest: hsl(210deg 60% 98%);
 
 @use 'sprucecss/scss/spruce' with (
@@ -33,8 +34,15 @@ $color-primary-lightest: hsl(210deg 60% 98%);
     'breadcrumb': (
       'separator': hsl(0deg 0% 80%),
     ),
+    'header': (
+      'background': hsl(0deg 0% 100% / 95%),
+    ),
     'navigation': (
       'arrow': hsl(0deg 0% 0% / 15%),
+    ),
+    'main': (
+      'background': hsl(210deg 60% 98%),
+      'shadow': hsl(200deg 72% 32% / 10%),
     ),
     'search': (
       'icon': hsl(229deg 26% 48% / 25%),
@@ -58,6 +66,7 @@ $color-primary-lightest: hsl(210deg 60% 98%);
     ),
   ),
   $color-primary: $color-primary,
+  $color-secondary: $color-secondary,
   $dark-colors: dark.$colors,
   $display: (
     'border-radius-sm': 0.45rem,

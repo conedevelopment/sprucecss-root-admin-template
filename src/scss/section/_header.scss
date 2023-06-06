@@ -1,7 +1,7 @@
 @use 'sprucecss/scss/spruce' as *;
 
 .app-header {
-  background-color: hsl(0deg 0% 100% / 95%);
+  background-color: color('background', 'header');
   border-block-end: 1px solid color('border');
   position: sticky;
   inset-block-start: 0;
@@ -12,7 +12,7 @@
 
   &__inner {
     align-items: center;
-    block-size: get-css-variable(--app-header-block-size);
+    block-size: get-css-variable(--header-block-size);
     display: flex;
     flex-wrap: wrap;
     gap: spacer-clamp('s', 'l');

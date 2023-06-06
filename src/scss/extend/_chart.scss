@@ -1,7 +1,20 @@
 @use 'sprucecss/scss/spruce' as *;
 
-.apexcharts-text {
+.apexcharts-text,
+.apexcharts-legend-text {
+  color: color('text') !important;
   fill: color('text');
+}
+
+.apexcharts-tooltip,
+.apexcharts-tooltip-title {
+  border-color: color('border') !important;
+  background: color('background') !important;
+}
+
+.apexcharts-tooltip-title {
+  line-height: 1;
+  padding-block: 0.75em !important;
 }
 
 .apexcharts-xaxis-tick,

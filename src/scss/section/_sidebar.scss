@@ -9,42 +9,30 @@
   padding-block: 0 spacer('m');
 
   &__logo {
-    block-size: 1.25rem;
+    block-size: get-css-variable(--logo-block-size);
     display: inline-flex;
   }
 
   &__header {
     align-items: center;
     display: flex;
-    block-size: get-css-variable(--app-header-block-size);
+    flex-shrink: 0;
+    block-size: get-css-variable(--header-block-size);
     border-block-end: 1px solid color('border');
     justify-content: space-between;
-    padding-inline: spacer('m');
-  }
-
-  &__footer {
-    align-items: center;
-    border-block-start: 1px solid color('border');
-    display: flex;
-    justify-content: space-between;
-    padding-block-start: spacer('m');
-    padding-inline: spacer('m');
+    margin-inline: spacer('m');
   }
 
   &__body {
     @include scrollbar(
-      $border-radius: 0.05rem
+      $border-radius: 0.15em
     );
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     gap: spacer('m');
-    max-block-size: calc(100vh - var(--dimension) - #{spacer('m')} * 3);
     overflow-y: auto;
-    padding-inline: spacer('m');
-
-    @include breakpoint('sm') {
-      max-block-size: initial;
-    }
+    margin-inline: calc(#{spacer('m')} / 2);
+    padding-inline: calc(#{spacer('m')} / 2);
   }
 }

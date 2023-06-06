@@ -369,7 +369,7 @@ template {
   --spruce-base-color-mark-foreground: hsl(205, 100%, 2%);
   --spruce-base-color-marker: hsl(214, 98%, 49%);
   --spruce-base-color-primary: hsl(214, 98%, 49%);
-  --spruce-base-color-secondary: hsl(227, 92%, 55%);
+  --spruce-base-color-secondary: hsl(160, 89%, 46%);
   --spruce-base-color-text: hsl(208, 9%, 42%);
   --spruce-base-color-primary-lightest: hsl(210, 60%, 98%);
 }
@@ -379,10 +379,10 @@ template {
   --spruce-btn-color-primary-background-hover: #0256c5;
   --spruce-btn-color-primary-foreground: hsl(0, 0%, 100%);
   --spruce-btn-color-primary-shadow: #aed1fe;
-  --spruce-btn-color-secondary-background: hsl(227, 92%, 55%);
-  --spruce-btn-color-secondary-background-hover: #0937dc;
+  --spruce-btn-color-secondary-background: hsl(160, 89%, 46%);
+  --spruce-btn-color-secondary-background-hover: #0aae77;
   --spruce-btn-color-secondary-foreground: hsl(0, 0%, 100%);
-  --spruce-btn-color-secondary-shadow: #ced8fd;
+  --spruce-btn-color-secondary-shadow: #a3fadd;
   --spruce-btn-color-dark-background: hsl(205, 100%, 2%);
   --spruce-btn-color-dark-background-hover: hsl(205, 100%, 5%);
   --spruce-btn-color-dark-foreground: hsl(0, 0%, 100%);
@@ -447,7 +447,16 @@ template {
 }
 
 :root {
+  --spruce-header-color-background: hsla(0, 0%, 100%, 0.95);
+}
+
+:root {
   --spruce-navigation-color-arrow: hsla(0, 0%, 0%, 0.15);
+}
+
+:root {
+  --spruce-main-color-background: hsl(210, 60%, 98%);
+  --spruce-main-color-shadow: hsla(200, 72%, 32%, 0.1);
 }
 
 :root {
@@ -1540,20 +1549,20 @@ legend {
 
 :root[data-theme-mode=dark] {
   --spruce-base-color-background: hsl(245, 38%, 11%);
-  --spruce-base-color-blockquote-border: hsl(230, 100%, 67%);
+  --spruce-base-color-blockquote-border: hsl(211, 99%, 46%);
   --spruce-base-color-border: hsla(0, 0%, 100%, 0.08);
   --spruce-base-color-card-border: hsl(207, 90%, 13%);
   --spruce-base-color-code-background: hsl(207, 64%, 21%);
   --spruce-base-color-code-foreground: hsl(0, 0%, 95%);
   --spruce-base-color-footer-background: hsla(0, 0%, 0%, 0.15);
   --spruce-base-color-heading: hsl(0, 0%, 95%);
-  --spruce-base-color-link-hover: #6881ff;
-  --spruce-base-color-link: hsl(230, 100%, 67%);
+  --spruce-base-color-link-hover: hsl(205, 100%, 62%);
+  --spruce-base-color-link: hsl(205, 100%, 56%);
   --spruce-base-color-mark-background: hsl(50, 100%, 80%);
   --spruce-base-color-mark-foreground: hsl(245, 38%, 11%);
-  --spruce-base-color-marker: hsl(230, 100%, 67%);
-  --spruce-base-color-primary: hsl(230, 100%, 67%);
-  --spruce-base-color-secondary: hsl(227, 92%, 55%);
+  --spruce-base-color-marker: hsl(211, 99%, 46%);
+  --spruce-base-color-primary: hsl(211, 99%, 46%);
+  --spruce-base-color-secondary: hsl(160, 89%, 46%);
   --spruce-base-color-text: hsl(0, 0%, 97%);
 }
 
@@ -1562,11 +1571,24 @@ legend {
 }
 
 :root[data-theme-mode=dark] {
-  --spruce-btn-color-primary-background: hsl(230, 100%, 67%);
-  --spruce-btn-color-primary-background-hover: hsl(186, 100%, 45%);
-  --spruce-btn-color-primary-foreground: hsl(186, 100%, 5%);
-  --spruce-btn-color-secondary-background: hsl(227, 92%, 55%);
-  --spruce-btn-color-secondary-background-hover: #3b64f7;
+  --spruce-btn-color-dark-background: hsl(0, 0%, 100%);
+  --spruce-btn-color-dark-background-hover: hsl(0, 0%, 95%);
+  --spruce-btn-color-dark-foreground: hsl(205, 100%, 5%);
+  --spruce-btn-color-dark-outline-border: hsla(0, 0%, 100%, 0.15);
+  --spruce-btn-color-dark-outline-foreground: hsl(0, 0%, 100%);
+  --spruce-btn-color-dark-outline-foreground-hover: hsl(205, 100%, 2%);
+  --spruce-btn-color-dark-outline-background-hover: hsl(0, 0%, 100%);
+  --spruce-btn-color-dark-outline-focus-ring: hsl(0, 0%, 100%);
+  --spruce-btn-color-light-background: hsl(246, 31%, 13%);
+  --spruce-btn-color-light-background-hover: hsl(211, 99%, 46%);
+  --spruce-btn-color-light-focus-ring: hsl(211, 99%, 46%);
+  --spruce-btn-color-light-foreground: hsl(211, 99%, 46%);
+  --spruce-btn-color-light-foreground-hover: hsl(0, 0%, 100%);
+  --spruce-btn-color-primary-background: hsl(211, 99%, 46%);
+  --spruce-btn-color-primary-background-hover: #208bfe;
+  --spruce-btn-color-primary-foreground: hsl(0, 0%, 100%);
+  --spruce-btn-color-secondary-background: hsl(160, 89%, 46%);
+  --spruce-btn-color-secondary-background-hover: #13f1a7;
   --spruce-btn-color-secondary-foreground: hsl(0, 0%, 95%);
 }
 
@@ -1575,16 +1597,12 @@ legend {
 }
 
 :root[data-theme-mode=dark] {
-  --spruce-container-color-background: hsl(207, 92%, 12%);
-}
-
-:root[data-theme-mode=dark] {
   --spruce-form-color-background: #1b1836;
   --spruce-form-color-background-disabled: hsl(245, 38%, 11%);
   --spruce-form-color-border-disabled: hsla(0, 0%, 100%, 0.08);
-  --spruce-form-color-border-focus: hsl(230, 100%, 67%);
+  --spruce-form-color-border-focus: hsl(211, 99%, 46%);
   --spruce-form-color-border: hsla(0, 0%, 100%, 0.08);
-  --spruce-form-color-check-background: hsl(230, 100%, 67%);
+  --spruce-form-color-check-background: hsl(211, 99%, 46%);
   --spruce-form-color-check-foreground: hsl(245, 38%, 11%);
   --spruce-form-color-invalid: hsl(0, 71%, 51%);
   --spruce-form-color-invalid-shadow: rgba(219, 41, 41, 0.25);
@@ -1592,18 +1610,27 @@ legend {
   --spruce-form-color-legend: hsl(0, 0%, 95%);
   --spruce-form-color-placeholder: hsl(0, 0%, 60%);
   --spruce-form-color-select-foreground: hsl(0, 0%, 100%);
-  --spruce-form-color-shadow-focus: rgba(87, 115, 255, 0.25);
+  --spruce-form-color-shadow-focus: rgba(1, 113, 233, 0.25);
   --spruce-form-color-text: hsl(0, 0%, 97%);
   --spruce-form-color-valid: hsl(150, 100%, 33%);
   --spruce-form-color-valid-shadow: rgba(0, 168, 84, 0.25);
 }
 
 :root[data-theme-mode=dark] {
+  --spruce-header-color-background: hsla(245, 38%, 11%, 0.95);
+}
+
+:root[data-theme-mode=dark] {
   --spruce-navigation-color-arrow: hsla(0, 0%, 100%, 0.15);
   --spruce-navigation-color-icon-background: hsl(245, 38%, 10%);
-  --spruce-navigation-color-icon-background-hover: hsl(230, 100%, 67%);
-  --spruce-navigation-color-icon-foreground: hsl(230, 100%, 67%);
+  --spruce-navigation-color-icon-background-hover: hsl(211, 99%, 46%);
+  --spruce-navigation-color-icon-foreground: hsl(211, 99%, 46%);
   --spruce-navigation-color-icon-foreground-hover: hsl(186, 100%, 5%);
+}
+
+:root[data-theme-mode=dark] {
+  --spruce-main-color-background: hsl(245, 38%, 15%);
+  --spruce-main-color-shadow: hsla(0, 0%, 0%, 0.2);
 }
 
 :root[data-theme-mode=dark] {
@@ -1630,8 +1657,8 @@ legend {
 }
 
 :root[data-theme-mode=dark] {
-  --spruce-selection-color-background: hsl(230, 100%, 67%);
-  --spruce-selection-color-foreground: hsl(186, 100%, 5%);
+  --spruce-selection-color-background: hsl(211, 99%, 46%);
+  --spruce-selection-color-foreground: hsl(0, 0%, 100%);
 }
 
 :root[data-theme-mode=dark] {
@@ -1646,6 +1673,9 @@ legend {
 
 [data-theme-mode=dark] {
   color-scheme: dark;
+}
+[data-theme-mode=dark] select.form-control:not([multiple]):not([size]) {
+  background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3e%3cpath d="M12,12.507l-3.816,-3.815c-0.171,-0.172 -0.45,-0.172 -0.622,-0l-0.933,0.933c-0.172,0.172 -0.172,0.451 0,0.623l5.06,5.06c0.172,0.172 0.45,0.172 0.622,0l5.06,-5.06c0.172,-0.172 0.172,-0.451 -0,-0.623l-0.933,-0.933c-0.172,-0.172 -0.451,-0.172 -0.622,-0l-3.816,3.815Z" style="fill:hsl%280, 0%, 100%%29;"/%3e%3c/svg%3e');
 }
 
 .container {
@@ -1667,17 +1697,17 @@ legend {
   position: relative;
 }
 .l-main__sidebar {
-  box-shadow: 0 0 1rem hsla(201.15, 72.03%, 32.71%, 0.1);
-  inline-size: var(--spruce-app-sidebar-inline-size);
+  box-shadow: 0 0 1rem var(--spruce-main-color-shadow);
+  inline-size: var(--spruce-sidebar-inline-size);
   inset: 0 auto 0 0;
   position: fixed;
   z-index: 10;
 }
 .l-main__body {
-  background-color: hsl(210, 60%, 98%);
-  inline-size: calc(100% - var(--spruce-app-sidebar-inline-size));
+  background-color: var(--spruce-main-color-background);
+  inline-size: calc(100% - var(--spruce-sidebar-inline-size));
   min-block-size: 100lvh;
-  margin-inline-start: var(--spruce-app-sidebar-inline-size);
+  margin-inline-start: var(--spruce-sidebar-inline-size);
 }
 .l-main__header {
   background-color: var(--spruce-base-color-background);
@@ -2330,33 +2360,26 @@ pre[class*=language-] {
   padding-block: 0 1.5rem;
 }
 .app-sidebar__logo {
-  block-size: 1.25rem;
+  block-size: var(--spruce-logo-block-size);
   display: inline-flex;
 }
 .app-sidebar__header {
   align-items: center;
   display: flex;
-  block-size: var(--spruce-app-header-block-size);
+  flex-shrink: 0;
+  block-size: var(--spruce-header-block-size);
   border-block-end: 1px solid var(--spruce-base-color-border);
   justify-content: space-between;
-  padding-inline: 1.5rem;
-}
-.app-sidebar__footer {
-  align-items: center;
-  border-block-start: 1px solid var(--spruce-base-color-border);
-  display: flex;
-  justify-content: space-between;
-  padding-block-start: 1.5rem;
-  padding-inline: 1.5rem;
+  margin-inline: 1.5rem;
 }
 .app-sidebar__body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   gap: 1.5rem;
-  max-block-size: calc(100vh - var(--dimension) - 1.5rem * 3);
   overflow-y: auto;
-  padding-inline: 1.5rem;
+  margin-inline: calc(1.5rem / 2);
+  padding-inline: calc(1.5rem / 2);
 }
 .app-sidebar__body::-webkit-scrollbar {
   block-size: 0.5rem;
@@ -2364,23 +2387,18 @@ pre[class*=language-] {
 }
 .app-sidebar__body::-webkit-scrollbar-thumb {
   background: var(--spruce-scrollbar-color-thumb-background);
-  border-radius: 0.05rem;
+  border-radius: 0.15em;
 }
 .app-sidebar__body::-webkit-scrollbar-thumb:hover {
   background: var(--spruce-scrollbar-color-thumb-background-hover);
 }
 .app-sidebar__body::-webkit-scrollbar-track {
   background: var(--spruce-scrollbar-color-track-background);
-  border-radius: 0.05rem;
-}
-@media (min-width: 48em) {
-  .app-sidebar__body {
-    max-block-size: initial;
-  }
+  border-radius: 0.15em;
 }
 
 .app-header {
-  background-color: hsla(0, 0%, 100%, 0.95);
+  background-color: var(--spruce-header-color-background);
   border-block-end: 1px solid var(--spruce-base-color-border);
   position: sticky;
   inset-block-start: 0;
@@ -2391,7 +2409,7 @@ pre[class*=language-] {
 }
 .app-header__inner {
   align-items: center;
-  block-size: var(--spruce-app-header-block-size);
+  block-size: var(--spruce-header-block-size);
   display: flex;
   flex-wrap: wrap;
   gap: clamp(1rem, 5vw, 3rem);
@@ -2446,7 +2464,8 @@ pre[class*=language-] {
 }
 .app-heading__inner {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
   justify-content: space-between;
 }
 .app-heading__inner--column {
@@ -2459,24 +2478,25 @@ pre[class*=language-] {
 .app-heading__caption > * + * {
   margin-block-start: 0.5rem;
 }
-.app-heading__title {
-  margin-block: 0;
-}
-.app-heading__meta {
+.app-heading__description {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   font-size: 1rem;
   gap: 0.5rem 1.5rem;
 }
-.app-heading__meta > * {
-  margin-block: 0;
+.app-heading__description > * {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+.app-heading__description > * + * {
+  margin-block-start: 0.25rem;
 }
 .app-heading__actions {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem 1rem;
   justify-content: end;
 }
 
@@ -2492,38 +2512,6 @@ pre[class*=language-] {
 }
 .app-body__row--thirds {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.post-content > * {
-  margin-block-end: 0;
-  margin-block-start: 0;
-}
-.post-content > * + * {
-  margin-block-start: 1.5rem;
-}
-@media (min-width: 64em) {
-  .post-content {
-    font-size: 1.0375rem;
-  }
-}
-.post-content :is(dd, dl, dl, h1, h2, h3, h4, h5, h6, hr, ul, ol, p:not(p:has(img)), blockquote, form) {
-  margin-inline: auto;
-  max-inline-size: 40rem;
-}
-.post-content * + h2,
-.post-content * + h3 {
-  margin-block-start: 3rem;
-}
-.post-content h2 + *,
-.post-content h3 + *,
-.post-content h4 + *,
-.post-content h5 + *,
-.post-content h6 + * {
-  margin-block-start: 1rem;
-}
-.post-content img,
-.post-content iframe {
-  border-radius: var(--spruce-border-radius-sm);
 }
 
 .app-footer {
@@ -2561,6 +2549,21 @@ pre[class*=language-] {
   color: var(--spruce-btn-color-light-foreground-hover);
 }
 
+.btn--dark {
+  background-color: var(--spruce-btn-color-dark-background);
+  border-color: var(--spruce-btn-color-dark-background);
+  color: var(--spruce-btn-color-dark-foreground);
+}
+.btn--dark:focus-visible {
+  outline: 2px solid var(--spruce-btn-color-dark-background);
+  outline-offset: 2px;
+}
+.btn--dark:hover {
+  background-color: var(--spruce-btn-color-dark-background-hover);
+  border-color: var(--spruce-btn-color-dark-background-hover);
+  color: var(--spruce-btn-color-dark-foreground);
+}
+
 .btn--outline-dark {
   background-color: transparent;
   border-color: var(--spruce-btn-color-dark-outline-border);
@@ -2576,8 +2579,21 @@ pre[class*=language-] {
   color: var(--spruce-btn-color-dark-outline-foreground-hover);
 }
 
-.apexcharts-text {
+.apexcharts-text,
+.apexcharts-legend-text {
+  color: var(--spruce-base-color-text) !important;
   fill: var(--spruce-base-color-text);
+}
+
+.apexcharts-tooltip,
+.apexcharts-tooltip-title {
+  border-color: var(--spruce-base-color-border) !important;
+  background: var(--spruce-base-color-background) !important;
+}
+
+.apexcharts-tooltip-title {
+  line-height: 1;
+  padding-block: 0.75em !important;
 }
 
 .apexcharts-xaxis-tick,
@@ -2591,7 +2607,8 @@ pre[class*=language-] {
 }
 
 :root {
-  --spruce-app-sidebar-inline-size: 20rem;
-  --spruce-app-header-block-size: 4.5rem;
+  --spruce-logo-block-size: 1.25rem;
+  --spruce-sidebar-inline-size: 20rem;
+  --spruce-header-block-size: 4.5rem;
   --spruce-container-gap: clamp(1.5rem, 5vw, 3rem);
 }

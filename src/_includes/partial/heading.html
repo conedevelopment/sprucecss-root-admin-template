@@ -1,14 +1,24 @@
-<div class="post-heading">
-    <div class="post-heading__inner">
-        <h1 class="post-heading__title">{{ title }}</h1>
-        {% if showMeta %}
-            <div class="post-heading__meta">
-                {% include "partial/tags.html" %}
-                <span>
-                    <span class="sr-only">Posted on</span>
-                    <time datetime="{{ date | w3DateFilter }}">{{ date | dateFilter('en') }}</time>
-                </span>
+<div class="app-heading">
+    <div class="container">
+        <div class="app-heading__inner">
+            <div class="app-heading__caption">
+                <h1 class="app-heading__title">{{ headingTitle }}</h1>
+                {% if headingDescription %}
+                    <div class="app-heading__description">
+                        <p>{{ headingDescription }}</p>
+                    </div>
+                {% endif %}
             </div>
-        {% endif %}
+            {% if headingActions %}
+                <div class="app-heading__actions">
+                    {% for action in headingActions %}
+                        <a href="{{ action.link }}" class="{{ action.class }}">
+                            {% svgIcon action.icon, 'btn__icon' %}
+                            {{ action.label }}
+                        </a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
     </div>
 </div>
