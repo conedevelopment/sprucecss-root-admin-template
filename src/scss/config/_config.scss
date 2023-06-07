@@ -30,6 +30,7 @@ $color-primary-lightest: hsl(210deg 60% 98%);
       'light-focus-ring': $color-primary,
       'light-foreground': $color-primary,
       'light-foreground-hover': hsl(0deg 0% 100%),
+      'primary-outline-foreground': $color-primary,
     ),
     'breadcrumb': (
       'separator': hsl(0deg 0% 80%),
@@ -41,7 +42,7 @@ $color-primary-lightest: hsl(210deg 60% 98%);
       'arrow': hsl(0deg 0% 0% / 15%),
     ),
     'main': (
-      'background': hsl(210deg 60% 98%),
+      'background': $color-primary-lightest,
       'shadow': hsl(200deg 72% 32% / 10%),
     ),
     'search': (

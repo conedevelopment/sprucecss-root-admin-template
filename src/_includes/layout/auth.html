@@ -4,18 +4,12 @@
     <main id="content" class="l-auth">
         <div class="l-auth__inner">
             <div class="l-auth__form">
-                <a class="l-auth__logo" href="/">
-                    <img
-                        src="/img/root-logo-dark.svg"
-                        alt="Root"
-                        data-theme-mode="data-theme-mode"
-                        data-light-asset="/img/root-logo-dark.svg"
-                        data-dark-asset="/img/root-logo-light.svg"
-                    />
+                <a class="l-auth__logo" href="/" aria-label="{{ site.name }}">
+                    {% svgIcon './src/img/root-logo.svg' %}
                 </a>
                 {{ content | safe }}
                 <div class="l-auth__footer">
-                    <p>Not a member? <a href="/registration/">Sign up</a></p>
+                    <p>Not a member? <a href="/sign-up/">Sign Up</a></p>
                 </div>
             </div>
             <div class="l-auth__sidebar"></div>

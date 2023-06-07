@@ -396,6 +396,7 @@ template {
   --spruce-btn-color-light-focus-ring: hsl(214, 98%, 49%);
   --spruce-btn-color-light-foreground: hsl(214, 98%, 49%);
   --spruce-btn-color-light-foreground-hover: hsl(0, 0%, 100%);
+  --spruce-btn-color-primary-outline-foreground: hsl(214, 98%, 49%);
 }
 
 :root {
@@ -969,7 +970,7 @@ samp {
 .btn--outline-primary {
   background-color: transparent;
   border-color: var(--spruce-btn-color-primary-background);
-  color: var(--spruce-btn-color-primary-background);
+  color: var(--spruce-btn-color-primary-outline-foreground);
 }
 .btn--outline-primary:focus-visible {
   outline: 2px solid var(--spruce-btn-color-primary-background);
@@ -1562,6 +1563,7 @@ legend {
   --spruce-base-color-mark-foreground: hsl(245, 38%, 11%);
   --spruce-base-color-marker: hsl(211, 99%, 46%);
   --spruce-base-color-primary: hsl(211, 99%, 46%);
+  --spruce-base-color-primary-lightest: hsl(245, 38%, 15%);
   --spruce-base-color-secondary: hsl(160, 89%, 46%);
   --spruce-base-color-text: hsl(0, 0%, 97%);
 }
@@ -1587,6 +1589,7 @@ legend {
   --spruce-btn-color-primary-background: hsl(211, 99%, 46%);
   --spruce-btn-color-primary-background-hover: #208bfe;
   --spruce-btn-color-primary-foreground: hsl(0, 0%, 100%);
+  --spruce-btn-color-primary-outline-foreground: hsl(211, 99%, 60%);
   --spruce-btn-color-secondary-background: hsl(160, 89%, 46%);
   --spruce-btn-color-secondary-background-hover: #13f1a7;
   --spruce-btn-color-secondary-foreground: hsl(0, 0%, 95%);

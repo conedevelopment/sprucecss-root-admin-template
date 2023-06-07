@@ -1,5 +1,5 @@
 <div class="auth-form">
-    <h1 class="auth-form__title">Registration</h1>
+    <h1 class="auth-form__title">Sign Up</h1>
     <p>Enter your details and register.</p>
     <form method="POST" action="#">
         <div class="form-group-stack">
@@ -20,72 +20,59 @@
                     type="text"
                     name="your-name"
                     required="required"
-                    autocomplete="off"
                 />
             </div>
             <div class="form-group">
-                <label class="form-label" for="email">Email</label>
+                <label class="form-label" for="your-email">Email</label>
                 <input
                     class="form-control form-control--lg"
-                    id="email"
+                    id="your-email"
                     type="email"
-                    name="email"
+                    name="your-email"
                     required="required"
-                    autocomplete="off"
                 />
             </div>
             <div class="form-row--mixed">
                 <div class="form-group">
-                    <label
-                        class="form-label"
-                        for="password"
-                        >Password
-                    </label>
+                    <label class="form-label" for="your-password">Password</label>
                     <input
                         class="form-control form-control--lg"
-                        id="password"
+                        id="your-password"
                         type="password"
-                        name="password"
+                        name="your-password"
                         required="required"
-                        autocomplete="off"
                     />
                 </div>
                 <div class="form-group">
-                    <label
-                        class="form-label"
-                        for="password"
-                        >Confirm Password
-                    </label>
+                    <label class="form-label" for="your-password-again">Confirm Password</label>
                     <input
                         class="form-control form-control--lg"
-                        id="password"
+                        id="your-password-again"
                         type="password"
-                        name="password"
+                        name="your-password-again"
                         required="required"
-                        autocomplete="off"
                     />
                 </div>
             </div>
             <div class="form-group">
                 <label
                     class="form-check form-check--lg"
-                    for="remember"
+                    for="remember-me"
                 >
                     <input
                         class="form-check__control"
-                        id="remember"
+                        id="remember-me"
                         type="checkbox"
-                        name="remember"
+                        name="remember-me"
                     />
-                    <span class="form-label form-check__label"
-                        >I aggree with the <a href="#">User Agreement</a> and <a href="#">Privacy Policy</a></span
-                    >
+                    <span class="form-label form-check__label">
+                        I aggree with the <a href="#">User Agreement</a> and <a href="#">Privacy Policy</a>
+                    </span>
                 </label>
             </div>
             <div class="form-group">
                 <button
                     class="btn btn--primary btn--lg btn--block btn--primary-shadow"
-                    type="submit"
                 >
                     Sign Up
                 </button>

@@ -1,13 +1,7 @@
 <aside class="app-sidebar">
     <div class="app-sidebar__header">
-        <a class="app-sidebar__logo" href="/">
-            <img
-                src="/img/root-logo-dark.svg"
-                alt="Root"
-                data-theme-mode="data-theme-mode"
-                data-light-asset="/img/root-logo-dark.svg"
-                data-dark-asset="/img/root-logo-light.svg"
-            />
+        <a class="app-sidebar__logo" href="/" aria-label="{{ site.name }}">
+            {% svgIcon './src/img/root-logo.svg' %}
         </a>
         {% include "partial/search-toggle.html" %}
     </div>
@@ -69,7 +63,7 @@
             </h3>
             <nav class="sidebar-section__navigation">
                 <ul>
-                    <li><a href="/login/">Login</a></li>
+                    <li><a href="/sign-in/">Sign In</a></li>
                     <li><a href="/sign-up/">Sign Up</a></li>
                     <li><a href="/password-reset/">Password Reset</a></li>
                 </ul>

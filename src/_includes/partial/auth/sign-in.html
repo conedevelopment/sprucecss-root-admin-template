@@ -1,5 +1,5 @@
 <div class="auth-form">
-    <h1 class="auth-form__title">Login</h1>
+    <h1 class="auth-form__title">Sign In</h1>
     <p>Hey there, welcome back!</p>
     <form method="POST" action="#">
         <div class="form-group-stack">
@@ -13,53 +13,48 @@
             </div>
             <span class="or-separator" aria-hidden="true">or</span>
             <div class="form-group">
-                <label class="form-label" for="email">Email</label>
+                <label class="form-label" for="your-email">Email</label>
                 <input
                     class="form-control form-control--lg"
-                    id="email"
-                    type="text"
-                    name="email"
+                    id="your-email"
+                    type="email"
+                    name="your-email"
                     required="required"
-                    autocomplete="off"
                 />
             </div>
             <div class="form-group">
                 <label
                     class="form-label form-label--space-between"
-                    for="password"
-                    >Password <a href="/forgot-password/">Forgot password?</a>
+                    for="your-password"
+                    >Password <a href="/password-reset/">Forgot your password?</a>
                 </label>
                 <input
                     class="form-control form-control--lg"
-                    id="password"
+                    id="your-password"
                     type="password"
-                    name="password"
+                    name="your-password"
                     required="required"
-                    autocomplete="off"
                 />
             </div>
             <div class="form-group">
                 <label
                     class="form-check form-check--lg"
-                    for="remember"
+                    for="remember-me"
                 >
                     <input
                         class="form-check__control"
-                        id="remember"
+                        id="remember-me"
                         type="checkbox"
-                        name="remember"
+                        name="remember-me"
                     />
-                    <span class="form-label form-check__label"
-                        >Remember me</span
-                    >
+                    <span class="form-label form-check__label">Remember me</span>
                 </label>
             </div>
             <div class="form-group">
                 <button
                     class="btn btn--primary btn--lg btn--block btn--primary-shadow"
-                    type="submit"
                 >
-                    Login
+                    Sign In
                 </button>
             </div>
         </div>
