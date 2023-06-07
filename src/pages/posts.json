@@ -1,4 +1,0 @@
-{
-  "layout": "layout/main.html",
-  "permalink": "/blog/{{ title | slug }}/index.html"
-}

@@ -85,16 +85,6 @@
                                 <div id="donut"></div>
                             </div>
                         </div>
-                        <!--
-                        <div class="card">
-                            <div class="card__header">
-                                <h2 class="card__title">Google Map</h2>
-                            </div>
-                            <div class="card__body card__body--plain">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2708.1622165738654!2d16.60481986745575!3d47.25253117142704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476eb97987d5c8bb%3A0xb421247eb91d6fbb!2sNAIK%20ERTI%20K%C3%A1moni%20Arbor%C3%A9tum!5e0!3m2!1shu!2shu!4v1685969634733!5m2!1shu!2shu" width="600" height="450" style="border:0;aspect-ratio:5/3;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                        </div>
-                        -->
                     </div>
                     <div class="card">
                         <div class="card__header">
@@ -102,55 +92,57 @@
                         </div>
                         <div class="card__body">
                             <div class="data-table">
-                                <table class="table table--hover">
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                <label class="form-check">
-                                                    <input class="form-check__control" type="checkbox" value="1" name="select-all" aria-albel="Select all item"/>
-                                                </label>
-                                            </th>
-                                            <th scope="col">Image</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">SKU</th>
-                                            <th scope="col">Qty</th>
-                                            <th scope="col">Status</th>
-                                            <th scope="col"><span class="sr-only">Actions</span></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% set productList = products.slice(0, 6) %}
-                                        {% for product in productList %}
-                                        <tr>
-                                            <td>
-                                                <label class="form-check">
-                                                    <input class="form-check__control" type="checkbox" value="1" name="{{ product.id }}" aria-albel="Select {{ product.name }}"/>
-                                                </label>
-                                            </td>
-                                            <td><img class="data-table__image" src="{{ product.image }}?random={{ product.id }}" alt="{{ product.name }}"></td>
-                                            <td>{{ product.name }}</td>
-                                            <td>{{ product.price }}</td>
-                                            <td>{{ product.sku }}</td>
-                                            <td>{{ product.qty }}</td>
-                                            <td>{{ product.status }}</td>
-                                            <td>
-                                                <div class="data-table__actions">
-                                                    <a href="#" class="btn btn--light btn--sm btn--icon">
-                                                        {% svgIcon './src/img/icon/eye.svg', 'btn__icon' %}
-                                                    </a>
-                                                    <a href="#" class="btn btn--light btn--sm btn--icon">
-                                                        {% svgIcon './src/img/icon/edit.svg', 'btn__icon' %}
-                                                    </a>
-                                                    <a href="#" class="btn btn--light btn--sm btn--icon">
-                                                        {% svgIcon './src/img/icon/trash.svg', 'btn__icon' %}
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
+                                <div class="table-responsive">
+                                    <table class="table table--hover">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <label class="form-check">
+                                                        <input class="form-check__control" type="checkbox" value="1" name="select-all" aria-albel="Select all item"/>
+                                                    </label>
+                                                </th>
+                                                <th scope="col">Image</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col">SKU</th>
+                                                <th scope="col">Qty</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col"><span class="sr-only">Actions</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% set productList = products.slice(0, 6) %}
+                                            {% for product in productList %}
+                                            <tr>
+                                                <td>
+                                                    <label class="form-check">
+                                                        <input class="form-check__control" type="checkbox" value="1" name="{{ product.id }}" aria-albel="Select {{ product.name }}"/>
+                                                    </label>
+                                                </td>
+                                                <td><img class="data-table__image" src="{{ product.image }}?random={{ product.id }}" alt="{{ product.name }}"></td>
+                                                <td>{{ product.name }}</td>
+                                                <td>{{ product.price }}</td>
+                                                <td>{{ product.sku }}</td>
+                                                <td>{{ product.qty }}</td>
+                                                <td>{{ product.status }}</td>
+                                                <td>
+                                                    <div class="data-table__actions">
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon">
+                                                            {% svgIcon './src/img/icon/eye.svg', 'btn__icon' %}
+                                                        </a>
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon">
+                                                            {% svgIcon './src/img/icon/edit.svg', 'btn__icon' %}
+                                                        </a>
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon">
+                                                            {% svgIcon './src/img/icon/trash.svg', 'btn__icon' %}
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
                                 <div class="data-table__footer">
                                     <p>Showing 1 to 20 of 100 results</p>
                                     {% include "partial/pagination.html" %}
