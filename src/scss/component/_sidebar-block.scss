@@ -1,6 +1,8 @@
 @use 'sprucecss/scss/spruce' as *;
 
-.sidebar-section {
+.sidebar-block {
+  @include a11y-card-link('.sidebar-block__toggle', true);
+
   &__title {
     align-items: center;
     color: color('heading');
@@ -10,8 +12,24 @@
     margin-block: 0;
   }
 
+  &__toggle {
+    &[aria-expanded='true'] {
+      svg {
+        rotate: 180deg;
+      }
+    }
+  }
+
   &__navigation {
     margin-block-start: 1rem;
+
+    &[data-state='closed'] {
+      display: none;
+    }
+
+    &[data-state='open'] {
+      display: block;
+    }
 
     ul {
       @include clear-list;

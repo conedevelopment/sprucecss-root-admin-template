@@ -27,12 +27,15 @@
     @include scrollbar(
       $border-radius: 0.15em
     );
-    display: flex;
-    flex-direction: column;
     flex-grow: 1;
-    gap: spacer('m');
     overflow-y: auto;
     margin-inline: calc(#{spacer('m')} / 2);
     padding-inline: calc(#{spacer('m')} / 2);
+
+    > * + * {
+      border-block-start: 1px dashed color('border');
+      margin-block-start: spacer('s');
+      padding-block-start: spacer('s');
+    }
   }
 }

@@ -11,7 +11,14 @@
     border-block-end: 1px solid color('border');
     display: flex;
     justify-content: space-between;
+    min-block-size: 3.8rem;
     padding: spacer('s');
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacer('xs');
   }
 
   &__title {

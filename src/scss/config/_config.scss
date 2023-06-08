@@ -72,6 +72,9 @@ $color-primary-lightest: hsl(210deg 60% 98%);
   $display: (
     'border-radius-sm': 0.45rem,
   ),
+  $form-control-sm: (
+    padding: 0.1em 0.65em,
+  ),
   $form-label: (
     'font-family': #{'Manrope', sans-serif},
     'font-weight': 500,
