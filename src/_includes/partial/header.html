@@ -1,9 +1,15 @@
 <header class="app-header">
     <div class="app-header__inner">
         <div class="app-header__column">
+            <a class="app-header__logo" href="/" aria-label="{{ site.name }}">
+                {% svgIcon './src/img/root-logo.svg' %}
+            </a>
             <div class="app-header__actions app-header__actions--secondary">
                 <button class="btn btn--outline-dark btn--sm btn--icon">
                     {% svgIcon './src/img/icon/menu-close.svg', 'btn__icon' %}
+                </button>
+                <button class="btn btn--outline-dark btn--sm btn--icon">
+                    {% svgIcon './src/img/icon/search.svg', 'btn__icon' %}
                 </button>
                 {% include "partial/theme-switcher.html" %}
             </div>

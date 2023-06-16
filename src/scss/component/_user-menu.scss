@@ -14,10 +14,14 @@
 
   &__caption {
     font-size: config('font-size-base', $typography);
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: spacer('xxs');
     line-height: 1;
+
+    @include breakpoint('md') {
+      display: flex;
+    }
   }
 
   &__role {
@@ -31,9 +35,10 @@
 
   &__toggle {
     @include clear-btn;
+    display: flex;
 
     svg {
-      --dimension: 0.75rem;
+      --dimension: 1em;
       block-size: var(--dimension);
       inline-size: var(--dimension);
     }

@@ -1,5 +1,6 @@
 {
-  "copyright": "Some rights reserved",
+  "version": "v2.0.0",
+  "copyright": "Some rights reserved.",
   "name": "Spruce CSS Eleventy Admin Template",
   "url": "https://eleventy-admin.sprucecss.com"
 }

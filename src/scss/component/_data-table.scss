@@ -3,8 +3,8 @@
 .data-table {
   &__image {
     --dimension: 2.25rem;
-    width: var(--dimension);
-    height: var(--dimension);
+    inline-size: var(--dimension);
+    block-size: var(--dimension);
     border-radius: 50%;
   }
 

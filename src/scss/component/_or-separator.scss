@@ -12,7 +12,7 @@
     background-color: color('border');
     content: '';
     display: flex;
-    height: 1px;
-    width: 100%;
+    block-size: 1px;
+    inline-size: 100%;
   }
 }

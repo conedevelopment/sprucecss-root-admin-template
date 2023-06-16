@@ -3,4 +3,8 @@
 .app-footer {
   padding-block: spacer-clamp('s', 'm') spacer-clamp('m', 'l');
   text-align: center;
+
+  &__created-with {
+    margin-block: 0;
+  }
 }

@@ -5,22 +5,32 @@
   position: relative;
 
   &__sidebar {
+    background-color: color('background');
     box-shadow: 0 0 spacer('s') color('shadow', 'main');
     inline-size: get-css-variable(--sidebar-inline-size);
     inset-block: 0;
     inset-inline: 0 auto;
     position: fixed;
-    z-index: 10;
+    z-index: 20;
+    display: none;
+
+    @include breakpoint('md') {
+      display: block;
+    }
+
+    &--open {
+      display: block;
+    }
   }
 
   &__body {
     background-color: color('background', 'main');
     inline-size: calc(100% - #{get-css-variable(--sidebar-inline-size)});
     min-block-size: 100lvh;
-    margin-inline-start: get-css-variable(--sidebar-inline-size);
-  }
+    inline-size: 100%;
 
-  &__header {
-    background-color: color('background');
+    @include breakpoint('md') {
+      margin-inline-start: get-css-variable(--sidebar-inline-size);
+    }
   }
 }
