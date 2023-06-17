@@ -8,6 +8,33 @@ const isProduction = process.env.NODE_ENV === 'production';
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const w3DateFilter = require('./src/filters/w3-date-filter.js');
 
+function addPrefixToIds(htmlString, prefix) {
+  const regex = /id=(["'])(.*?)\1/g;
+  return htmlString.replace(regex, `id=$1${prefix}$2$1`);
+}
+
+function extractUrlValue(str, prefix) {
+  const regex = /url\((.*?)\)/g;
+  const matches = [];
+  let match;
+
+  while ((match = regex.exec(str))) {
+    if (match[1]) {
+      matches.push(match[1]);
+    }
+  }
+
+  matches.forEach((match) => {
+    if (match.charAt(0) !== '#') {
+      return;
+    }
+
+    str = str.replace(match, `#${prefix}${match.substring(1)}`);
+  });
+
+  return str;
+}
+
 module.exports = config => {
   config.addFilter('dateFilter', dateFilter);
   config.addFilter('w3DateFilter', w3DateFilter);
@@ -19,7 +46,7 @@ module.exports = config => {
   config.addPassthroughCopy('./src/js/**');
   config.addPassthroughCopy('./src/font/**');
 
-  config.addNunjucksAsyncShortcode('svgIcon', async (src, cls) => {
+  config.addNunjucksAsyncShortcode('svgIcon', async (src, cls = null, prefix = null) => {
     const metadata = await Image(src, {
       formats: ['svg'],
       dryRun: true,
@@ -30,6 +57,10 @@ module.exports = config => {
       key: 'class',
       value: cls ? cls : 'icon'
     });
+
+    if (prefix) {
+      return extractUrlValue(addPrefixToIds(stringify(svg), prefix), prefix);
+    }
 
     return stringify(svg);
   });

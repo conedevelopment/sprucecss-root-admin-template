@@ -1,11 +1,11 @@
 {% extends "layout/base.html" %}
 
 {% block content %}
-    <main id="content" class="l-main">
+    <div class="l-main">
         <div class="l-main__sidebar">
             {% include "partial/sidebar.html" %}
         </div>
-        <div class="l-main__body">
+        <main id="content" class="l-main__body">
             {% include "partial/header.html" %}
             {% set headingTitle = 'Dashboard' %}
             {% set headingDescription = 'Hey Adam, welcome back! Here is your personal dashboard.' %}
@@ -162,6 +162,6 @@
                 </div>
             </div>
             {% include "partial/footer.html" %}
-        </div>
-    </main>
+        </main>
+    </div>
 {% endblock %}
