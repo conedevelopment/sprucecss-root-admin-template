@@ -8,28 +8,17 @@ const isProduction = process.env.NODE_ENV === 'production';
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const w3DateFilter = require('./src/filters/w3-date-filter.js');
 
-function addPrefixToIds(htmlString, prefix) {
-  const regex = /id=(["'])(.*?)\1/g;
-  return htmlString.replace(regex, `id=$1${prefix}$2$1`);
-}
+function addPrefixToIdsAndUrls(str, prefix) {
+  const regexId = /id=(["'])(.*?)\1/g;
+  const regexUrl = /url\((.*?)\)/g;
 
-function extractUrlValue(str, prefix) {
-  const regex = /url\((.*?)\)/g;
-  const matches = [];
-  let match;
+  str = str.replace(regexId, `id=$1${prefix}$2$1`);
 
-  while ((match = regex.exec(str))) {
-    if (match[1]) {
-      matches.push(match[1]);
+  str = str.replace(regexUrl, (match, url) => {
+    if (url.charAt(0) === '#') {
+      return `url(#${prefix}${url.substring(1)})`;
     }
-  }
-
-  matches.forEach((match) => {
-    if (match.charAt(0) !== '#') {
-      return;
-    }
-
-    str = str.replace(match, `#${prefix}${match.substring(1)}`);
+    return match;
   });
 
   return str;
@@ -59,7 +48,7 @@ module.exports = config => {
     });
 
     if (prefix) {
-      return extractUrlValue(addPrefixToIds(stringify(svg), prefix), prefix);
+      return addPrefixToIdsAndUrls(stringify(svg), prefix);
     }
 
     return stringify(svg);
