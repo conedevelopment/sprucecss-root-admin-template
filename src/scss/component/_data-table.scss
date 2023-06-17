@@ -1,6 +1,9 @@
 @use 'sprucecss/scss/spruce' as *;
 
 .data-table {
+  position: relative;
+  overflow: hidden;
+
   &__image {
     --dimension: 2.25rem;
     inline-size: var(--dimension);

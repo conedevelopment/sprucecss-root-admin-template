@@ -1719,12 +1719,12 @@ legend {
 }
 .l-main__body {
   background-color: var(--spruce-main-color-background);
-  inline-size: calc(100% - var(--spruce-sidebar-inline-size));
-  min-block-size: 100lvh;
   inline-size: 100%;
+  min-block-size: 100lvh;
 }
 @media (min-width: 64em) {
   .l-main__body {
+    inline-size: calc(100% - var(--spruce-sidebar-inline-size));
     margin-inline-start: var(--spruce-sidebar-inline-size);
   }
 }
@@ -2278,6 +2278,10 @@ pre[class*=language-] {
   inline-size: var(--dimension);
 }
 
+.data-table {
+  position: relative;
+  overflow: hidden;
+}
 .data-table__image {
   --dimension: 2.25rem;
   inline-size: var(--dimension);
