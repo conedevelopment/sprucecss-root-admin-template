@@ -6,6 +6,15 @@
   gap: spacer('xxs');
 }
 
+.apexcharts-legend {
+  display: flex;
+  gap: spacer('s');
+
+  > * {
+    margin: 0 !important;
+  }
+}
+
 .apexcharts-text,
 .apexcharts-legend-text {
   color: color('text') !important;

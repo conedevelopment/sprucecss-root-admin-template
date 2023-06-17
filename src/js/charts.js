@@ -213,9 +213,8 @@
   const optionDonut = {
     chart: {
         type: 'donut',
+        height: 300,
         width: '100%',
-        height: 180,
-        width: 400,
     },
     dataLabels: {
       enabled: false,
@@ -224,23 +223,26 @@
       pie: {
         customScale: 1,
         donut: {
-          size: '75%',
+          size: '65%',
         },
-        offsetY: 5,
       },
-      stroke: {
-        colors: undefined,
+    },
+    stroke: {
+      width: 0,
+    },
+    states: {
+      hover: {
+        filter: 'none'
       }
     },
     colors: colorPalette,
     series: [21, 23, 19, 14],
     labels: ['Accepted (188 - 56%)', 'Anonym (70 - 21%)', 'Declined (48 - 15%)', 'N/A (21 - 6%'],
     legend: {
-      position: 'left',
-      offsetY: 20,
+      position: 'bottom',
       markers: {
-        width: 16,
-        height: 16,
+        width: 20,
+        height: 20,
       },
     }
   }

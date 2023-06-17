@@ -2751,6 +2751,14 @@ pre[class*=language-] {
   gap: 0.25rem;
 }
 
+.apexcharts-legend {
+  display: flex;
+  gap: 1rem;
+}
+.apexcharts-legend > * {
+  margin: 0 !important;
+}
+
 .apexcharts-text,
 .apexcharts-legend-text {
   color: var(--spruce-base-color-text) !important;
