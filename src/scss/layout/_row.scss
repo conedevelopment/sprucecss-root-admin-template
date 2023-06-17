@@ -1,0 +1,17 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.l-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: spacer('m');
+
+  @each $name, $breakpoint in $breakpoints {
+    @for $i from 1 through 4 {
+      @include breakpoint($name) {
+        &--column\:#{$name}\:#{$i} {
+          grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+        }
+      }
+    }
+  }
+}

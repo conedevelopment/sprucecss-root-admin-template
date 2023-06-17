@@ -4,14 +4,4 @@
   display: flex;
   flex-direction: column;
   gap: spacer('m');
-
-  &__row {
-    display: grid;
-    gap: spacer('m');
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    &--thirds {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
 }

@@ -1695,6 +1695,132 @@ legend {
   --inline-size: 50rem;
 }
 
+.l-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+@media (min-width: 32em) {
+  .l-row--column\:xs\:1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+@media (min-width: 32em) {
+  .l-row--column\:xs\:2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 32em) {
+  .l-row--column\:xs\:3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 32em) {
+  .l-row--column\:xs\:4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (min-width: 48em) {
+  .l-row--column\:sm\:1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+@media (min-width: 48em) {
+  .l-row--column\:sm\:2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 48em) {
+  .l-row--column\:sm\:3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 48em) {
+  .l-row--column\:sm\:4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (min-width: 64em) {
+  .l-row--column\:md\:1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+@media (min-width: 64em) {
+  .l-row--column\:md\:2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 64em) {
+  .l-row--column\:md\:3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 64em) {
+  .l-row--column\:md\:4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (min-width: 80em) {
+  .l-row--column\:lg\:1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+@media (min-width: 80em) {
+  .l-row--column\:lg\:2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 80em) {
+  .l-row--column\:lg\:3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 80em) {
+  .l-row--column\:lg\:4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (min-width: 90em) {
+  .l-row--column\:xl\:1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+@media (min-width: 90em) {
+  .l-row--column\:xl\:2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 90em) {
+  .l-row--column\:xl\:3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 90em) {
+  .l-row--column\:xl\:4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (min-width: 110em) {
+  .l-row--column\:xxl\:1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+@media (min-width: 110em) {
+  .l-row--column\:xxl\:2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 110em) {
+  .l-row--column\:xxl\:3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 110em) {
+  .l-row--column\:xxl\:4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 .l-main {
   display: flex;
   position: relative;
@@ -2549,14 +2675,6 @@ pre[class*=language-] {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-}
-.app-body__row {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-.app-body__row--thirds {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .app-footer {
