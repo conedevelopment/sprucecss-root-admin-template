@@ -2543,6 +2543,14 @@ pre[class*=language-] {
   block-size: 1.25rem;
   display: inline-flex;
 }
+.app-sidebar__search {
+  display: none;
+}
+@media (min-width: 64em) {
+  .app-sidebar__search {
+    display: flex;
+  }
+}
 .app-sidebar__header {
   align-items: center;
   display: flex;
