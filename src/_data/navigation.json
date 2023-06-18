@@ -15,7 +15,7 @@
     "items": [
       {
         "caption": "Products",
-        "url": "#",
+        "url": "/products/",
         "icon": "./src/img/icon/home.svg"
       },
       {

@@ -7,16 +7,12 @@
         </div>
         <main id="content" class="l-main__body" data-item="body">
             {% include "partial/header.html" %}
-            {% set headingTitle = 'Dashboard' %}
+            {% set headingTitle = 'Products' %}
             {% set headingDescription = 'Hey Adam, welcome back! Here is your personal dashboard.' %}
             {% set headingActions = [{
-                'label': 'Create new',
+                'label': 'Add new product',
                 'icon': './src/img/icon/plus.svg',
                 'class': 'btn btn--primary btn--icon'
-            }, {
-                'label': 'Statistics',
-                'icon': './src/img/icon/bar-chart.svg',
-                'class': 'btn btn--outline-primary btn--icon'
             }] %}
             {% include "partial/heading.html" %}
             <div class="container">
@@ -50,42 +46,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="l-row l-row--column:sm:2 l-row--column:md:1 l-row--column:lg:2">
-                        <div class="app-card">
-                            <div class="app-card__header">
-                                <h2 class="app-card__title">Sales</h2>
-                                <div class="form-group">
-                                    <label class="form-label sr-only" for="front-end-frameworks">Front-end Frameworks</label>
-                                    <select class="form-control form-control--sm" id="front-end-frameworks">
-                                        <option value="react">Yesterday</option>
-                                        <option value="vue">Last Week</option>
-                                        <option value="svelte">Last Month</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="app-card__body">
-                                <div id="chart-area"></div>
-                            </div>
-                        </div>
-                        <div class="app-card">
-                            <div class="app-card__header">
-                                <h2 class="app-card__title">Active users</h2>
-                            </div>
-                            <div class="app-card__body">
-                                <div id="chart-bar"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="app-body__row">
-                        <div class="app-card">
-                            <div class="app-card__header">
-                                <h2 class="app-card__title">Subscription Notification</h2>
-                            </div>
-                            <div class="app-card__body">
-                                <div id="donut"></div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="app-card">
                         <div class="app-card__header">
                             <h2 class="app-card__title">Products</h2>
@@ -111,7 +71,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {% set productList = products.slice(0, 6) %}
+                                            {% set productList = products.slice(0, 20) %}
                                             {% for product in productList %}
                                             <tr>
                                                 <td>

@@ -2273,34 +2273,36 @@ pre[class*=language-] {
   font-style: italic;
 }
 
-.card {
+.app-card {
   background-color: var(--spruce-base-color-background);
   border: 1px solid var(--spruce-base-color-border);
   border-radius: var(--spruce-border-radius-sm);
   box-shadow: 0 0 0.25rem hsla(201.15, 72.03%, 32.71%, 0.05);
 }
-.card__header {
+.app-card__header {
   align-items: center;
   border-block-end: 1px solid var(--spruce-base-color-border);
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 0.5rem 1.5rem;
   min-block-size: 3.8rem;
   padding: 1rem;
 }
-.card__actions {
+.app-card__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-.card__title {
+.app-card__title {
   font-size: clamp(0.996625rem, 2vw + 1rem, 1.1725rem);
   font-weight: 600;
   margin-block: 0;
 }
-.card__body {
+.app-card__body {
   padding: 1rem;
 }
-.card__body--plain {
+.app-card__body--plain {
   display: flex;
   align-items: center;
   justify-content: space-between;
