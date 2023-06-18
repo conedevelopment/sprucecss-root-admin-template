@@ -2782,6 +2782,67 @@ pre[class*=language-] {
   stroke: var(--spruce-base-color-border);
 }
 
+@media (min-width: 32em) {
+  .display--flex\:xs {
+    display: flex !important;
+  }
+}
+@media (min-width: 48em) {
+  .display--flex\:sm {
+    display: flex !important;
+  }
+}
+@media (min-width: 64em) {
+  .display--flex\:md {
+    display: flex !important;
+  }
+}
+@media (min-width: 80em) {
+  .display--flex\:lg {
+    display: flex !important;
+  }
+}
+@media (min-width: 90em) {
+  .display--flex\:xl {
+    display: flex !important;
+  }
+}
+@media (min-width: 110em) {
+  .display--flex\:xxl {
+    display: flex !important;
+  }
+}
+@media (min-width: 32em) {
+  .display--none\:xs {
+    display: none !important;
+  }
+}
+@media (min-width: 48em) {
+  .display--none\:sm {
+    display: none !important;
+  }
+}
+@media (min-width: 64em) {
+  .display--none\:md {
+    display: none !important;
+  }
+}
+@media (min-width: 80em) {
+  .display--none\:lg {
+    display: none !important;
+  }
+}
+@media (min-width: 90em) {
+  .display--none\:xl {
+    display: none !important;
+  }
+}
+@media (min-width: 110em) {
+  .display--none\:xxl {
+    display: none !important;
+  }
+}
+
 .m-block\:0 {
   margin-block: 0 !important;
 }
