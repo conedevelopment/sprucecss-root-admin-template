@@ -15,8 +15,7 @@
     background-color: color('primary');
     border: 0;
 
-    #{$this}__body *,
-    #{$this}__data {
+    #{$this}__column > * {
       color: hsl(0deg 0% 100%);
     }
   }
@@ -25,16 +24,9 @@
     background-color: color('primary');
     border: 0;
 
-    #{$this}__body *,
-    #{$this}__data {
+    #{$this}__column > * {
       color: hsl(0deg 0% 100%);
     }
-  }
-
-  &__body {
-    @include layout-stack('xxs');
-    margin-block: spacer('m');
-    margin-inline: spacer('m') 0;
   }
 
   &__title {
@@ -42,15 +34,20 @@
     font-weight: 600;
   }
 
-  &__data {
+  &__column {
+    @include layout-stack(0);
     font-size: font-size('h2');
     font-weight: 700;
     color: color('heading');
     line-height: config('line-height-heading', $typography);
+    padding: spacer('m');
   }
 
   &__chart {
     max-inline-size: 65%;
-    margin: spacer('m');
+
+    foreignObject {
+      padding-block: spacer('s');
+    }
   }
 }

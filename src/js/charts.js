@@ -1,3 +1,13 @@
+import getData from './chart-config/minimal.js';
+
+const optionsWidgetOptions01 = getData(['#fff']);
+const chartWidget01 = new ApexCharts(document.querySelector('#chart01'), optionsWidgetOptions01);
+chartWidget01.render();
+
+const optionsWidgetOptions02 = getData(['#026df7']);
+const chartWidget02 = new ApexCharts(document.querySelector('#chart02'), optionsWidgetOptions02);
+chartWidget02.render();
+
 (() => {
   const randomizeArray = function (arg) {
     const array = arg.slice();
@@ -63,6 +73,12 @@
     tooltip: {
       enabled: true,
     },
+    grid: {
+      padding: {
+          top: 10,
+          bottom: 10,
+      },
+    }
   };
 
   const optionsWidget2 = {
@@ -256,10 +272,6 @@
 
   const chartArea = new ApexCharts(document.querySelector('#chart-area'), optionsArea);
   const chartBar = new ApexCharts(document.querySelector('#chart-bar'), optionsBar);
-  const chartWidget = new ApexCharts(document.querySelector('#chart-widget'), optionsWidget);
-  const chartWidget2 = new ApexCharts(document.querySelector('#chart-widget2'), optionsWidget2);
-  chartWidget.render();
-  chartWidget2.render();
   chartArea.render();
   chartBar.render();
 })();

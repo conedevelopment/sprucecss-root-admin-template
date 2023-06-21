@@ -22,24 +22,18 @@
             <div class="container">
                 <div class="app-body">
                     <div class="l-row l-row--column:sm:2 l-row--column:lg:3">
-                        <div class="widget widget--primary">
-                            <div class="widget__body">
-                                <h2 class="widget__title">Customers</h2>
-                                <p class="widget__data">4,324</p>
-                            </div>
-                            <div class="widget__chart">
-                                <div id="chart-widget"></div>
-                            </div>
-                        </div>
-                        <div class="widget">
-                            <div class="widget__body">
-                                <h2 class="widget__title">Sales</h2>
-                                <p class="widget__data">599</p>
-                            </div>
-                            <div class="widget__chart">
-                                <div id="chart-widget2"></div>
-                            </div>
-                        </div>
+                        {% set widgetClass = 'widget--primary' %}
+                        {% set chartTitle = 'Customers' %}
+                        {% set chartData = '4,324' %}
+                        {% set chartId = 'chart01' %}
+                        {% include 'partial/widget/chart.html' %}
+
+                        {% set widgetClass = null %}
+                        {% set chartTitle = 'Sales' %}
+                        {% set chartData = '599' %}
+                        {% set chartId = 'chart02' %}
+                        {% include 'partial/widget/chart.html' %}
+
                         <div class="widget">
                             <div class="widget__body">
                                 <h2 class="widget__title">Customers</h2>

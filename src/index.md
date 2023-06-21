@@ -1,4 +1,4 @@
 ---
 title: "Home"
-layout: "layout/main.html"
+layout: "layout/dashboard.html"
 ---
