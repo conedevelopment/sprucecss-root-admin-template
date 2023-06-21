@@ -1,12 +1,17 @@
 import getData from './chart-config/minimal.js';
 
 const optionsWidgetOptions01 = getData(['#fff']);
-const chartWidget01 = new ApexCharts(document.querySelector('#chart01'), optionsWidgetOptions01);
-chartWidget01.render();
-
 const optionsWidgetOptions02 = getData(['#026df7']);
+const optionsWidgetOptions03 = getData(['#026df7']);
+
+const chartWidget01 = new ApexCharts(document.querySelector('#chart01'), optionsWidgetOptions01);
 const chartWidget02 = new ApexCharts(document.querySelector('#chart02'), optionsWidgetOptions02);
+const chartWidget03 = new ApexCharts(document.querySelector('#chart03'), optionsWidgetOptions03);
+
+chartWidget01.render();
 chartWidget02.render();
+chartWidget03.render();
+
 
 (() => {
   const randomizeArray = function (arg) {

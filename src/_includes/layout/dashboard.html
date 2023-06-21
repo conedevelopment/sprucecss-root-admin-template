@@ -23,26 +23,22 @@
                 <div class="app-body">
                     <div class="l-row l-row--column:sm:2 l-row--column:lg:3">
                         {% set widgetClass = 'widget--primary' %}
-                        {% set chartTitle = 'Customers' %}
-                        {% set chartData = '4,324' %}
+                        {% set chartTitle = 'Orders' %}
+                        {% set chartData = '65' %}
                         {% set chartId = 'chart01' %}
                         {% include 'partial/widget/chart.html' %}
 
                         {% set widgetClass = null %}
-                        {% set chartTitle = 'Sales' %}
-                        {% set chartData = '599' %}
+                        {% set chartTitle = 'Customers' %}
+                        {% set chartData = '54' %}
                         {% set chartId = 'chart02' %}
                         {% include 'partial/widget/chart.html' %}
 
-                        <div class="widget">
-                            <div class="widget__body">
-                                <h2 class="widget__title">Customers</h2>
-                                <p class="widget__data">4,324</p>
-                            </div>
-                            <div class="widget__chart">
-                                <div id="chart-widget3"></div>
-                            </div>
-                        </div>
+                        {% set widgetClass = null %}
+                        {% set chartTitle = 'Users' %}
+                        {% set chartData = '184' %}
+                        {% set chartId = 'chart03' %}
+                        {% include 'partial/widget/chart.html' %}
                     </div>
                     <div class="l-row l-row--column:sm:2 l-row--column:md:1 l-row--column:lg:2">
                         <div class="app-card">
