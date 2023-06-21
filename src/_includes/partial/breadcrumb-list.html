@@ -1,11 +1,13 @@
-<ol class="breadcrumb-list app-header__breadcrumb">
-    <li>
-        <a href="#">Dashboard</a>
-    </li>
-    <li>
-        <a href="#">Products</a>
-    </li>
-    <li>
-        <span aria-current="page">Edit</span>
-    </li>
-</ol>
+{% if breadcrumbs %}
+    <ol class="breadcrumb-list {{ breadcrumbClass }}">
+        {% for breadcrumb in breadcrumbs %}
+            <li>
+                {% if breadcrumb.url %}
+                    <a href="{{ breadcrumb.url }}">{{ breadcrumb.caption }}</a>
+                {% else %}
+                    <span aria-current="page">{{ breadcrumb.caption }}</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
