@@ -16,22 +16,22 @@
       {
         "caption": "Products",
         "url": "/products/",
-        "icon": "./src/img/icon/home.svg"
+        "icon": "./src/img/icon/shopping-bag.svg"
       },
       {
         "caption": "Customers",
-        "url": "#",
-        "icon": "./src/img/icon/home.svg"
+        "url": "/customers/",
+        "icon": "./src/img/icon/users.svg"
       },
       {
         "caption": "Orders",
-        "url": "#",
-        "icon": "./src/img/icon/home.svg"
+        "url": "/orders/",
+        "icon": "./src/img/icon/shopping-cart.svg"
       },
       {
-        "caption": "Cateories",
-        "url": "#",
-        "icon": "./src/img/icon/home.svg"
+        "caption": "Categories",
+        "url": "/categories/",
+        "icon": "./src/img/icon/archive.svg"
       }
     ]
   },

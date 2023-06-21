@@ -16,12 +16,13 @@
                 <button class="btn btn--outline-dark btn--sm btn--icon display--none:md">
                     {% svgIcon './src/img/icon/search.svg', 'btn__icon' %}
                 </button>
-                {% include "partial/theme-switcher.html" %}
+                {% include 'partial/theme-switcher.html' %}
             </div>
-            {% include "partial/breadcrumb-list.html" %}
+            {% set breadcrumbClass = 'app-header__breadcrumb' %}
+            {% include 'partial/breadcrumb-list.html' %}
         </div>
         <div class="app-header__actions">
-            {% include "partial/user-menu.html" %}
+            {% include 'partial/user-menu.html' %}
         </div>
     </div>
 </header>

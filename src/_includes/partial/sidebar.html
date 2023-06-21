@@ -35,7 +35,9 @@
                         {% for item in block.items %}
                         <li>
                             <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
-                                {% svgIcon './src/img/icon/home.svg' %}
+                                {% if item.icon %}
+                                    {% svgIcon item.icon %}
+                                {% endif %}
                                 {{ item.caption }}
                             </a>
                         </li>
