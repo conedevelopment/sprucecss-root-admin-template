@@ -1,0 +1,73 @@
+<div class="app-card">
+    <div class="app-card__header">
+        <h2 class="app-card__title">Products</h2>
+    </div>
+    <div class="app-card__body">
+        <div class="data-table">
+            <div class="table-responsive">
+                <table class="table table--hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                <label class="form-check">
+                                    <input class="form-check__control" type="checkbox" value="1" name="select-all" aria-albel="Select all item"/>
+                                </label>
+                            </th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">SKU</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Status</th>
+                            <th scope="col"><span class="sr-only">Actions</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% set productList = products.slice(0, 6) %}
+                        {% for product in productList %}
+                        <tr>
+                            <td>
+                                <label class="form-check">
+                                    <input class="form-check__control" type="checkbox" value="1" name="{{ product.id }}" aria-albel="Select {{ product.name }}"/>
+                                </label>
+                            </td>
+                            <td><img class="data-table__image" src="{{ product.image }}?random={{ product.id }}" alt="{{ product.name }}"></td>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.price }}</td>
+                            <td>{{ product.sku }}</td>
+                            <td>{{ product.qty }}</td>
+                            <td>{{ product.status }}</td>
+                            <td>
+                                <div class="data-table__actions">
+                                    <a href="#" class="btn btn--light btn--sm btn--icon">
+                                        {% svgIcon './src/img/icon/eye.svg', 'btn__icon' %}
+                                    </a>
+                                    <a href="#" class="btn btn--light btn--sm btn--icon">
+                                        {% svgIcon './src/img/icon/edit.svg', 'btn__icon' %}
+                                    </a>
+                                    <a href="#" class="btn btn--light btn--sm btn--icon">
+                                        {% svgIcon './src/img/icon/trash.svg', 'btn__icon' %}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="data-table__footer">
+                <p>Showing 1 to 20 of 100 results</p>
+                {% include "partial/pagination.html" %}
+                <div class="form-group">
+                    <label class="sr-only" for="front-end-frameworks">Front-end Frameworks</label>
+                    <select class="form-control form-control--sm" id="front-end-frameworks">
+                        <option value="react">React</option>
+                        <option value="vue">Vue</option>
+                        <option value="svelte">Svelte</option>
+                        <option value="ember">Ember</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

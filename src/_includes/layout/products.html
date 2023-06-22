@@ -7,12 +7,14 @@
         </div>
         <main id="content" class="l-main__body" data-item="body">
             {% include "partial/header.html" %}
-            {% set headingTitle = 'Products' %}
-            {% set headingActions = [{
-                'label': 'Add new product',
-                'icon': './src/img/icon/plus.svg',
-                'class': 'btn btn--primary btn--icon'
-            }] %}
+            {% set heading = {
+                'title': 'Products',
+                'actions': [{
+                    'label': 'Add new product',
+                    'icon': './src/img/icon/plus.svg',
+                    'class': 'btn btn--primary btn--icon'
+                }]
+            } %}
             {% include "partial/heading.html" %}
             <div class="container">
                 <div class="app-body">

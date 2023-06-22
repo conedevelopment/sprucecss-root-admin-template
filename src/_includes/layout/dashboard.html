@@ -7,17 +7,19 @@
         </div>
         <main id="content" class="l-main__body" data-item="body">
             {% include "partial/header.html" %}
-            {% set headingTitle = 'Dashboard' %}
-            {% set headingDescription = 'Hey Adam, welcome back! Here is your personal dashboard.' %}
-            {% set headingActions = [{
-                'label': 'Create new',
-                'icon': './src/img/icon/plus.svg',
-                'class': 'btn btn--primary btn--icon'
-            }, {
-                'label': 'Statistics',
-                'icon': './src/img/icon/bar-chart.svg',
-                'class': 'btn btn--outline-primary btn--icon'
-            }] %}
+            {% set heading = {
+                'title': 'Dashboard',
+                'description': 'Hey Adam, welcome back! Here is your personal dashboard.',
+                'actions': [{
+                    'label': 'Create new',
+                    'icon': './src/img/icon/plus.svg',
+                    'class': 'btn btn--primary btn--icon'
+                }, {
+                    'label': 'Statistics',
+                    'icon': './src/img/icon/bar-chart.svg',
+                    'class': 'btn btn--outline-primary btn--icon'
+                }]
+            } %}
             {% include "partial/heading.html" %}
             <div class="container">
                 <div class="app-body">
