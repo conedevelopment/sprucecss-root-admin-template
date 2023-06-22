@@ -45,6 +45,9 @@ export default function getMinimalData(colors) {
     colors,
     tooltip: {
       enabled: true,
+      marker: {
+        show: false,
+      },
     },
     grid: {
       padding: {
