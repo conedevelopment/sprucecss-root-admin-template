@@ -1,6 +1,6 @@
 import shuffle from '../shuffle.js';
 
-export default function getData(colors) {
+export default function getMinimalData(colors) {
   const data = [
     47, 45, 54, 38, 56, 24,
     65, 31, 37, 39, 62, 51,

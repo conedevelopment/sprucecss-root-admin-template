@@ -1,132 +1,26 @@
-import getData from './chart-config/minimal.js';
+import getMinimalData from './chart-config/minimal.js';
+import getDonutData from './chart-config/donut.js';
 
-const optionsWidgetOptions01 = getData(['#fff']);
-const optionsWidgetOptions02 = getData(['#026df7']);
-const optionsWidgetOptions03 = getData(['#026df7']);
+const optionsWidgetOptions01 = getMinimalData(['#fff']);
+const optionsWidgetOptions02 = getMinimalData(['#026df7']);
+const optionsWidgetOptions03 = getMinimalData(['#026df7']);
+const optionsDonutOptions01 = getDonutData(
+  [21, 23, 19, 14],
+  ['Accepted (188 - 56%)', 'Anonym (70 - 21%)', 'Declined (48 - 15%)', 'N/A (21 - 6%'],
+  ['#00D8B6', '#008FFB', '#FEB019', '#FF4560']
+);
 
 const chartWidget01 = new ApexCharts(document.querySelector('#chart01'), optionsWidgetOptions01);
 const chartWidget02 = new ApexCharts(document.querySelector('#chart02'), optionsWidgetOptions02);
 const chartWidget03 = new ApexCharts(document.querySelector('#chart03'), optionsWidgetOptions03);
+const chartDonut01 = new ApexCharts(document.querySelector('#donut01'), optionsDonutOptions01);
 
 chartWidget01.render();
 chartWidget02.render();
 chartWidget03.render();
-
+chartDonut01.render();
 
 (() => {
-  const randomizeArray = function (arg) {
-    const array = arg.slice();
-    let currentIndex = array.length; let temporaryValue; let
-      randomIndex;
-
-    while (currentIndex !== 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-
-    return array;
-  };
-
-  // data for the sparklines that appear below header area
-  const sparklineData = [47, 45, 54, 38, 56, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93, 53, 61, 27, 54, 43, 19, 46];
-
-  // the default colorPalette for this dashboard
-  // var colorPalette = ['#01BFD6', '#5564BE', '#F7A600', '#EDCD24', '#F74F58'];
-  const colorPalette = ['#00D8B6', '#008FFB', '#FEB019', '#FF4560', '#775DD0'];
-
-  const optionsWidget = {
-    chart: {
-      id: 'sparkline3',
-      group: 'sparklines',
-      type: 'area',
-      height: 80,
-      width: '100%',
-      sparkline: {
-        enabled: true,
-      },
-    },
-    stroke: {
-      curve: 'smooth',
-      width: 2,
-    },
-    fill: {
-      type: "gradient",
-      opacity: 0.75,
-      gradient: {
-        shadeIntensity: 1,
-        opacityFrom: 0.75,
-        opacityTo: 0,
-        stops: [0, 100],
-      },
-    },
-    series: [{
-      name: 'Profits',
-      data: randomizeArray(sparklineData),
-    }],
-    labels: [...Array(24).keys()].map((n) => `2018-09-0${n + 1}`),
-    xaxis: {
-      type: 'datetime',
-    },
-    yaxis: {
-      min: 0,
-    },
-    colors: ['#fff'],
-    tooltip: {
-      enabled: true,
-    },
-    grid: {
-      padding: {
-          top: 10,
-          bottom: 10,
-      },
-    }
-  };
-
-  const optionsWidget2 = {
-    chart: {
-      id: 'sparkline3',
-      group: 'sparklines',
-      type: 'area',
-      height: 80,
-      width: '100%',
-      sparkline: {
-        enabled: true,
-      },
-    },
-    stroke: {
-      curve: 'smooth',
-      width: 2,
-    },
-    fill: {
-      type: "gradient",
-      opacity: 0.75,
-      gradient: {
-        shadeIntensity: 1,
-        opacityFrom: 0.75,
-        opacityTo: 0,
-        stops: [0, 100],
-      },
-    },
-    series: [{
-      name: 'Profits',
-      data: randomizeArray(sparklineData),
-    }],
-    labels: [...Array(24).keys()].map((n) => `2018-09-0${n + 1}`),
-    xaxis: {
-      type: 'datetime',
-    },
-    yaxis: {
-      min: 0,
-    },
-    colors: ['#026df7'],
-    tooltip: {
-      enabled: true,
-    },
-  };
 
   const optionsArea = {
     series: [{
@@ -230,50 +124,6 @@ chartWidget03.render();
       },
     },
   };
-
-  const optionDonut = {
-    chart: {
-        type: 'donut',
-        height: 300,
-        width: '100%',
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    plotOptions: {
-      pie: {
-        customScale: 1,
-        donut: {
-          size: '65%',
-        },
-      },
-    },
-    stroke: {
-      width: 0,
-    },
-    states: {
-      hover: {
-        filter: 'none'
-      }
-    },
-    colors: colorPalette,
-    series: [21, 23, 19, 14],
-    labels: ['Accepted (188 - 56%)', 'Anonym (70 - 21%)', 'Declined (48 - 15%)', 'N/A (21 - 6%'],
-    legend: {
-      position: 'bottom',
-      markers: {
-        width: 20,
-        height: 20,
-      },
-    }
-  }
-
-  var donut = new ApexCharts(
-    document.querySelector("#donut"),
-    optionDonut
-  )
-  donut.render();
-
 
   const chartArea = new ApexCharts(document.querySelector('#chart-area'), optionsArea);
   const chartBar = new ApexCharts(document.querySelector('#chart-bar'), optionsBar);
