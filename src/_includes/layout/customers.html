@@ -1,0 +1,33 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+    <div class="l-main">
+        <div class="l-main__sidebar" data-item="sidebar">
+            {% include "partial/sidebar.html" %}
+        </div>
+        <main id="content" class="l-main__body" data-item="body">
+            {% include "partial/header.html" %}
+            {% set heading = {
+                'title': title,
+                'actions': [{
+                    'label': 'Add new user',
+                    'icon': './src/img/icon/plus.svg',
+                    'class': 'btn btn--primary btn--icon'
+                }]
+            } %}
+            {% include "partial/heading.html" %}
+            <div class="container">
+                <div class="app-body">
+                    {% set dataTable = {
+                        'headings': ['Image', 'First Name', 'Last Name', 'Email', 'Postal Code', 'Actions'],
+                        'data': customers.slice(0, 20),
+                        'showHeader': false,
+                        'showFooter': true
+                    } %}
+                    {% include 'partial/card/data-table.html' %}
+                </div>
+            </div>
+            {% include "partial/footer.html" %}
+        </main>
+    </div>
+{% endblock %}

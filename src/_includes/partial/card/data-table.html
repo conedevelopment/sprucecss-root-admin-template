@@ -1,7 +1,11 @@
 <div class="app-card">
-    <div class="app-card__header">
-        <h2 class="app-card__title">Products</h2>
-    </div>
+    {% if dataTable.showHeader == true %}
+        <div class="app-card__header">
+            {% if dataTable.title %}
+                <h2 class="app-card__title">{{ dataTable.title }}</h2>
+            {% endif %}
+        </div>
+    {% endif %}
     <div class="app-card__body">
         <div class="data-table">
             <div class="table-responsive">
@@ -13,61 +17,70 @@
                                     <input class="form-check__control" type="checkbox" value="1" name="select-all" aria-albel="Select all item"/>
                                 </label>
                             </th>
-                            <th scope="col">Image</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">SKU</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Status</th>
-                            <th scope="col"><span class="sr-only">Actions</span></th>
+                            {% for heading in dataTable.headings %}
+                                {% if heading == 'Actions' %}
+                                    <th scope="col">
+                                        <span class="sr-only">{{ heading }}</span>
+                                    </th>
+                                {% else %}
+                                    <th scope="col">
+                                        {{ heading }}
+                                    </th>
+                                {% endif %}
+                            {% endfor %}
                         </tr>
                     </thead>
                     <tbody>
-                        {% set productList = products.slice(0, 6) %}
-                        {% for product in productList %}
+                        {% for data in dataTable.data %}
                         <tr>
                             <td>
                                 <label class="form-check">
-                                    <input class="form-check__control" type="checkbox" value="1" name="{{ product.id }}" aria-albel="Select {{ product.name }}"/>
+                                    <input class="form-check__control" type="checkbox" value="1" name="{{ data.id }}" aria-albel="Select {{ data.name }}"/>
                                 </label>
                             </td>
-                            <td><img class="data-table__image" src="{{ product.image }}?random={{ product.id }}" alt="{{ product.name }}"></td>
-                            <td>{{ product.name }}</td>
-                            <td>{{ product.price }}</td>
-                            <td>{{ product.sku }}</td>
-                            <td>{{ product.qty }}</td>
-                            <td>{{ product.status }}</td>
-                            <td>
-                                <div class="data-table__actions">
-                                    <a href="#" class="btn btn--light btn--sm btn--icon">
-                                        {% svgIcon './src/img/icon/eye.svg', 'btn__icon' %}
-                                    </a>
-                                    <a href="#" class="btn btn--light btn--sm btn--icon">
-                                        {% svgIcon './src/img/icon/edit.svg', 'btn__icon' %}
-                                    </a>
-                                    <a href="#" class="btn btn--light btn--sm btn--icon">
-                                        {% svgIcon './src/img/icon/trash.svg', 'btn__icon' %}
-                                    </a>
-                                </div>
-                            </td>
+                            {% for heading in dataTable.headings %}
+                                {% if heading == 'Actions' %}
+                                <td>
+                                    <div class="data-table__actions">
+                                        <a href="#" class="btn btn--light btn--sm btn--icon">
+                                            {% svgIcon './src/img/icon/eye.svg', 'btn__icon' %}
+                                        </a>
+                                        <a href="#" class="btn btn--light btn--sm btn--icon">
+                                            {% svgIcon './src/img/icon/edit.svg', 'btn__icon' %}
+                                        </a>
+                                        <a href="#" class="btn btn--light btn--sm btn--icon">
+                                            {% svgIcon './src/img/icon/trash.svg', 'btn__icon' %}
+                                        </a>
+                                    </div>
+                                </td>
+                                {% elseif heading == 'Image' %}
+                                    <td>
+                                        <img class="data-table__image" src="{{ data.image }}?random={{ data.id }}" alt="{{ data.name }}">
+                                    </td>
+                                {% else %}
+                                    <td>{{ data[heading.toLowerCase().split(' ').join('_')] }}</td>
+                                {% endif %}
+                            {% endfor %}
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
             </div>
-            <div class="data-table__footer">
-                <p>Showing 1 to 20 of 100 results</p>
-                {% include "partial/pagination.html" %}
-                <div class="form-group">
-                    <label class="sr-only" for="front-end-frameworks">Front-end Frameworks</label>
-                    <select class="form-control form-control--sm" id="front-end-frameworks">
-                        <option value="react">React</option>
-                        <option value="vue">Vue</option>
-                        <option value="svelte">Svelte</option>
-                        <option value="ember">Ember</option>
-                    </select>
+            {% if dataTable.showFooter == true %}
+                <div class="data-table__footer">
+                    <p>Showing 1 to 20 of 100 results</p>
+                    {% include "partial/pagination.html" %}
+                    <div class="form-group">
+                        <label class="sr-only" for="front-end-frameworks">Front-end Frameworks</label>
+                        <select class="form-control form-control--sm" id="front-end-frameworks">
+                            <option value="react">React</option>
+                            <option value="vue">Vue</option>
+                            <option value="svelte">Svelte</option>
+                            <option value="ember">Ember</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
+            {% endif %}
         </div>
     </div>
 </div>

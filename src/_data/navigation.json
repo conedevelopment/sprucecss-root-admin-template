@@ -19,14 +19,14 @@
         "icon": "./src/img/icon/shopping-bag.svg"
       },
       {
-        "caption": "Customers",
-        "url": "/customers/",
-        "icon": "./src/img/icon/users.svg"
-      },
-      {
         "caption": "Orders",
         "url": "/orders/",
         "icon": "./src/img/icon/shopping-cart.svg"
+      },
+      {
+        "caption": "Customers",
+        "url": "/customers/",
+        "icon": "./src/img/icon/users.svg"
       },
       {
         "caption": "Categories",
