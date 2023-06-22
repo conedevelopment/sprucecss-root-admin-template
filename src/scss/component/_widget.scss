@@ -1,6 +1,6 @@
 @use 'sprucecss/scss/spruce' as *;
 
-.widget {
+.app-widget {
   $this: &;
 
   background-color: color('background');

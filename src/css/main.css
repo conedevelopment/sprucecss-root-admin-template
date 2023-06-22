@@ -1187,7 +1187,7 @@ html[dir=rtl] .form-control--valid, html[dir=rtl] .form-control--invalid {
 .form-control--sm {
   --webkit-date-line-height: 1.36;
   --spruce-border-radius: 0.35em;
-  --spruce-padding: 0.1em 0.65em;
+  --spruce-padding: 0.1em 0.45em;
 }
 .form-control--sm[type=color] {
   --spruce-aspect-ratio: 1;
@@ -1239,7 +1239,7 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
 
 .form-check--sm {
   --spruce-border-radius: 0.35em;
-  --spruce-padding: 0.1em 0.65em;
+  --spruce-padding: 0.1em 0.45em;
 }
 .form-check--sm .form-check__control {
   font-size: var(--spruce-font-size);
@@ -2309,7 +2309,7 @@ pre[class*=language-] {
   padding: 0;
 }
 
-.widget {
+.app-widget {
   background-color: var(--spruce-base-color-background);
   border: 1px solid var(--spruce-base-color-border);
   border-radius: var(--spruce-border-radius-sm);
@@ -2318,33 +2318,33 @@ pre[class*=language-] {
   align-items: center;
   justify-content: space-between;
 }
-.widget--primary {
+.app-widget--primary {
   background-color: var(--spruce-base-color-primary);
   border: 0;
 }
-.widget--primary .widget__title,
-.widget--primary .widget__data {
+.app-widget--primary .app-widget__title,
+.app-widget--primary .app-widget__data {
   color: hsl(0, 0%, 100%);
 }
-.widget--secondary {
+.app-widget--secondary {
   background-color: var(--spruce-base-color-primary);
   border: 0;
 }
-.widget--secondary .widget__title,
-.widget--secondary .widget__data {
+.app-widget--secondary .app-widget__title,
+.app-widget--secondary .app-widget__data {
   color: hsl(0, 0%, 100%);
 }
-.widget__title {
+.app-widget__title {
   font-size: 0.938rem;
   font-weight: 600;
   line-height: 1;
   margin-block: 0;
 }
-.widget__data {
+.app-widget__data {
   line-height: 1;
   margin-block: 0;
 }
-.widget__column {
+.app-widget__column {
   align-items: start;
   color: var(--spruce-base-color-heading);
   display: flex;
@@ -2355,10 +2355,10 @@ pre[class*=language-] {
   line-height: var(--spruce-line-height-heading);
   padding: 1.5rem;
 }
-.widget__chart {
+.app-widget__chart {
   max-inline-size: 65%;
 }
-.widget__chart foreignObject {
+.app-widget__chart foreignObject {
   padding-block: 1rem;
 }
 
