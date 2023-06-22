@@ -23,17 +23,23 @@
                 <div class="app-body">
                     <div class="l-row l-row--column:sm:2 l-row--column:lg:3">
                         {% set widgetClass = 'widget--primary' %}
+                        {% set trendingType = 'up' %}
+                        {% set trendingData = '+12%' %}
                         {% set chartTitle = 'Orders' %}
                         {% set chartData = '65' %}
                         {% set chartId = 'chart01' %}
                         {% include 'partial/widget/chart.html' %}
 
+                        {% set trendingType = 'up' %}
+                        {% set trendingData = '+6%' %}
                         {% set widgetClass = null %}
                         {% set chartTitle = 'Customers' %}
                         {% set chartData = '54' %}
                         {% set chartId = 'chart02' %}
                         {% include 'partial/widget/chart.html' %}
 
+                        {% set trendingType = 'down' %}
+                        {% set trendingData = '-12%' %}
                         {% set widgetClass = null %}
                         {% set chartTitle = 'Users' %}
                         {% set chartData = '184' %}

@@ -15,7 +15,8 @@
     background-color: color('primary');
     border: 0;
 
-    #{$this}__column > * {
+    #{$this}__title,
+    #{$this}__data {
       color: hsl(0deg 0% 100%);
     }
   }
@@ -24,7 +25,8 @@
     background-color: color('primary');
     border: 0;
 
-    #{$this}__column > * {
+    #{$this}__title,
+    #{$this}__data {
       color: hsl(0deg 0% 100%);
     }
   }
@@ -32,13 +34,23 @@
   &__title {
     font-size: font-size('h5');
     font-weight: 600;
+    line-height: 1;
+    margin-block: 0;
+  }
+
+  &__data {
+    line-height: 1;
+    margin-block: 0;
   }
 
   &__column {
-    @include layout-stack(0);
-    font-size: font-size('h2');
-    font-weight: 700;
+    align-items: start;
     color: color('heading');
+    display: flex;
+    flex-direction: column;
+    font-size: font-size('h1');
+    font-weight: 700;
+    gap: spacer('xs');
     line-height: config('line-height-heading', $typography);
     padding: spacer('m');
   }

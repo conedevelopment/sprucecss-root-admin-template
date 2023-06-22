@@ -2,6 +2,16 @@
     <div class="widget__column">
         <h2 class="widget__title">{{ chartTitle }}</h2>
         <p class="widget__data">{{ chartData }}</p>
+        {% if trendingData %}
+            <div class="trending trending--{{ trendingType }} widget__trending">
+                <span class="trending__caption">{{ trendingData }}</span>
+                {% if trendingType == 'up' %}
+                    {% svgIcon './src/img/icon/trending-up.svg', 'trending__icon' %}
+                {% else %}
+                    {% svgIcon './src/img/icon/trending-down.svg', 'trending__icon' %}
+                {% endif %}
+            </div>
+        {% endif %}
     </div>
     <div class="widget__chart">
         <div id="{{ chartId }}"></div>
