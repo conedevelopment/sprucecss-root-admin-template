@@ -21,6 +21,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: spacer('xs');
+    margin-inline-start: auto;
   }
 
   &__title {

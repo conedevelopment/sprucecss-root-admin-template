@@ -1,11 +1,12 @@
 <div class="app-card">
-    {% if dataTable.showHeader == true %}
         <div class="app-card__header">
             {% if dataTable.title %}
                 <h2 class="app-card__title">{{ dataTable.title }}</h2>
             {% endif %}
+            <div class="app-card__actions">
+                {% include "partial/search.html" %}
+            </div>
         </div>
-    {% endif %}
     <div class="app-card__body">
         <div class="data-table">
             <div class="table-responsive">
@@ -18,17 +19,17 @@
                                 </label>
                             </th>
                             {% for heading in dataTable.headings %}
-                                {% if heading == 'Actions' %}
+                                {% if heading == "Actions" %}
                                     <th scope="col">
                                         <span class="sr-only">{{ heading }}</span>
                                     </th>
                                 {% else %}
                                     <th scope="col">
-                                        {% if (heading == 'First Name') or (heading == 'Last Name') or (heading == 'Price') or (heading == 'Qty') or (heading == 'Status') %}
+                                        {% if (heading == "First Name") or (heading == "Last Name") or (heading == "Price") or (heading == "Qty") or (heading == "Status") %}
                                             <div class="data-table-sort">
                                                 {{ heading }}
                                                 <button class="data-table-sort__control" type="button">
-                                                    {% svgIcon './src/img/icon/chevron-up-down.svg', 'data-table-sort__icon' %}
+                                                    {% svgIcon "./src/img/icon/chevron-up-down.svg", "data-table-sort__icon" %}
                                                 </button>
                                             </div>
                                         {% else %}
