@@ -32,6 +32,9 @@ $colors: (
   'breadcrumb': (
     'arrow': hsl(0deg 0% 100% / 0.1),
   ),
+  'data-table': (
+    'icon': hsl(0deg 0% 100% / 0.1),
+  ),
   'btn': (
     'dark-background': hsl(0deg 0% 100%),
     'dark-background-hover': hsl(0deg 0% 95%),
@@ -122,5 +125,8 @@ $colors: (
     'thumb-background': hsl(0 0% 100% / 15%),
     'thumb-background-hover':	hsl(0 0% 100% / 25%),
     'track-background':	hsl(0 0% 100% / 5%),
+  ),
+  'widget': (
+    'icon-background': color.adjust($dark-color-black, $lightness: 5%),
   ),
 );

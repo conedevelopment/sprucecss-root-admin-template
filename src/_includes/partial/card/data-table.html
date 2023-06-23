@@ -24,7 +24,16 @@
                                     </th>
                                 {% else %}
                                     <th scope="col">
-                                        {{ heading }}
+                                        {% if (heading == 'First Name') or (heading == 'Last Name') or (heading == 'Price') or (heading == 'Qty') or (heading == 'Status') %}
+                                            <div class="data-table-sort">
+                                                {{ heading }}
+                                                <button class="data-table-sort__control" type="button">
+                                                    {% svgIcon './src/img/icon/chevron-up-down.svg', 'data-table-sort__icon' %}
+                                                </button>
+                                            </div>
+                                        {% else %}
+                                            {{ heading }}
+                                        {% endif %}
                                     </th>
                                 {% endif %}
                             {% endfor %}
@@ -68,17 +77,19 @@
             </div>
             {% if dataTable.showFooter == true %}
                 <div class="data-table__footer">
-                    <p>Showing 1 to 20 of 100 results</p>
-                    {% include "partial/pagination.html" %}
-                    <div class="form-group">
-                        <label class="sr-only" for="front-end-frameworks">Front-end Frameworks</label>
-                        <select class="form-control form-control--sm" id="front-end-frameworks">
-                            <option value="react">React</option>
-                            <option value="vue">Vue</option>
-                            <option value="svelte">Svelte</option>
-                            <option value="ember">Ember</option>
-                        </select>
+                    <div class="data-table__footer-column">
+                        <div class="form-group">
+                            <label class="sr-only" for="number-of-results">Number of results</label>
+                            <select class="form-control form-control--sm" id="number-of-results">
+                                <option value="10">10</option>
+                                <option value="20" selected>20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                        <p>Showing 1 to 20 of 100 results</p>
                     </div>
+                    {% include "partial/pagination.html" %}
                 </div>
             {% endif %}
         </div>

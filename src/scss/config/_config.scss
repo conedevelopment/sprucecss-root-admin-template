@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use 'dark-colors' as dark;
 
 $color-primary: hsl(214deg 98% 49%);
@@ -35,6 +36,9 @@ $color-primary-lightest: hsl(210deg 60% 98%);
     'breadcrumb': (
       'separator': hsl(0deg 0% 80%),
     ),
+    'data-table': (
+      'icon': hsl(0deg 0% 80%),
+    ),
     'header': (
       'background': hsl(0deg 0% 100% / 95%),
     ),
@@ -64,6 +68,9 @@ $color-primary-lightest: hsl(210deg 60% 98%);
     'table': (
       'hover': $color-primary-lightest,
       'stripe': $color-primary-lightest,
+    ),
+    'widget': (
+      'icon-background': color.adjust($color-primary, $lightness: 49%),
     ),
   ),
   $color-primary: $color-primary,

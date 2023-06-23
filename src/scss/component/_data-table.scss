@@ -14,7 +14,6 @@
   &__actions {
     align-items: center;
     display: flex;
-    flex-wrap: wrap;
     gap: spacer('xs');
     justify-content: end;
   }
@@ -22,6 +21,38 @@
   &__footer {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
+    gap: spacer('s');
     justify-content: space-between;
+    margin-block: spacer('m') spacer('s');
+
+    &-column {
+      display: flex;
+      flex-wrap: wrap;
+      gap: spacer('s');
+
+      > * {
+        margin-block: 0;
+      }
+    }
+  }
+}
+
+.data-table-sort {
+  @include a11y-card-link('.data-table-sort__control', true);
+  align-items: center;
+  display: flex;
+  gap: spacer('xs');
+  white-space: nowrap;
+
+  &__control {
+    @include clear-btn;
+  }
+
+  svg {
+    --dimension: 0.85em;
+    block-size: var(--dimension);
+    color: color('icon', 'data-table');
+    inline-size: var(--dimension);
   }
 }

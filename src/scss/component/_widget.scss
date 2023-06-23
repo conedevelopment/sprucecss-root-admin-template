@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use 'sprucecss/scss/spruce' as *;
 
 .app-widget {
@@ -31,11 +32,45 @@
     }
   }
 
+  &--summary {
+    justify-content: start;
+    gap: spacer('m');
+    padding: spacer('m');
+
+    #{$this}__column {
+      padding: 0;
+    }
+  }
+
+  &__icon {
+    --dimension: 4rem;
+    align-items: center;
+    background-color: color('icon-background', 'widget');
+    block-size: var(--dimension);
+    border-radius: config('border-radius-lg', $display);
+    color: color('primary');
+    display: flex;
+    justify-content: center;
+    inline-size: var(--dimension);
+
+    svg {
+      --dimension: 1.5rem;
+      block-size: var(--dimension);
+      inline-size: var(--dimension);
+    }
+  }
+
   &__title {
     font-size: font-size('h5');
     font-weight: 600;
     line-height: 1;
     margin-block: 0;
+  }
+
+  &__data-row {
+    align-items: center;
+    display: flex;
+    gap: spacer('s');
   }
 
   &__data {
