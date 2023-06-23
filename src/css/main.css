@@ -2347,6 +2347,9 @@ pre[class*=language-] {
 .app-widget--summary .app-widget__column {
   padding: 0;
 }
+.app-widget--small-data .app-widget__data {
+  font-size: clamp(0.996625rem, 2vw + 1rem, 1.1725rem);
+}
 .app-widget__icon {
   --dimension: 4rem;
   align-items: center;
@@ -2355,6 +2358,7 @@ pre[class*=language-] {
   border-radius: var(--spruce-border-radius-lg);
   color: var(--spruce-base-color-primary);
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   inline-size: var(--dimension);
 }
@@ -2366,7 +2370,6 @@ pre[class*=language-] {
 .app-widget__title {
   font-size: 0.938rem;
   font-weight: 600;
-  line-height: 1;
   margin-block: 0;
 }
 .app-widget__data-row {
@@ -2375,7 +2378,7 @@ pre[class*=language-] {
   gap: 1rem;
 }
 .app-widget__data {
-  line-height: 1;
+  line-height: var(--spruce-line-height-heading);
   margin-block: 0;
 }
 .app-widget__column {
@@ -2385,9 +2388,11 @@ pre[class*=language-] {
   flex-direction: column;
   font-size: clamp(1.9465332031rem, 2vw + 1rem, 2.2900390625rem);
   font-weight: 700;
-  gap: 0.5rem;
   line-height: var(--spruce-line-height-heading);
   padding: 1.5rem;
+}
+.app-widget__column .app-widget__trending {
+  margin-block-start: 0.25rem;
 }
 .app-widget__chart {
   max-inline-size: 65%;

@@ -24,28 +24,27 @@
                             'icon': './src/img/icon/shopping-bag.svg',
                             'trendingType': 'up',
                             'trendingData': '+12%',
-                            'chartTitle': 'Total Orders (this month)',
+                            'chartTitle': 'Total Products',
                             'chartData': '341'
                         } %}
                         {% include 'partial/widget/summary.html' %}
-                        <div class="widget">
-                            <div class="widget__body">
-                                <h2 class="widget__title">Sales</h2>
-                                <p class="widget__data">599</p>
-                            </div>
-                            <div class="widget__chart">
-                                <div id="chart-widget2"></div>
-                            </div>
-                        </div>
-                        <div class="widget">
-                            <div class="widget__body">
-                                <h2 class="widget__title">Customers</h2>
-                                <p class="widget__data">4,324</p>
-                            </div>
-                            <div class="widget__chart">
-                                <div id="chart-widget3"></div>
-                            </div>
-                        </div>
+                        {% set widget = {
+                            'class': 'app-widget--summary',
+                            'icon': './src/img/icon/archive.svg',
+                            'trendingType': 'up',
+                            'trendingData': null,
+                            'chartTitle': 'Total Inventory',
+                            'chartData': '2,340'
+                        } %}
+                        {% include 'partial/widget/summary.html' %}
+                        {% set widget = {
+                            'class': 'app-widget--summary app-widget--small-data',
+                            'icon': './src/img/icon/shopping-bag.svg',
+                            'trendingData': null,
+                            'chartTitle': 'Best Selling',
+                            'chartData': 'ZephyrFit Fitness Tracker'
+                        } %}
+                        {% include 'partial/widget/summary.html' %}
                     </div>
                     {% set dataTable = {
                         'headings': ['Image', 'Name', 'Price', 'SKU', 'Qty', 'Status', 'Actions'],
