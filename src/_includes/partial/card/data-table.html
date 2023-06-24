@@ -76,7 +76,10 @@
                                         <img class="data-table__image" src="{{ data.image }}?random={{ data.id }}" alt="{{ data.name }}">
                                     </td>
                                 {% else %}
-                                    <td>{{ data[heading.toLowerCase().split(' ').join('_')] }}</td>
+                                    <td>
+                                        {% if (heading == 'Price') or (heading == 'Order Total') %}$ {% endif %}
+                                        {{ data[heading.toLowerCase().split(' ').join('_')] }}
+                                    </td>
                                 {% endif %}
                             {% endfor %}
                         </tr>

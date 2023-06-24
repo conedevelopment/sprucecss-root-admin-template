@@ -10,7 +10,7 @@
             {% set heading = {
                 'title': title,
                 'actions': [{
-                    'label': 'Add new category',
+                    'label': 'Add new order',
                     'icon': './src/img/icon/plus.svg',
                     'class': 'btn btn--primary btn--icon'
                 }]
@@ -19,8 +19,8 @@
             <div class="container">
                 <div class="app-body">
                     {% set dataTable = {
-                        'headings': ['ID', 'Name', 'Actions'],
-                        'data': categories.slice(0, 10),
+                        'headings': ['ID', 'Order Total', 'Customer Name', 'Actions'],
+                        'data': orders.slice(0, 20),
                         'showHeader': false,
                         'showFooter': true,
                         'showSearch': false,
