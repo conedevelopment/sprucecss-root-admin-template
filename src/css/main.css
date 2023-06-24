@@ -1095,7 +1095,7 @@ samp {
 
 .form-label {
   color: var(--spruce-form-color-label);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.5;
 }
 
@@ -1328,7 +1328,7 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
 .form-switch__control {
   --spruce-border-width: 1px;
   --spruce-font-size: 1.125rem;
-  --spruce-font-weight: 500;
+  --spruce-font-weight: 600;
   --spruce-line-height: calc(2px + 2ex + 2px);
   --spruce-margin-block-start: 0.25em;
   background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3e%3ccircle cx="12" cy="12" r="8.5" style="fill:hsl%28260, 4%, 70%%29;"/%3e%3c/svg%3e');
@@ -1377,9 +1377,9 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
 }
 
 fieldset {
-  --spruce-gap: 1rem;
-  --spruce-legend-font-size: clamp(0.938rem, 5vw, 1.1725rem);
-  --spruce-legend-font-weight: 700;
+  --spruce-gap: 0.5rem;
+  --spruce-legend-font-size: 0.938rem;
+  --spruce-legend-font-weight: 600;
   border: 0;
   margin: 0;
   padding: 0;
@@ -1714,8 +1714,8 @@ legend {
 
 .l-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr);
 }
 @media (min-width: 32em) {
   .l-row--column\:xs\:1 {
@@ -1845,12 +1845,12 @@ legend {
 .l-main__sidebar {
   background-color: var(--spruce-base-color-background);
   box-shadow: 0 0 1rem var(--spruce-main-color-shadow);
+  display: none;
   inline-size: var(--spruce-sidebar-inline-size);
   inset-block: 0;
   inset-inline: 0 auto;
   position: fixed;
   z-index: 20;
-  display: none;
 }
 @media (min-width: 64em) {
   .l-main__sidebar {
@@ -1949,6 +1949,17 @@ legend {
 @media (min-width: 64em) {
   .l-auth .auth-form {
     padding-block-end: 1.5rem;
+  }
+}
+
+.l-sidebar {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 64em) {
+  .l-sidebar {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
   }
 }
 
@@ -2290,8 +2301,8 @@ pre[class*=language-] {
   border-block-end: 1px solid var(--spruce-base-color-border);
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 0.5rem 1.5rem;
+  justify-content: space-between;
   min-block-size: 3.8rem;
   padding: 1rem;
 }
@@ -2310,19 +2321,19 @@ pre[class*=language-] {
   padding: 1rem;
 }
 .app-card__body--plain {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
   padding: 0;
 }
 
 .app-widget {
+  align-items: center;
   background-color: var(--spruce-base-color-background);
   border: 1px solid var(--spruce-base-color-border);
   border-radius: var(--spruce-border-radius-sm);
   box-shadow: 0 0 0.25rem hsla(201.15, 72.03%, 32.71%, 0.05);
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 .app-widget--primary {
@@ -2342,8 +2353,8 @@ pre[class*=language-] {
   color: hsl(0, 0%, 100%);
 }
 .app-widget--summary {
-  justify-content: start;
   gap: 1.5rem;
+  justify-content: start;
   padding: 1.5rem;
 }
 .app-widget--summary .app-widget__column {
@@ -2361,8 +2372,8 @@ pre[class*=language-] {
   color: var(--spruce-base-color-primary);
   display: flex;
   flex-shrink: 0;
-  justify-content: center;
   inline-size: var(--dimension);
+  justify-content: center;
 }
 .app-widget__icon svg {
   --dimension: 1.5rem;
@@ -2415,9 +2426,9 @@ pre[class*=language-] {
   inline-size: var(--dimenion);
 }
 .user-menu__caption {
-  font-size: var(--spruce-font-size-base);
   display: none;
   flex-direction: column;
+  font-size: var(--spruce-font-size-base);
   gap: 0.25rem;
   line-height: 1;
 }
@@ -2450,14 +2461,14 @@ pre[class*=language-] {
 }
 
 .data-table {
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 .data-table__image {
   --dimension: 2.25rem;
-  inline-size: var(--dimension);
   block-size: var(--dimension);
   border-radius: 50%;
+  inline-size: var(--dimension);
 }
 .data-table__actions {
   align-items: center;
@@ -2609,19 +2620,19 @@ pre[class*=language-] {
 }
 .or-separator::before, .or-separator::after {
   background-color: var(--spruce-base-color-border);
+  block-size: 1px;
   content: "";
   display: flex;
-  block-size: 1px;
   inline-size: 100%;
 }
 
 .trending {
   align-items: center;
   border-radius: 2rem;
+  display: inline-flex;
   font-family: var(--spruce-font-family-heading);
   font-size: var(--spruce-font-size-sm);
   font-weight: 600;
-  display: inline-flex;
   gap: 0.25rem;
   line-height: 1;
   padding: 0.35em 0.55em;
@@ -2695,17 +2706,17 @@ pre[class*=language-] {
 }
 .app-sidebar__header {
   align-items: center;
-  display: flex;
-  flex-shrink: 0;
   block-size: var(--spruce-header-block-size);
   border-block-end: 1px solid var(--spruce-base-color-border);
+  display: flex;
+  flex-shrink: 0;
   justify-content: space-between;
   margin-inline: 1.5rem;
 }
 .app-sidebar__body {
   flex-grow: 1;
-  overflow-y: auto;
   margin-inline: calc(1.5rem / 2);
+  overflow-y: auto;
   padding-inline: calc(1.5rem / 2);
 }
 .app-sidebar__body::-webkit-scrollbar {
@@ -2730,12 +2741,12 @@ pre[class*=language-] {
 }
 
 .app-header {
+  backdrop-filter: saturate(180%) blur(0.25rem);
   background-color: var(--spruce-header-color-background);
   border-block-end: 1px solid var(--spruce-base-color-border);
+  inset-block-start: 0;
+  inset-block-start: 0;
   position: sticky;
-  inset-block-start: 0;
-  backdrop-filter: saturate(180%) blur(0.25rem);
-  inset-block-start: 0;
   position: sticky;
   z-index: 15;
 }
@@ -2763,8 +2774,8 @@ pre[class*=language-] {
   gap: 1rem;
 }
 .app-header__logo {
-  display: inline-flex;
   block-size: 1.25rem;
+  display: inline-flex;
 }
 @media (min-width: 64em) {
   .app-header__logo {
@@ -2917,8 +2928,8 @@ pre[class*=language-] {
 
 .apexcharts-tooltip,
 .apexcharts-tooltip-title {
-  border-color: var(--spruce-base-color-border) !important;
   background: var(--spruce-base-color-background) !important;
+  border-color: var(--spruce-base-color-border) !important;
 }
 
 .apexcharts-tooltip-title {
@@ -2930,6 +2941,14 @@ pre[class*=language-] {
 .apexcharts-gridline,
 .apexcharts-grid-borders line:last-child {
   stroke: var(--spruce-base-color-border);
+}
+
+.form-group-stack > * {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+.form-group-stack > * + * {
+  margin-block-start: 1rem;
 }
 
 @media (min-width: 32em) {

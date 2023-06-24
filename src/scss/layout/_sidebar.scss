@@ -1,0 +1,11 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.l-sidebar {
+  display: grid;
+  gap: spacer('m');
+  grid-template-columns: minmax(0, 1fr);
+
+  @include breakpoint('md') {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
+  }
+}
