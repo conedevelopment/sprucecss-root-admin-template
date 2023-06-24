@@ -1601,6 +1601,7 @@ legend {
   --spruce-btn-color-primary-background: hsl(211, 99%, 46%);
   --spruce-btn-color-primary-background-hover: #208bfe;
   --spruce-btn-color-primary-foreground: hsl(0, 0%, 100%);
+  --spruce-btn-color-primary-shadow: #01346b;
   --spruce-btn-color-primary-outline-foreground: hsl(211, 99%, 60%);
   --spruce-btn-color-secondary-background: hsl(160, 89%, 46%);
   --spruce-btn-color-secondary-background-hover: #13f1a7;

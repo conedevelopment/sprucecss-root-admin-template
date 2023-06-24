@@ -52,6 +52,7 @@ $colors: (
     'primary-background': $dark-color-primary,
     'primary-background-hover': color.adjust($dark-color-primary, $lightness: 10%),
     'primary-foreground': hsl(0deg 0% 100%),
+    'primary-shadow': color.adjust($dark-color-primary, $lightness: -25%),
     'primary-outline-foreground': hsl(211deg 99% 60%),
     'secondary-background': $dark-color-secondary,
     'secondary-background-hover': color.adjust($dark-color-secondary, $lightness: 5%),
