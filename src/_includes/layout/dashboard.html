@@ -63,7 +63,10 @@
                         'headings': ['Image', 'Name', 'Price', 'SKU', 'Qty', 'Status', 'Actions'],
                         'data': products.slice(0, 6),
                         'showHeader': true,
-                        'showFooter': false
+                        'showFooter': false,
+                        'showSearch': false,
+                        'searchClass': null,
+                        'searchControlClass': null
                     } %}
                     {% include 'partial/card/data-table.html' %}
                 </div>

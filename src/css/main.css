@@ -2642,6 +2642,15 @@ pre[class*=language-] {
 .search-form {
   position: relative;
 }
+.search-form--sm .search-form__control {
+  padding-inline-start: 1.75em;
+}
+.search-form--sm .search-form__submit {
+  padding-inline: 0.6em;
+}
+.search-form--sm .search-form__icon {
+  --dimension: 0.75rem;
+}
 .search-form__control {
   padding-inline-start: 2.15em;
 }

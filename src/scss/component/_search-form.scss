@@ -1,7 +1,22 @@
 @use 'sprucecss/scss/spruce' as *;
 
 .search-form {
+  $this: &;
   position: relative;
+
+  &--sm {
+    #{$this}__control {
+      padding-inline-start: 1.75em;
+    }
+
+    #{$this}__submit {
+      padding-inline: 0.6em;
+    }
+
+    #{$this}__icon {
+      --dimension: 0.75rem;
+    }
+  }
 
   &__control {
     padding-inline-start: 2.15em;

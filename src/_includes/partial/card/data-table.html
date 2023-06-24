@@ -1,12 +1,20 @@
 <div class="app-card">
+    {% if dataTable.showHeader == true %}
         <div class="app-card__header">
             {% if dataTable.title %}
                 <h2 class="app-card__title">{{ dataTable.title }}</h2>
             {% endif %}
+            {% if dataTable.showSearch == true %}
             <div class="app-card__actions">
+                {% set search = {
+                    'class': dataTable.searchClass,
+                    'controlClass': dataTable.searchControlClass
+                } %}
                 {% include "partial/search.html" %}
             </div>
+            {% endif %}
         </div>
+    {% endif %}
     <div class="app-card__body">
         <div class="data-table">
             <div class="table-responsive">
