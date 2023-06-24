@@ -13,9 +13,9 @@
   }
 
   &__caption {
-    font-size: config('font-size-base', $typography);
     display: none;
     flex-direction: column;
+    font-size: config('font-size-base', $typography);
     gap: spacer('xxs');
     line-height: 1;
 

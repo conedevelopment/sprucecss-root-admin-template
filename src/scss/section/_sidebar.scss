@@ -23,10 +23,10 @@
 
   &__header {
     align-items: center;
-    display: flex;
-    flex-shrink: 0;
     block-size: get-css-variable(--header-block-size);
     border-block-end: 1px solid color('border');
+    display: flex;
+    flex-shrink: 0;
     justify-content: space-between;
     margin-inline: spacer('m');
   }
@@ -36,8 +36,8 @@
       $border-radius: 0.15em
     );
     flex-grow: 1;
-    overflow-y: auto;
     margin-inline: calc(#{spacer('m')} / 2);
+    overflow-y: auto;
     padding-inline: calc(#{spacer('m')} / 2);
 
     > * + * {

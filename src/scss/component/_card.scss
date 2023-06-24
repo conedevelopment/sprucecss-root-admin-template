@@ -11,8 +11,8 @@
     border-block-end: 1px solid color('border');
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: spacer('xs') spacer('m');
+    justify-content: space-between;
     min-block-size: 3.8rem;
     padding: spacer('s');
   }
@@ -34,8 +34,8 @@
     padding: spacer('s');
 
     &--plain {
-      display: flex;
       align-items: center;
+      display: flex;
       justify-content: space-between;
       padding: 0;
     }

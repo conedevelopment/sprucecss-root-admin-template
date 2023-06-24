@@ -21,11 +21,9 @@
                     {% set dataTable = {
                         'headings': ['Image', 'First Name', 'Last Name', 'Email', 'Postal Code', 'Actions'],
                         'data': customers.slice(0, 20),
-                        'showHeader': false,
+                        'showHeader': true,
                         'showFooter': true,
-                        'showSearch': false,
-                        'searchClass': null,
-                        'searchControlClass': null
+                        'showSearch': true
                     } %}
                     {% include 'partial/card/data-table.html' %}
                 </div>

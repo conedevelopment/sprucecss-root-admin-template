@@ -21,11 +21,9 @@
                     {% set dataTable = {
                         'headings': ['ID', 'Order Total', 'Customer Name', 'Actions'],
                         'data': orders.slice(0, 20),
-                        'showHeader': false,
+                        'showHeader': true,
                         'showFooter': true,
-                        'showSearch': false,
-                        'searchClass': null,
-                        'searchControlClass': null
+                        'showSearch': true
                     } %}
                     {% include 'partial/card/data-table.html' %}
                 </div>

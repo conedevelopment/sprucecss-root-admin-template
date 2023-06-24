@@ -4,10 +4,10 @@
 .trending {
   align-items: center;
   border-radius: 2rem;
+  display: inline-flex;
   font-family: config('font-family-heading', $typography);
   font-size: config('font-size-sm', $typography);
   font-weight: 600;
-  display: inline-flex;
   gap: spacer('xxs');
   line-height: 1;
   padding: 0.35em 0.55em;

@@ -1,12 +1,12 @@
 @use 'sprucecss/scss/spruce' as *;
 
 .app-header {
+  backdrop-filter: saturate(180%) blur(.25rem);
   background-color: color('background', 'header');
   border-block-end: 1px solid color('border');
+  inset-block-start: 0;
+  inset-block-start: 0;
   position: sticky;
-  inset-block-start: 0;
-  backdrop-filter: saturate(180%) blur(.25rem);
-  inset-block-start: 0;
   position: sticky;
   z-index: 15;
 
@@ -38,8 +38,8 @@
   }
 
   &__logo {
-    display: inline-flex;
     block-size: 1.25rem;
+    display: inline-flex;
 
     @include breakpoint('md') {
       display: none;

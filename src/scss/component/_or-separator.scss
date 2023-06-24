@@ -10,9 +10,9 @@
   &::before,
   &::after {
     background-color: color('border');
+    block-size: 1px;
     content: '';
     display: flex;
-    block-size: 1px;
     inline-size: 100%;
   }
 }

@@ -2,8 +2,8 @@
 
 .l-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
   gap: spacer('m');
+  grid-template-columns: minmax(0, 1fr);
 
   @each $name, $breakpoint in $breakpoints {
     @for $i from 1 through 4 {
