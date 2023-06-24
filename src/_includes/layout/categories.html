@@ -1,0 +1,36 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+    <div class="l-main">
+        <div class="l-main__sidebar" data-item="sidebar">
+            {% include "partial/sidebar.html" %}
+        </div>
+        <main id="content" class="l-main__body" data-item="body">
+            {% include "partial/header.html" %}
+            {% set heading = {
+                'title': title,
+                'actions': [{
+                    'label': 'Add new category',
+                    'icon': './src/img/icon/plus.svg',
+                    'class': 'btn btn--primary btn--icon'
+                }]
+            } %}
+            {% include "partial/heading.html" %}
+            <div class="container">
+                <div class="app-body">
+                    {% set dataTable = {
+                        'headings': ['ID', 'Name'],
+                        'data': categories.slice(0, 10),
+                        'showHeader': false,
+                        'showFooter': true,
+                        'showSearch': false,
+                        'searchClass': null,
+                        'searchControlClass': null
+                    } %}
+                    {% include 'partial/card/data-table.html' %}
+                </div>
+            </div>
+            {% include "partial/footer.html" %}
+        </main>
+    </div>
+{% endblock %}
