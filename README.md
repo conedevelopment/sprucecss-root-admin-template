@@ -11,7 +11,25 @@
   </a>
 </p>
 
-**The “Spruce CSS Eleventy Starter” repository contains a simple boilerplate for starting your next project with Eleventy x Spruce CSS.**
+**This repository contains the static template of our Laravel admin named [Root](https://root.conedevelopment.com/).**
+
+The template is built with Eleventy for our sanity and easier management. You can grab the content from the Nunjucks template files or the compiled `dist` folder.
+
+<img src="./.github/cover.png" alt="Spruce CSS">
+
+It is in **BETA** and will be in it probably for the next two months. Making a complex admin theme is quite a task.
+
+Right now, you can access the following views:
+
+- Dashboard
+- Product List
+- Product Edit
+- Order List
+- Customer List
+- Category List
+- Sign Up
+- Sign In
+- Password Reset
 
 ## Table of Contents
 
