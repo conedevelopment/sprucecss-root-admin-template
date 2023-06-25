@@ -15,15 +15,13 @@
                 <div class="app-body">
                     <div class="l-sidebar">
                         <div class="l-sidebar__main">
-                            <div class="app-card">
-                                <div class="app-card__header">
-                                    <h2 class="app-card__title">Content</h2>
-                                </div>
+                            <div class="app-card app-card--edit">
                                 <div class="app-card__body">
                                     <div class="form-group-stack">
                                         <div class="form-group">
                                             <label class="form-label" for="your-name">Name</label>
                                             <input class="form-control" id="your-name" name="your-name" type="text"/>
+                                            <span class="form-description">Just a help text for presentation purpose</span>
                                         </div>
                                         <div class="form-group">
                                             <label class="form-label" for="your-email">Email</label>
@@ -36,11 +34,6 @@
                                         <div class="form-group">
                                             <label class="form-label" for="your-color">Your favorite color</label>
                                             <input class="form-control" id="your-color" name="your-color" type="color" value="#6524d6"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-label" for="first-name-row">First Name</label>
-                                            <input class="form-control" id="first-name-row" type="text"/>
-                                            <span class="form-description">Just a help text for presentation purpose</span>
                                         </div>
                                         <div class="form-group">
                                             <label class="form-label" for="front-end-frameworks-row">Front-end Frameworks</label>
@@ -85,15 +78,15 @@
                             </div>
                         </div>
                         <div class="app-body__sidebar">
-                            <div class="app-card">
+                            <div class="app-card app-card--edit">
                                 <div class="app-card__header">
                                     <h2 class="app-card__title">Settings</h2>
                                 </div>
                                 <div class="app-card__body">
                                     <div class="form-group-stack">
                                         <div class="form-group">
-                                            <label class="form-label" for="front-end-frameworks">Front-end Frameworks</label>
-                                            <select class="form-control" id="front-end-frameworks">
+                                            <label class="form-label" for="status">Status</label>
+                                            <select class="form-control" id="status">
                                                 <option value="react">React</option>
                                                 <option value="vue">Vue</option>
                                                 <option value="svelte">Svelte</option>
