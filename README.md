@@ -15,7 +15,7 @@
 
 The template is built with Eleventy for our sanity and easier management. You can grab the content from the Nunjucks template files or the compiled `dist` folder.
 
-<img src="./.github/cover-v2.png" alt="Beta version">
+<img src="./.github/cover-v3.png" alt="Beta version">
 
 It is in **BETA** and will be in it probably for the next two months. Making a complex admin theme is quite a task.
 
