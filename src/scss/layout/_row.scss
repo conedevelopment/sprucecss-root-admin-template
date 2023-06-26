@@ -1,6 +1,7 @@
 @use 'sprucecss/scss/spruce' as *;
 
 .l-row {
+  align-items: start;
   display: grid;
   gap: spacer('m');
   grid-template-columns: minmax(0, 1fr);
@@ -13,5 +14,17 @@
         }
       }
     }
+  }
+
+  &--sidebar {
+    @include breakpoint('lg') {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
+    }
+  }
+
+  &__column {
+    display: grid;
+    gap: spacer('m');
+    grid-template-columns: minmax(0, 1fr);
   }
 }

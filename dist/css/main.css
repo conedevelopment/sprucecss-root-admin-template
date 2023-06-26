@@ -1717,6 +1717,7 @@ legend {
 }
 
 .l-row {
+  align-items: start;
   display: grid;
   gap: 1.5rem;
   grid-template-columns: minmax(0, 1fr);
@@ -1841,6 +1842,16 @@ legend {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+@media (min-width: 80em) {
+  .l-row--sidebar {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
+  }
+}
+.l-row__column {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr);
+}
 
 .l-main {
   display: flex;
@@ -1953,17 +1964,6 @@ legend {
 @media (min-width: 64em) {
   .l-auth .auth-form {
     padding-block-end: 1.5rem;
-  }
-}
-
-.l-sidebar {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: minmax(0, 1fr);
-}
-@media (min-width: 80em) {
-  .l-sidebar {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
   }
 }
 
