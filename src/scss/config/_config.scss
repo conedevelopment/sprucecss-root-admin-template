@@ -87,6 +87,9 @@ $color-primary-lightest: hsl(210deg 60% 98%);
     'legend-font-size': 0.938rem,
     'legend-font-weight': 600,
   ),
+  $form-group: (
+    'row-container-inline-size': 40rem,
+  ),
   $form-label: (
     'font-family': #{'Manrope', sans-serif},
     'font-weight': 600,

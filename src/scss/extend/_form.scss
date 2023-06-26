@@ -2,6 +2,13 @@
 
 .form-group-stack {
   @include layout-stack('s');
+
+  &--bordered {
+    > * + * {
+      border-block-start: 1px dashed color('border');
+      padding-block-start: spacer('s');
+    }
+  }
 }
 
 .form-label,

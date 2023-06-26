@@ -5,7 +5,7 @@
   gap: spacer('m');
   grid-template-columns: minmax(0, 1fr);
 
-  @include breakpoint('md') {
+  @include breakpoint('lg') {
     grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
   }
 }
