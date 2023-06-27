@@ -13,7 +13,10 @@
                 >
                     {% svgIcon './src/img/icon/menu-open.svg', 'btn__icon' %}
                 </button>
-                <button class="btn btn--outline-dark btn--sm btn--icon display--none:md">
+                <button
+                    class="btn btn--outline-dark btn--sm btn--icon display--none:md"
+                    aria-label="Open search"
+                >
                     {% svgIcon './src/img/icon/search.svg', 'btn__icon' %}
                 </button>
                 {% include 'partial/theme-switcher.html' %}

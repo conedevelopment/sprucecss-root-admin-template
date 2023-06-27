@@ -22,8 +22,9 @@
                     <thead>
                         <tr>
                             <th style="width: 3.25rem;">
-                                <label class="form-check">
-                                    <input class="form-check__control" type="checkbox" value="1" name="select-all" aria-albel="Select all item"/>
+                                <span class="sr-only">Select</span>
+                                <label class="form-check" aria-label="Select all item">
+                                    <input class="form-check__control" type="checkbox" value="1" name="select-all" />
                                 </label>
                             </th>
                             {% for heading in dataTable.headings %}
@@ -36,7 +37,7 @@
                                         {% if (heading == "First Name") or (heading == "Last Name") or (heading == "Price") or (heading == "Qty") or (heading == "Status") %}
                                             <div class="data-table-sort">
                                                 {{ heading }}
-                                                <button class="data-table-sort__control" type="button">
+                                                <button class="data-table-sort__control" type="button" aria-label="Sort ascending">
                                                     {% svgIcon "./src/img/icon/chevron-up-down.svg", "data-table-sort__icon" %}
                                                 </button>
                                             </div>
@@ -52,21 +53,21 @@
                         {% for data in dataTable.data %}
                         <tr>
                             <td>
-                                <label class="form-check">
-                                    <input class="form-check__control" type="checkbox" value="1" name="{{ data.id }}" aria-albel="Select {{ data.name }}"/>
+                                <label class="form-check" aria-label="Select {{ data.name }}">
+                                    <input class="form-check__control" type="checkbox" value="1" name="{{ data.id }}" />
                                 </label>
                             </td>
                             {% for heading in dataTable.headings %}
                                 {% if heading == 'Actions' %}
                                 <td>
                                     <div class="data-table__actions">
-                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon">
+                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
                                             {% svgIcon './src/img/icon/eye.svg', 'btn__icon' %}
                                         </a>
-                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon">
+                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                             {% svgIcon './src/img/icon/edit.svg', 'btn__icon' %}
                                         </a>
-                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon">
+                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
                                             {% svgIcon './src/img/icon/trash.svg', 'btn__icon' %}
                                         </a>
                                     </div>

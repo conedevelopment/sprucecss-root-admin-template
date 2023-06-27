@@ -6,7 +6,6 @@
 
   &__sidebar {
     background-color: color('background');
-    box-shadow: 0 0 spacer('s') color('shadow', 'main');
     display: none;
     inline-size: get-css-variable(--sidebar-inline-size);
     inset-block: 0;

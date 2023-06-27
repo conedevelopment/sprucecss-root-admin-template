@@ -73,7 +73,7 @@ $colors: (
     'invalid-shadow': color.adjust($dark-color-danger, $alpha: -0.75),
     'label': $dark-color-white,
     'legend': $dark-color-white,
-    'placeholder': hsl(0deg 0% 60%),
+    'placeholder': hsl(0deg 0% 90%),
     'select-foreground': hsl(0deg 0% 100%),
     'shadow-focus': color.adjust($dark-color-primary, $alpha: -0.75),
     'text': $dark-color-gray,
@@ -91,8 +91,7 @@ $colors: (
     'icon-foreground-hover': hsl(186deg 100% 5%),
   ),
   'main': (
-    'background': hsl(245deg 38% 15%),
-    'shadow': hsl(0deg 0% 0% / 20%),
+    'background': $dark-color-black,
   ),
   'prism': (
     'color': hsl(217deg 34% 88%),

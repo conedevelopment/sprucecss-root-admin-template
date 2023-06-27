@@ -13,12 +13,12 @@
   padding: 0.35em 0.55em;
 
   &--up {
-    background: color.adjust(color('success', 'alert', $only-color: true), $lightness: 60%);
+    background: color.adjust(color('success', 'alert', $only-color: true), $lightness: 75%);
     color: color('success', 'alert');
   }
 
   &--down {
-    background: color.adjust(color('danger', 'alert', $only-color: true), $lightness: 46%);
+    background: color.adjust(color('danger', 'alert', $only-color: true), $lightness: 55%);
     color: color('danger', 'alert');
   }
 
