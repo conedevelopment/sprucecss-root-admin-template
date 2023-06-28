@@ -1,0 +1,26 @@
+@use 'sass:color';
+@use 'sprucecss/scss/spruce' as *;
+
+.status {
+  align-items: center;
+  display: inline-flex;
+  gap: spacer('xs');
+  line-height: 1;
+  position: relative;
+
+  &--out-of-stock::before {
+    background-color: color('danger', 'alert');
+  }
+
+  &--in-stock::before {
+    background-color: color('success', 'alert');
+  }
+
+  &::before {
+    --dimension: 0.55em;
+    content: '';
+    block-size: var(--dimension);
+    border-radius: 50%;
+    inline-size: var(--dimension);
+  }
+}

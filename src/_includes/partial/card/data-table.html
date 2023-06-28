@@ -51,39 +51,44 @@
                     </thead>
                     <tbody>
                         {% for data in dataTable.data %}
-                        <tr>
-                            <td>
-                                <label class="form-check" aria-label="Select {{ data.name }}">
-                                    <input class="form-check__control" type="checkbox" value="1" name="{{ data.id }}" />
-                                </label>
-                            </td>
-                            {% for heading in dataTable.headings %}
-                                {% if heading == 'Actions' %}
+                            <tr>
                                 <td>
-                                    <div class="data-table__actions">
-                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                            {% svgIcon './src/img/icon/eye.svg', 'btn__icon' %}
-                                        </a>
-                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
-                                            {% svgIcon './src/img/icon/edit.svg', 'btn__icon' %}
-                                        </a>
-                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
-                                            {% svgIcon './src/img/icon/trash.svg', 'btn__icon' %}
-                                        </a>
-                                    </div>
+                                    <label class="form-check" aria-label="Select {{ data.name }}">
+                                        <input class="form-check__control" type="checkbox" value="1" name="{{ data.id }}" />
+                                    </label>
                                 </td>
-                                {% elseif heading == 'Image' %}
+                                {% for heading in dataTable.headings %}
+                                    {% if heading == 'Actions' %}
                                     <td>
-                                        <img class="data-table__image" src="{{ data.image }}?random={{ data.id }}" alt="{{ data.name }}">
+                                        <div class="data-table__actions">
+                                            <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
+                                                {% svgIcon './src/img/icon/eye.svg', 'btn__icon' %}
+                                            </a>
+                                            <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                {% svgIcon './src/img/icon/edit.svg', 'btn__icon' %}
+                                            </a>
+                                            <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                {% svgIcon './src/img/icon/trash.svg', 'btn__icon' %}
+                                            </a>
+                                        </div>
                                     </td>
-                                {% else %}
-                                    <td>
-                                        {% if (heading == 'Price') or (heading == 'Order Total') %}$ {% endif %}
-                                        {{ data[heading.toLowerCase().split(' ').join('_')] }}
-                                    </td>
-                                {% endif %}
-                            {% endfor %}
-                        </tr>
+                                    {% elseif heading == 'Image' %}
+                                        <td>
+                                            <img class="data-table__image" src="{{ data.image }}?random={{ data.id }}" alt="{{ data.name }}">
+                                        </td>
+                                    {% elseif heading == 'Status' %}
+                                        <td>
+                                            {% set value = heading.toLowerCase().split(' ').join('_') %}
+                                            <span class="status status--{{ data[value].toLowerCase().split(' ').join('-') }}">{{ data[value] }}</span>
+                                        </td>
+                                    {% else %}
+                                        <td>
+                                            {% if (heading == 'Price') or (heading == 'Order Total') %}$ {% endif %}
+                                            {{ data[heading.toLowerCase().split(' ').join('_')] }}
+                                        </td>
+                                    {% endif %}
+                                {% endfor %}
+                            </tr>
                         {% endfor %}
                     </tbody>
                 </table>

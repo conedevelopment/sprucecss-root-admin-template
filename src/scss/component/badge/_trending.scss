@@ -13,13 +13,13 @@
   padding: 0.35em 0.55em;
 
   &--up {
-    background: color.adjust(color('success', 'alert', $only-color: true), $lightness: 75%);
-    color: color('success', 'alert');
+    background: color.adjust(color('success', 'alert', $only-color: true), $lightness: 60%);
+    color: color.adjust(color('success', 'alert', $only-color: true), $lightness: -7.5%);
   }
 
   &--down {
-    background: color.adjust(color('danger', 'alert', $only-color: true), $lightness: 55%);
-    color: color('danger', 'alert');
+    background: color.adjust(color('danger', 'alert', $only-color: true), $lightness: 45%);
+    color: color.adjust(color('danger', 'alert', $only-color: true), $lightness: -5%);
   }
 
   &__icon {

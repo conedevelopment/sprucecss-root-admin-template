@@ -14,10 +14,6 @@ $color-primary-lightest: hsl(210deg 60% 98%);
     'font-size': 1rem,
   ),
   $colors: (
-    'alert': (
-      'danger': hsl(0 71% 41%),
-      'success': hsl(150deg 96% 20%),
-    ),
     'base': (
       'primary-lightest': $color-primary-lightest,
     ),
