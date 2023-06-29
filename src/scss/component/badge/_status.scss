@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use 'sass:map';
 @use 'sprucecss/scss/spruce' as *;
 
 .status {
@@ -8,12 +9,10 @@
   line-height: 1;
   position: relative;
 
-  &--out-of-stock::before {
-    background-color: color('danger', 'alert');
-  }
-
-  &--in-stock::before {
-    background-color: color('success', 'alert');
+  @each $name, $value in map.get($colors, 'alert') {
+    &--#{$name}::before {
+      background-color: color($name, 'alert');
+    }
   }
 
   &::before {

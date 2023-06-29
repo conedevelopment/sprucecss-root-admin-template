@@ -79,7 +79,13 @@
                                     {% elseif heading == 'Status' %}
                                         <td>
                                             {% set value = heading.toLowerCase().split(' ').join('_') %}
-                                            <span class="status status--{{ data[value].toLowerCase().split(' ').join('-') }}">{{ data[value] }}</span>
+                                            {% set status = data[value].toLowerCase().split(' ').join('-') %}
+
+                                            {% if status == 'out-of-stock' %}
+                                                <span class="status status--danger">{{ data[value] }}</span>
+                                            {% elseif status == 'in-stock' %}
+                                                <span class="status status--success">{{ data[value] }}</span>
+                                            {% endif %}
                                         </td>
                                     {% else %}
                                         <td>
