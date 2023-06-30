@@ -14,61 +14,19 @@
             <div class="container">
                 <div class="app-body">
                     <div class="l-row l-row--column:sm:2 l-row--column:lg:3">
-                        <div class="app-card app-card--setting">
-                            <div class="app-card__body">
-                                <div class="app-card__content">
-                                    <h2 class="app-card__title">Account</h2>
-                                    <p class="app-card__description">Change your account settings.</p>
-                                </div>
-                                <div class="app-card__actions">
-                                    <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-card app-card--setting">
-                            <div class="app-card__body">
-                                <div class="app-card__content">
-                                    <h2 class="app-card__title">Billing</h2>
-                                    <p class="app-card__description">Manage your billing information.</p>
-                                </div>
-                                <div class="app-card__actions">
-                                    <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
+                        {% for setting in settings %}
+                            <div class="app-card app-card--setting">
+                                <div class="app-card__body">
+                                    <div class="app-card__content">
+                                        <h2 class="app-card__title">{{ setting.title }}</h2>
+                                        <p class="app-card__description">{{ setting.description }}</p>
+                                    </div>
+                                    <div class="app-card__actions">
+                                        <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="app-card app-card--setting">
-                            <div class="app-card__body">
-                                <div class="app-card__content">
-                                    <h2 class="app-card__title">Notifications</h2>
-                                    <p class="app-card__description">Manage your notification settings.</p>
-                                </div>
-                                <div class="app-card__actions">
-                                    <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-card app-card--setting">
-                            <div class="app-card__body">
-                                <div class="app-card__content">
-                                    <h2 class="app-card__title">Security</h2>
-                                    <p class="app-card__description">Manage your security settings.</p>
-                                </div>
-                                <div class="app-card__actions">
-                                    <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-card app-card--setting">
-                            <div class="app-card__body">
-                                <div class="app-card__content">
-                                    <h2 class="app-card__title">Integrations</h2>
-                                    <p class="app-card__description">Manage your integrations.</p>
-                                </div>
-                                <div class="app-card__actions">
-                                    <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

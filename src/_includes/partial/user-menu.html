@@ -8,8 +8,8 @@
         {% svgIcon './src/img/icon/chevron-down.svg', 'open-search__icon' %}
     </button>
     <ul class="context-menu" data-state="closed" data-context-id="user">
-        <li><a href="/profile/">Profile</a></li>
-        <li><a href="/settings/">Settings</a></li>
-        <li><a href="/sign-in/">Log Out</a></li>
+        {% for item in user %}
+            <li><a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.title }}</a></li>
+        {% endfor %}
     </ul>
 </div>

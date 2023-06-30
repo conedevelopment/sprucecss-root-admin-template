@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Account",
+    "description": "Change your account settings."
+  },
+  {
+    "title": "Privacy",
+    "description": "Change your privacy settings."
+  },
+  {
+    "title": "Security",
+    "description": "Change your security settings."
+  },
+  {
+    "title": "Notifications",
+    "description": "Change your notification settings."
+  },
+  {
+    "title": "Billing",
+    "description": "Change your billing settings."
+  },
+  {
+    "title": "Integrations",
+    "description": "Change your integration settings."
+  }
+]
