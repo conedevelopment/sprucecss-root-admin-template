@@ -27,6 +27,7 @@ Right now, you can access the following views:
 - [Order List](https://root-admin.sprucecss.com/orders/)
 - [Customer List](https://root-admin.sprucecss.com/customers/)
 - [Category List](https://root-admin.sprucecss.com/categories/)
+- [Settings](https://root-admin.sprucecss.com/settings/)
 - [Sign In](https://root-admin.sprucecss.com/sign-in/)
 - [Sign Up](https://root-admin.sprucecss.com/sign-up/)
 - [Password Reset](https://root-admin.sprucecss.com/password-reset/)
