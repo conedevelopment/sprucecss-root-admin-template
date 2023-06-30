@@ -1,7 +1,7 @@
 @use 'sprucecss/scss/spruce' as *;
 
 .app-footer {
-  padding-block: spacer-clamp('s', 'm') spacer-clamp('m', 'l');
+  padding-block: spacer-clamp('m', 'l');
   text-align: center;
 
   &__created-with {

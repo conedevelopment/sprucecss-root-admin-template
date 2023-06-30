@@ -17,6 +17,17 @@
     }
   }
 
+  &--setting {
+    #{$this}__body {
+      @include layout-stack(0.75rem);
+      padding: spacer('m');
+    }
+
+    #{$this}__content {
+      @include layout-stack('xs');
+    }
+  }
+
   &__header {
     align-items: center;
     border-block-end: 1px solid color('border');
