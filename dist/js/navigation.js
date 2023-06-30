@@ -21,6 +21,8 @@
   }
 
   function handleKeyDown(e) {
+    if (buttonOpen.getAttribute('aria-expanded') === 'false') return;
+
     if (e.code === 'Escape') {
       closeNavigation();
     }

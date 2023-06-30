@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <script src="/js/theme-detection.js?8b566e9c-64cf-4a14-90e6-7fddfdeeba37"></script>
+    <script src="/js/theme-detection.js?9a05b30d-c714-4d6d-80a2-5949855f530c"></script>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -13,20 +13,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="alternate" type="application/rss+xml" href="https://eleventy-admin.sprucecss.com/feed.xml" />
-    <title>Categories - Spruce CSS Eleventy Admin Template</title>
-    <link rel="canonical" href="https://eleventy-admin.sprucecss.com/categories/" />
+    <title>Orders - Spruce CSS Eleventy Admin Template</title>
+    <link rel="canonical" href="https://eleventy-admin.sprucecss.com/settings/" />
     <meta name="generator" content="Eleventy v2.0.1" />
     <meta property="og:site_name" content="Spruce CSS Eleventy Admin Template" />
-    <meta property="og:title" content="Categories - Spruce CSS Eleventy Admin Template" />
+    <meta property="og:title" content="Orders - Spruce CSS Eleventy Admin Template" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://eleventy-admin.sprucecss.com/categories/" />
+    <meta property="og:url" content="https://eleventy-admin.sprucecss.com/settings/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:image" content="https://eleventy-admin.sprucecss.com/img/social-share.png" />
     <meta name="twitter:image" content="https://eleventy-admin.sprucecss.com/img/social-share.png" />
     <meta property="og:image:alt" content="Page image for Spruce CSS Eleventy Admin Template" />
     <meta name="twitter:image:alt" content="Page image for Spruce CSS Eleventy Admin Template" />
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/main.css?8b566e9c-64cf-4a14-90e6-7fddfdeeba37">
+    <link rel="stylesheet" href="/css/main.css?9a05b30d-c714-4d6d-80a2-5949855f530c">
 </head>
 
 <body>
@@ -175,7 +175,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/categories/" aria-current="page" data-state="active">
+                                    <a href="/categories/">
                                         <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='icon'>
                                             <polyline points='21 8 21 21 3 21 3 8'></polyline>
                                             <rect x='1' y='3' width='22' height='5'></rect>
@@ -320,7 +320,7 @@
                                 <a href="/">Dashboard</a>
                             </li>
                             <li>
-                                <span aria-current="page">Categories</span>
+                                <span aria-current="page">Orders</span>
                             </li>
                         </ol>
                     </div>
@@ -355,7 +355,7 @@
                 <div class="container">
                     <div class="app-heading__inner">
                         <div class="app-heading__caption">
-                            <h1 class="app-heading__title">Categories</h1>
+                            <h1 class="app-heading__title">Orders</h1>
                         </div>
                         <div class="app-heading__actions">
                             <a href="" class="btn btn--primary btn--icon">
@@ -363,7 +363,7 @@
                                     <line x1='12' y1='5' x2='12' y2='19'></line>
                                     <line x1='5' y1='12' x2='19' y2='12'></line>
                                 </svg>
-                                Add new category
+                                Add new order
                             </a>
                         </div>
                     </div>
@@ -372,6 +372,19 @@
             <div class="container">
                 <div class="app-body">
                     <div class="app-card">
+                        <div class="app-card__header">
+                            <div class="app-card__actions">
+                                <form class="search-form ">
+                                    <input class="form-control  search-form__control" type="text" placeholder="Search..." title="Search" />
+                                    <button class="search-form__submit">
+                                        <span class="sr-only">Search</span>
+                                        <svg aria-hidden="true" class="search-form__icon" focusable="false" height="24" role="img" style="fill: currentColor" viewBox="0 0 24 24" width="24" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M19.501,9.75c-0,2.152 -0.699,4.14 -1.875,5.752l5.935,5.94c0.585,0.586 0.585,1.537 -0,2.123c-0.586,0.586 -1.538,0.586 -2.124,0l-5.935,-5.939c-1.612,1.181 -3.6,1.875 -5.752,1.875c-5.386,-0 -9.75,-4.364 -9.75,-9.751c0,-5.386 4.364,-9.75 9.75,-9.75c5.387,-0 9.751,4.364 9.751,9.75Zm-9.751,6.751c3.704,-0 6.751,-3.047 6.751,-6.751c-0,-3.703 -3.047,-6.75 -6.751,-6.75c-3.703,0 -6.75,3.047 -6.75,6.75c0,3.704 3.047,6.751 6.75,6.751Z"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
                         <div class="app-card__body">
                             <div class="data-table">
                                 <div class="table-responsive">
@@ -388,7 +401,10 @@
                                                     ID
                                                 </th>
                                                 <th scope="col">
-                                                    Name
+                                                    Order Total
+                                                </th>
+                                                <th scope="col">
+                                                    Customer Name
                                                 </th>
                                                 <th scope="col">
                                                     <span class="sr-only">Actions</span>
@@ -398,7 +414,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <label class="form-check" aria-label="Select Electronics">
+                                                    <label class="form-check" aria-label="Select ">
                                                         <input class="form-check__control" type="checkbox" value="1" name="1" />
                                                     </label>
                                                 </td>
@@ -406,7 +422,11 @@
                                                     1
                                                 </td>
                                                 <td>
-                                                    Electronics
+                                                    $
+                                                    119.97
+                                                </td>
+                                                <td>
+                                                    John Doe
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
@@ -435,7 +455,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <label class="form-check" aria-label="Select Fashion">
+                                                    <label class="form-check" aria-label="Select ">
                                                         <input class="form-check__control" type="checkbox" value="1" name="2" />
                                                     </label>
                                                 </td>
@@ -443,7 +463,11 @@
                                                     2
                                                 </td>
                                                 <td>
-                                                    Fashion
+                                                    $
+                                                    97.95
+                                                </td>
+                                                <td>
+                                                    Jane Smith
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
@@ -472,7 +496,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <label class="form-check" aria-label="Select Home &amp; Kitchen">
+                                                    <label class="form-check" aria-label="Select ">
                                                         <input class="form-check__control" type="checkbox" value="1" name="3" />
                                                     </label>
                                                 </td>
@@ -480,7 +504,11 @@
                                                     3
                                                 </td>
                                                 <td>
-                                                    Home &amp; Kitchen
+                                                    $
+                                                    254.94
+                                                </td>
+                                                <td>
+                                                    David Johnson
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
@@ -509,7 +537,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <label class="form-check" aria-label="Select Books &amp; Stationery">
+                                                    <label class="form-check" aria-label="Select ">
                                                         <input class="form-check__control" type="checkbox" value="1" name="4" />
                                                     </label>
                                                 </td>
@@ -517,7 +545,11 @@
                                                     4
                                                 </td>
                                                 <td>
-                                                    Books &amp; Stationery
+                                                    $
+                                                    149.95
+                                                </td>
+                                                <td>
+                                                    Emily Davis
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
@@ -546,7 +578,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <label class="form-check" aria-label="Select Sports &amp; Outdoors">
+                                                    <label class="form-check" aria-label="Select ">
                                                         <input class="form-check__control" type="checkbox" value="1" name="5" />
                                                     </label>
                                                 </td>
@@ -554,7 +586,11 @@
                                                     5
                                                 </td>
                                                 <td>
-                                                    Sports &amp; Outdoors
+                                                    $
+                                                    174.97
+                                                </td>
+                                                <td>
+                                                    Michael Wilson
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
@@ -583,7 +619,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <label class="form-check" aria-label="Select Beauty &amp; Personal Care">
+                                                    <label class="form-check" aria-label="Select ">
                                                         <input class="form-check__control" type="checkbox" value="1" name="6" />
                                                     </label>
                                                 </td>
@@ -591,7 +627,11 @@
                                                     6
                                                 </td>
                                                 <td>
-                                                    Beauty &amp; Personal Care
+                                                    $
+                                                    189.98
+                                                </td>
+                                                <td>
+                                                    Sarah Thompson
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
@@ -620,7 +660,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <label class="form-check" aria-label="Select Toys &amp; Games">
+                                                    <label class="form-check" aria-label="Select ">
                                                         <input class="form-check__control" type="checkbox" value="1" name="7" />
                                                     </label>
                                                 </td>
@@ -628,7 +668,11 @@
                                                     7
                                                 </td>
                                                 <td>
-                                                    Toys &amp; Games
+                                                    $
+                                                    109.97
+                                                </td>
+                                                <td>
+                                                    Robert Martinez
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
@@ -657,7 +701,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <label class="form-check" aria-label="Select Health &amp; Wellness">
+                                                    <label class="form-check" aria-label="Select ">
                                                         <input class="form-check__control" type="checkbox" value="1" name="8" />
                                                     </label>
                                                 </td>
@@ -665,7 +709,11 @@
                                                     8
                                                 </td>
                                                 <td>
-                                                    Health &amp; Wellness
+                                                    $
+                                                    79.98
+                                                </td>
+                                                <td>
+                                                    Jennifer Anderson
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
@@ -694,7 +742,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <label class="form-check" aria-label="Select Automotive">
+                                                    <label class="form-check" aria-label="Select ">
                                                         <input class="form-check__control" type="checkbox" value="1" name="9" />
                                                     </label>
                                                 </td>
@@ -702,7 +750,11 @@
                                                     9
                                                 </td>
                                                 <td>
-                                                    Automotive
+                                                    $
+                                                    169.97
+                                                </td>
+                                                <td>
+                                                    Christopher Brown
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
@@ -731,7 +783,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <label class="form-check" aria-label="Select Electronics">
+                                                    <label class="form-check" aria-label="Select ">
                                                         <input class="form-check__control" type="checkbox" value="1" name="10" />
                                                     </label>
                                                 </td>
@@ -739,7 +791,421 @@
                                                     10
                                                 </td>
                                                 <td>
-                                                    Electronics
+                                                    $
+                                                    109.97
+                                                </td>
+                                                <td>
+                                                    Laura Davis
+                                                </td>
+                                                <td>
+                                                    <div class="data-table__actions">
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
+                                                                <circle cx='12' cy='12' r='3'></circle>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
+                                                                <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <polyline points='3 6 5 6 21 6'></polyline>
+                                                                <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
+                                                                <line x1='10' y1='11' x2='10' y2='17'></line>
+                                                                <line x1='14' y1='11' x2='14' y2='17'></line>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="form-check" aria-label="Select ">
+                                                        <input class="form-check__control" type="checkbox" value="1" name="11" />
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    11
+                                                </td>
+                                                <td>
+                                                    $
+                                                    144.97
+                                                </td>
+                                                <td>
+                                                    Matthew Taylor
+                                                </td>
+                                                <td>
+                                                    <div class="data-table__actions">
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
+                                                                <circle cx='12' cy='12' r='3'></circle>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
+                                                                <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <polyline points='3 6 5 6 21 6'></polyline>
+                                                                <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
+                                                                <line x1='10' y1='11' x2='10' y2='17'></line>
+                                                                <line x1='14' y1='11' x2='14' y2='17'></line>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="form-check" aria-label="Select ">
+                                                        <input class="form-check__control" type="checkbox" value="1" name="12" />
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    12
+                                                </td>
+                                                <td>
+                                                    $
+                                                    189.97
+                                                </td>
+                                                <td>
+                                                    Jessica Wilson
+                                                </td>
+                                                <td>
+                                                    <div class="data-table__actions">
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
+                                                                <circle cx='12' cy='12' r='3'></circle>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
+                                                                <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <polyline points='3 6 5 6 21 6'></polyline>
+                                                                <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
+                                                                <line x1='10' y1='11' x2='10' y2='17'></line>
+                                                                <line x1='14' y1='11' x2='14' y2='17'></line>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="form-check" aria-label="Select ">
+                                                        <input class="form-check__control" type="checkbox" value="1" name="13" />
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    13
+                                                </td>
+                                                <td>
+                                                    $
+                                                    199.97
+                                                </td>
+                                                <td>
+                                                    Daniel Johnson
+                                                </td>
+                                                <td>
+                                                    <div class="data-table__actions">
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
+                                                                <circle cx='12' cy='12' r='3'></circle>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
+                                                                <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <polyline points='3 6 5 6 21 6'></polyline>
+                                                                <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
+                                                                <line x1='10' y1='11' x2='10' y2='17'></line>
+                                                                <line x1='14' y1='11' x2='14' y2='17'></line>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="form-check" aria-label="Select ">
+                                                        <input class="form-check__control" type="checkbox" value="1" name="14" />
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    14
+                                                </td>
+                                                <td>
+                                                    $
+                                                    84.97
+                                                </td>
+                                                <td>
+                                                    Sophia Anderson
+                                                </td>
+                                                <td>
+                                                    <div class="data-table__actions">
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
+                                                                <circle cx='12' cy='12' r='3'></circle>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
+                                                                <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <polyline points='3 6 5 6 21 6'></polyline>
+                                                                <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
+                                                                <line x1='10' y1='11' x2='10' y2='17'></line>
+                                                                <line x1='14' y1='11' x2='14' y2='17'></line>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="form-check" aria-label="Select ">
+                                                        <input class="form-check__control" type="checkbox" value="1" name="15" />
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    15
+                                                </td>
+                                                <td>
+                                                    $
+                                                    144.97
+                                                </td>
+                                                <td>
+                                                    Alexander Smith
+                                                </td>
+                                                <td>
+                                                    <div class="data-table__actions">
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
+                                                                <circle cx='12' cy='12' r='3'></circle>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
+                                                                <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <polyline points='3 6 5 6 21 6'></polyline>
+                                                                <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
+                                                                <line x1='10' y1='11' x2='10' y2='17'></line>
+                                                                <line x1='14' y1='11' x2='14' y2='17'></line>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="form-check" aria-label="Select ">
+                                                        <input class="form-check__control" type="checkbox" value="1" name="16" />
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    16
+                                                </td>
+                                                <td>
+                                                    $
+                                                    89.99
+                                                </td>
+                                                <td>
+                                                    Olivia Thompson
+                                                </td>
+                                                <td>
+                                                    <div class="data-table__actions">
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
+                                                                <circle cx='12' cy='12' r='3'></circle>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
+                                                                <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <polyline points='3 6 5 6 21 6'></polyline>
+                                                                <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
+                                                                <line x1='10' y1='11' x2='10' y2='17'></line>
+                                                                <line x1='14' y1='11' x2='14' y2='17'></line>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="form-check" aria-label="Select ">
+                                                        <input class="form-check__control" type="checkbox" value="1" name="17" />
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    17
+                                                </td>
+                                                <td>
+                                                    $
+                                                    119.98
+                                                </td>
+                                                <td>
+                                                    William Martinez
+                                                </td>
+                                                <td>
+                                                    <div class="data-table__actions">
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
+                                                                <circle cx='12' cy='12' r='3'></circle>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
+                                                                <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <polyline points='3 6 5 6 21 6'></polyline>
+                                                                <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
+                                                                <line x1='10' y1='11' x2='10' y2='17'></line>
+                                                                <line x1='14' y1='11' x2='14' y2='17'></line>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="form-check" aria-label="Select ">
+                                                        <input class="form-check__control" type="checkbox" value="1" name="18" />
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    18
+                                                </td>
+                                                <td>
+                                                    $
+                                                    109.99
+                                                </td>
+                                                <td>
+                                                    Ava Davis
+                                                </td>
+                                                <td>
+                                                    <div class="data-table__actions">
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
+                                                                <circle cx='12' cy='12' r='3'></circle>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
+                                                                <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <polyline points='3 6 5 6 21 6'></polyline>
+                                                                <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
+                                                                <line x1='10' y1='11' x2='10' y2='17'></line>
+                                                                <line x1='14' y1='11' x2='14' y2='17'></line>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="form-check" aria-label="Select ">
+                                                        <input class="form-check__control" type="checkbox" value="1" name="19" />
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    19
+                                                </td>
+                                                <td>
+                                                    $
+                                                    99.99
+                                                </td>
+                                                <td>
+                                                    James Wilson
+                                                </td>
+                                                <td>
+                                                    <div class="data-table__actions">
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
+                                                                <circle cx='12' cy='12' r='3'></circle>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
+                                                                <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <polyline points='3 6 5 6 21 6'></polyline>
+                                                                <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
+                                                                <line x1='10' y1='11' x2='10' y2='17'></line>
+                                                                <line x1='14' y1='11' x2='14' y2='17'></line>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="form-check" aria-label="Select ">
+                                                        <input class="form-check__control" type="checkbox" value="1" name="20" />
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    20
+                                                </td>
+                                                <td>
+                                                    $
+                                                    134.97
+                                                </td>
+                                                <td>
+                                                    Mia Thompson
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
@@ -826,14 +1292,14 @@
             </footer>
         </main>
     </div>
-    <script src="/js/theme-change-assets.js?8b566e9c-64cf-4a14-90e6-7fddfdeeba37" defer></script>
-    <script src="/js/navigation.js?8b566e9c-64cf-4a14-90e6-7fddfdeeba37" defer></script>
-    <script src="/js/navigation-sidebar.js?8b566e9c-64cf-4a14-90e6-7fddfdeeba37" defer></script>
-    <script src="/js/navigation-context.js?8b566e9c-64cf-4a14-90e6-7fddfdeeba37" defer></script>
-    <script src="/js/accordion-card.js?8b566e9c-64cf-4a14-90e6-7fddfdeeba37" defer></script>
-    <script src="/js/theme-switcher.js?8b566e9c-64cf-4a14-90e6-7fddfdeeba37" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts?8b566e9c-64cf-4a14-90e6-7fddfdeeba37" defer></script>
-    <script src="/js/charts.js?8b566e9c-64cf-4a14-90e6-7fddfdeeba37" type="module" defer></script>
+    <script src="/js/theme-change-assets.js?9a05b30d-c714-4d6d-80a2-5949855f530c" defer></script>
+    <script src="/js/navigation.js?9a05b30d-c714-4d6d-80a2-5949855f530c" defer></script>
+    <script src="/js/navigation-sidebar.js?9a05b30d-c714-4d6d-80a2-5949855f530c" defer></script>
+    <script src="/js/navigation-context.js?9a05b30d-c714-4d6d-80a2-5949855f530c" defer></script>
+    <script src="/js/accordion-card.js?9a05b30d-c714-4d6d-80a2-5949855f530c" defer></script>
+    <script src="/js/theme-switcher.js?9a05b30d-c714-4d6d-80a2-5949855f530c" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts?9a05b30d-c714-4d6d-80a2-5949855f530c" defer></script>
+    <script src="/js/charts.js?9a05b30d-c714-4d6d-80a2-5949855f530c" type="module" defer></script>
 </body>
 
 </html>

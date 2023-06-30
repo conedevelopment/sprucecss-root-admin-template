@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <script src="/js/theme-detection.js?7e29cd8f-289a-45aa-aa90-97e116cc5794"></script>
+    <script src="/js/theme-detection.js?063f1374-470c-44a9-9413-e71e9e58c755"></script>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -26,7 +26,7 @@
     <meta property="og:image:alt" content="Page image for Spruce CSS Eleventy Admin Template" />
     <meta name="twitter:image:alt" content="Page image for Spruce CSS Eleventy Admin Template" />
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/main.css?7e29cd8f-289a-45aa-aa90-97e116cc5794">
+    <link rel="stylesheet" href="/css/main.css?063f1374-470c-44a9-9413-e71e9e58c755">
 </head>
 
 <body>
@@ -331,11 +331,22 @@
                                 <span class="user-menu__role">Administrator</span>
                                 <span class="user-menu__display-name">info@adamlaki.com</span>
                             </div>
-                            <button class="user-menu__toggle">
+                            <button class="user-menu__toggle" aria-expanded="false" data-action="context" data-context-target="user">
                                 <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='open-search__icon'>
                                     <polyline points='6 9 12 15 18 9'></polyline>
                                 </svg>
                             </button>
+                            <ul class="context-menu" data-state="closed" data-context-id="user">
+                                <li>
+                                    <a href="/profile/">Profile</a>
+                                </li>
+                                <li>
+                                    <a href="/settings/">Settings</a>
+                                </li>
+                                <li>
+                                    <a href="/sign-in/">Log Out</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -1281,13 +1292,14 @@
             </footer>
         </main>
     </div>
-    <script src="/js/theme-change-assets.js?7e29cd8f-289a-45aa-aa90-97e116cc5794" defer></script>
-    <script src="/js/navigation.js?7e29cd8f-289a-45aa-aa90-97e116cc5794" defer></script>
-    <script src="/js/navigation-sidebar.js?7e29cd8f-289a-45aa-aa90-97e116cc5794" defer></script>
-    <script src="/js/accordion-card.js?7e29cd8f-289a-45aa-aa90-97e116cc5794" defer></script>
-    <script src="/js/theme-switcher.js?7e29cd8f-289a-45aa-aa90-97e116cc5794" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts?7e29cd8f-289a-45aa-aa90-97e116cc5794" defer></script>
-    <script src="/js/charts.js?7e29cd8f-289a-45aa-aa90-97e116cc5794" type="module" defer></script>
+    <script src="/js/theme-change-assets.js?063f1374-470c-44a9-9413-e71e9e58c755" defer></script>
+    <script src="/js/navigation.js?063f1374-470c-44a9-9413-e71e9e58c755" defer></script>
+    <script src="/js/navigation-sidebar.js?063f1374-470c-44a9-9413-e71e9e58c755" defer></script>
+    <script src="/js/navigation-context.js?063f1374-470c-44a9-9413-e71e9e58c755" defer></script>
+    <script src="/js/accordion-card.js?063f1374-470c-44a9-9413-e71e9e58c755" defer></script>
+    <script src="/js/theme-switcher.js?063f1374-470c-44a9-9413-e71e9e58c755" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts?063f1374-470c-44a9-9413-e71e9e58c755" defer></script>
+    <script src="/js/charts.js?063f1374-470c-44a9-9413-e71e9e58c755" type="module" defer></script>
 </body>
 
 </html>

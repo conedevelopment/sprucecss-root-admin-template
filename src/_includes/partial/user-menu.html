@@ -4,7 +4,12 @@
         <span class="user-menu__role">Administrator</span>
         <span class="user-menu__display-name">info@adamlaki.com</span>
     </div>
-    <button class="user-menu__toggle">
+    <button class="user-menu__toggle" aria-expanded="false" data-action="context" data-context-target="user">
         {% svgIcon './src/img/icon/chevron-down.svg', 'open-search__icon' %}
     </button>
+    <ul class="context-menu" data-state="closed" data-context-id="user">
+        <li><a href="/profile/">Profile</a></li>
+        <li><a href="/settings/">Settings</a></li>
+        <li><a href="/sign-in/">Log Out</a></li>
+    </ul>
 </div>

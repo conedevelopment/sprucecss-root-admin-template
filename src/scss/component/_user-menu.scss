@@ -1,9 +1,11 @@
 @use 'sprucecss/scss/spruce' as *;
 
 .user-menu {
+  @include a11y-card-link('.user-menu__toggle', true);
   align-items: center;
   display: flex;
-  gap: spacer('s');
+  gap: spacer-clamp('xs', 's');
+  position: relative;
 
   &__avatar {
     --dimenion: 2.1rem;
@@ -34,8 +36,11 @@
   }
 
   &__toggle {
-    @include clear-btn;
+    background: none;
+    border: 0;
+    cursor: pointer;
     display: flex;
+    padding: 0;
 
     svg {
       --dimension: 1em;

@@ -17,9 +17,9 @@
 
   &::before {
     --dimension: 0.55em;
-    content: '';
     block-size: var(--dimension);
     border-radius: 50%;
+    content: '';
     inline-size: var(--dimension);
   }
 }
