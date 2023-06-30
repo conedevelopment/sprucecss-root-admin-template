@@ -35,6 +35,12 @@
     &--secondary {
       gap: spacer('s');
     }
+
+    button {
+      > * {
+        pointer-events: none;
+      }
+    }
   }
 
   &__logo {

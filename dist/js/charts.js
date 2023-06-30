@@ -30,16 +30,32 @@ const optionsAreaOptions01 = getAreaData([{
   ['2023-05-19T00:00:00.000Z', '2023-05-19T01:30:00.000Z', '2023-05-19T02:30:00.000Z', '2023-05-19T03:30:00.000Z', '2023-05-19T04:30:00.000Z', '2023-05-19T05:30:00.000Z', '2023-05-19T06:30:00.000Z']
 );
 
-const chartWidget01 = new ApexCharts(document.querySelector('#chart01'), optionsWidgetOptions01);
-const chartWidget02 = new ApexCharts(document.querySelector('#chart02'), optionsWidgetOptions02);
-const chartWidget03 = new ApexCharts(document.querySelector('#chart03'), optionsWidgetOptions03);
-const chartDonut01 = new ApexCharts(document.querySelector('#donut01'), optionsDonutOptions01);
-const chartBar01 = new ApexCharts(document.querySelector('#bar01'), optionsBarOptions01);
-const chartArea01 = new ApexCharts(document.querySelector('#area01'), optionsAreaOptions01);
+if (document.querySelector('#chart01')) {
+  const chartWidget01 = new ApexCharts(document.querySelector('#chart01'), optionsWidgetOptions01);
+  chartWidget01.render();
+}
 
-chartWidget01.render();
-chartWidget02.render();
-chartWidget03.render();
-chartDonut01.render();
-chartBar01.render();
-chartArea01.render();
+if (document.querySelector('#chart02')) {
+  const chartWidget02 = new ApexCharts(document.querySelector('#chart02'), optionsWidgetOptions02);
+  chartWidget02.render();
+}
+
+if (document.querySelector('#chart03')) {
+  const chartWidget03 = new ApexCharts(document.querySelector('#chart03'), optionsWidgetOptions03);
+  chartWidget03.render();
+}
+
+if (document.querySelector('#donut01')) {
+  const chartDonut01 = new ApexCharts(document.querySelector('#donut01'), optionsDonutOptions01);
+  chartDonut01.render();
+}
+
+if (document.querySelector('#bar01')) {
+  const chartBar01 = new ApexCharts(document.querySelector('#bar01'), optionsBarOptions01);
+  chartBar01.render();
+}
+
+if (document.querySelector('#area01')) {
+  const chartArea01 = new ApexCharts(document.querySelector('#area01'), optionsAreaOptions01);
+  chartArea01.render();
+}

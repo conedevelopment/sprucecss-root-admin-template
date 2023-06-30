@@ -2421,8 +2421,8 @@ pre[class*=language-] {
   flex-wrap: wrap;
   gap: 0.5rem 1.5rem;
   justify-content: space-between;
-  min-block-size: 3.8rem;
-  padding: 1rem;
+  min-block-size: 3.4rem;
+  padding: 0.75rem 1rem;
 }
 .app-card__actions {
   display: flex;
@@ -2917,6 +2917,9 @@ pre[class*=language-] {
 }
 .app-header__actions--secondary {
   gap: 1rem;
+}
+.app-header__actions button > * {
+  pointer-events: none;
 }
 .app-header__logo {
   block-size: 1.25rem;
