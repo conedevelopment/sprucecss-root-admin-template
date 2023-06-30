@@ -18,6 +18,10 @@
         rotate: 180deg;
       }
     }
+
+    svg {
+      pointer-events: none;
+    }
   }
 
   &__navigation {
