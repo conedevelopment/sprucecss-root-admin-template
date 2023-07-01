@@ -1330,7 +1330,7 @@ html[dir=rtl] select.form-control:not([multiple]):not([size]) {
   --spruce-font-size: 1.125rem;
   --spruce-font-weight: 600;
   --spruce-line-height: calc(2px + 2ex + 2px);
-  --spruce-margin-block-start: 0.05em;
+  --spruce-margin-block-start: 0.25em;
   background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3e%3ccircle cx="12" cy="12" r="8.5" style="fill:hsl%28260, 4%, 70%%29;"/%3e%3c/svg%3e');
   appearance: none;
   background-color: var(--spruce-form-color-background);
