@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <script src="/js/theme-detection.js?8efc9ef5-edb1-409d-a4d4-5e309683a62a"></script>
+        <script src="/js/theme-detection.js?dff16438-1e75-435e-9857-c8b053f5f647"></script>
         <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -35,14 +35,14 @@
 
 
 <title>Account - Spruce CSS Eleventy Admin Template</title>
-<link rel="canonical" href="https://eleventy-admin.sprucecss.com/account/profile/" />
+<link rel="canonical" href="https://eleventy-admin.sprucecss.com/account/password/" />
 
 <meta name="generator" content="Eleventy v2.0.1" />
 
 <meta property="og:site_name" content="Spruce CSS Eleventy Admin Template" />
 <meta property="og:title" content="Account - Spruce CSS Eleventy Admin Template" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://eleventy-admin.sprucecss.com/account/profile/" />
+<meta property="og:url" content="https://eleventy-admin.sprucecss.com/account/password/" />
 
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -56,7 +56,7 @@
 
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
 
-        <link rel="stylesheet" href="/css/main.css?8efc9ef5-edb1-409d-a4d4-5e309683a62a">
+        <link rel="stylesheet" href="/css/main.css?dff16438-1e75-435e-9857-c8b053f5f647">
     </head>
     <body>
         <a class="btn btn--primary skip-link" href="#content">Skip to content</a>
@@ -427,7 +427,7 @@
         
             <li>
                 
-                    <span aria-current="page">Profile</span>
+                    <span aria-current="page">Password</span>
                 
             </li>
         
@@ -485,7 +485,7 @@
         <ul>
             
             <li>
-                <a href="/account/profile/"  aria-current="page" data-state="active">
+                <a href="/account/profile/" >
                     Profile
                 </a>
             </li>
@@ -497,7 +497,7 @@
             </li>
             
             <li>
-                <a href="/account/password/" >
+                <a href="/account/password/"  aria-current="page" data-state="active">
                     Password
                 </a>
             </li>
@@ -508,42 +508,19 @@
 
                         </div>
                         <div class="app-card__body">
-                            <h3 class="app-card__section-heading">Personal Information</h3>
+                            <h3 class="app-card__section-heading">Set up a new password</h3>
 <div class="form-group-stack form-group-stack--bordered form-group-container">
     <div class="form-group--row">
-        <label class="form-label" for="your-first-name">First Name</label>
-        <input class="form-control" id="your-first-name" name="your-first-name" type="text" value="Adam" />
+        <label class="form-label" for="your-old-password">Old Password</label>
+        <input class="form-control" id="your-old-password" name="your-old-password" type="password" />
     </div>
     <div class="form-group--row">
-        <label class="form-label" for="your-last-name">Last Name</label>
-        <input class="form-control" id="your-last-name" name="your-last-name" type="text" value="Laki" />
+        <label class="form-label" for="your-new-password">New Password</label>
+        <input class="form-control" id="your-new-password" name="your-new-password" type="password" />
     </div>
     <div class="form-group--row">
-        <label class="form-label" for="your-email">Email</label>
-        <input class="form-control" id="your-email" name="your-email" type="email" value="info@adamlaki.com" />
-    </div>
-    <div class="form-group--row">
-        <label class="form-label" for="your-phone">Phone</label>
-        <input class="form-control" id="your-phone" name="your-phone" type="text" value="+00 36 555 66 44" />
-    </div>
-    <div class="form-group--row">
-        <label class="form-label" for="your-bio">Bio</label>
-        <textarea class="form-control" id="your-bio" name="your-bio" rows="4">Hey, I’m Adam! I’m a passionate, accessibility-focused front-end developer. I develop with Gatsby, 11ty, and WordPress. I like to learn and try out new things in my field.</textarea>
-    </div>
-</div>
-<h3 class="app-card__section-heading">Address</h3>
-<div class="form-group-stack form-group-stack--bordered form-group-container">
-    <div class="form-group--row">
-        <label class="form-label" for="your-country">Country</label>
-        <input class="form-control" id="your-country" name="your-country" type="text" value="Hungary" />
-    </div>
-    <div class="form-group--row">
-        <label class="form-label" for="your-city">City/State</label>
-        <input class="form-control" id="your-city" name="your-city" type="text" value="Budapest" />
-    </div>
-    <div class="form-group--row">
-        <label class="form-label" for="your-postal-code">Postal Code</label>
-        <input class="form-control" id="your-postal-code" name="your-postal-code" type="text" value="H-1900" />
+        <label class="form-label" for="your-new-again-password">New Password Again</label>
+        <input class="form-control" id="your-new-again-password" name="your-new-again-password" type="password" />
     </div>
 </div>
 <div class="app-actions">
@@ -569,13 +546,13 @@
     </div>
 
 
-        <script src="/js/theme-change-assets.js?8efc9ef5-edb1-409d-a4d4-5e309683a62a" defer></script>
-        <script src="/js/navigation.js?8efc9ef5-edb1-409d-a4d4-5e309683a62a" defer></script>
-        <script src="/js/navigation-block.js?8efc9ef5-edb1-409d-a4d4-5e309683a62a" defer></script>
-        <script src="/js/navigation-context.js?8efc9ef5-edb1-409d-a4d4-5e309683a62a" defer></script>
-        <script src="/js/accordion-card.js?8efc9ef5-edb1-409d-a4d4-5e309683a62a" defer></script>
-        <script src="/js/theme-switcher.js?8efc9ef5-edb1-409d-a4d4-5e309683a62a" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts?8efc9ef5-edb1-409d-a4d4-5e309683a62a" defer></script>
-        <script src="/js/charts.js?8efc9ef5-edb1-409d-a4d4-5e309683a62a" type="module" defer></script>
+        <script src="/js/theme-change-assets.js?dff16438-1e75-435e-9857-c8b053f5f647" defer></script>
+        <script src="/js/navigation.js?dff16438-1e75-435e-9857-c8b053f5f647" defer></script>
+        <script src="/js/navigation-block.js?dff16438-1e75-435e-9857-c8b053f5f647" defer></script>
+        <script src="/js/navigation-context.js?dff16438-1e75-435e-9857-c8b053f5f647" defer></script>
+        <script src="/js/accordion-card.js?dff16438-1e75-435e-9857-c8b053f5f647" defer></script>
+        <script src="/js/theme-switcher.js?dff16438-1e75-435e-9857-c8b053f5f647" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts?dff16438-1e75-435e-9857-c8b053f5f647" defer></script>
+        <script src="/js/charts.js?dff16438-1e75-435e-9857-c8b053f5f647" type="module" defer></script>
     </body>
 </html>
