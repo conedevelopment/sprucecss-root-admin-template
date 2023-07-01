@@ -1,26 +1,32 @@
 [
   {
     "title": "Account",
-    "description": "Change your account settings."
+    "description": "Change your account settings.",
+    "url": "/account/"
   },
   {
     "title": "Privacy",
-    "description": "Change your privacy settings."
+    "description": "Change your privacy settings.",
+    "url": null
   },
   {
     "title": "Security",
-    "description": "Change your security settings."
+    "description": "Change your security settings.",
+    "url": null
   },
   {
     "title": "Notifications",
-    "description": "Change your notification settings."
+    "description": "Change your notification settings.",
+    "url": null
   },
   {
     "title": "Billing",
-    "description": "Change your billing settings."
+    "description": "Change your billing settings.",
+    "url": null
   },
   {
     "title": "Integrations",
-    "description": "Change your integration settings."
+    "description": "Change your integration settings.",
+    "url": null
   }
 ]

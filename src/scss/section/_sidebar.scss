@@ -41,7 +41,7 @@
     padding-inline: calc(#{spacer('m')} / 2);
 
     > * + * {
-      border-block-start: 1px dashed color('border');
+      border-block-start: 1px solid color('border');
       margin-block-start: spacer('s');
       padding-block-start: spacer('s');
     }

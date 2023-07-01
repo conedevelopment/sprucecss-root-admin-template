@@ -1,11 +1,11 @@
 [
   {
     "caption": "Profile",
-    "url": "/account/"
+    "url": "/account/profile/"
   },
   {
     "caption": "Notifications",
-    "url": "/notifications/"
+    "url": "/account/notifications/"
   },
   {
     "caption": "Password",

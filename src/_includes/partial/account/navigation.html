@@ -1,0 +1,13 @@
+<div class="block-navigation">
+    <nav class="block-navigation__menu" data-state="open">
+        <ul>
+            {% for item in account %}
+            <li>
+                <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+                    {{ item.caption }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</div>

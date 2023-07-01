@@ -24,7 +24,7 @@
   }
 
   > li + li {
-    border-block-start: 1px dashed color('border');
+    border-block-start: 1px solid color('border');
     margin-block-start: 0;
   }
 

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <script src="/js/theme-detection.js?e0c0801d-79b9-4bd3-baf1-d69efcba62dd"></script>
+        <script src="/js/theme-detection.js?ee425710-c6e2-4078-8f07-0033d4668403"></script>
         <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -35,14 +35,14 @@
 
 
 <title>Account - Spruce CSS Eleventy Admin Template</title>
-<link rel="canonical" href="https://eleventy-admin.sprucecss.com/account/" />
+<link rel="canonical" href="https://eleventy-admin.sprucecss.com/account/notifications/" />
 
 <meta name="generator" content="Eleventy v2.0.1" />
 
 <meta property="og:site_name" content="Spruce CSS Eleventy Admin Template" />
 <meta property="og:title" content="Account - Spruce CSS Eleventy Admin Template" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://eleventy-admin.sprucecss.com/account/" />
+<meta property="og:url" content="https://eleventy-admin.sprucecss.com/account/notifications/" />
 
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -56,7 +56,7 @@
 
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
 
-        <link rel="stylesheet" href="/css/main.css?e0c0801d-79b9-4bd3-baf1-d69efcba62dd">
+        <link rel="stylesheet" href="/css/main.css?ee425710-c6e2-4078-8f07-0033d4668403">
     </head>
     <body>
         <a class="btn btn--primary skip-link" href="#content">Skip to content</a>
@@ -421,7 +421,13 @@
         
             <li>
                 
-                    <span aria-current="page">Account</span>
+                    <a href="/account/">Account</a>
+                
+            </li>
+        
+            <li>
+                
+                    <span aria-current="page">Notifications</span>
                 
             </li>
         
@@ -444,7 +450,7 @@
     </button>
     <ul class="context-menu" data-state="closed" data-context-id="user">
         
-            <li><a href="/account/"  aria-current="page" data-state="active">Account</a></li>
+            <li><a href="/account/"  data-state="active">Account</a></li>
         
             <li><a href="/settings/" >Settings</a></li>
         
@@ -485,7 +491,7 @@
             </li>
             
             <li>
-                <a href="/account/notifications/" >
+                <a href="/account/notifications/"  aria-current="page" data-state="active">
                     Notifications
                 </a>
             </li>
@@ -502,35 +508,35 @@
 
                         </div>
                         <div class="app-card__body">
-                            <div class="app-card app-card--info">
-    <div class="app-card__header">
-        <h3 class="app-card__title">Personal Information</h3>
-        <a href="/account/profile/" class="btn btn--outline-primary btn--sm">Edit</a>
-    </div>
-    <div class="app-card__body">
-        <div class="l-row l-row--column:md:2">
-            <div class="data-group">
-                <p class="data-group__title">First Name</p>
-                <p class="data-group__content">Adam</p>
-            </div>
-            <div class="data-group">
-                <p class="data-group__title">Last Name</p>
-                <p class="data-group__content">Laki</p>
-            </div>
-            <div class="data-group">
-                <p class="data-group__title">Email</p>
-                <p class="data-group__content">info@adamlaki.com</p>
-            </div>
-            <div class="data-group">
-                <p class="data-group__title">Phone</p>
-                <p class="data-group__content">+00 36 555 66 44</p>
-            </div>
-            <div class="data-group">
-                <p class="data-group__title">Bio</p>
-                <p class="data-group__content">Hey, I’m Adam! I’m a passionate, accessibility-focused front-end developer. I develop with Gatsby, 11ty, and WordPress. I like to learn and try out new things in my field.</p>
+                            <h3 class="app-card__section-heading">Notifications</h3>
+<div class="form-group-stack form-group-stack--bordered form-group-container">
+    <fieldset>
+        <div class="form-group--row">
+            <legend>Email notifications</legend>
+            <div class="form-group form-group--vertical-check">
+                <label class="form-switch">
+                    <input class="form-switch__control" type="checkbox" value="true"/>
+                    <span class="form-label form-switch__label">News and updates</span>
+                </label>
+                <label class="form-switch">
+                    <input class="form-switch__control" type="checkbox" value="true"/>
+                    <span class="form-label form-switch__label">News and updates</span>
+                </label>
+                <label class="form-switch">
+                    <input class="form-switch__control" type="checkbox" value="true"/>
+                    <span class="form-label form-switch__label">News and updates</span>
+                </label>
+                <label class="form-switch">
+                    <input class="form-switch__control" type="checkbox" value="true"/>
+                    <span class="form-label form-switch__label">News and updates</span>
+                </label>
             </div>
         </div>
-    </div>
+    </fieldset>
+</div>
+<div class="app-actions">
+    <button class="btn btn--primary">Save</button>
+    <button class="btn btn--light">Cancel</button>
 </div>
 
                         </div>
@@ -551,13 +557,13 @@
     </div>
 
 
-        <script src="/js/theme-change-assets.js?e0c0801d-79b9-4bd3-baf1-d69efcba62dd" defer></script>
-        <script src="/js/navigation.js?e0c0801d-79b9-4bd3-baf1-d69efcba62dd" defer></script>
-        <script src="/js/navigation-block.js?e0c0801d-79b9-4bd3-baf1-d69efcba62dd" defer></script>
-        <script src="/js/navigation-context.js?e0c0801d-79b9-4bd3-baf1-d69efcba62dd" defer></script>
-        <script src="/js/accordion-card.js?e0c0801d-79b9-4bd3-baf1-d69efcba62dd" defer></script>
-        <script src="/js/theme-switcher.js?e0c0801d-79b9-4bd3-baf1-d69efcba62dd" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts?e0c0801d-79b9-4bd3-baf1-d69efcba62dd" defer></script>
-        <script src="/js/charts.js?e0c0801d-79b9-4bd3-baf1-d69efcba62dd" type="module" defer></script>
+        <script src="/js/theme-change-assets.js?ee425710-c6e2-4078-8f07-0033d4668403" defer></script>
+        <script src="/js/navigation.js?ee425710-c6e2-4078-8f07-0033d4668403" defer></script>
+        <script src="/js/navigation-block.js?ee425710-c6e2-4078-8f07-0033d4668403" defer></script>
+        <script src="/js/navigation-context.js?ee425710-c6e2-4078-8f07-0033d4668403" defer></script>
+        <script src="/js/accordion-card.js?ee425710-c6e2-4078-8f07-0033d4668403" defer></script>
+        <script src="/js/theme-switcher.js?ee425710-c6e2-4078-8f07-0033d4668403" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts?ee425710-c6e2-4078-8f07-0033d4668403" defer></script>
+        <script src="/js/charts.js?ee425710-c6e2-4078-8f07-0033d4668403" type="module" defer></script>
     </body>
 </html>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <script src="/js/theme-detection.js?443c43c0-571b-49a9-a3c0-26576c5962e9"></script>
+        <script src="/js/theme-detection.js?68a18f4e-2316-457b-ad22-2d9f3c4c5479"></script>
         <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -34,15 +34,15 @@
     
 
 
-<title>Settings - Spruce CSS Eleventy Admin Template</title>
-<link rel="canonical" href="https://eleventy-admin.sprucecss.com/settings copy/" />
+<title>Account - Spruce CSS Eleventy Admin Template</title>
+<link rel="canonical" href="https://eleventy-admin.sprucecss.com/account/profile/" />
 
 <meta name="generator" content="Eleventy v2.0.1" />
 
 <meta property="og:site_name" content="Spruce CSS Eleventy Admin Template" />
-<meta property="og:title" content="Settings - Spruce CSS Eleventy Admin Template" />
+<meta property="og:title" content="Account - Spruce CSS Eleventy Admin Template" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://eleventy-admin.sprucecss.com/settings copy/" />
+<meta property="og:url" content="https://eleventy-admin.sprucecss.com/account/profile/" />
 
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -56,7 +56,7 @@
 
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
 
-        <link rel="stylesheet" href="/css/main.css?443c43c0-571b-49a9-a3c0-26576c5962e9">
+        <link rel="stylesheet" href="/css/main.css?68a18f4e-2316-457b-ad22-2d9f3c4c5479">
     </head>
     <body>
         <a class="btn btn--primary skip-link" href="#content">Skip to content</a>
@@ -137,9 +137,15 @@
     </div>
     <div class="app-sidebar__body">
         
-            <div class="sidebar-block">
+            <div
+                class="block-navigation"
+                data-item="navigation-block"
+            >
                 
-                <nav class="sidebar-block__navigation" data-state="open">
+                <nav
+                    class="block-navigation__menu block-navigation__menu--breakout"
+                    data-state="open"
+                >
                     <ul>
                         
                         <li>
@@ -159,14 +165,18 @@
                 </nav>
             </div>
         
-            <div class="sidebar-block">
+            <div
+                class="block-navigation"
+                data-item="navigation-block"
+            >
                 
-                    <h3 class="sidebar-block__title">
+                    <h3 class="block-navigation__title">
                         Shop
                         <button
-                            class="btn btn--light btn--sm btn--icon sidebar-block__toggle"
+                            class="btn btn--light btn--sm btn--icon block-navigation__toggle"
                             aria-expanded="true"
                             aria-label="Toggle shop navigation"
+                            data-action="block-navigation-toggle"
                         >
                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
     <polyline points='18 15 12 9 6 15'></polyline>
@@ -175,7 +185,10 @@
                         </button>
                     </h3>
                 
-                <nav class="sidebar-block__navigation" data-state="open">
+                <nav
+                    class="block-navigation__menu block-navigation__menu--breakout"
+                    data-state="open"
+                >
                     <ul>
                         
                         <li>
@@ -239,14 +252,18 @@
                 </nav>
             </div>
         
-            <div class="sidebar-block">
+            <div
+                class="block-navigation"
+                data-item="navigation-block"
+            >
                 
-                    <h3 class="sidebar-block__title">
+                    <h3 class="block-navigation__title">
                         Pages
                         <button
-                            class="btn btn--light btn--sm btn--icon sidebar-block__toggle"
+                            class="btn btn--light btn--sm btn--icon block-navigation__toggle"
                             aria-expanded="false"
                             aria-label="Toggle shop navigation"
+                            data-action="block-navigation-toggle"
                         >
                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
     <polyline points='18 15 12 9 6 15'></polyline>
@@ -255,7 +272,10 @@
                         </button>
                     </h3>
                 
-                <nav class="sidebar-block__navigation" data-state="closed">
+                <nav
+                    class="block-navigation__menu block-navigation__menu--breakout"
+                    data-state="closed"
+                >
                     <ul>
                         
                         <li>
@@ -391,6 +411,28 @@
             </div>
             
             
+    <ol class="breadcrumb-list app-header__breadcrumb">
+        
+            <li>
+                
+                    <a href="/">Dashboard</a>
+                
+            </li>
+        
+            <li>
+                
+                    <a href="/account/">Account</a>
+                
+            </li>
+        
+            <li>
+                
+                    <span aria-current="page">Profile</span>
+                
+            </li>
+        
+    </ol>
+
 
         </div>
         <div class="app-header__actions">
@@ -408,7 +450,7 @@
     </button>
     <ul class="context-menu" data-state="closed" data-context-id="user">
         
-            <li><a href="/profile/" >Profile</a></li>
+            <li><a href="/account/"  data-state="active">Account</a></li>
         
             <li><a href="/settings/" >Settings</a></li>
         
@@ -426,7 +468,7 @@
     <div class="container">
         <div class="app-heading__inner">
             <div class="app-heading__caption">
-                <h1 class="app-heading__title">Settings</h1>
+                <h1 class="app-heading__title">Account</h1>
                 
             </div>
             
@@ -436,80 +478,80 @@
 
             <div class="container">
                 <div class="app-body">
-                    <div class="l-row l-row--column:sm:2 l-row--column:lg:3">
-                        
-                            <div class="app-card app-card--setting">
-                                <div class="app-card__body">
-                                    <div class="app-card__content">
-                                        <h2 class="app-card__title">Account</h2>
-                                        <p class="app-card__description">Change your account settings.</p>
-                                    </div>
-                                    <div class="app-card__actions">
-                                        <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="app-card app-card--setting">
-                                <div class="app-card__body">
-                                    <div class="app-card__content">
-                                        <h2 class="app-card__title">Privacy</h2>
-                                        <p class="app-card__description">Change your privacy settings.</p>
-                                    </div>
-                                    <div class="app-card__actions">
-                                        <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="app-card app-card--setting">
-                                <div class="app-card__body">
-                                    <div class="app-card__content">
-                                        <h2 class="app-card__title">Security</h2>
-                                        <p class="app-card__description">Change your security settings.</p>
-                                    </div>
-                                    <div class="app-card__actions">
-                                        <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="app-card app-card--setting">
-                                <div class="app-card__body">
-                                    <div class="app-card__content">
-                                        <h2 class="app-card__title">Notifications</h2>
-                                        <p class="app-card__description">Change your notification settings.</p>
-                                    </div>
-                                    <div class="app-card__actions">
-                                        <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="app-card app-card--setting">
-                                <div class="app-card__body">
-                                    <div class="app-card__content">
-                                        <h2 class="app-card__title">Billing</h2>
-                                        <p class="app-card__description">Change your billing settings.</p>
-                                    </div>
-                                    <div class="app-card__actions">
-                                        <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="app-card app-card--setting">
-                                <div class="app-card__body">
-                                    <div class="app-card__content">
-                                        <h2 class="app-card__title">Integrations</h2>
-                                        <p class="app-card__description">Change your integration settings.</p>
-                                    </div>
-                                    <div class="app-card__actions">
-                                        <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        
+                    <div class="app-card app-card--sidebar">
+                        <div class="app-card__sidebar">
+                            <div class="block-navigation">
+    <nav class="block-navigation__menu" data-state="open">
+        <ul>
+            
+            <li>
+                <a href="/account/profile/"  aria-current="page" data-state="active">
+                    Profile
+                </a>
+            </li>
+            
+            <li>
+                <a href="/account/notifications/" >
+                    Notifications
+                </a>
+            </li>
+            
+            <li>
+                <a href="/password/" >
+                    Password
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+                        </div>
+                        <div class="app-card__body">
+                            <h3 class="app-card__section-heading">Personal Information</h3>
+<div class="form-group-stack form-group-stack--bordered form-group-container">
+    <div class="form-group--row">
+        <label class="form-label" for="your-first-name">First Name</label>
+        <input class="form-control" id="your-first-name" name="your-first-name" type="text" value="Adam" />
+    </div>
+    <div class="form-group--row">
+        <label class="form-label" for="your-last-name">Last Name</label>
+        <input class="form-control" id="your-last-name" name="your-last-name" type="text" value="Laki" />
+    </div>
+    <div class="form-group--row">
+        <label class="form-label" for="your-email">Email</label>
+        <input class="form-control" id="your-email" name="your-email" type="email" value="info@adamlaki.com" />
+    </div>
+    <div class="form-group--row">
+        <label class="form-label" for="your-phone">Phone</label>
+        <input class="form-control" id="your-phone" name="your-phone" type="text" value="+00 36 555 66 44" />
+    </div>
+    <div class="form-group--row">
+        <label class="form-label" for="your-bio">Bio</label>
+        <textarea class="form-control" id="your-bio" name="your-bio" rows="4">Hey, I’m Adam! I’m a passionate, accessibility-focused front-end developer. I develop with Gatsby, 11ty, and WordPress. I like to learn and try out new things in my field.</textarea>
+    </div>
+</div>
+<h3 class="app-card__section-heading">Address</h3>
+<div class="form-group-stack form-group-stack--bordered form-group-container">
+    <div class="form-group--row">
+        <label class="form-label" for="your-country">Country</label>
+        <input class="form-control" id="your-country" name="your-country" type="text" value="Hungary" />
+    </div>
+    <div class="form-group--row">
+        <label class="form-label" for="your-city">City/State</label>
+        <input class="form-control" id="your-city" name="your-city" type="text" value="Budapest" />
+    </div>
+    <div class="form-group--row">
+        <label class="form-label" for="your-postal-code">Postal Code</label>
+        <input class="form-control" id="your-postal-code" name="your-postal-code" type="text" value="H-1900" />
+    </div>
+</div>
+<div class="app-actions">
+    <button class="btn btn--primary">Save</button>
+    <button class="btn btn--light">Cancel</button>
+</div>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -527,13 +569,13 @@
     </div>
 
 
-        <script src="/js/theme-change-assets.js?443c43c0-571b-49a9-a3c0-26576c5962e9" defer></script>
-        <script src="/js/navigation.js?443c43c0-571b-49a9-a3c0-26576c5962e9" defer></script>
-        <script src="/js/navigation-sidebar.js?443c43c0-571b-49a9-a3c0-26576c5962e9" defer></script>
-        <script src="/js/navigation-context.js?443c43c0-571b-49a9-a3c0-26576c5962e9" defer></script>
-        <script src="/js/accordion-card.js?443c43c0-571b-49a9-a3c0-26576c5962e9" defer></script>
-        <script src="/js/theme-switcher.js?443c43c0-571b-49a9-a3c0-26576c5962e9" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts?443c43c0-571b-49a9-a3c0-26576c5962e9" defer></script>
-        <script src="/js/charts.js?443c43c0-571b-49a9-a3c0-26576c5962e9" type="module" defer></script>
+        <script src="/js/theme-change-assets.js?68a18f4e-2316-457b-ad22-2d9f3c4c5479" defer></script>
+        <script src="/js/navigation.js?68a18f4e-2316-457b-ad22-2d9f3c4c5479" defer></script>
+        <script src="/js/navigation-block.js?68a18f4e-2316-457b-ad22-2d9f3c4c5479" defer></script>
+        <script src="/js/navigation-context.js?68a18f4e-2316-457b-ad22-2d9f3c4c5479" defer></script>
+        <script src="/js/accordion-card.js?68a18f4e-2316-457b-ad22-2d9f3c4c5479" defer></script>
+        <script src="/js/theme-switcher.js?68a18f4e-2316-457b-ad22-2d9f3c4c5479" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts?68a18f4e-2316-457b-ad22-2d9f3c4c5479" defer></script>
+        <script src="/js/charts.js?68a18f4e-2316-457b-ad22-2d9f3c4c5479" type="module" defer></script>
     </body>
 </html>

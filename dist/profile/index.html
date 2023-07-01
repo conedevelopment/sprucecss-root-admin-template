@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <script src="/js/theme-detection.js?30ea6e6f-59cd-45ee-ad05-bcb371dd58f2"></script>
+        <script src="/js/theme-detection.js?e548d1d5-ebe3-4a4e-bce9-859bf94eab00"></script>
         <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -34,13 +34,13 @@
     
 
 
-<title>Profile - Spruce CSS Eleventy Admin Template</title>
+<title>Account - Spruce CSS Eleventy Admin Template</title>
 <link rel="canonical" href="https://eleventy-admin.sprucecss.com/profile/" />
 
 <meta name="generator" content="Eleventy v2.0.1" />
 
 <meta property="og:site_name" content="Spruce CSS Eleventy Admin Template" />
-<meta property="og:title" content="Profile - Spruce CSS Eleventy Admin Template" />
+<meta property="og:title" content="Account - Spruce CSS Eleventy Admin Template" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://eleventy-admin.sprucecss.com/profile/" />
 
@@ -56,7 +56,7 @@
 
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
 
-        <link rel="stylesheet" href="/css/main.css?30ea6e6f-59cd-45ee-ad05-bcb371dd58f2">
+        <link rel="stylesheet" href="/css/main.css?e548d1d5-ebe3-4a4e-bce9-859bf94eab00">
     </head>
     <body>
         <a class="btn btn--primary skip-link" href="#content">Skip to content</a>
@@ -421,7 +421,13 @@
         
             <li>
                 
-                    <span aria-current="page">Profile</span>
+                    <a href="/account/">Account</a>
+                
+            </li>
+        
+            <li>
+                
+                    <a href="/account/profile/">Profile</a>
                 
             </li>
         
@@ -462,7 +468,7 @@
     <div class="container">
         <div class="app-heading__inner">
             <div class="app-heading__caption">
-                <h1 class="app-heading__title">Profile</h1>
+                <h1 class="app-heading__title">Account</h1>
                 
             </div>
             
@@ -473,92 +479,75 @@
             <div class="container">
                 <div class="app-body">
                     <div class="app-card app-card--sidebar">
-                        <div class="app-card__body">
-                            <div class="app-card__sidebar">
-                                <div class="block-navigation">
-                                    <nav class="block-navigation__menu" data-state="open">
-                                        <ul>
-                                            
-                                            <li>
-                                                <a href="/account/" >
-                                                    Profile
-                                                </a>
-                                            </li>
-                                            
-                                            <li>
-                                                <a href="/notifications/" >
-                                                    Notifications
-                                                </a>
-                                            </li>
-                                            
-                                            <li>
-                                                <a href="/password/" >
-                                                    Password
-                                                </a>
-                                            </li>
-                                            
-                                        </ul>
-                                    </nav>
-                                </div>
+                        <div class="app-card__sidebar">
+                            <div class="block-navigation">
+                                <nav class="block-navigation__menu" data-state="open">
+                                    <ul>
+                                        
+                                        <li>
+                                            <a href="/account/profile/" >
+                                                Profile
+                                            </a>
+                                        </li>
+                                        
+                                        <li>
+                                            <a href="/notifications/" >
+                                                Notifications
+                                            </a>
+                                        </li>
+                                        
+                                        <li>
+                                            <a href="/password/" >
+                                                Password
+                                            </a>
+                                        </li>
+                                        
+                                    </ul>
+                                </nav>
                             </div>
+                        </div>
+                        <div class="app-card__body">
+                            <h3>Personal Information</h3>
                             <div class="form-group-stack form-group-stack--bordered form-group-container">
                                 <div class="form-group--row">
-                                    <label class="form-label" for="your-name">Name</label>
-                                    <input class="form-control" id="your-name" name="your-name" type="text"/>
-                                    <span class="form-description">Just a help text for presentation purpose</span>
+                                    <label class="form-label" for="your-first-name">First Name</label>
+                                    <input class="form-control" id="your-first-name" name="your-first-name" type="text"/>
+                                </div>
+                                <div class="form-group--row">
+                                    <label class="form-label" for="your-last-name">Last Name</label>
+                                    <input class="form-control" id="your-last-name" name="your-last-name" type="text"/>
                                 </div>
                                 <div class="form-group--row">
                                     <label class="form-label" for="your-email">Email</label>
                                     <input class="form-control" id="your-email" name="your-email" type="email"/>
                                 </div>
                                 <div class="form-group--row">
-                                    <label class="form-label" for="your-birthday">Birthday</label>
-                                    <input class="form-control" id="your-birthday" name="your-birthday" type="date"/>
+                                    <label class="form-label" for="your-phone">Phone</label>
+                                    <input class="form-control" id="your-phone" name="your-phone" type="text"/>
                                 </div>
                                 <div class="form-group--row">
-                                    <label class="form-label" for="your-color">Your favorite color</label>
-                                    <input class="form-control" id="your-color" name="your-color" type="color" value="#6524d6"/>
+                                    <label class="form-label" for="your-bio">Bio</label>
+                                    <textarea class="form-control" id="your-bio" name="your-bio" placeholder="Write your bio..." rows="4"></textarea>
+                                </div>
+                            </div>
+                            <h3>Address</h3>
+                            <div class="form-group-stack form-group-stack--bordered form-group-container">
+                                <div class="form-group--row">
+                                    <label class="form-label" for="your-country">Country</label>
+                                    <input class="form-control" id="your-country" name="your-country" type="text"/>
                                 </div>
                                 <div class="form-group--row">
-                                    <label class="form-label" for="front-end-frameworks-row">Front-end Frameworks</label>
-                                    <select class="form-control" id="front-end-frameworks-row">
-                                        <option value="react">React</option>
-                                        <option value="vue">Vue</option>
-                                        <option value="svelte">Svelte</option>
-                                        <option value="ember">Ember</option>
-                                    </select>
+                                    <label class="form-label" for="your-city">City/State</label>
+                                    <input class="form-control" id="your-city" name="your-city" type="text"/>
                                 </div>
                                 <div class="form-group--row">
-                                    <label class="form-label" for="avatar">Avatar</label>
-                                    <input class="form-file form-file" type="file" id="avatar" accept="image/png, image/jpeg"/>
+                                    <label class="form-label" for="your-postal-code">Postal Code</label>
+                                    <input class="form-control" id="your-postal-code" name="your-postal-code" type="text"/>
                                 </div>
-                                <div class="form-group--row">
-                                    <label class="form-label" for="your-message">Your Message</label>
-                                    <textarea class="form-control" id="your-message" name="your-message" placeholder="Write your message..." rows="4"></textarea>
-                                </div>
-                                <fieldset>
-                                    <div class="form-group--row">
-                                        <legend>Radio (Horizontal)</legend>
-                                        <div class="form-group form-group--horizontal-check">
-                                            <label class="form-check">
-                                                <input class="form-check__control" type="radio" value="react" name="radio-example-horizontal"/>
-                                                <span class="form-label form-check__label">React</span>
-                                            </label>
-                                            <label class="form-check">
-                                                <input class="form-check__control" type="radio" value="vue" name="radio-example-horizontal"/>
-                                                <span class="form-label form-check__label">Vue</span>
-                                            </label>
-                                            <label class="form-check">
-                                                <input class="form-check__control" type="radio" value="svelte" name="radio-example-horizontal"/>
-                                                <span class="form-label form-check__label">Svelte</span>
-                                            </label>
-                                            <label class="form-check">
-                                                <input class="form-check__control" type="radio" value="ember" name="radio-example-horizontal"/>
-                                                <span class="form-label form-check__label">Ember</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </fieldset>
+                            </div>
+                            <div class="app-actions">
+                                <button class="btn btn--primary">Save</button>
+                                <button class="btn btn--light">Cancel</button>
                             </div>
                         </div>
                     </div>
@@ -578,13 +567,13 @@
     </div>
 
 
-        <script src="/js/theme-change-assets.js?30ea6e6f-59cd-45ee-ad05-bcb371dd58f2" defer></script>
-        <script src="/js/navigation.js?30ea6e6f-59cd-45ee-ad05-bcb371dd58f2" defer></script>
-        <script src="/js/navigation-block.js?30ea6e6f-59cd-45ee-ad05-bcb371dd58f2" defer></script>
-        <script src="/js/navigation-context.js?30ea6e6f-59cd-45ee-ad05-bcb371dd58f2" defer></script>
-        <script src="/js/accordion-card.js?30ea6e6f-59cd-45ee-ad05-bcb371dd58f2" defer></script>
-        <script src="/js/theme-switcher.js?30ea6e6f-59cd-45ee-ad05-bcb371dd58f2" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts?30ea6e6f-59cd-45ee-ad05-bcb371dd58f2" defer></script>
-        <script src="/js/charts.js?30ea6e6f-59cd-45ee-ad05-bcb371dd58f2" type="module" defer></script>
+        <script src="/js/theme-change-assets.js?e548d1d5-ebe3-4a4e-bce9-859bf94eab00" defer></script>
+        <script src="/js/navigation.js?e548d1d5-ebe3-4a4e-bce9-859bf94eab00" defer></script>
+        <script src="/js/navigation-block.js?e548d1d5-ebe3-4a4e-bce9-859bf94eab00" defer></script>
+        <script src="/js/navigation-context.js?e548d1d5-ebe3-4a4e-bce9-859bf94eab00" defer></script>
+        <script src="/js/accordion-card.js?e548d1d5-ebe3-4a4e-bce9-859bf94eab00" defer></script>
+        <script src="/js/theme-switcher.js?e548d1d5-ebe3-4a4e-bce9-859bf94eab00" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts?e548d1d5-ebe3-4a4e-bce9-859bf94eab00" defer></script>
+        <script src="/js/charts.js?e548d1d5-ebe3-4a4e-bce9-859bf94eab00" type="module" defer></script>
     </body>
 </html>
