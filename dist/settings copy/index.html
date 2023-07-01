@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <script src="/js/theme-detection.js?de72ae5f-d010-4eba-8afc-292cc32d8d73"></script>
+        <script src="/js/theme-detection.js?443c43c0-571b-49a9-a3c0-26576c5962e9"></script>
         <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -34,15 +34,15 @@
     
 
 
-<title>Edit Product - Spruce CSS Eleventy Admin Template</title>
-<link rel="canonical" href="https://eleventy-admin.sprucecss.com/product-edit/" />
+<title>Settings - Spruce CSS Eleventy Admin Template</title>
+<link rel="canonical" href="https://eleventy-admin.sprucecss.com/settings copy/" />
 
 <meta name="generator" content="Eleventy v2.0.1" />
 
 <meta property="og:site_name" content="Spruce CSS Eleventy Admin Template" />
-<meta property="og:title" content="Edit Product - Spruce CSS Eleventy Admin Template" />
+<meta property="og:title" content="Settings - Spruce CSS Eleventy Admin Template" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://eleventy-admin.sprucecss.com/product-edit/" />
+<meta property="og:url" content="https://eleventy-admin.sprucecss.com/settings copy/" />
 
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -56,7 +56,7 @@
 
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
 
-        <link rel="stylesheet" href="/css/main.css?de72ae5f-d010-4eba-8afc-292cc32d8d73">
+        <link rel="stylesheet" href="/css/main.css?443c43c0-571b-49a9-a3c0-26576c5962e9">
     </head>
     <body>
         <a class="btn btn--primary skip-link" href="#content">Skip to content</a>
@@ -137,15 +137,9 @@
     </div>
     <div class="app-sidebar__body">
         
-            <div
-                class="block-navigation"
-                data-item="navigation-block"
-            >
+            <div class="sidebar-block">
                 
-                <nav
-                    class="block-navigation__menu"
-                    data-state="open"
-                >
+                <nav class="sidebar-block__navigation" data-state="open">
                     <ul>
                         
                         <li>
@@ -165,18 +159,14 @@
                 </nav>
             </div>
         
-            <div
-                class="block-navigation"
-                data-item="navigation-block"
-            >
+            <div class="sidebar-block">
                 
-                    <h3 class="block-navigation__title">
+                    <h3 class="sidebar-block__title">
                         Shop
                         <button
-                            class="btn btn--light btn--sm btn--icon block-navigation__toggle"
+                            class="btn btn--light btn--sm btn--icon sidebar-block__toggle"
                             aria-expanded="true"
                             aria-label="Toggle shop navigation"
-                            data-action="block-navigation-toggle"
                         >
                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
     <polyline points='18 15 12 9 6 15'></polyline>
@@ -185,10 +175,7 @@
                         </button>
                     </h3>
                 
-                <nav
-                    class="block-navigation__menu"
-                    data-state="open"
-                >
+                <nav class="sidebar-block__navigation" data-state="open">
                     <ul>
                         
                         <li>
@@ -252,18 +239,14 @@
                 </nav>
             </div>
         
-            <div
-                class="block-navigation"
-                data-item="navigation-block"
-            >
+            <div class="sidebar-block">
                 
-                    <h3 class="block-navigation__title">
+                    <h3 class="sidebar-block__title">
                         Pages
                         <button
-                            class="btn btn--light btn--sm btn--icon block-navigation__toggle"
+                            class="btn btn--light btn--sm btn--icon sidebar-block__toggle"
                             aria-expanded="false"
                             aria-label="Toggle shop navigation"
-                            data-action="block-navigation-toggle"
                         >
                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
     <polyline points='18 15 12 9 6 15'></polyline>
@@ -272,10 +255,7 @@
                         </button>
                     </h3>
                 
-                <nav
-                    class="block-navigation__menu"
-                    data-state="closed"
-                >
+                <nav class="sidebar-block__navigation" data-state="closed">
                     <ul>
                         
                         <li>
@@ -411,28 +391,6 @@
             </div>
             
             
-    <ol class="breadcrumb-list app-header__breadcrumb">
-        
-            <li>
-                
-                    <a href="/">Dashboard</a>
-                
-            </li>
-        
-            <li>
-                
-                    <a href="/products/">Products</a>
-                
-            </li>
-        
-            <li>
-                
-                    <span aria-current="page">Edit</span>
-                
-            </li>
-        
-    </ol>
-
 
         </div>
         <div class="app-header__actions">
@@ -468,7 +426,7 @@
     <div class="container">
         <div class="app-heading__inner">
             <div class="app-heading__caption">
-                <h1 class="app-heading__title">Edit Product</h1>
+                <h1 class="app-heading__title">Settings</h1>
                 
             </div>
             
@@ -478,128 +436,80 @@
 
             <div class="container">
                 <div class="app-body">
-                    <div class="alert alert--success" role="alert">
-                        Nunc vitae dui in nunc mattis tincidunt. Nulla eleifend imperdiet odio eget semper.
-                    </div>
-                    <div class="l-row l-row--sidebar">
-                        <div class="l-row__column">
-                            <div class="app-card app-card--edit">
+                    <div class="l-row l-row--column:sm:2 l-row--column:lg:3">
+                        
+                            <div class="app-card app-card--setting">
                                 <div class="app-card__body">
-                                    <div class="form-group-stack form-group-stack--bordered form-group-container">
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="your-name">Name</label>
-                                            <input class="form-control" id="your-name" name="your-name" type="text"/>
-                                            <span class="form-description">Just a help text for presentation purpose</span>
-                                        </div>
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="your-email">Email</label>
-                                            <input class="form-control" id="your-email" name="your-email" type="email"/>
-                                        </div>
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="your-birthday">Birthday</label>
-                                            <input class="form-control" id="your-birthday" name="your-birthday" type="date"/>
-                                        </div>
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="your-color">Your favorite color</label>
-                                            <input class="form-control" id="your-color" name="your-color" type="color" value="#6524d6"/>
-                                        </div>
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="front-end-frameworks-row">Front-end Frameworks</label>
-                                            <select class="form-control" id="front-end-frameworks-row">
-                                                <option value="react">React</option>
-                                                <option value="vue">Vue</option>
-                                                <option value="svelte">Svelte</option>
-                                                <option value="ember">Ember</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="avatar">Avatar</label>
-                                            <input class="form-file form-file" type="file" id="avatar" accept="image/png, image/jpeg"/>
-                                        </div>
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="your-message">Your Message</label>
-                                            <textarea class="form-control" id="your-message" name="your-message" placeholder="Write your message..." rows="4"></textarea>
-                                        </div>
-                                        <fieldset>
-                                            <div class="form-group--row">
-                                                <legend>Radio (Horizontal)</legend>
-                                                <div class="form-group form-group--horizontal-check">
-                                                    <label class="form-check">
-                                                        <input class="form-check__control" type="radio" value="react" name="radio-example-horizontal"/>
-                                                        <span class="form-label form-check__label">React</span>
-                                                    </label>
-                                                    <label class="form-check">
-                                                        <input class="form-check__control" type="radio" value="vue" name="radio-example-horizontal"/>
-                                                        <span class="form-label form-check__label">Vue</span>
-                                                    </label>
-                                                    <label class="form-check">
-                                                        <input class="form-check__control" type="radio" value="svelte" name="radio-example-horizontal"/>
-                                                        <span class="form-label form-check__label">Svelte</span>
-                                                    </label>
-                                                    <label class="form-check">
-                                                        <input class="form-check__control" type="radio" value="ember" name="radio-example-horizontal"/>
-                                                        <span class="form-label form-check__label">Ember</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </fieldset>
+                                    <div class="app-card__content">
+                                        <h2 class="app-card__title">Account</h2>
+                                        <p class="app-card__description">Change your account settings.</p>
+                                    </div>
+                                    <div class="app-card__actions">
+                                        <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="app-card app-card--edit">
+                        
+                            <div class="app-card app-card--setting">
                                 <div class="app-card__body">
-                                    <div class="auth-form">
-                                        <div class="form-group-stack">
-                                            <div class="form-group">
-                                                <label class="form-label" for="email">Email</label>
-                                                <input class="form-control form-control--lg" id="email" type="text" name="email" required="required" autocomplete="off" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-label form-label--space-between" for="password">Password <a href="#">Forgot password?</a>
-                                                </label>
-                                                <input class="form-control form-control--lg" id="password" type="password" name="password" required="required" autocomplete="off" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-check form-check--lg" for="remember">
-                                                    <input class="form-check__control" id="remember" type="checkbox" name="remember" />
-                                                    <span class="form-label form-check__label">Remember me</span>
-                                                </label>
-                                            </div>
-                                        </div>
+                                    <div class="app-card__content">
+                                        <h2 class="app-card__title">Privacy</h2>
+                                        <p class="app-card__description">Change your privacy settings.</p>
+                                    </div>
+                                    <div class="app-card__actions">
+                                        <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="l-row__column">
-                            <div class="app-card app-card--edit">
-                                <div class="app-card__header">
-                                    <h2 class="app-card__title">Settings</h2>
-                                </div>
+                        
+                            <div class="app-card app-card--setting">
                                 <div class="app-card__body">
-                                    <div class="form-group-stack">
-                                        <div class="form-group">
-                                            <label class="form-label" for="status">Status</label>
-                                            <select class="form-control" id="status">
-                                                <option value="react">React</option>
-                                                <option value="vue">Vue</option>
-                                                <option value="svelte">Svelte</option>
-                                                <option value="ember">Ember</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-switch form-switch--sm">
-                                                <span class="form-label form-switch__label">Enable notifications</span>
-                                                <input class="form-switch__control" type="checkbox" value="true"/>
-                                            </label>
-                                        </div>
+                                    <div class="app-card__content">
+                                        <h2 class="app-card__title">Security</h2>
+                                        <p class="app-card__description">Change your security settings.</p>
+                                    </div>
+                                    <div class="app-card__actions">
+                                        <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="app-actions">
-                        <button class="btn btn--primary">Save</button>
-                        <button class="btn btn--light">Cancel</button>
+                        
+                            <div class="app-card app-card--setting">
+                                <div class="app-card__body">
+                                    <div class="app-card__content">
+                                        <h2 class="app-card__title">Notifications</h2>
+                                        <p class="app-card__description">Change your notification settings.</p>
+                                    </div>
+                                    <div class="app-card__actions">
+                                        <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="app-card app-card--setting">
+                                <div class="app-card__body">
+                                    <div class="app-card__content">
+                                        <h2 class="app-card__title">Billing</h2>
+                                        <p class="app-card__description">Change your billing settings.</p>
+                                    </div>
+                                    <div class="app-card__actions">
+                                        <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="app-card app-card--setting">
+                                <div class="app-card__body">
+                                    <div class="app-card__content">
+                                        <h2 class="app-card__title">Integrations</h2>
+                                        <p class="app-card__description">Change your integration settings.</p>
+                                    </div>
+                                    <div class="app-card__actions">
+                                        <a href="#" class="btn btn--outline-primary btn--sm">Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -617,13 +527,13 @@
     </div>
 
 
-        <script src="/js/theme-change-assets.js?de72ae5f-d010-4eba-8afc-292cc32d8d73" defer></script>
-        <script src="/js/navigation.js?de72ae5f-d010-4eba-8afc-292cc32d8d73" defer></script>
-        <script src="/js/navigation-block.js?de72ae5f-d010-4eba-8afc-292cc32d8d73" defer></script>
-        <script src="/js/navigation-context.js?de72ae5f-d010-4eba-8afc-292cc32d8d73" defer></script>
-        <script src="/js/accordion-card.js?de72ae5f-d010-4eba-8afc-292cc32d8d73" defer></script>
-        <script src="/js/theme-switcher.js?de72ae5f-d010-4eba-8afc-292cc32d8d73" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts?de72ae5f-d010-4eba-8afc-292cc32d8d73" defer></script>
-        <script src="/js/charts.js?de72ae5f-d010-4eba-8afc-292cc32d8d73" type="module" defer></script>
+        <script src="/js/theme-change-assets.js?443c43c0-571b-49a9-a3c0-26576c5962e9" defer></script>
+        <script src="/js/navigation.js?443c43c0-571b-49a9-a3c0-26576c5962e9" defer></script>
+        <script src="/js/navigation-sidebar.js?443c43c0-571b-49a9-a3c0-26576c5962e9" defer></script>
+        <script src="/js/navigation-context.js?443c43c0-571b-49a9-a3c0-26576c5962e9" defer></script>
+        <script src="/js/accordion-card.js?443c43c0-571b-49a9-a3c0-26576c5962e9" defer></script>
+        <script src="/js/theme-switcher.js?443c43c0-571b-49a9-a3c0-26576c5962e9" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts?443c43c0-571b-49a9-a3c0-26576c5962e9" defer></script>
+        <script src="/js/charts.js?443c43c0-571b-49a9-a3c0-26576c5962e9" type="module" defer></script>
     </body>
 </html>

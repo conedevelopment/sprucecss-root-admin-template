@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <script src="/js/theme-detection.js?de72ae5f-d010-4eba-8afc-292cc32d8d73"></script>
+        <script src="/js/theme-detection.js?39ff4dd2-e13c-42c9-b784-7e775863bea5"></script>
         <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -34,15 +34,15 @@
     
 
 
-<title>Edit Product - Spruce CSS Eleventy Admin Template</title>
-<link rel="canonical" href="https://eleventy-admin.sprucecss.com/product-edit/" />
+<title>Profile - Spruce CSS Eleventy Admin Template</title>
+<link rel="canonical" href="https://eleventy-admin.sprucecss.com/profile/" />
 
 <meta name="generator" content="Eleventy v2.0.1" />
 
 <meta property="og:site_name" content="Spruce CSS Eleventy Admin Template" />
-<meta property="og:title" content="Edit Product - Spruce CSS Eleventy Admin Template" />
+<meta property="og:title" content="Profile - Spruce CSS Eleventy Admin Template" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://eleventy-admin.sprucecss.com/product-edit/" />
+<meta property="og:url" content="https://eleventy-admin.sprucecss.com/profile/" />
 
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -56,7 +56,7 @@
 
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
 
-        <link rel="stylesheet" href="/css/main.css?de72ae5f-d010-4eba-8afc-292cc32d8d73">
+        <link rel="stylesheet" href="/css/main.css?39ff4dd2-e13c-42c9-b784-7e775863bea5">
     </head>
     <body>
         <a class="btn btn--primary skip-link" href="#content">Skip to content</a>
@@ -421,13 +421,7 @@
         
             <li>
                 
-                    <a href="/products/">Products</a>
-                
-            </li>
-        
-            <li>
-                
-                    <span aria-current="page">Edit</span>
+                    <span aria-current="page">Profile</span>
                 
             </li>
         
@@ -450,7 +444,7 @@
     </button>
     <ul class="context-menu" data-state="closed" data-context-id="user">
         
-            <li><a href="/profile/" >Profile</a></li>
+            <li><a href="/profile/"  aria-current="page" data-state="active">Profile</a></li>
         
             <li><a href="/settings/" >Settings</a></li>
         
@@ -468,7 +462,7 @@
     <div class="container">
         <div class="app-heading__inner">
             <div class="app-heading__caption">
-                <h1 class="app-heading__title">Edit Product</h1>
+                <h1 class="app-heading__title">Profile</h1>
                 
             </div>
             
@@ -478,128 +472,95 @@
 
             <div class="container">
                 <div class="app-body">
-                    <div class="alert alert--success" role="alert">
-                        Nunc vitae dui in nunc mattis tincidunt. Nulla eleifend imperdiet odio eget semper.
-                    </div>
-                    <div class="l-row l-row--sidebar">
-                        <div class="l-row__column">
-                            <div class="app-card app-card--edit">
-                                <div class="app-card__body">
-                                    <div class="form-group-stack form-group-stack--bordered form-group-container">
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="your-name">Name</label>
-                                            <input class="form-control" id="your-name" name="your-name" type="text"/>
-                                            <span class="form-description">Just a help text for presentation purpose</span>
-                                        </div>
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="your-email">Email</label>
-                                            <input class="form-control" id="your-email" name="your-email" type="email"/>
-                                        </div>
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="your-birthday">Birthday</label>
-                                            <input class="form-control" id="your-birthday" name="your-birthday" type="date"/>
-                                        </div>
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="your-color">Your favorite color</label>
-                                            <input class="form-control" id="your-color" name="your-color" type="color" value="#6524d6"/>
-                                        </div>
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="front-end-frameworks-row">Front-end Frameworks</label>
-                                            <select class="form-control" id="front-end-frameworks-row">
-                                                <option value="react">React</option>
-                                                <option value="vue">Vue</option>
-                                                <option value="svelte">Svelte</option>
-                                                <option value="ember">Ember</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="avatar">Avatar</label>
-                                            <input class="form-file form-file" type="file" id="avatar" accept="image/png, image/jpeg"/>
-                                        </div>
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="your-message">Your Message</label>
-                                            <textarea class="form-control" id="your-message" name="your-message" placeholder="Write your message..." rows="4"></textarea>
-                                        </div>
-                                        <fieldset>
-                                            <div class="form-group--row">
-                                                <legend>Radio (Horizontal)</legend>
-                                                <div class="form-group form-group--horizontal-check">
-                                                    <label class="form-check">
-                                                        <input class="form-check__control" type="radio" value="react" name="radio-example-horizontal"/>
-                                                        <span class="form-label form-check__label">React</span>
-                                                    </label>
-                                                    <label class="form-check">
-                                                        <input class="form-check__control" type="radio" value="vue" name="radio-example-horizontal"/>
-                                                        <span class="form-label form-check__label">Vue</span>
-                                                    </label>
-                                                    <label class="form-check">
-                                                        <input class="form-check__control" type="radio" value="svelte" name="radio-example-horizontal"/>
-                                                        <span class="form-label form-check__label">Svelte</span>
-                                                    </label>
-                                                    <label class="form-check">
-                                                        <input class="form-check__control" type="radio" value="ember" name="radio-example-horizontal"/>
-                                                        <span class="form-label form-check__label">Ember</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                    </div>
+                    <div class="app-card app-card--sidebar">
+                        <div class="app-card__body">
+                            <div class="app-card__sidebar">
+                                <div class="block-navigation">
+                                    <nav class="block-navigation__menu" data-state="open">
+                                        <ul>
+                                            
+                                            <li>
+                                                <a href="/profile/"  aria-current="page" data-state="active">
+                                                    Profile
+                                                </a>
+                                            </li>
+                                            
+                                            <li>
+                                                <a href="/notifications/" >
+                                                    Notifications
+                                                </a>
+                                            </li>
+                                            
+                                            <li>
+                                                <a href="/password/" >
+                                                    Password
+                                                </a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </nav>
                                 </div>
                             </div>
-                            <div class="app-card app-card--edit">
-                                <div class="app-card__body">
-                                    <div class="auth-form">
-                                        <div class="form-group-stack">
-                                            <div class="form-group">
-                                                <label class="form-label" for="email">Email</label>
-                                                <input class="form-control form-control--lg" id="email" type="text" name="email" required="required" autocomplete="off" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-label form-label--space-between" for="password">Password <a href="#">Forgot password?</a>
-                                                </label>
-                                                <input class="form-control form-control--lg" id="password" type="password" name="password" required="required" autocomplete="off" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-check form-check--lg" for="remember">
-                                                    <input class="form-check__control" id="remember" type="checkbox" name="remember" />
-                                                    <span class="form-label form-check__label">Remember me</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="form-group-stack form-group-stack--bordered form-group-container">
+                                <div class="form-group--row">
+                                    <label class="form-label" for="your-name">Name</label>
+                                    <input class="form-control" id="your-name" name="your-name" type="text"/>
+                                    <span class="form-description">Just a help text for presentation purpose</span>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="l-row__column">
-                            <div class="app-card app-card--edit">
-                                <div class="app-card__header">
-                                    <h2 class="app-card__title">Settings</h2>
+                                <div class="form-group--row">
+                                    <label class="form-label" for="your-email">Email</label>
+                                    <input class="form-control" id="your-email" name="your-email" type="email"/>
                                 </div>
-                                <div class="app-card__body">
-                                    <div class="form-group-stack">
-                                        <div class="form-group">
-                                            <label class="form-label" for="status">Status</label>
-                                            <select class="form-control" id="status">
-                                                <option value="react">React</option>
-                                                <option value="vue">Vue</option>
-                                                <option value="svelte">Svelte</option>
-                                                <option value="ember">Ember</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-switch form-switch--sm">
-                                                <span class="form-label form-switch__label">Enable notifications</span>
-                                                <input class="form-switch__control" type="checkbox" value="true"/>
+                                <div class="form-group--row">
+                                    <label class="form-label" for="your-birthday">Birthday</label>
+                                    <input class="form-control" id="your-birthday" name="your-birthday" type="date"/>
+                                </div>
+                                <div class="form-group--row">
+                                    <label class="form-label" for="your-color">Your favorite color</label>
+                                    <input class="form-control" id="your-color" name="your-color" type="color" value="#6524d6"/>
+                                </div>
+                                <div class="form-group--row">
+                                    <label class="form-label" for="front-end-frameworks-row">Front-end Frameworks</label>
+                                    <select class="form-control" id="front-end-frameworks-row">
+                                        <option value="react">React</option>
+                                        <option value="vue">Vue</option>
+                                        <option value="svelte">Svelte</option>
+                                        <option value="ember">Ember</option>
+                                    </select>
+                                </div>
+                                <div class="form-group--row">
+                                    <label class="form-label" for="avatar">Avatar</label>
+                                    <input class="form-file form-file" type="file" id="avatar" accept="image/png, image/jpeg"/>
+                                </div>
+                                <div class="form-group--row">
+                                    <label class="form-label" for="your-message">Your Message</label>
+                                    <textarea class="form-control" id="your-message" name="your-message" placeholder="Write your message..." rows="4"></textarea>
+                                </div>
+                                <fieldset>
+                                    <div class="form-group--row">
+                                        <legend>Radio (Horizontal)</legend>
+                                        <div class="form-group form-group--horizontal-check">
+                                            <label class="form-check">
+                                                <input class="form-check__control" type="radio" value="react" name="radio-example-horizontal"/>
+                                                <span class="form-label form-check__label">React</span>
+                                            </label>
+                                            <label class="form-check">
+                                                <input class="form-check__control" type="radio" value="vue" name="radio-example-horizontal"/>
+                                                <span class="form-label form-check__label">Vue</span>
+                                            </label>
+                                            <label class="form-check">
+                                                <input class="form-check__control" type="radio" value="svelte" name="radio-example-horizontal"/>
+                                                <span class="form-label form-check__label">Svelte</span>
+                                            </label>
+                                            <label class="form-check">
+                                                <input class="form-check__control" type="radio" value="ember" name="radio-example-horizontal"/>
+                                                <span class="form-label form-check__label">Ember</span>
                                             </label>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
                             </div>
                         </div>
-                    </div>
-                    <div class="app-actions">
-                        <button class="btn btn--primary">Save</button>
-                        <button class="btn btn--light">Cancel</button>
                     </div>
                 </div>
             </div>
@@ -617,13 +578,13 @@
     </div>
 
 
-        <script src="/js/theme-change-assets.js?de72ae5f-d010-4eba-8afc-292cc32d8d73" defer></script>
-        <script src="/js/navigation.js?de72ae5f-d010-4eba-8afc-292cc32d8d73" defer></script>
-        <script src="/js/navigation-block.js?de72ae5f-d010-4eba-8afc-292cc32d8d73" defer></script>
-        <script src="/js/navigation-context.js?de72ae5f-d010-4eba-8afc-292cc32d8d73" defer></script>
-        <script src="/js/accordion-card.js?de72ae5f-d010-4eba-8afc-292cc32d8d73" defer></script>
-        <script src="/js/theme-switcher.js?de72ae5f-d010-4eba-8afc-292cc32d8d73" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts?de72ae5f-d010-4eba-8afc-292cc32d8d73" defer></script>
-        <script src="/js/charts.js?de72ae5f-d010-4eba-8afc-292cc32d8d73" type="module" defer></script>
+        <script src="/js/theme-change-assets.js?39ff4dd2-e13c-42c9-b784-7e775863bea5" defer></script>
+        <script src="/js/navigation.js?39ff4dd2-e13c-42c9-b784-7e775863bea5" defer></script>
+        <script src="/js/navigation-block.js?39ff4dd2-e13c-42c9-b784-7e775863bea5" defer></script>
+        <script src="/js/navigation-context.js?39ff4dd2-e13c-42c9-b784-7e775863bea5" defer></script>
+        <script src="/js/accordion-card.js?39ff4dd2-e13c-42c9-b784-7e775863bea5" defer></script>
+        <script src="/js/theme-switcher.js?39ff4dd2-e13c-42c9-b784-7e775863bea5" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts?39ff4dd2-e13c-42c9-b784-7e775863bea5" defer></script>
+        <script src="/js/charts.js?39ff4dd2-e13c-42c9-b784-7e775863bea5" type="module" defer></script>
     </body>
 </html>

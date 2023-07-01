@@ -17,20 +17,27 @@
     </div>
     <div class="app-sidebar__body">
         {% for block in navigation %}
-            <div class="sidebar-block">
+            <div
+                class="block-navigation"
+                data-item="navigation-block"
+            >
                 {% if block.title %}
-                    <h3 class="sidebar-block__title">
+                    <h3 class="block-navigation__title">
                         {{ block.title }}
                         <button
-                            class="btn btn--light btn--sm btn--icon sidebar-block__toggle"
+                            class="btn btn--light btn--sm btn--icon block-navigation__toggle"
                             aria-expanded="{{ block.expanded }}"
                             aria-label="Toggle shop navigation"
+                            data-action="block-navigation-toggle"
                         >
                             {% svgIcon './src/img/icon/chevron-up.svg', 'btn__icon' %}
                         </button>
                     </h3>
                 {% endif %}
-                <nav class="sidebar-block__navigation" data-state="{% if block.expanded == true %}open{% else %}closed{% endif %}">
+                <nav
+                    class="block-navigation__menu"
+                    data-state="{% if block.expanded == true %}open{% else %}closed{% endif %}"
+                >
                     <ul>
                         {% for item in block.items %}
                         <li>

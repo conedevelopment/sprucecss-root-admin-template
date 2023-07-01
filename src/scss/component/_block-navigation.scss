@@ -1,7 +1,12 @@
 @use 'sprucecss/scss/spruce' as *;
 
-.sidebar-block {
-  @include a11y-card-link('.sidebar-block__toggle', true);
+.block-navigation {
+  @include a11y-card-link('.block-navigation__toggle', true);
+  display: flex;
+  flex-direction: column;
+  gap: spacer('s');
+  position: relative;
+  z-index: 1;
 
   &__title {
     align-items: center;
@@ -24,9 +29,7 @@
     }
   }
 
-  &__navigation {
-    margin-block-start: 1rem;
-
+  &__menu {
     &[data-state='closed'] {
       display: none;
     }

@@ -1,0 +1,14 @@
+[
+  {
+    "caption": "Profile",
+    "url": "/profile/"
+  },
+  {
+    "caption": "Notifications",
+    "url": "/notifications/"
+  },
+  {
+    "caption": "Password",
+    "url": "/password/"
+  }
+]

@@ -1,0 +1,99 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+    <div class="l-main">
+        <div class="l-main__sidebar" data-item="sidebar">
+            {% include "partial/sidebar.html" %}
+        </div>
+        <main id="content" class="l-main__body" data-item="body">
+            {% include "partial/header.html" %}
+            {% set heading = {
+                'title': title
+            } %}
+            {% include "partial/heading.html" %}
+            <div class="container">
+                <div class="app-body">
+                    <div class="app-card app-card--sidebar">
+                        <div class="app-card__body">
+                            <div class="app-card__sidebar">
+                                <div class="block-navigation">
+                                    <nav class="block-navigation__menu" data-state="open">
+                                        <ul>
+                                            {% for item in account %}
+                                            <li>
+                                                <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+                                                    {{ item.caption }}
+                                                </a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="form-group-stack form-group-stack--bordered form-group-container">
+                                <div class="form-group--row">
+                                    <label class="form-label" for="your-name">Name</label>
+                                    <input class="form-control" id="your-name" name="your-name" type="text"/>
+                                    <span class="form-description">Just a help text for presentation purpose</span>
+                                </div>
+                                <div class="form-group--row">
+                                    <label class="form-label" for="your-email">Email</label>
+                                    <input class="form-control" id="your-email" name="your-email" type="email"/>
+                                </div>
+                                <div class="form-group--row">
+                                    <label class="form-label" for="your-birthday">Birthday</label>
+                                    <input class="form-control" id="your-birthday" name="your-birthday" type="date"/>
+                                </div>
+                                <div class="form-group--row">
+                                    <label class="form-label" for="your-color">Your favorite color</label>
+                                    <input class="form-control" id="your-color" name="your-color" type="color" value="#6524d6"/>
+                                </div>
+                                <div class="form-group--row">
+                                    <label class="form-label" for="front-end-frameworks-row">Front-end Frameworks</label>
+                                    <select class="form-control" id="front-end-frameworks-row">
+                                        <option value="react">React</option>
+                                        <option value="vue">Vue</option>
+                                        <option value="svelte">Svelte</option>
+                                        <option value="ember">Ember</option>
+                                    </select>
+                                </div>
+                                <div class="form-group--row">
+                                    <label class="form-label" for="avatar">Avatar</label>
+                                    <input class="form-file form-file" type="file" id="avatar" accept="image/png, image/jpeg"/>
+                                </div>
+                                <div class="form-group--row">
+                                    <label class="form-label" for="your-message">Your Message</label>
+                                    <textarea class="form-control" id="your-message" name="your-message" placeholder="Write your message..." rows="4"></textarea>
+                                </div>
+                                <fieldset>
+                                    <div class="form-group--row">
+                                        <legend>Radio (Horizontal)</legend>
+                                        <div class="form-group form-group--horizontal-check">
+                                            <label class="form-check">
+                                                <input class="form-check__control" type="radio" value="react" name="radio-example-horizontal"/>
+                                                <span class="form-label form-check__label">React</span>
+                                            </label>
+                                            <label class="form-check">
+                                                <input class="form-check__control" type="radio" value="vue" name="radio-example-horizontal"/>
+                                                <span class="form-label form-check__label">Vue</span>
+                                            </label>
+                                            <label class="form-check">
+                                                <input class="form-check__control" type="radio" value="svelte" name="radio-example-horizontal"/>
+                                                <span class="form-label form-check__label">Svelte</span>
+                                            </label>
+                                            <label class="form-check">
+                                                <input class="form-check__control" type="radio" value="ember" name="radio-example-horizontal"/>
+                                                <span class="form-label form-check__label">Ember</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% include "partial/footer.html" %}
+        </main>
+    </div>
+{% endblock %}

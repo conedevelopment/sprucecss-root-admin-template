@@ -2233,6 +2233,81 @@ legend {
   inline-size: var(--dimension);
 }
 
+.block-navigation {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+.block-navigation__toggle::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.block-navigation__title {
+  align-items: center;
+  color: var(--spruce-base-color-heading);
+  display: flex;
+  font-size: var(--spruce-font-size-base);
+  justify-content: space-between;
+  margin-block: 0;
+}
+.block-navigation__toggle[aria-expanded=true] svg {
+  rotate: 180deg;
+}
+.block-navigation__toggle svg {
+  pointer-events: none;
+}
+.block-navigation__menu[data-state=closed] {
+  display: none;
+}
+.block-navigation__menu[data-state=open] {
+  display: block;
+}
+.block-navigation__menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.block-navigation__menu a {
+  align-items: center;
+  color: var(--spruce-base-color-text);
+  display: flex;
+  gap: 0.75em;
+  padding-block: 0.35em;
+  position: relative;
+  text-decoration: none;
+}
+.block-navigation__menu a:hover:not([aria-current=page])::before {
+  background-color: var(--spruce-base-color-primary-lightest);
+}
+.block-navigation__menu a::before {
+  border-radius: var(--spruce-border-radius-sm);
+  content: "";
+  inset-block: 0;
+  inset-inline: -0.75rem -0.35em;
+  position: absolute;
+  z-index: -1;
+}
+.block-navigation__menu a[aria-current=page] {
+  color: hsl(0, 0%, 100%);
+}
+.block-navigation__menu a[aria-current=page]::before {
+  background-color: var(--spruce-base-color-primary);
+}
+.block-navigation__menu a[aria-current=page] svg {
+  color: hsl(0, 0%, 100%);
+}
+.block-navigation__menu a svg {
+  --dimension: 1.15em;
+  block-size: var(--dimension);
+  color: var(--spruce-base-color-primary);
+  inline-size: var(--dimension);
+}
+
 .breadcrumb-list {
   list-style: none;
   margin: 0;
@@ -2302,6 +2377,17 @@ legend {
 }
 .app-card--setting .app-card__content > * + * {
   margin-block-start: 0.5rem;
+}
+.app-card--sidebar .app-card__body {
+  display: grid;
+  gap: clamp(1.5rem, 5vw, 3rem);
+  grid-template-columns: minmax(0, 1fr);
+  padding: 1.5rem;
+}
+@media (min-width: 64em) {
+  .app-card--sidebar .app-card__body {
+    grid-template-columns: minmax(0, 12.5rem) minmax(0, 1fr);
+  }
 }
 .app-card__header {
   align-items: center;
@@ -2655,76 +2741,6 @@ pre[class*=language-] {
   inline-size: var(--dimension);
 }
 
-.sidebar-block {
-  position: relative;
-}
-.sidebar-block__toggle::before {
-  content: "";
-  inset: 0;
-  position: absolute;
-}
-
-.sidebar-block__title {
-  align-items: center;
-  color: var(--spruce-base-color-heading);
-  display: flex;
-  font-size: var(--spruce-font-size-base);
-  justify-content: space-between;
-  margin-block: 0;
-}
-.sidebar-block__toggle[aria-expanded=true] svg {
-  rotate: 180deg;
-}
-.sidebar-block__navigation {
-  margin-block-start: 1rem;
-}
-.sidebar-block__navigation[data-state=closed] {
-  display: none;
-}
-.sidebar-block__navigation[data-state=open] {
-  display: block;
-}
-.sidebar-block__navigation ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.sidebar-block__navigation a {
-  align-items: center;
-  color: var(--spruce-base-color-text);
-  display: flex;
-  gap: 0.75em;
-  padding-block: 0.35em;
-  position: relative;
-  text-decoration: none;
-}
-.sidebar-block__navigation a:hover:not([aria-current=page])::before {
-  background-color: var(--spruce-base-color-primary-lightest);
-}
-.sidebar-block__navigation a::before {
-  border-radius: var(--spruce-border-radius-sm);
-  content: "";
-  inset-block: 0;
-  inset-inline: -0.75rem -0.35em;
-  position: absolute;
-  z-index: -1;
-}
-.sidebar-block__navigation a[aria-current=page] {
-  color: hsl(0, 0%, 100%);
-}
-.sidebar-block__navigation a[aria-current=page]::before {
-  background-color: var(--spruce-base-color-primary);
-}
-.sidebar-block__navigation a[aria-current=page] svg {
-  color: hsl(0, 0%, 100%);
-}
-.sidebar-block__navigation a svg {
-  --dimension: 1.15em;
-  block-size: var(--dimension);
-  color: var(--spruce-base-color-primary);
-  inline-size: var(--dimension);
-}
-
 .skip-link {
   inset: -50vh auto auto 1.5rem;
   position: fixed;
@@ -2984,9 +3000,6 @@ pre[class*=language-] {
 }
 .app-header__actions--secondary {
   gap: 1rem;
-}
-.app-header__actions button > * {
-  pointer-events: none;
 }
 .app-header__logo {
   block-size: 1.25rem;

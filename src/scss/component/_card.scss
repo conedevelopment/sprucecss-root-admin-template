@@ -28,6 +28,19 @@
     }
   }
 
+  &--sidebar {
+    #{$this}__body {
+      display: grid;
+      gap: spacer-clamp('m', 'l');
+      grid-template-columns: minmax(0, 1fr);
+      padding: spacer('m');
+
+      @include breakpoint('md') {
+        grid-template-columns: minmax(0, 12.5rem) minmax(0, 1fr);
+      }
+    }
+  }
+
   &__header {
     align-items: center;
     border-block-end: 1px solid color('border');
