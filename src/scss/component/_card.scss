@@ -93,12 +93,4 @@
       padding: 0;
     }
   }
-
-  &__section-heading {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: spacer('s') spacer('m');
-    justify-content: space-between;
-  }
 }

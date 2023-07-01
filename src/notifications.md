@@ -11,7 +11,7 @@ breadcrumbs:
       url: null
 ---
 
-<h3 class="app-card__section-heading">Notifications</h3>
+<h3>Notifications</h3>
 <div class="form-group-stack form-group-stack--bordered form-group-container">
     <fieldset>
         <div class="form-group--row" style="--gap: 1rem 3rem; --label-inline-size: 15rem; align-items: start;">

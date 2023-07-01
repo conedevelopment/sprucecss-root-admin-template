@@ -18,6 +18,10 @@
     @include layout-stack('xs');
   }
 
+  &__title {
+    font-weight: 700;
+  }
+
   &__description {
     @include layout-stack('xxs');
     align-items: center;

@@ -494,7 +494,7 @@ template {
   --spruce-font-size-lg: 1.125rem;
   --spruce-font-size-ratio: 1.25;
   --spruce-font-size-sm: 0.875rem;
-  --spruce-font-weight-heading: 700;
+  --spruce-font-weight-heading: 600;
   --spruce-inline-border-radius: 0.45rem;
   --spruce-inline-padding: 0.1em 0.3em;
   --spruce-line-height-base: 1.8;
@@ -2254,6 +2254,7 @@ legend {
   color: var(--spruce-base-color-heading);
   display: flex;
   font-size: var(--spruce-font-size-base);
+  font-weight: 700;
   justify-content: space-between;
   margin-block: 0;
 }
@@ -2450,13 +2451,6 @@ legend {
   display: flex;
   justify-content: space-between;
   padding: 0;
-}
-.app-card__section-heading {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 1.5rem;
-  justify-content: space-between;
 }
 
 .context-menu {
@@ -3100,6 +3094,9 @@ pre[class*=language-] {
 }
 .app-heading__caption > * + * {
   margin-block-start: 0.5rem;
+}
+.app-heading__title {
+  font-weight: 700;
 }
 .app-heading__description {
   align-items: center;

@@ -13,6 +13,7 @@
     color: color('heading');
     display: flex;
     font-size: config('font-size-base', $typography);
+    font-weight: 700;
     justify-content: space-between;
     margin-block: 0;
   }

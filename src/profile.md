@@ -11,7 +11,7 @@ breadcrumbs:
       url: null
 ---
 
-<h3 class="app-card__section-heading">Personal Information</h3>
+<h3>Personal Information</h3>
 <div class="form-group-stack form-group-stack--bordered form-group-container">
     <div class="form-group--row">
         <label class="form-label" for="your-first-name">First Name</label>
@@ -34,7 +34,7 @@ breadcrumbs:
         <textarea class="form-control" id="your-bio" name="your-bio" rows="4">Hey, I’m Adam! I’m a passionate, accessibility-focused front-end developer. I develop with Gatsby, 11ty, and WordPress. I like to learn and try out new things in my field.</textarea>
     </div>
 </div>
-<h3 class="app-card__section-heading">Address</h3>
+<h3>Address</h3>
 <div class="form-group-stack form-group-stack--bordered form-group-container">
     <div class="form-group--row">
         <label class="form-label" for="your-country">Country</label>

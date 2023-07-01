@@ -11,7 +11,7 @@ breadcrumbs:
       url: null
 ---
 
-<h3 class="app-card__section-heading">Set up a new password</h3>
+<h3>Set up a new password</h3>
 <div class="form-group-stack form-group-stack--bordered form-group-container">
     <div class="form-group--row">
         <label class="form-label" for="your-old-password">Old Password</label>
