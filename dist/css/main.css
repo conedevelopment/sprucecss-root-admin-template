@@ -2212,6 +2212,7 @@ legend {
   gap: 0.5rem;
   line-height: 1;
   position: relative;
+  white-space: nowrap;
 }
 .status--danger::before {
   background-color: var(--spruce-alert-color-danger);
@@ -2230,6 +2231,7 @@ legend {
   block-size: var(--dimension);
   border-radius: 50%;
   content: "";
+  flex-shrink: 0;
   inline-size: var(--dimension);
 }
 
