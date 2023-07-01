@@ -48,6 +48,7 @@
       display: flex;
       gap: 0.75em;
       padding-block: 0.35em;
+      padding-inline: 0.75em;
       position: relative;
       text-decoration: none;
 
@@ -61,7 +62,7 @@
         border-radius: config('border-radius-sm', $display);
         content: '';
         inset-block: 0;
-        inset-inline: -0.75rem -0.35em;
+        inset-inline: 0;
         position: absolute;
         z-index: -1;
       }
@@ -83,6 +84,17 @@
         block-size: var(--dimension);
         color: color('primary');
         inline-size: var(--dimension);
+      }
+    }
+
+    &--breakout {
+      a {
+        padding-block: 0.35em;
+        padding-inline: 0;
+
+        &::before {
+          inset-inline: -0.75rem -0.35em;
+        }
       }
     }
   }

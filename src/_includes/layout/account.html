@@ -14,22 +14,23 @@
             <div class="container">
                 <div class="app-body">
                     <div class="app-card app-card--sidebar">
-                        <div class="app-card__body">
-                            <div class="app-card__sidebar">
-                                <div class="block-navigation">
-                                    <nav class="block-navigation__menu" data-state="open">
-                                        <ul>
-                                            {% for item in account %}
-                                            <li>
-                                                <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
-                                                    {{ item.caption }}
-                                                </a>
-                                            </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </nav>
-                                </div>
+                        <div class="app-card__sidebar">
+                            <div class="block-navigation">
+                                <nav class="block-navigation__menu" data-state="open">
+                                    <ul>
+                                        {% for item in account %}
+                                        <li>
+                                            <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+                                                {{ item.caption }}
+                                            </a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </nav>
                             </div>
+                        </div>
+                        <div class="app-card__body">
+                            <h3>Profile</h3>
                             <div class="form-group-stack form-group-stack--bordered form-group-container">
                                 <div class="form-group--row">
                                     <label class="form-label" for="your-name">Name</label>

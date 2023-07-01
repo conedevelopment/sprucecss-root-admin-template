@@ -1,9 +1,9 @@
 ---
-title: "Profile"
-layout: "layout/profile.html"
+title: "Account"
+layout: "layout/account.html"
 breadcrumbs:
     - caption: "Dashboard"
       url: "/"
-    - caption: "Profile"
+    - caption: "Account"
       url: null
 ---

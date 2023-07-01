@@ -29,15 +29,23 @@
   }
 
   &--sidebar {
-    #{$this}__body {
-      display: grid;
-      gap: spacer-clamp('m', 'l');
-      grid-template-columns: minmax(0, 1fr);
-      padding: spacer('m');
+    display: grid;
+    gap: spacer-clamp('m', 'l');
+    grid-template-columns: minmax(0, 1fr);
+    padding: spacer('m');
 
-      @include breakpoint('md') {
-        grid-template-columns: minmax(0, 12.5rem) minmax(0, 1fr);
-      }
+    @include breakpoint('md') {
+      grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+    }
+
+    #{$this}__sidebar {
+      border-inline-end: 1px solid color('border');
+      padding-inline-end: spacer-clamp('m', 'l');
+    }
+
+    #{$this}__body {
+      @include layout-stack('m');
+      padding: 0;
     }
   }
 
