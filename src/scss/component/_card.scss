@@ -39,8 +39,10 @@
     }
 
     #{$this}__sidebar {
-      border-inline-end: 1px solid color('border');
-      padding-inline-end: spacer-clamp('m', 'l');
+      @include breakpoint('md') {
+        border-inline-end: 1px solid color('border');
+        padding-inline-end: spacer-clamp('m', 'l');
+      }
     }
 
     #{$this}__body {

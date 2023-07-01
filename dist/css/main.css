@@ -2397,9 +2397,11 @@ legend {
     grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
   }
 }
-.app-card--sidebar .app-card__sidebar {
-  border-inline-end: 1px solid var(--spruce-base-color-border);
-  padding-inline-end: clamp(1.5rem, 5vw, 3rem);
+@media (min-width: 64em) {
+  .app-card--sidebar .app-card__sidebar {
+    border-inline-end: 1px solid var(--spruce-base-color-border);
+    padding-inline-end: clamp(1.5rem, 5vw, 3rem);
+  }
 }
 .app-card--sidebar .app-card__body {
   padding: 0;
