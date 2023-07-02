@@ -13,93 +13,80 @@
             {% include "partial/heading.html" %}
             <div class="container">
                 <div class="app-body">
-                    <div class="alert alert--success" role="alert">
-                        Nunc vitae dui in nunc mattis tincidunt. Nulla eleifend imperdiet odio eget semper.
-                    </div>
                     <div class="l-row l-row--sidebar">
                         <div class="l-row__column">
                             <div class="app-card app-card--edit">
+                                <div class="app-card__header">
+                                    <h2 class="app-card__title">General</h2>
+                                </div>
                                 <div class="app-card__body">
                                     <div class="form-group-stack form-group-stack--bordered form-group-container">
                                         <div class="form-group--row">
-                                            <label class="form-label" for="your-name">Name</label>
-                                            <input class="form-control" id="your-name" name="your-name" type="text"/>
+                                            <label class="form-label" for="product-name">Name</label>
+                                            <input class="form-control" id="product-name" name="product-name" type="text"/>
                                             <span class="form-description">Just a help text for presentation purpose</span>
                                         </div>
                                         <div class="form-group--row">
-                                            <label class="form-label" for="your-email">Email</label>
-                                            <input class="form-control" id="your-email" name="your-email" type="email"/>
-                                        </div>
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="your-birthday">Birthday</label>
-                                            <input class="form-control" id="your-birthday" name="your-birthday" type="date"/>
-                                        </div>
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="your-color">Your favorite color</label>
-                                            <input class="form-control" id="your-color" name="your-color" type="color" value="#6524d6"/>
-                                        </div>
-                                        <div class="form-group--row">
-                                            <label class="form-label" for="front-end-frameworks-row">Front-end Frameworks</label>
-                                            <select class="form-control" id="front-end-frameworks-row">
-                                                <option value="react">React</option>
-                                                <option value="vue">Vue</option>
-                                                <option value="svelte">Svelte</option>
-                                                <option value="ember">Ember</option>
+                                            <label class="form-label" for="product-category">Category</label>
+                                            <select class="form-control" id="product-category">
+                                                <option value="shoes">Shoes</option>
+                                                <option value="caps">Caps</option>
+                                                <option value="jacket">Jacket</option>
                                             </select>
                                         </div>
                                         <div class="form-group--row">
-                                            <label class="form-label" for="avatar">Avatar</label>
-                                            <input class="form-file form-file" type="file" id="avatar" accept="image/png, image/jpeg"/>
+                                            <label class="form-label" for="product-brand">Brand</label>
+                                            <select class="form-control" id="product-brand">
+                                                <option value="shoes">Nike</option>
+                                                <option value="caps">Adidas</option>
+                                                <option value="jacket">Puma</option>
+                                            </select>
                                         </div>
                                         <div class="form-group--row">
-                                            <label class="form-label" for="your-message">Your Message</label>
-                                            <textarea class="form-control" id="your-message" name="your-message" placeholder="Write your message..." rows="4"></textarea>
+                                            <label class="form-label" for="product-image">Image</label>
+                                            <input class="form-file form-file" type="file" id="product-image" accept="image/png, image/jpeg"/>
                                         </div>
-                                        <fieldset>
-                                            <div class="form-group--row">
-                                                <legend>Radio (Horizontal)</legend>
-                                                <div class="form-group form-group--horizontal-check">
-                                                    <label class="form-check">
-                                                        <input class="form-check__control" type="radio" value="react" name="radio-example-horizontal"/>
-                                                        <span class="form-label form-check__label">React</span>
-                                                    </label>
-                                                    <label class="form-check">
-                                                        <input class="form-check__control" type="radio" value="vue" name="radio-example-horizontal"/>
-                                                        <span class="form-label form-check__label">Vue</span>
-                                                    </label>
-                                                    <label class="form-check">
-                                                        <input class="form-check__control" type="radio" value="svelte" name="radio-example-horizontal"/>
-                                                        <span class="form-label form-check__label">Svelte</span>
-                                                    </label>
-                                                    <label class="form-check">
-                                                        <input class="form-check__control" type="radio" value="ember" name="radio-example-horizontal"/>
-                                                        <span class="form-label form-check__label">Ember</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </fieldset>
+                                        <div class="form-group--row">
+                                            <label class="form-label" for="product-description">Description</label>
+                                            <textarea class="form-control" id="product-description" name="product-description" placeholder="Write your description..."></textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="app-card app-card--edit">
+                                <div class="app-card__header">
+                                    <h2 class="app-card__title">Metadata</h2>
+                                </div>
                                 <div class="app-card__body">
-                                    <div class="auth-form">
-                                        <div class="form-group-stack">
-                                            <div class="form-group">
-                                                <label class="form-label" for="email">Email</label>
-                                                <input class="form-control form-control--lg" id="email" type="text" name="email" required="required" autocomplete="off" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-label form-label--space-between" for="password">Password <a href="#">Forgot password?</a>
-                                                </label>
-                                                <input class="form-control form-control--lg" id="password" type="password" name="password" required="required" autocomplete="off" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-check form-check--lg" for="remember">
-                                                    <input class="form-check__control" id="remember" type="checkbox" name="remember" />
-                                                    <span class="form-label form-check__label">Remember me</span>
-                                                </label>
-                                            </div>
+                                    <div class="form-group-stack form-group-stack--bordered form-group-container">
+                                        <div class="form-group--row">
+                                            <label class="form-label" for="product-weight">Weight</label>
+                                            <input class="form-control" id="product-weight" name="product-weight" type="text"/>
+                                        </div>
+                                        <div class="form-group--row">
+                                            <label class="form-label" for="product-composition">Composition</label>
+                                            <input class="form-control" id="product-composition" name="product-composition" type="text"/>
+                                        </div>
+                                        <div class="form-group--row">
+                                            <label class="form-label" for="product-color">Color</label>
+                                            <input class="form-control" id="product-color" name="product-color" type="color" value="#6524d6"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-card app-card--edit">
+                                <div class="app-card__header">
+                                    <h2 class="app-card__title">SEO</h2>
+                                </div>
+                                <div class="app-card__body">
+                                    <div class="form-group-stack form-group-stack--bordered form-group-container">
+                                        <div class="form-group--row">
+                                            <label class="form-label" for="seo-title">SEO title</label>
+                                            <input class="form-control" id="seo-title" name="seo-title" type="text"/>
+                                        </div>
+                                        <div class="form-group--row">
+                                            <label class="form-label" for="seo-description">SEO description</label>
+                                            <textarea class="form-control" id="seo-description" name="seo-description"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -112,19 +99,22 @@
                                 </div>
                                 <div class="app-card__body">
                                     <div class="form-group-stack">
+                                        <div class="form-group--row">
+                                            <label class="form-label" for="product-price">Price</label>
+                                            <input class="form-control" id="product-price" name="product-price" type="text"/>
+                                        </div>
                                         <div class="form-group">
-                                            <label class="form-label" for="status">Status</label>
-                                            <select class="form-control" id="status">
-                                                <option value="react">React</option>
-                                                <option value="vue">Vue</option>
-                                                <option value="svelte">Svelte</option>
-                                                <option value="ember">Ember</option>
+                                            <label class="form-label" for="product-status">Status</label>
+                                            <select class="form-control" id="product-status">
+                                                <option value="in-stock">In stock</option>
+                                                <option value="can-be-ordered">Can be ordered</option>
+                                                <option value="not-available">Not available</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label class="form-switch form-switch--sm">
-                                                <span class="form-label form-switch__label">Enable notifications</span>
-                                                <input class="form-switch__control" type="checkbox" value="true"/>
+                                                <input class="form-switch__control" type="checkbox" value="true" checked/>
+                                                <span class="form-label form-switch__label">Visible</span>
                                             </label>
                                         </div>
                                     </div>
