@@ -6,6 +6,7 @@
     "sku": "SKU001",
     "qty": 10,
     "status": "In stock",
+    "stock": 231,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -15,6 +16,7 @@
     "sku": "SKU002",
     "qty": 5,
     "status": "In stock",
+    "stock": 56,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -24,6 +26,7 @@
     "sku": "SKU003",
     "qty": 2,
     "status": "Out of stock",
+    "stock": 150,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -33,6 +36,7 @@
     "sku": "SKU004",
     "qty": 15,
     "status": "In stock",
+    "stock": 89,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -42,6 +46,7 @@
     "sku": "SKU005",
     "qty": 7,
     "status": "In stock",
+    "stock": 43,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -51,6 +56,7 @@
     "sku": "SKU006",
     "qty": 0,
     "status": "Out of stock",
+    "stock": 30,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -60,6 +66,7 @@
     "sku": "SKU007",
     "qty": 12,
     "status": "In stock",
+    "stock": 432,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -69,6 +76,7 @@
     "sku": "SKU008",
     "qty": 3,
     "status": "In stock",
+    "stock": 123,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -78,6 +86,7 @@
     "sku": "SKU009",
     "qty": 8,
     "status": "In stock",
+    "stock": 34,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -87,6 +96,7 @@
     "sku": "SKU010",
     "qty": 4,
     "status": "In stock",
+    "stock": 65,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -96,6 +106,7 @@
     "sku": "SKU011",
     "qty": 6,
     "status": "In stock",
+    "stock": 214,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -105,6 +116,7 @@
     "sku": "SKU012",
     "qty": 1,
     "status": "In stock",
+    "stock": 12,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -114,6 +126,7 @@
     "sku": "SKU013",
     "qty": 9,
     "status": "In stock",
+    "stock": 34,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -123,6 +136,7 @@
     "sku": "SKU014",
     "qty": 11,
     "status": "In stock",
+    "stock": 53,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -132,6 +146,7 @@
     "sku": "SKU015",
     "qty": 0,
     "status": "Out of stock",
+    "stock": 65,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -141,6 +156,7 @@
     "sku": "SKU016",
     "qty": 13,
     "status": "In stock",
+    "stock": 40,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -150,6 +166,7 @@
     "sku": "SKU017",
     "qty": 6,
     "status": "In stock",
+    "stock": 89,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -159,6 +176,7 @@
     "sku": "SKU018",
     "qty": 3,
     "status": "In stock",
+    "stock": 45,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -168,6 +186,7 @@
     "sku": "SKU019",
     "qty": 8,
     "status": "In stock",
+    "stock": 10,
     "image": "https://picsum.photos/80/80"
   },
   {
@@ -177,6 +196,7 @@
     "sku": "SKU020",
     "qty": 0,
     "status": "Out of stock",
+    "stock": 5,
     "image": "https://picsum.photos/80/80"
   }
 ]

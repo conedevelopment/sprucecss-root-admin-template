@@ -3258,6 +3258,10 @@ legend {
   font-weight: 400;
 }
 
+.form-control[type=color] {
+  --spruce-border-radius: 50%;
+}
+
 @media (min-width: 32em) {
   .display--flex\:xs {
     display: flex !important;

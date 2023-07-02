@@ -21,3 +21,7 @@ legend {
     font-weight: 400;
   }
 }
+
+.form-control[type=color] {
+  --spruce-border-radius: 50%;
+}
