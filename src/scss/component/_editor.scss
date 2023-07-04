@@ -2,9 +2,10 @@
 
 .editor {
   @include set-css-variable((
-    --height:  12.5rem
+    --block-size:  17rem
   ));
   @include transition;
+  block-size: get-css-variable(--block-size);
   border: 1px solid color('border', 'form');
   border-radius: config('border-radius-sm', $display);
   display: flex;
@@ -32,7 +33,7 @@
     padding: spacer('xs');
 
     .form-control {
-      width: auto;
+      inline-size: auto;
     }
   }
 
@@ -45,13 +46,14 @@
 
   &__body {
     @include scrollbar;
+    flex: 1 1 auto;
     margin: spacer('xxs');
     padding: spacer('s');
+    overflow-x: hidden;
     overflow-y: auto;
 
     > [contenteditable='true'] {
       @include layout-stack('xs');
-      height: get-css-variable(--height);
       outline: 0;
     }
   }

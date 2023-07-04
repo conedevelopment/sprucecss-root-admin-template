@@ -1,6 +1,6 @@
 {
   "version": "v2.0.0",
   "copyright": "Some rights reserved.",
-  "name": "Spruce CSS Eleventy Admin Template",
-  "url": "https://eleventy-admin.sprucecss.com"
+  "name": "Spruce CSS Root Admin Template",
+  "url": "https://root-admin.sprucecss.com/"
 }
