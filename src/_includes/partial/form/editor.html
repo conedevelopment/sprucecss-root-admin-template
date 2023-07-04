@@ -1,0 +1,45 @@
+<div class="editor">
+    <div class="editor__controls">
+        <select class="form-control form-control--sm" aria-label="Heading level">
+            <option value="heading-1">Heading 1</option>
+            <option value="heading-2">Heading 2</option>
+            <option value="heading-3">Heading 3</option>
+        </select>
+        <div class="editor__group">
+            <button class="btn btn--light btn--sm btn--icon" aria-label="Bold">
+                {% svgIcon './src/img/icon/format-bold.svg', 'btn__icon' %}
+            </button>
+            <button class="btn btn--light btn--sm btn--icon" title="Italic">
+                {% svgIcon './src/img/icon/format-italic.svg', 'btn__icon' %}
+            </button>
+            <button class="btn btn--light btn--sm btn--icon" title="Strikethrough">
+                {% svgIcon './src/img/icon/format-strikethrough.svg', 'btn__icon' %}
+            </button>
+            <button class="btn btn--light btn--sm btn--icon" title="Clear">
+                {% svgIcon './src/img/icon/format-clear.svg', 'btn__icon' %}
+            </button>
+        </div>
+        <div class="editor__group">
+            <button class="btn btn--light btn--sm btn--icon" title="Undo">
+                {% svgIcon './src/img/icon/format-undo.svg', 'btn__icon' %}
+            </button>
+            <button class="btn btn--light btn--sm btn--icon" title="Redo">
+                {% svgIcon './src/img/icon/format-redo.svg', 'btn__icon' %}
+            </button>
+        </div>
+    </div>
+    <div class="editor__body" id="product-description">
+        <div contenteditable="true" translate="no" tabindex="0">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id pellentesque mi. Nunc euismod libero vitae facilisis iaculis. Praesent porttitor eros ut lacinia pretium. Morbi sed tortor fringilla, tempor ligula vel, suscipit velit. Duis imperdiet sodales rhoncus. Cras ut mi mattis, imperdiet erat sit amet, fermentum metus. Quisque eu eros mi. Duis eget leo commodo, placerat ante nec, tristique neque. Aenean urna velit, laoreet hendrerit maximus non, commodo in eros. Praesent vitae accumsan magna.</p>
+
+            <p>Integer efficitur fermentum nulla, eget condimentum erat placerat at. Etiam malesuada convallis mi, eget accumsan arcu blandit in. Morbi in quam in lacus vestibulum elementum. Nam ultrices nisi a tincidunt ornare. Cras commodo ultricies nisl, sed pellentesque tellus elementum eget. Duis eu ante efficitur, eleifend elit eget, suscipit justo.</p>
+
+            <ul>
+                <li>Integer lacinia bibendum felis vel lacinia. Donec lobortis convallis tincidunt.</li>
+                <li>Vestibulum non rutrum magna. Nullam lacinia elit non gravida tempor. Interdum et malesuada fames ac ante ipsum primis in faucibus.</li>
+                <li>Suspendisse mollis congue nunc cursus euismod. Vestibulum posuere nunc eget aliquet semper.</li>
+                <li>Nam lacinia elit eu eros lacinia, at bibendum urna faucibus. Sed sed mi ultricies, ullamcorper magna in, interdum mauris.</li>
+            </ul>
+        </div>
+    </div>
+</div>
