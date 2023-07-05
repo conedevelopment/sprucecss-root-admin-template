@@ -14,7 +14,7 @@ breadcrumbs:
 <h3>Notifications</h3>
 <div class="form-group-stack form-group-stack--bordered form-group-container">
     <fieldset>
-        <div class="form-group--row form-group--row-vertical-start" style="--spruce-gap: 1rem 3rem; --spruce-label-inline-size: 14rem;">
+        <div class="form-group--row form-group--row:vertical-start" style="--spruce-gap: 1rem 3rem; --spruce-label-inline-size: 14rem;">
             <legend>
                 Email notifications
                 <span class="form-description">Configure tools that integrate with Code Scanning to keep the quality of your code under control.</span>
@@ -43,7 +43,7 @@ breadcrumbs:
         </div>
     </fieldset>
     <fieldset>
-        <div class="form-group--row form-group--row-vertical-start" style="--spruce-gap: 1rem 3rem; --spruce-label-inline-size: 14rem;">
+        <div class="form-group--row form-group--row:vertical-start" style="--spruce-gap: 1rem 3rem; --spruce-label-inline-size: 14rem;">
             <legend>
                 Push notifications
                 <span class="form-description">Praesent lobortis imperdiet mattis.</span>

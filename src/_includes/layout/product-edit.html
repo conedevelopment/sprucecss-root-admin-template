@@ -35,6 +35,23 @@
                                             </select>
                                         </div>
                                         <div class="form-group--row">
+                                            <label class="form-label" for="your-age">Stock</label>
+                                            <div class="range-group">
+                                                <div class="range-group__inner">
+                                                    <button class="btn btn--primary btn--sm btn--icon" data-action="decrement" aria-label="Decrement age">
+                                                        {% svgIcon './src/img/icon/minus.svg', 'btn__icon' %}
+                                                    </button>
+                                                    <input class="form-range range-group__control" id="your-age" type="range" min="0" max="100" value="40" step="1" />
+                                                    <button class="btn btn--primary btn--sm btn--icon" data-action="increment" aria-label="Increment age">
+                                                        {% svgIcon './src/img/icon/plus.svg', 'btn__icon' %}
+                                                    </button>
+                                                </div>
+                                                <span class="form-label">
+                                                    <span class="form-label__value" data-suffix="piece">40 piece</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group--row">
                                             <label class="form-label" for="product-brand">Brand</label>
                                             <select class="form-control" id="product-brand">
                                                 <option value="shoes">Nike</option>
@@ -101,7 +118,11 @@
                                     <div class="form-group-stack">
                                         <div class="form-group--row">
                                             <label class="form-label" for="product-price">Price</label>
-                                            <input class="form-control" id="product-price" name="product-price" type="text"/>
+                                            <div class="form-group--stacked">
+                                                <div class="form-group-label">$</div>
+                                                <input class="form-control" id="product-price" name="product-price" type="text"/>
+                                                <div class="form-group-label">.00</div>
+                                              </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="form-label" for="product-status">Status</label>
