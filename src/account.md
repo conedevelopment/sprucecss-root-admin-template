@@ -38,3 +38,46 @@ breadcrumbs:
         </div>
     </div>
 </div>
+
+<div class="app-card app-card--info">
+    <div class="app-card__header">
+        <h3 class="app-card__title">Notifications</h3>
+        <a href="/account/profile/" class="btn btn--outline-primary btn--sm">Edit</a>
+    </div>
+    <div class="app-card__body">
+        <div class="l-row l-row--column:md:2">
+            <div class="data-group">
+                <p class="data-group__title">News and updates (Email)</p>
+                <p class="data-group__content">Enabled</p>
+            </div>
+            <div class="data-group">
+                <p class="data-group__title">Tips and tutorials (Email)</p>
+                <p class="data-group__content">Enabled</p>
+            </div>
+            <div class="data-group">
+                <p class="data-group__title">Comments (Email)</p>
+                <p class="data-group__content">Disabled</p>
+            </div>
+            <div class="data-group">
+                <p class="data-group__title">Reminders (Email)</p>
+                <p class="data-group__content">Disabled</p>
+            </div>
+            <div class="data-group">
+                <p class="data-group__title">News and updates (Push)</p>
+                <p class="data-group__content">Disabled</p>
+            </div>
+            <div class="data-group">
+                <p class="data-group__title">Tips and tutorials (Push)</p>
+                <p class="data-group__content">Disabled</p>
+            </div>
+            <div class="data-group">
+                <p class="data-group__title">Comments (Push)</p>
+                <p class="data-group__content">Enabled</p>
+            </div>
+            <div class="data-group">
+                <p class="data-group__title">Reminders (Push)</p>
+                <p class="data-group__content">Disabled</p>
+            </div>
+        </div>
+    </div>
+</div>
