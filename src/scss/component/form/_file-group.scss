@@ -1,0 +1,74 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.file-group {
+  $this: &;
+  @include generate-variables($form-control, $include: ('border-width', 'border-radius'));
+  align-items: center;
+  border: config('border-width', $form-control) solid color('border', 'form');
+  border-radius: config('border-radius', $form-control);
+  display: flex;
+  gap: spacer('m');
+  padding: spacer('s');
+  overflow: hidden;
+
+  &__preview {
+    align-items: center;
+    aspect-ratio: 1;
+    background-color: color('primary-lightest');
+    background-position: center;
+    background-size: cover;
+    border-radius: config('border-radius', $form-control);
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    inline-size: 9rem;
+    justify-content: center;
+
+    &[style*='background-image'] #{$this}__icon {
+      display: none;
+    }
+  }
+
+  &__body {
+    @include layout-stack('xs');
+    inline-size: 100%;
+  }
+
+  &__icon {
+    --dimension: 2rem;
+    block-size: var(--dimension);
+    color: color('primary');
+    inline-size: var(--dimension);
+  }
+
+  &__title {
+    color: color('heading');
+    font-family: config('font-family-heading', $typography);
+    font-weight: 700;
+  }
+
+  &__meta {
+    list-style: none;
+    padding-inline-start: 0;
+
+    li {
+
+    }
+
+    > * + * {
+      margin-block-start: 0;
+    }
+  }
+
+  .form-file {
+    inline-size: 100%;
+  }
+}
+
+.file-list {
+
+}
+
+.file-item {
+
+}
