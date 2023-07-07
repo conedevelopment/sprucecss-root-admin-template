@@ -1,5 +1,9 @@
 @use 'sprucecss/scss/spruce' as *;
 
+.file-group-container {
+  container: file-group-container / inline-size;
+}
+
 .file-group {
   $this: &;
   @include generate-variables($form-control, $include: ('border-width', 'border-radius'));
@@ -10,6 +14,16 @@
   gap: spacer('m');
   padding: spacer('s');
   overflow: hidden;
+
+  @container file-group-container (inline-size < 30rem) {
+    flex-direction: column;
+  }
+
+  &:has([style*='background-image']) {
+    #{$this}__remove {
+      display: inline-flex;
+    }
+  }
 
   &__preview {
     align-items: center;
@@ -24,14 +38,25 @@
     inline-size: 9rem;
     justify-content: center;
 
+    @container file-group-container (inline-size < 30rem) {
+      aspect-ratio: 16 / 9;
+      inline-size: 100%;
+    }
+
     &[style*='background-image'] #{$this}__icon {
       display: none;
     }
   }
 
   &__body {
-    @include layout-stack('xs');
+    display: flex;
+    flex-direction: column;
+    gap: spacer('xs');
     inline-size: 100%;
+
+    > * {
+      margin-block: 0;
+    }
   }
 
   &__icon {
@@ -51,17 +76,24 @@
     list-style: none;
     padding-inline-start: 0;
 
-    li {
-
-    }
-
     > * + * {
       margin-block-start: 0;
     }
   }
 
-  .form-file {
-    inline-size: 100%;
+  &__action {
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacer('xs');
+    margin-block-start: spacer('xxs');
+  }
+
+  &__remove {
+    display: none;
+  }
+
+  &__input {
+    flex: 1;
   }
 }
 

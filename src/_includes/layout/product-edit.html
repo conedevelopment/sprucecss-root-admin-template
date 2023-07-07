@@ -63,9 +63,80 @@
                                             <label class="form-label" for="product-image">Image</label>
                                             <input class="form-file form-file" type="file" id="product-image" accept="image/png, image/jpeg"/>
                                         </div>
-                                        <div class="form-group--row form-group--row-vertical-start">
+                                        <div class="form-group--row form-group--row:vertical-start">
                                             <label class="form-label" for="product-description">Description</label>
                                             {% include "partial/form/editor.html" %}
+                                        </div>
+                                        <div class="form-group--row">
+                                            <label class="form-label" for="product-image-1">Image</label>
+                                            <div class="file-group-container">
+                                                <div class="file-group">
+                                                    <div class="file-group__preview">
+                                                        {% svgIcon './src/img/icon/image.svg', 'file-group__icon' %}
+                                                    </div>
+                                                    <div class="file-group__body">
+                                                        <p class="file-group__title">Upload a product image</p>
+                                                        <ul class="file-group__meta">
+                                                            <li>JPG, PNG, SVG or GIF</li>
+                                                            <li>Maximum upload limit: 5 MB</li>
+                                                        </ul>
+                                                        <div class="file-group__action">
+                                                            <button class="btn btn--delete btn--icon file-group__remove">
+                                                                {% svgIcon './src/img/icon/close.svg', 'btn__icon' %}
+                                                            </button>
+                                                            <input class="form-file form-file file-group__input" type="file" id="product-image-1" accept="image/png, image/jpeg"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group--row">
+                                            <label class="form-label" for="product-image-2">Image</label>
+                                            <div class="file-group-container">
+                                                <div class="file-group">
+                                                    <div class="file-group__preview">
+                                                        {% svgIcon './src/img/icon/image.svg', 'file-group__icon' %}
+                                                    </div>
+                                                    <div class="file-group__body">
+                                                        <p class="file-group__title">Upload a product image</p>
+                                                        <ul class="file-group__meta">
+                                                            <li>JPG, PNG, SVG or GIF</li>
+                                                            <li>Maximum upload limit: 5 MB</li>
+                                                        </ul>
+                                                        <div class="file-group__action">
+                                                            <button class="btn btn--delete btn--icon file-group__remove">
+                                                                {% svgIcon './src/img/icon/close.svg', 'btn__icon' %}
+                                                            </button>
+                                                            <button class="btn btn--primary btn--icon">
+                                                                <span>Select image</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group--row">
+                                            <label class="form-label" for="product-image-3">Image</label>
+                                            <div class="file-group-container">
+                                                <div class="file-group">
+                                                    <div class="file-group__preview" style="background-image: url('https://images.unsplash.com/photo-1688292667451-3a8945737a72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=691&q=80');">
+                                                        {% svgIcon './src/img/icon/image.svg', 'file-group__icon' %}
+                                                    </div>
+                                                    <div class="file-group__body">
+                                                        <p class="file-group__title">Upload a product image</p>
+                                                        <ul class="file-group__meta">
+                                                            <li>JPG, PNG, SVG or GIF</li>
+                                                            <li>Maximum upload limit: 5 MB</li>
+                                                        </ul>
+                                                        <div class="file-group__action">
+                                                            <button class="btn btn--delete btn--icon file-group__remove">
+                                                                {% svgIcon './src/img/icon/close.svg', 'btn__icon' %}
+                                                            </button>
+                                                            <input class="form-file form-file file-group__input" type="file" id="product-image-3" accept="image/png, image/jpeg"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -137,6 +208,77 @@
                                                 <input class="form-switch__control" type="checkbox" value="true" checked/>
                                                 <span class="form-label form-switch__label">Visible</span>
                                             </label>
+                                        </div>
+                                        <div class="form-group--row">
+                                            <label class="form-label" for="product-image-1">Image</label>
+                                            <div class="file-group-container">
+                                                <div class="file-group">
+                                                    <div class="file-group__preview">
+                                                        {% svgIcon './src/img/icon/image.svg', 'file-group__icon' %}
+                                                    </div>
+                                                    <div class="file-group__body">
+                                                        <p class="file-group__title">Upload a product image</p>
+                                                        <ul class="file-group__meta">
+                                                            <li>JPG, PNG, SVG or GIF</li>
+                                                            <li>Maximum upload limit: 5 MB</li>
+                                                        </ul>
+                                                        <div class="file-group__action">
+                                                            <button class="btn btn--delete btn--icon file-group__remove">
+                                                                {% svgIcon './src/img/icon/close.svg', 'btn__icon' %}
+                                                            </button>
+                                                            <input class="form-file form-file file-group__input" type="file" id="product-image-1" accept="image/png, image/jpeg"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group--row">
+                                            <label class="form-label" for="product-image-2">Image</label>
+                                            <div class="file-group-container">
+                                                <div class="file-group">
+                                                    <div class="file-group__preview">
+                                                        {% svgIcon './src/img/icon/image.svg', 'file-group__icon' %}
+                                                    </div>
+                                                    <div class="file-group__body">
+                                                        <p class="file-group__title">Upload a product image</p>
+                                                        <ul class="file-group__meta">
+                                                            <li>JPG, PNG, SVG or GIF</li>
+                                                            <li>Maximum upload limit: 5 MB</li>
+                                                        </ul>
+                                                        <div class="file-group__action">
+                                                            <button class="btn btn--delete btn--icon file-group__remove">
+                                                                {% svgIcon './src/img/icon/close.svg', 'btn__icon' %}
+                                                            </button>
+                                                            <button class="btn btn--primary btn--icon">
+                                                                <span>Select image</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group--row">
+                                            <label class="form-label" for="product-image-3">Image</label>
+                                            <div class="file-group-container">
+                                                <div class="file-group">
+                                                    <div class="file-group__preview" style="background-image: url('https://images.unsplash.com/photo-1688292667451-3a8945737a72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=691&q=80');">
+                                                        {% svgIcon './src/img/icon/image.svg', 'file-group__icon' %}
+                                                    </div>
+                                                    <div class="file-group__body">
+                                                        <p class="file-group__title">Upload a product image</p>
+                                                        <ul class="file-group__meta">
+                                                            <li>JPG, PNG, SVG or GIF</li>
+                                                            <li>Maximum upload limit: 5 MB</li>
+                                                        </ul>
+                                                        <div class="file-group__action">
+                                                            <button class="btn btn--delete btn--icon file-group__remove">
+                                                                {% svgIcon './src/img/icon/close.svg', 'btn__icon' %}
+                                                            </button>
+                                                            <input class="form-file form-file file-group__input" type="file" id="product-image-3" accept="image/png, image/jpeg"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
