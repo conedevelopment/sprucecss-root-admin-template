@@ -51,7 +51,7 @@
   &__body {
     display: flex;
     flex-direction: column;
-    gap: spacer('xs');
+    gap: spacer('xxs');
     inline-size: 100%;
 
     > * {
@@ -85,7 +85,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: spacer('xs');
-    margin-block-start: spacer('xxs');
+    margin-block-start: spacer('xs');
   }
 
   &__remove {
