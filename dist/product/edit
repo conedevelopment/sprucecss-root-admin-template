@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <script src="/js/theme-detection.js?88484f42-b47d-4737-b2a1-c6af39d57503"></script>
+        <script src="/js/theme-detection.js?0aabd34b-0cd5-4211-a144-41a76014448a"></script>
         <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -55,7 +55,7 @@
 
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
 
-        <link rel="stylesheet" href="/css/main.css?88484f42-b47d-4737-b2a1-c6af39d57503">
+        <link rel="stylesheet" href="/css/main.css?0aabd34b-0cd5-4211-a144-41a76014448a">
     </head>
     <body>
         <a class="btn btn--primary skip-link" href="#content">Skip to content</a>
@@ -551,36 +551,37 @@
                                             </select>
                                         </div>
                                         <div class="form-group--row">
-                                            <label class="form-label" for="product-image-3">Image</label>
-                                            <div class="file-group-container">
-                                                <div class="file-group">
-                                                    <div class="file-group__preview">
-                                                        <svg aria-hidden='true' focusable='false' fill='none' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='file-group__icon'>
+                                            <label class="form-label" for="product-image">Image</label>
+<div class="file-group-container">
+    <div class="file-group">
+        <div class="file-group__preview">
+            <svg aria-hidden='true' focusable='false' fill='none' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='file-group__icon'>
     <rect x='3' y='3' width='18' height='18' rx='2' ry='2'></rect>
     <circle cx='8.5' cy='8.5' r='1.5'></circle>
     <polyline points='21 15 16 10 5 21'></polyline>
 </svg>
 
-                                                    </div>
-                                                    <div class="file-group__body">
-                                                        <p class="file-group__title">Upload a product image</p>
-                                                        <ul class="file-group__meta">
-                                                            <li>Accepted formats: JPG, PNG</li>
-                                                            <li>Maximum upload limit: 5 MB</li>
-                                                        </ul>
-                                                        <div class="file-group__action">
-                                                            <button class="btn btn--delete btn--icon file-group__remove">
-                                                                <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+        </div>
+        <div class="file-group__body">
+            <p class="file-group__title">Upload a product image</p>
+            <ul class="file-group__meta">
+                <li>Accepted formats: JPG, PNG</li>
+                <li>Maximum upload limit: 5 MB</li>
+            </ul>
+            <div class="file-group__action">
+                <button class="btn btn--delete btn--icon file-group__remove">
+                    <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
     <line x1='18' y1='6' x2='6' y2='18'></line>
     <line x1='6' y1='6' x2='18' y2='18'></line>
 </svg>
 
-                                                            </button>
-                                                            <input class="form-file form-file file-group__input" type="file" id="product-image-3" accept="image/png, image/jpeg"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                </button>
+                <input class="form-file form-file file-group__input" type="file" id="product-image" accept="image/png, image/jpeg"/>
+            </div>
+        </div>
+    </div>
+</div>
+
                                         </div>
                                         <div class="form-group--row form-group--row:vertical-start">
                                             <label class="form-label" for="product-description">Description</label>
@@ -670,6 +671,96 @@
                                             <label class="form-label" for="product-color">Color</label>
                                             <input class="form-control" id="product-color" name="product-color" type="color" value="#6524d6"/>
                                         </div>
+                                        <div class="form-group--row">
+                                            <span class="form-label">Gallery</span>
+<div class="file-list">
+    <button class="btn btn--primary btn--lg btn--block">Choose file</button>
+    <ul class="file-list__items">
+        <li class="file-list-item">
+            <div class="file-list-item__column">
+                <img class="file-list-item__thumbnail" src="https://picsum.photos/80/80" alt="">
+                <span id="list-item-1" class="file-list-item__name">pic1234.jpg</span>
+            </div>
+            <div class="file-list-item__actions">
+                <button class="btn btn--light btn--sm btn--icon" aria-describedby="list-item-1" aria-label="Move one up" disabled>
+                    <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+    <polyline points='18 15 12 9 6 15'></polyline>
+</svg>
+
+                </button>
+                <button class="btn btn--light btn--sm btn--icon" aria-describedby="list-item-1" aria-label="Move one down">
+                    <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+    <polyline points='6 9 12 15 18 9'></polyline>
+</svg>
+
+                </button>
+                <button class="btn btn--delete btn--sm btn--icon" aria-describedby="list-item-1" aria-label="Remove">
+                    <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+    <line x1='18' y1='6' x2='6' y2='18'></line>
+    <line x1='6' y1='6' x2='18' y2='18'></line>
+</svg>
+
+                </button>
+            </div>
+        </li>
+        <li class="file-list-item">
+            <div class="file-list-item__column">
+                <img class="file-list-item__thumbnail" src="https://picsum.photos/81/81" alt="">
+                <span id="list-item-2" class="file-list-item__name">image5678.png</span>
+            </div>
+            <div class="file-list-item__actions">
+                <button class="btn btn--light btn--sm btn--icon" aria-describedby="list-item-2" aria-label="Move one up">
+                    <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+    <polyline points='18 15 12 9 6 15'></polyline>
+</svg>
+
+                </button>
+                <button class="btn btn--light btn--sm btn--icon" aria-describedby="list-item-2" aria-label="Move one down">
+                    <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+    <polyline points='6 9 12 15 18 9'></polyline>
+</svg>
+
+                </button>
+                <button class="btn btn--delete btn--sm btn--icon" aria-describedby="list-item-2" aria-label="Remove">
+                    <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+    <line x1='18' y1='6' x2='6' y2='18'></line>
+    <line x1='6' y1='6' x2='18' y2='18'></line>
+</svg>
+
+                </button>
+            </div>
+        </li>
+        <li class="file-list-item">
+            <div class="file-list-item__column">
+                <img class="file-list-item__thumbnail" src="https://picsum.photos/82/82" alt="">
+                <span id="list-item-3" class="file-list-item__name">photo91011.gif</span>
+            </div>
+            <div class="file-list-item__actions">
+                <button class="btn btn--light btn--sm btn--icon" aria-describedby="list-item-3" aria-label="Move one up">
+                    <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+    <polyline points='18 15 12 9 6 15'></polyline>
+</svg>
+
+                </button>
+                <button class="btn btn--light btn--sm btn--icon" aria-describedby="list-item-3" aria-label="Move one down" disabled>
+                    <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+    <polyline points='6 9 12 15 18 9'></polyline>
+</svg>
+
+                </button>
+                <button class="btn btn--delete btn--sm btn--icon" aria-describedby="list-item-3" aria-label="Remove">
+                    <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+    <line x1='18' y1='6' x2='6' y2='18'></line>
+    <line x1='6' y1='6' x2='18' y2='18'></line>
+</svg>
+
+                </button>
+            </div>
+        </li>
+    </ul>
+</div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -745,14 +836,14 @@
     </div>
 
 
-        <script src="/js/theme-change-assets.js?88484f42-b47d-4737-b2a1-c6af39d57503" defer></script>
-        <script src="/js/navigation.js?88484f42-b47d-4737-b2a1-c6af39d57503" defer></script>
-        <script src="/js/navigation-block.js?88484f42-b47d-4737-b2a1-c6af39d57503" defer></script>
-        <script src="/js/navigation-context.js?88484f42-b47d-4737-b2a1-c6af39d57503" defer></script>
-        <script src="/js/accordion-card.js?88484f42-b47d-4737-b2a1-c6af39d57503" defer></script>
-        <script src="/js/theme-switcher.js?88484f42-b47d-4737-b2a1-c6af39d57503" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts?88484f42-b47d-4737-b2a1-c6af39d57503" defer></script>
-        <script src="/js/charts.js?88484f42-b47d-4737-b2a1-c6af39d57503" type="module" defer></script>
-        <script src="/js/range-group.js?88484f42-b47d-4737-b2a1-c6af39d57503" type="module" defer></script>
+        <script src="/js/theme-change-assets.js?0aabd34b-0cd5-4211-a144-41a76014448a" defer></script>
+        <script src="/js/navigation.js?0aabd34b-0cd5-4211-a144-41a76014448a" defer></script>
+        <script src="/js/navigation-block.js?0aabd34b-0cd5-4211-a144-41a76014448a" defer></script>
+        <script src="/js/navigation-context.js?0aabd34b-0cd5-4211-a144-41a76014448a" defer></script>
+        <script src="/js/accordion-card.js?0aabd34b-0cd5-4211-a144-41a76014448a" defer></script>
+        <script src="/js/theme-switcher.js?0aabd34b-0cd5-4211-a144-41a76014448a" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts?0aabd34b-0cd5-4211-a144-41a76014448a" defer></script>
+        <script src="/js/charts.js?0aabd34b-0cd5-4211-a144-41a76014448a" type="module" defer></script>
+        <script src="/js/range-group.js?0aabd34b-0cd5-4211-a144-41a76014448a" type="module" defer></script>
     </body>
 </html>

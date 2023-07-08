@@ -2742,6 +2742,55 @@ legend {
   flex: 1;
 }
 
+.file-list {
+  --spruce-border-radius: 0.45rem;
+  --spruce-border-width: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.file-list__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: var(--spruce-border-width) solid var(--spruce-form-color-border);
+  border-radius: var(--spruce-border-radius);
+  padding: 0.5rem;
+}
+.file-list__items > * + * {
+  border-block-start: var(--spruce-border-width) solid var(--spruce-base-color-border);
+  margin-block-start: 0.5rem;
+  padding-block-start: 0.5rem;
+}
+
+.file-list-item {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.file-list-item__column {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+.file-list-item__thumbnail {
+  aspect-ratio: 1;
+  border-radius: var(--spruce-border-radius-sm);
+  inline-size: 2.5rem;
+}
+.file-list-item__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-inline-size: 25ch;
+}
+.file-list-item__actions {
+  align-items: center;
+  display: flex;
+  gap: 0.25rem;
+}
+
 .editor {
   --spruce-block-size: 18rem;
   transition-duration: var(--spruce-duration);

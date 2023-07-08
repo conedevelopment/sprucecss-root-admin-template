@@ -60,27 +60,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group--row">
-                                            <label class="form-label" for="product-image-3">Image</label>
-                                            <div class="file-group-container">
-                                                <div class="file-group">
-                                                    <div class="file-group__preview">
-                                                        {% svgIcon './src/img/icon/image.svg', 'file-group__icon' %}
-                                                    </div>
-                                                    <div class="file-group__body">
-                                                        <p class="file-group__title">Upload a product image</p>
-                                                        <ul class="file-group__meta">
-                                                            <li>Accepted formats: JPG, PNG</li>
-                                                            <li>Maximum upload limit: 5 MB</li>
-                                                        </ul>
-                                                        <div class="file-group__action">
-                                                            <button class="btn btn--delete btn--icon file-group__remove">
-                                                                {% svgIcon './src/img/icon/close.svg', 'btn__icon' %}
-                                                            </button>
-                                                            <input class="form-file form-file file-group__input" type="file" id="product-image-3" accept="image/png, image/jpeg"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            {% include "partial/form/file-group.html" %}
                                         </div>
                                         <div class="form-group--row form-group--row:vertical-start">
                                             <label class="form-label" for="product-description">Description</label>
@@ -106,6 +86,9 @@
                                         <div class="form-group--row">
                                             <label class="form-label" for="product-color">Color</label>
                                             <input class="form-control" id="product-color" name="product-color" type="color" value="#6524d6"/>
+                                        </div>
+                                        <div class="form-group--row">
+                                            {% include "partial/form/file-list.html" %}
                                         </div>
                                     </div>
                                 </div>
