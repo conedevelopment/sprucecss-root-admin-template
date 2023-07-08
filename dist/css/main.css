@@ -2199,6 +2199,9 @@ legend {
 .auth-form > * + * {
   margin-block-start: 1rem;
 }
+.auth-form__title {
+  font-weight: 700;
+}
 .auth-form .or-separator {
   margin-block-start: 1.5rem;
 }
@@ -2702,7 +2705,7 @@ legend {
 .file-group__body {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
   inline-size: 100%;
 }
 .file-group__body > * {
@@ -2730,7 +2733,7 @@ legend {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-block-start: 0.25rem;
+  margin-block-start: 0.5rem;
 }
 .file-group__remove {
   display: none;
@@ -2895,6 +2898,25 @@ pre[class*=language-] code {
 pre[class*=language-] {
   background: var(--spruce-prism-color-background);
   overflow-x: auto;
+}
+:not(pre) > code[class*=language-]::-webkit-scrollbar,
+pre[class*=language-]::-webkit-scrollbar {
+  block-size: 0.5rem;
+  inline-size: 0.5rem;
+}
+:not(pre) > code[class*=language-]::-webkit-scrollbar-thumb,
+pre[class*=language-]::-webkit-scrollbar-thumb {
+  background: var(--spruce-scrollbar-color-thumb-background);
+  border-radius: var(--spruce-border-radius-sm);
+}
+:not(pre) > code[class*=language-]::-webkit-scrollbar-thumb:hover,
+pre[class*=language-]::-webkit-scrollbar-thumb:hover {
+  background: var(--spruce-scrollbar-color-thumb-background-hover);
+}
+:not(pre) > code[class*=language-]::-webkit-scrollbar-track,
+pre[class*=language-]::-webkit-scrollbar-track {
+  background: var(--spruce-scrollbar-color-track-background);
+  border-radius: var(--spruce-border-radius-sm);
 }
 
 .token.comment,

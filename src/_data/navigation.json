@@ -5,7 +5,8 @@
       {
         "caption": "Dashboard",
         "url": "/",
-        "icon": "./src/img/icon/home.svg"
+        "icon": "./src/img/icon/home.svg",
+        "visible": true
       }
     ]
   },
@@ -16,22 +17,32 @@
       {
         "caption": "Products",
         "url": "/products/",
-        "icon": "./src/img/icon/shopping-bag.svg"
+        "icon": "./src/img/icon/shopping-bag.svg",
+        "visible": true
+      },
+      {
+        "caption": "Product Edit",
+        "url": "/product/edit",
+        "icon": null,
+        "visible": false
       },
       {
         "caption": "Orders",
         "url": "/orders/",
-        "icon": "./src/img/icon/shopping-cart.svg"
+        "icon": "./src/img/icon/shopping-cart.svg",
+        "visible": true
       },
       {
         "caption": "Customers",
         "url": "/customers/",
-        "icon": "./src/img/icon/users.svg"
+        "icon": "./src/img/icon/users.svg",
+        "visible": true
       },
       {
         "caption": "Categories",
         "url": "/categories/",
-        "icon": "./src/img/icon/archive.svg"
+        "icon": "./src/img/icon/archive.svg",
+        "visible": true
       }
     ]
   },
@@ -41,25 +52,18 @@
     "items": [
       {
         "caption": "Sign In",
-        "url": "/sign-in/"
+        "url": "/sign-in/",
+        "visible": true
       },
       {
         "caption": "Sign Up",
-        "url": "/sign-up/"
+        "url": "/sign-up/",
+        "visible": true
       },
       {
         "caption": "Password Reset",
-        "url": "/password-reset/"
-      }
-    ]
-  },
-  {
-    "title": "Reference",
-    "expanded": false,
-    "items": [
-      {
-        "caption": "File Group",
-        "url": "/reference/file-group/"
+        "url": "/password-reset/",
+        "visible": true
       }
     ]
   }

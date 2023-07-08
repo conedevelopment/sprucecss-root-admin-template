@@ -26,7 +26,7 @@
                         {{ block.title }}
                         <button
                             class="btn btn--light btn--sm btn--icon block-navigation__toggle"
-                            aria-expanded="{{ block.expanded }}"
+                            aria-expanded="{{ helpers.getLinkActiveParent(block, page.url) | safe }}"
                             aria-label="Toggle shop navigation"
                             data-action="block-navigation-toggle"
                         >
@@ -36,17 +36,19 @@
                 {% endif %}
                 <nav
                     class="block-navigation__menu block-navigation__menu--breakout"
-                    data-state="{% if block.expanded == true %}open{% else %}closed{% endif %}"
+                    data-state="{{ helpers.getLinkActiveParent(block, page.url, false) | safe }}"
                 >
                     <ul>
                         {% for item in block.items %}
                         <li>
-                            <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
-                                {% if item.icon %}
-                                    {% svgIcon item.icon %}
-                                {% endif %}
-                                {{ item.caption }}
-                            </a>
+                            {% if item.visible %}
+                                <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+                                    {% if item.icon %}
+                                        {% svgIcon item.icon %}
+                                    {% endif %}
+                                    {{ item.caption }}
+                                </a>
+                            {% endif %}
                         </li>
                         {% endfor %}
                     </ul>

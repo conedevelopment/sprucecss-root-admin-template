@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <script src="/js/theme-detection.js?67982d9c-e878-4f80-8165-9711b13e83c9"></script>
+    <script src="/js/theme-detection.js?9dea04fc-4842-4c7a-b554-351cbbacc2f5"></script>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -25,7 +25,7 @@
     <meta property="og:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <meta name="twitter:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/main.css?67982d9c-e878-4f80-8165-9711b13e83c9">
+    <link rel="stylesheet" href="/css/main.css?9dea04fc-4842-4c7a-b554-351cbbacc2f5">
 </head>
 
 <body>
@@ -134,13 +134,13 @@
                     <div class="block-navigation" data-item="navigation-block">
                         <h3 class="block-navigation__title">
                             Shop
-                            <button class="btn btn--light btn--sm btn--icon block-navigation__toggle" aria-expanded="true" aria-label="Toggle shop navigation" data-action="block-navigation-toggle">
+                            <button class="btn btn--light btn--sm btn--icon block-navigation__toggle" aria-expanded="false" aria-label="Toggle shop navigation" data-action="block-navigation-toggle">
                                 <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                     <polyline points='18 15 12 9 6 15'></polyline>
                                 </svg>
                             </button>
                         </h3>
-                        <nav class="block-navigation__menu block-navigation__menu--breakout" data-state="open">
+                        <nav class="block-navigation__menu block-navigation__menu--breakout" data-state="closed">
                             <ul>
                                 <li>
                                     <a href="/products/">
@@ -151,6 +151,8 @@
                                         </svg>
                                         Products
                                     </a>
+                                </li>
+                                <li>
                                 </li>
                                 <li>
                                     <a href="/orders/">
@@ -188,7 +190,7 @@
                     </div>
                     <div class="block-navigation" data-item="navigation-block">
                         <h3 class="block-navigation__title">
-                            Pages
+                            Auth
                             <button class="btn btn--light btn--sm btn--icon block-navigation__toggle" aria-expanded="false" aria-label="Toggle shop navigation" data-action="block-navigation-toggle">
                                 <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                     <polyline points='18 15 12 9 6 15'></polyline>
@@ -539,13 +541,13 @@
                                                                 <circle cx='12' cy='12' r='3'></circle>
                                                             </svg>
                                                         </a>
-                                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                        <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
                                                                 <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
                                                             </svg>
                                                         </a>
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                        <a href="#" class="btn btn--delete btn--sm btn--icon" aria-label="Delete">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <polyline points='3 6 5 6 21 6'></polyline>
                                                                 <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
@@ -589,13 +591,13 @@
                                                                 <circle cx='12' cy='12' r='3'></circle>
                                                             </svg>
                                                         </a>
-                                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                        <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
                                                                 <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
                                                             </svg>
                                                         </a>
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                        <a href="#" class="btn btn--delete btn--sm btn--icon" aria-label="Delete">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <polyline points='3 6 5 6 21 6'></polyline>
                                                                 <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
@@ -639,13 +641,13 @@
                                                                 <circle cx='12' cy='12' r='3'></circle>
                                                             </svg>
                                                         </a>
-                                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                        <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
                                                                 <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
                                                             </svg>
                                                         </a>
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                        <a href="#" class="btn btn--delete btn--sm btn--icon" aria-label="Delete">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <polyline points='3 6 5 6 21 6'></polyline>
                                                                 <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
@@ -689,13 +691,13 @@
                                                                 <circle cx='12' cy='12' r='3'></circle>
                                                             </svg>
                                                         </a>
-                                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                        <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
                                                                 <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
                                                             </svg>
                                                         </a>
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                        <a href="#" class="btn btn--delete btn--sm btn--icon" aria-label="Delete">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <polyline points='3 6 5 6 21 6'></polyline>
                                                                 <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
@@ -739,13 +741,13 @@
                                                                 <circle cx='12' cy='12' r='3'></circle>
                                                             </svg>
                                                         </a>
-                                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                        <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
                                                                 <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
                                                             </svg>
                                                         </a>
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                        <a href="#" class="btn btn--delete btn--sm btn--icon" aria-label="Delete">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <polyline points='3 6 5 6 21 6'></polyline>
                                                                 <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
@@ -789,13 +791,13 @@
                                                                 <circle cx='12' cy='12' r='3'></circle>
                                                             </svg>
                                                         </a>
-                                                        <a href="/product-edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                                        <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
                                                                 <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
                                                             </svg>
                                                         </a>
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="Delete">
+                                                        <a href="#" class="btn btn--delete btn--sm btn--icon" aria-label="Delete">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <polyline points='3 6 5 6 21 6'></polyline>
                                                                 <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'></path>
@@ -825,15 +827,15 @@
             </footer>
         </main>
     </div>
-    <script src="/js/theme-change-assets.js?67982d9c-e878-4f80-8165-9711b13e83c9" defer></script>
-    <script src="/js/navigation.js?67982d9c-e878-4f80-8165-9711b13e83c9" defer></script>
-    <script src="/js/navigation-block.js?67982d9c-e878-4f80-8165-9711b13e83c9" defer></script>
-    <script src="/js/navigation-context.js?67982d9c-e878-4f80-8165-9711b13e83c9" defer></script>
-    <script src="/js/accordion-card.js?67982d9c-e878-4f80-8165-9711b13e83c9" defer></script>
-    <script src="/js/theme-switcher.js?67982d9c-e878-4f80-8165-9711b13e83c9" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts?67982d9c-e878-4f80-8165-9711b13e83c9" defer></script>
-    <script src="/js/charts.js?67982d9c-e878-4f80-8165-9711b13e83c9" type="module" defer></script>
-    <script src="/js/range-group.js?67982d9c-e878-4f80-8165-9711b13e83c9" type="module" defer></script>
+    <script src="/js/theme-change-assets.js?9dea04fc-4842-4c7a-b554-351cbbacc2f5" defer></script>
+    <script src="/js/navigation.js?9dea04fc-4842-4c7a-b554-351cbbacc2f5" defer></script>
+    <script src="/js/navigation-block.js?9dea04fc-4842-4c7a-b554-351cbbacc2f5" defer></script>
+    <script src="/js/navigation-context.js?9dea04fc-4842-4c7a-b554-351cbbacc2f5" defer></script>
+    <script src="/js/accordion-card.js?9dea04fc-4842-4c7a-b554-351cbbacc2f5" defer></script>
+    <script src="/js/theme-switcher.js?9dea04fc-4842-4c7a-b554-351cbbacc2f5" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts?9dea04fc-4842-4c7a-b554-351cbbacc2f5" defer></script>
+    <script src="/js/charts.js?9dea04fc-4842-4c7a-b554-351cbbacc2f5" type="module" defer></script>
+    <script src="/js/range-group.js?9dea04fc-4842-4c7a-b554-351cbbacc2f5" type="module" defer></script>
 </body>
 
 </html>
