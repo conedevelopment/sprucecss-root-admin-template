@@ -42,7 +42,7 @@ breadcrumbs:
 <div class="app-card app-card--info">
     <div class="app-card__header">
         <h3 class="app-card__title">Notifications</h3>
-        <a href="/account/profile/" class="btn btn--outline-primary btn--sm">Edit</a>
+        <a href="/account/notifications/" class="btn btn--outline-primary btn--sm">Edit</a>
     </div>
     <div class="app-card__body">
         <div class="l-row l-row--column:md:2">
