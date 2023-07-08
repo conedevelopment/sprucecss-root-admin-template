@@ -11,7 +11,7 @@
   },
   {
     "title": "Shop",
-    "expanded": true,
+    "expanded": false,
     "items": [
       {
         "caption": "Products",
@@ -36,7 +36,7 @@
     ]
   },
   {
-    "title": "Pages",
+    "title": "Auth",
     "expanded": false,
     "items": [
       {
@@ -50,6 +50,16 @@
       {
         "caption": "Password Reset",
         "url": "/password-reset/"
+      }
+    ]
+  },
+  {
+    "title": "Reference",
+    "expanded": false,
+    "items": [
+      {
+        "caption": "File Group",
+        "url": "/reference/file-group/"
       }
     ]
   }
