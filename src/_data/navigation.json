@@ -22,7 +22,7 @@
       },
       {
         "caption": "Product Edit",
-        "url": "/product/edit",
+        "url": "/product/edit/",
         "icon": null,
         "visible": false
       },
