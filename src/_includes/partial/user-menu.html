@@ -7,9 +7,9 @@
     <button class="user-menu__toggle" aria-expanded="false" data-action="context" data-context-target="user">
         {% svgIcon './src/img/icon/chevron-down.svg', 'open-search__icon' %}
     </button>
-    <ul class="context-menu" data-state="closed" data-context-id="user">
+    <ul class="context-menu context-menu--inline-end" data-state="closed" data-context-id="user">
         {% for item in user %}
-            <li><a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.title }}</a></li>
+            <li><a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }} class="context-menu__item">{{ item.title }}</a></li>
         {% endfor %}
     </ul>
 </div>

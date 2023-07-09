@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <script src="/js/theme-detection.js?d3c52d30-ae15-4cc2-adb0-96f15896b7f4"></script>
+    <script src="/js/theme-detection.js?a16fb55b-8aec-46d1-8350-c5c305fbe61b"></script>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -25,7 +25,7 @@
     <meta property="og:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <meta name="twitter:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/main.css?d3c52d30-ae15-4cc2-adb0-96f15896b7f4">
+    <link rel="stylesheet" href="/css/main.css?a16fb55b-8aec-46d1-8350-c5c305fbe61b">
 </head>
 
 <body>
@@ -340,15 +340,15 @@
                                     <polyline points='6 9 12 15 18 9'></polyline>
                                 </svg>
                             </button>
-                            <ul class="context-menu" data-state="closed" data-context-id="user">
+                            <ul class="context-menu context-menu--inline-end" data-state="closed" data-context-id="user">
                                 <li>
-                                    <a href="/account/">Account</a>
+                                    <a href="/account/" class="context-menu__item">Account</a>
                                 </li>
                                 <li>
-                                    <a href="/settings/">Settings</a>
+                                    <a href="/settings/" class="context-menu__item">Settings</a>
                                 </li>
                                 <li>
-                                    <a href="/sign-in">Log Out</a>
+                                    <a href="/sign-in" class="context-menu__item">Log Out</a>
                                 </li>
                             </ul>
                         </div>
@@ -399,7 +399,7 @@
                                                     <input class="form-range range-group__control" id="your-age" type="range" min="0" max="100" value="40" step="1" />
                                                     <button class="btn btn--primary btn--sm btn--icon" data-action="increment" aria-label="Increment age">
                                                         <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                            <line x1='12' y1='5' x2='12' y2='19'></line>
+                                                            <line class='vertical-line' x1='12' y1='5' x2='12' y2='19'></line>
                                                             <line x1='5' y1='12' x2='19' y2='12'></line>
                                                         </svg>
                                                     </button>
@@ -590,6 +590,130 @@
                             </div>
                             <div class="app-card app-card--edit">
                                 <div class="app-card__header">
+                                    <h2 class="app-card__title">Repeater</h2>
+                                </div>
+                                <div class="app-card__body">
+                                    <div class="form-group">
+                                        <span class="form-label">Section builder</span>
+                                        <div class="repeater-container">
+                                            <div class="repeater">
+                                                <div class="repeater__heading">
+                                                    <div class="repeater__column">
+                                                        <button class="btn btn--primary btn--sm btn--icon repeater__toggle" data-action="toggle" aria-label="Toggle section" aria-expanded="true">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <line class='vertical-line' x1='12' y1='5' x2='12' y2='19'></line>
+                                                                <line x1='5' y1='12' x2='19' y2='12'></line>
+                                                            </svg>
+                                                        </button>
+                                                        <h3 id="repeater-item-1" class="repeater__title">
+                                                            <span class="repeater__order">#1</span>
+                                                            YouTube Video
+                                                        </h3>
+                                                    </div>
+                                                    <div class="repeater__actions">
+                                                        <button class="btn btn--light btn--sm btn--icon" aria-describedby="repeater-item-1" aria-label="Move one up" disabled>
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <polyline points='18 15 12 9 6 15'></polyline>
+                                                            </svg>
+                                                        </button>
+                                                        <button class="btn btn--light btn--sm btn--icon" aria-describedby="repeater-item-1" aria-label="Move one down">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <polyline points='6 9 12 15 18 9'></polyline>
+                                                            </svg>
+                                                        </button>
+                                                        <button class="btn btn--delete btn--sm btn--icon" aria-describedby="repeater-item-1" aria-label="Remove">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <line x1='18' y1='6' x2='6' y2='18'></line>
+                                                                <line x1='6' y1='6' x2='18' y2='18'></line>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="repeater__body">
+                                                    <div class="form-group-stack form-group-stack--bordered form-group-container">
+                                                        <div class="form-group--row">
+                                                            <label class="form-label" for="youtube-title">Title</label>
+                                                            <input class="form-control" id="youtube-title" name="youtube-title" type="text" />
+                                                        </div>
+                                                        <div class="form-group--row">
+                                                            <label class="form-label" for="youtube-thumbnail">Thumbnail</label>
+                                                            <input class="form-file form-file" type="file" id="youtube-thumbnail" accept="image/png, image/jpeg" />
+                                                        </div>
+                                                        <div class="form-group--row">
+                                                            <label class="form-label" for="youtube-id">YouTube ID</label>
+                                                            <input class="form-control" id="youtube-id" name="youtube-id" type="text" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="repeater">
+                                                <div class="repeater__heading">
+                                                    <div class="repeater__column">
+                                                        <button class="btn btn--primary btn--sm btn--icon repeater__toggle" data-action="toggle" aria-label="Toggle section" aria-expanded="false">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <line class='vertical-line' x1='12' y1='5' x2='12' y2='19'></line>
+                                                                <line x1='5' y1='12' x2='19' y2='12'></line>
+                                                            </svg>
+                                                        </button>
+                                                        <h3 id="repeater-item-2" class="repeater__title">
+                                                            <span class="repeater__order">#2</span>
+                                                            Testimonial
+                                                        </h3>
+                                                    </div>
+                                                    <div class="repeater__actions">
+                                                        <button class="btn btn--light btn--sm btn--icon" aria-describedby="repeater-item-2" aria-label="Move one up">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <polyline points='18 15 12 9 6 15'></polyline>
+                                                            </svg>
+                                                        </button>
+                                                        <button class="btn btn--light btn--sm btn--icon" aria-describedby="repeater-item-2" aria-label="Move one down" disabled>
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <polyline points='6 9 12 15 18 9'></polyline>
+                                                            </svg>
+                                                        </button>
+                                                        <button class="btn btn--delete btn--sm btn--icon" aria-describedby="repeater-item-2" aria-label="Remove">
+                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                <line x1='18' y1='6' x2='6' y2='18'></line>
+                                                                <line x1='6' y1='6' x2='18' y2='18'></line>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="repeater__body" hidden>
+                                                    <div class="form-group-stack form-group-stack--bordered form-group-container">
+                                                        <div class="form-group--row">
+                                                            <label class="form-label" for="testimonial-title">Title</label>
+                                                            <input class="form-control" id="testimonial-title" name="testimonial-title" type="text" />
+                                                        </div>
+                                                        <div class="form-group--row">
+                                                            <label class="form-label" for="testimonial-description">Description</label>
+                                                            <textarea class="form-control" id="testimonial-description" name="testimonial-description" rows="4"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="btn-dropdown">
+                                                <button class="btn btn--primary btn--icon" aria-expanded="false" data-action="context" data-context-target="repeater">
+                                                    Add section
+                                                    <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                        <polyline points='6 9 12 15 18 9'></polyline>
+                                                    </svg>
+                                                </button>
+                                                <ul class="context-menu context-menu--inline-start" data-state="closed" data-context-id="repeater">
+                                                    <li>
+                                                        <button class="context-menu__item">YouTube Video</button>
+                                                    </li>
+                                                    <li>
+                                                        <button class="context-menu__item">Testimonial</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-card app-card--edit">
+                                <div class="app-card__header">
                                     <h2 class="app-card__title">Metadata</h2>
                                 </div>
                                 <div class="app-card__body">
@@ -678,15 +802,16 @@
             </footer>
         </main>
     </div>
-    <script src="/js/theme-change-assets.js?d3c52d30-ae15-4cc2-adb0-96f15896b7f4" defer></script>
-    <script src="/js/navigation.js?d3c52d30-ae15-4cc2-adb0-96f15896b7f4" defer></script>
-    <script src="/js/navigation-block.js?d3c52d30-ae15-4cc2-adb0-96f15896b7f4" defer></script>
-    <script src="/js/navigation-context.js?d3c52d30-ae15-4cc2-adb0-96f15896b7f4" defer></script>
-    <script src="/js/accordion-card.js?d3c52d30-ae15-4cc2-adb0-96f15896b7f4" defer></script>
-    <script src="/js/theme-switcher.js?d3c52d30-ae15-4cc2-adb0-96f15896b7f4" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts?d3c52d30-ae15-4cc2-adb0-96f15896b7f4" defer></script>
-    <script src="/js/charts.js?d3c52d30-ae15-4cc2-adb0-96f15896b7f4" type="module" defer></script>
-    <script src="/js/range-group.js?d3c52d30-ae15-4cc2-adb0-96f15896b7f4" type="module" defer></script>
+    <script src="/js/theme-change-assets.js?a16fb55b-8aec-46d1-8350-c5c305fbe61b" defer></script>
+    <script src="/js/navigation.js?a16fb55b-8aec-46d1-8350-c5c305fbe61b" defer></script>
+    <script src="/js/navigation-block.js?a16fb55b-8aec-46d1-8350-c5c305fbe61b" defer></script>
+    <script src="/js/navigation-context.js?a16fb55b-8aec-46d1-8350-c5c305fbe61b" defer></script>
+    <script src="/js/accordion-card.js?a16fb55b-8aec-46d1-8350-c5c305fbe61b" defer></script>
+    <script src="/js/theme-switcher.js?a16fb55b-8aec-46d1-8350-c5c305fbe61b" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts?a16fb55b-8aec-46d1-8350-c5c305fbe61b" defer></script>
+    <script src="/js/charts.js?a16fb55b-8aec-46d1-8350-c5c305fbe61b" type="module" defer></script>
+    <script src="/js/range-group.js?a16fb55b-8aec-46d1-8350-c5c305fbe61b" type="module" defer></script>
+    <script src="/js/repeater.js?a16fb55b-8aec-46d1-8350-c5c305fbe61b" type="module" defer></script>
 </body>
 
 </html>
