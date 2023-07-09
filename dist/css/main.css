@@ -2863,6 +2863,7 @@ legend {
 .repeater__heading {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   justify-content: space-between;
 }
@@ -2882,7 +2883,7 @@ legend {
   white-space: nowrap;
   font-size: var(--spruce-font-size-base);
   margin-block: 0;
-  max-inline-size: 25ch;
+  max-inline-size: 20ch;
 }
 .repeater__actions {
   align-items: center;

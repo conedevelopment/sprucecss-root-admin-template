@@ -13,6 +13,7 @@
   &__heading {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     gap: spacer('s');
     justify-content: space-between;
   }
@@ -33,7 +34,7 @@
     @include text-ellipsis(1);
     font-size: config('font-size-base', $typography);
     margin-block: 0;
-    max-inline-size: 25ch;
+    max-inline-size: 20ch;
   }
 
   &__actions {
