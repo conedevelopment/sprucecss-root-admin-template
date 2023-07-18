@@ -6,6 +6,7 @@
 
   document.addEventListener('click', (e) => {
     if(
+      !e.target.matches('[data-action="context"]') &&
       !e.target.closest('[data-context-id]') &&
       document.querySelectorAll('[data-context-id][data-state="open"]').length > 0
     ) {
@@ -21,6 +22,7 @@
     id = e.target.getAttribute('data-context-target');
     btn = document.querySelector(`[data-context-target="${id}"]`);
     state = e.target.getAttribute('aria-expanded') === 'true';
+
     nav = document.querySelector(`[data-context-id="${id}"]`);
 
     e.target.setAttribute('aria-expanded', !state);
