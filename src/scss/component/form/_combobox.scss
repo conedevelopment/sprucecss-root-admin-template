@@ -2,24 +2,57 @@
 
 .combobox {
   @include generate-variables($form-control, $include: ('border-width', 'border-radius'));
+  position: relative;
+  z-index: 50;
 
-  &__selected-items {
-
+  &__inner {
+    @include set-css-variable((
+      --padding: 0.5em,
+    ));
+    align-items: center;
+    display: flex;
+    gap: spacer('s');
+    justify-content: space-between;
+    position: relative;
   }
 
-  &__dropdown {
+  &__toggle {
+    position: absolute;
+    inset: 0 0 0 auto;
+    pointer-events: none;
+  }
+
+  [role="listbox"] {
+    @include clear-list;
+    @include scrollbar;
+    background-color: color('background', 'form');
     border: config('border-width', $form-control) solid color('border', 'form');
     border-radius: config('border-radius', $form-control);
-    display: flex;
-    flex-direction: column;
-    gap: spacer('s');
-    padding: spacer('s');
+    max-block-size: 10rem;
+    overflow-y: auto;
+    inset: calc(100% + #{spacer('xs')}) 0 auto 0;
+    padding: spacer('xs');
+    position: absolute;
 
-    [role="listbox"] {
-      @include clear-list;
-      @include scrollbar;
-      max-block-size: 10rem;
-      overflow-y: auto;
+    > * + * {
+      margin-block-start: 0;
+    }
+  }
+
+  [role="option"] {
+    border-radius: config('border-radius', $form-control);
+    margin-inline-end: spacer('xxs');
+    padding-inline: spacer('xs');
+
+    &:hover,
+    &:focus,
+    &[aria-selected="true"] {
+      background-color: color('primary');
+      color: hsl(0deg 0% 100%);
+    }
+
+    &[aria-selected="true"] {
+
     }
   }
 }
