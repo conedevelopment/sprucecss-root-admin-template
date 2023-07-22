@@ -1,44 +1,195 @@
-<div class="combobox">
-    <div class="combobox__selected-items">
-        <div class="combobox-item">
-            <span class="combobox-item__label">Light pink</span>
-            <button class="btn btn--delete btn--icon btn--sm combobox-item__remove">
-                {% svgIcon './src/img/icon/close.svg', 'btn__icon' %}
-            </button>
-        </div>
-        <div class="combobox-item">
-            <span class="combobox-item__label">White</span>
-            <button class="btn btn--delete btn--icon btn--sm combobox-item__remove">
-                {% svgIcon './src/img/icon/close.svg', 'btn__icon' %}
-            </button>
-        </div>
-        <div class="combobox-item">
-            <span class="combobox-item__label">Light blue</span>
-            <button class="btn btn--delete btn--icon btn--sm combobox-item__remove">
-                {% svgIcon './src/img/icon/close.svg', 'btn__icon' %}
-            </button>
-        </div>
-    </div>
-    <div class="combobox__dropdown">
-        <input type="text" class="form-control">
-        <ul
-            tabindex="0"
-            role="listbox"
-            aria-labelledby="colorOptions"
-            aria-multiselectable="true"
+<div class="form-group--row">
+    <label class="form-label" for="colors">Choose a color</label>
+    <div
+        class="combobox"
+        x-data="data()"
+        x-id="['dropdown', 'list-item']"
+        x-on:click.outside="close($refs.input)"
+        x-on:keydown.escape.prevent.stop="close($refs.input)"
+    >
+        <input
+            :aria-activedescendant="highlightedItemId()"
+            :aria-controls="$id('dropdown')"
+            :aria-expanded="open"
+            :placeholder="placeholder"
+            aria-autocomplete="list"
+            class="form-control combobox__control"
+            id="colors"
+            role="combobox"
+            type="text"
+            x-model="search"
+            x-on:click="toggle()"
+            x-on:keyup.down="highlightNextItem"
+            x-on:keyup.enter="toggleFromKeyboard"
+            x-on:keyup.up="highlightPreviousItem"
+            x-ref="input"
         >
-            <li id="red" role="option" aria-selected="false">Red</li>
-            <li id="orange" role="option" aria-selected="false">Orange</li>
-            <li id="yellow" role="option" aria-selected="false">Yellow</li>
-            <li id="green" role="option" aria-selected="false">Green</li>
-            <li id="blue" role="option" aria-selected="false">Blue</li>
-            <li id="purple" role="option" aria-selected="false">Purple</li>
-            <li id="magenta" role="option" aria-selected="false">Hot pink</li>
-            <li id="lightpink" role="option" aria-selected="true">Light pink</li>
-            <li id="white" role="option" aria-selected="true">White</li>
-            <li id="lightblue" role="option" aria-selected="true">Light blue</li>
-            <li id="black" role="option" aria-selected="false">Black</li>
-            <li id="brown" role="option" aria-selected="false">Brown</li>
+        <ul
+            :id="$id('dropdown')"
+            aria-label="Colors"
+            aria-multiselectable="true"
+            role="listbox"
+            tabindex="-1"
+            x-ref="panel"
+            x-show="open || search.length > 0"
+        >
+            <template x-for="(item, index) in filteredItems" :key="item.id">
+                <li
+                    :aria-selected="item.selected"
+                    :class="{'highlighted': index === highlightedItemIndex}"
+                    :id="$id('list-item', item.id)"
+                    role="option"
+                    x-on:click="item.selected = ! item.selected"
+                >
+                    <span x-text="item.label"></span>
+                    <span x-show="item.selected">
+                        {% svgIcon './src/img/icon/check.svg' %}
+                    </span>
+                </li>
+            </template>
+            <li x-show="search !== '' && filteredItems().length === 0">
+                No results found.
+            </li>
         </ul>
     </div>
 </div>
+
+<script>
+    function data() {
+        return {
+            items: [
+                {
+                    "id": "red",
+                    "label": "Red",
+                    "selected": false
+                },
+                {
+                    "id": "orange",
+                    "label": "Orange",
+                    "selected": false
+                },
+                {
+                    "id": "yellow",
+                    "label": "Yellow",
+                    "selected": false
+                },
+                {
+                    "id": "green",
+                    "label": "Green",
+                    "selected": false
+                },
+                {
+                    "id": "blue",
+                    "label": "Blue",
+                    "selected": false
+                },
+                {
+                    "id": "purple",
+                    "label": "Purple",
+                    "selected": false
+                },
+                {
+                    "id": "hot-pink",
+                    "label": "Hot pink",
+                    "selected": false
+                },
+                {
+                    "id": "light-pink",
+                    "label": "Light pink",
+                    "selected": false
+                },
+                {
+                    "id": "white",
+                    "label": "White",
+                    "selected": false
+                },
+                {
+                    "id": "black",
+                    "label": "Black",
+                    "selected": false
+                },
+                {
+                    "id": "brown",
+                    "label": "Brown",
+                    "selected": false
+                }
+            ],
+            open: false,
+            search: '',
+            highlightedItemIndex: null,
+            filteredItems() {
+                return this.items.filter(item => {
+                    return item.label.toLowerCase().includes(this.search.toLowerCase())
+                })
+            },
+            placeholder() {
+                const selectedItems = this.items.filter(item => item.selected).map(item => item.label)
+
+                return selectedItems.length > 0 ? selectedItems.join(', ') : 'Search a color'
+            },
+            toggle() {
+                if (this.open) {
+                    return this.close()
+                }
+
+                this.$refs.input.focus()
+                this.open = true
+                this.highlightedItemIndex = null
+            },
+            close(focusAfter) {
+                if (! this.open) return
+
+                this.open = false
+                this.search = ''
+                this.highlightedItemIndex = null
+
+                focusAfter && focusAfter.focus()
+            },
+            highlightNextItem() {
+                this.open = true
+
+                if (this.highlightedItemIndex === null) {
+                    this.highlightedItemIndex = 0
+                    return
+                }
+
+                this.highlightedItemIndex++;
+
+                if (this.highlightedItemIndex >= this.filteredItems().length) {
+                    this.highlightedItemIndex = 0
+                }
+
+                this.$refs.panel.children[this.highlightedItemIndex + 1].focus()
+
+                this.$refs.panel.children[this.highlightedItemIndex + 1].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest'
+                })
+            },
+            highlightPreviousItem() {
+                this.open = true
+                this.highlightedItemIndex--;
+
+                if (this.highlightedItemIndex < 0) {
+                    this.highlightedItemIndex = this.filteredItems().length - 1
+                }
+
+                this.$refs.panel.children[this.highlightedItemIndex + 1].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest'
+                })
+            },
+            highlightedItemId() {
+                const highlightedItem = this.filteredItems()[this.highlightedItemIndex]
+                return highlightedItem ? this.$id('list-item', highlightedItem.id) : null
+            },
+            toggleFromKeyboard() {
+                if (this.highlightedItemIndex === null) {
+                    return
+                }
+
+                this.filteredItems()[this.highlightedItemIndex].selected = ! this.filteredItems()[this.highlightedItemIndex].selected
+            }
+        }
+    }
+</script>

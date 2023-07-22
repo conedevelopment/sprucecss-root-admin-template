@@ -17,9 +17,9 @@
   }
 
   &__toggle {
-    position: absolute;
     inset: 0 0 0 auto;
     pointer-events: none;
+    position: absolute;
   }
 
   [role="listbox"] {
@@ -28,31 +28,44 @@
     background-color: color('background', 'form');
     border: config('border-width', $form-control) solid color('border', 'form');
     border-radius: config('border-radius', $form-control);
+    display: flex;
+    flex-direction: column;
+    gap: spacer('xs');
+    inset: calc(100% + #{spacer('xs')}) 0 auto 0;
     max-block-size: 10rem;
     overflow-y: auto;
-    inset: calc(100% + #{spacer('xs')}) 0 auto 0;
     padding: spacer('xs');
     position: absolute;
 
-    > * + * {
+    > * {
       margin-block-start: 0;
     }
   }
 
   [role="option"] {
+    align-items: center;
     border-radius: config('border-radius', $form-control);
-    margin-inline-end: spacer('xxs');
-    padding-inline: spacer('xs');
+    display: flex;
+    justify-content: space-between;
+    padding-block: spacer('xxs');
+    padding-inline: spacer('s');
+
+    &[aria-selected="true"] {
+      background-color: color('light-background', 'btn');
+      color: color('light-foreground', 'btn');
+    }
 
     &:hover,
     &:focus,
-    &[aria-selected="true"] {
-      background-color: color('primary');
-      color: hsl(0deg 0% 100%);
+    &.highlighted {
+      background-color: color('primary-background', 'btn');
+      color: color('primary-foreground', 'btn');
     }
 
-    &[aria-selected="true"] {
-
+    svg {
+      --dimension: 0.85em;
+      block-size: var(--dimension);
+      inline-size: var(--dimension);
     }
   }
 }
