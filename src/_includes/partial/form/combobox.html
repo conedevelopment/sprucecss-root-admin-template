@@ -7,7 +7,10 @@
         x-on:click.outside="close($refs.input)"
         x-on:keydown.escape.prevent.stop="close($refs.input)"
     >
-        <div class="combobox__selected-items">
+        <div
+            class="combobox__selected-items"
+            x-show="selectedItems().length > 0"
+        >
             <template x-for="(item, index) in selectedItems" :key="item.id">
                 <span
                     class="combobox-item"

@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <script src="/js/theme-detection.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259"></script>
+    <script src="/js/theme-detection.js?b855c246-32fd-4c95-9329-b3b8c542337b"></script>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -25,7 +25,7 @@
     <meta property="og:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <meta name="twitter:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/main.css?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259">
+    <link rel="stylesheet" href="/css/main.css?b855c246-32fd-4c95-9329-b3b8c542337b">
 </head>
 
 <body>
@@ -588,7 +588,7 @@
                                         <div class="form-group--row">
                                             <label class="form-label" for="colors">Choose colors</label>
                                             <div class="combobox" x-data="data()" x-id="['dropdown', 'list-item']" x-on:click.outside="close($refs.input)" x-on:keydown.escape.prevent.stop="close($refs.input)">
-                                                <div class="combobox__selected-items">
+                                                <div class="combobox__selected-items" x-show="selectedItems().length > 0">
                                                     <template x-for="(item, index) in selectedItems" :key="item.id">
                                                         <span class="combobox-item" x-show="item.selected">
                                                             <span x-text="item.label"></span>
@@ -990,16 +990,16 @@
         </main>
     </div>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="/js/theme-change-assets.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" defer></script>
-    <script src="/js/navigation.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" defer></script>
-    <script src="/js/navigation-block.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" defer></script>
-    <script src="/js/navigation-context.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" defer></script>
-    <script src="/js/accordion-card.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" defer></script>
-    <script src="/js/theme-switcher.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" defer></script>
-    <script src="/js/charts.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" type="module" defer></script>
-    <script src="/js/range-group.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" type="module" defer></script>
-    <script src="/js/repeater.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" type="module" defer></script>
+    <script src="/js/theme-change-assets.js?b855c246-32fd-4c95-9329-b3b8c542337b" defer></script>
+    <script src="/js/navigation.js?b855c246-32fd-4c95-9329-b3b8c542337b" defer></script>
+    <script src="/js/navigation-block.js?b855c246-32fd-4c95-9329-b3b8c542337b" defer></script>
+    <script src="/js/navigation-context.js?b855c246-32fd-4c95-9329-b3b8c542337b" defer></script>
+    <script src="/js/accordion-card.js?b855c246-32fd-4c95-9329-b3b8c542337b" defer></script>
+    <script src="/js/theme-switcher.js?b855c246-32fd-4c95-9329-b3b8c542337b" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts?b855c246-32fd-4c95-9329-b3b8c542337b" defer></script>
+    <script src="/js/charts.js?b855c246-32fd-4c95-9329-b3b8c542337b" type="module" defer></script>
+    <script src="/js/range-group.js?b855c246-32fd-4c95-9329-b3b8c542337b" type="module" defer></script>
+    <script src="/js/repeater.js?b855c246-32fd-4c95-9329-b3b8c542337b" type="module" defer></script>
 </body>
 
 </html>

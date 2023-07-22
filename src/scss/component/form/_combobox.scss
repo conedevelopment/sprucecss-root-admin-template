@@ -54,6 +54,7 @@
     justify-content: space-between;
     padding-block: spacer('xxs');
     padding-inline: spacer('s');
+    user-select: none;
 
     &[aria-selected="true"] {
       background-color: color('light-background', 'btn');
@@ -78,8 +79,8 @@
 .combobox-item {
   align-items: center;
   background-color: color('light-background', 'btn');
-  color: color('light-foreground', 'btn');
   border-radius: 1em;
+  color: color('light-foreground', 'btn');
   display: flex;
   font-size: config('font-size-sm', $typography);
   gap: spacer('xxs');

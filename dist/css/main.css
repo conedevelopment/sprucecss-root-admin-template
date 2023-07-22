@@ -2713,6 +2713,7 @@ legend {
   justify-content: space-between;
   padding-block: 0.25rem;
   padding-inline: 1rem;
+  user-select: none;
 }
 .combobox [role=option][aria-selected=true] {
   background-color: var(--spruce-btn-color-light-background);
