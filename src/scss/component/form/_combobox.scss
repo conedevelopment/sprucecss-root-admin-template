@@ -2,24 +2,29 @@
 
 .combobox {
   @include generate-variables($form-control, $include: ('border-width', 'border-radius'));
-  position: relative;
-  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: spacer('xs');
 
   &__inner {
-    @include set-css-variable((
-      --padding: 0.5em,
-    ));
+    position: relative;
+  }
+
+  &__selected-items {
     align-items: center;
     display: flex;
-    gap: spacer('s');
-    justify-content: space-between;
-    position: relative;
+    flex-wrap: wrap;
+    gap: spacer('xs');
   }
 
   &__toggle {
     inset: 0 0 0 auto;
     pointer-events: none;
     position: absolute;
+  }
+
+  &__reset {
+    align-self: start;
   }
 
   [role="listbox"] {
@@ -67,5 +72,25 @@
       block-size: var(--dimension);
       inline-size: var(--dimension);
     }
+  }
+}
+
+.combobox-item {
+  align-items: center;
+  background-color: color('light-background', 'btn');
+  color: color('light-foreground', 'btn');
+  border-radius: 1em;
+  display: flex;
+  font-size: config('font-size-sm', $typography);
+  gap: spacer('xxs');
+  line-height: 1;
+  padding-block: spacer('xxs');
+  padding-inline: spacer('xs') spacer('xxs');
+
+  .btn--sm {
+    @include set-css-variable((
+      --icon-padding: 0.25em,
+      --border-radius: 1em,
+    ));
   }
 }

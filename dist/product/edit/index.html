@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <script src="/js/theme-detection.js?a552ab95-1c16-4dfa-81d0-cf0c2d8c9251"></script>
+    <script src="/js/theme-detection.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259"></script>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -25,7 +25,7 @@
     <meta property="og:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <meta name="twitter:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/main.css?a552ab95-1c16-4dfa-81d0-cf0c2d8c9251">
+    <link rel="stylesheet" href="/css/main.css?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259">
 </head>
 
 <body>
@@ -586,24 +586,42 @@
                                             </div>
                                         </div>
                                         <div class="form-group--row">
-                                            <label class="form-label" for="colors">Choose a color</label>
+                                            <label class="form-label" for="colors">Choose colors</label>
                                             <div class="combobox" x-data="data()" x-id="['dropdown', 'list-item']" x-on:click.outside="close($refs.input)" x-on:keydown.escape.prevent.stop="close($refs.input)">
-                                                <input :aria-activedescendant="highlightedItemId()" :aria-controls="$id('dropdown')" :aria-expanded="open" :placeholder="placeholder" aria-autocomplete="list" class="form-control combobox__control" id="colors" role="combobox" type="text" x-model="search" x-on:click="toggle()" x-on:keyup.down="highlightNextItem" x-on:keyup.enter="toggleFromKeyboard" x-on:keyup.up="highlightPreviousItem" x-ref="input">
-                                                <ul :id="$id('dropdown')" aria-label="Colors" aria-multiselectable="true" role="listbox" tabindex="-1" x-ref="panel" x-show="open || search.length > 0">
-                                                    <template x-for="(item, index) in filteredItems" :key="item.id">
-                                                        <li :aria-selected="item.selected" :class="{'highlighted': index === highlightedItemIndex}" :id="$id('list-item', item.id)" role="option" x-on:click="item.selected = ! item.selected">
+                                                <div class="combobox__selected-items">
+                                                    <template x-for="(item, index) in selectedItems" :key="item.id">
+                                                        <span class="combobox-item" x-show="item.selected">
                                                             <span x-text="item.label"></span>
-                                                            <span x-show="item.selected">
-                                                                <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='icon'>
-                                                                    <polyline points='20 6 9 17 4 12'></polyline>
+                                                            <button class="btn btn--primary btn--sm btn--icon" x-on:click="unselectItemById(item.id)">
+                                                                <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                    <line x1='18' y1='6' x2='6' y2='18'></line>
+                                                                    <line x1='6' y1='6' x2='18' y2='18'></line>
                                                                 </svg>
-                                                            </span>
-                                                        </li>
+                                                            </button>
+                                                        </span>
                                                     </template>
-                                                    <li x-show="search !== '' && filteredItems().length === 0">
-                                                        No results found.
-                                                    </li>
-                                                </ul>
+                                                </div>
+                                                <div class="combobox__inner">
+                                                    <input :aria-activedescendant="highlightedItemId()" :aria-controls="$id('dropdown')" :aria-expanded="open" aria-autocomplete="list" class="form-control combobox__control" id="colors" placeholder="Search for a color" role="combobox" type="text" x-model="search" x-on:click="toggle()" x-on:keyup.down="highlightNextItem" x-on:keyup.enter="toggleFromKeyboard" x-on:keyup.up="highlightPreviousItem" x-ref="input">
+                                                    <ul :id="$id('dropdown')" aria-label="Colors" aria-multiselectable="true" role="listbox" tabindex="-1" x-ref="panel" x-show="open || search.length > 0">
+                                                        <template x-for="(item, index) in filteredItems" :key="item.id">
+                                                            <li :aria-selected="item.selected" :class="{'highlighted': index === highlightedItemIndex}" :id="$id('list-item', item.id)" role="option" x-on:click="item.selected = ! item.selected">
+                                                                <span x-text="item.label"></span>
+                                                                <span x-show="item.selected">
+                                                                    <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='icon'>
+                                                                        <polyline points='20 6 9 17 4 12'></polyline>
+                                                                    </svg>
+                                                                </span>
+                                                            </li>
+                                                        </template>
+                                                        <li x-show="search !== '' && filteredItems().length === 0">
+                                                            No results found.
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <button class="btn btn--outline-primary btn--sm combobox__reset" x-show="selectedItems().length > 0" x-on:click="deselectAllItems">
+                                                    Deselect all item
+                                                </button>
                                             </div>
                                         </div>
                                         <script>
@@ -665,19 +683,20 @@
                                                             "selected": false
                                                         }
                                                     ],
-                                                    open: false,
-                                                    search: '',
-                                                    highlightedItemIndex: null,
+                                                    selectedItems() {
+                                                        return this.items.filter(item => item.selected)
+                                                    },
+                                                    unselectItemById(id) {
+                                                        this.items.find(item => item.id === id).selected = false
+                                                    },
                                                     filteredItems() {
                                                         return this.items.filter(item => {
                                                             return item.label.toLowerCase().includes(this.search.toLowerCase())
                                                         })
                                                     },
-                                                    placeholder() {
-                                                        const selectedItems = this.items.filter(item => item.selected).map(item => item.label)
-
-                                                        return selectedItems.length > 0 ? selectedItems.join(', ') : 'Search a color'
-                                                    },
+                                                    open: false,
+                                                    search: '',
+                                                    highlightedItemIndex: null,
                                                     toggle() {
                                                         if (this.open) {
                                                             return this.close()
@@ -740,6 +759,9 @@
                                                         }
 
                                                         this.filteredItems()[this.highlightedItemIndex].selected = !this.filteredItems()[this.highlightedItemIndex].selected
+                                                    },
+                                                    deselectAllItems() {
+                                                        this.items.forEach(item => item.selected = false)
                                                     }
                                                 }
                                             }
@@ -968,16 +990,16 @@
         </main>
     </div>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="/js/theme-change-assets.js?a552ab95-1c16-4dfa-81d0-cf0c2d8c9251" defer></script>
-    <script src="/js/navigation.js?a552ab95-1c16-4dfa-81d0-cf0c2d8c9251" defer></script>
-    <script src="/js/navigation-block.js?a552ab95-1c16-4dfa-81d0-cf0c2d8c9251" defer></script>
-    <script src="/js/navigation-context.js?a552ab95-1c16-4dfa-81d0-cf0c2d8c9251" defer></script>
-    <script src="/js/accordion-card.js?a552ab95-1c16-4dfa-81d0-cf0c2d8c9251" defer></script>
-    <script src="/js/theme-switcher.js?a552ab95-1c16-4dfa-81d0-cf0c2d8c9251" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts?a552ab95-1c16-4dfa-81d0-cf0c2d8c9251" defer></script>
-    <script src="/js/charts.js?a552ab95-1c16-4dfa-81d0-cf0c2d8c9251" type="module" defer></script>
-    <script src="/js/range-group.js?a552ab95-1c16-4dfa-81d0-cf0c2d8c9251" type="module" defer></script>
-    <script src="/js/repeater.js?a552ab95-1c16-4dfa-81d0-cf0c2d8c9251" type="module" defer></script>
+    <script src="/js/theme-change-assets.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" defer></script>
+    <script src="/js/navigation.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" defer></script>
+    <script src="/js/navigation-block.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" defer></script>
+    <script src="/js/navigation-context.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" defer></script>
+    <script src="/js/accordion-card.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" defer></script>
+    <script src="/js/theme-switcher.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" defer></script>
+    <script src="/js/charts.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" type="module" defer></script>
+    <script src="/js/range-group.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" type="module" defer></script>
+    <script src="/js/repeater.js?5f74c3e0-0fbd-4d2b-9ded-0324c9d4b259" type="module" defer></script>
 </body>
 
 </html>

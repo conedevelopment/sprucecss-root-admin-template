@@ -1,5 +1,5 @@
 <div class="form-group--row">
-    <label class="form-label" for="colors">Choose a color</label>
+    <label class="form-label" for="colors">Choose colors</label>
     <div
         class="combobox"
         x-data="data()"
@@ -7,50 +7,75 @@
         x-on:click.outside="close($refs.input)"
         x-on:keydown.escape.prevent.stop="close($refs.input)"
     >
-        <input
-            :aria-activedescendant="highlightedItemId()"
-            :aria-controls="$id('dropdown')"
-            :aria-expanded="open"
-            :placeholder="placeholder"
-            aria-autocomplete="list"
-            class="form-control combobox__control"
-            id="colors"
-            role="combobox"
-            type="text"
-            x-model="search"
-            x-on:click="toggle()"
-            x-on:keyup.down="highlightNextItem"
-            x-on:keyup.enter="toggleFromKeyboard"
-            x-on:keyup.up="highlightPreviousItem"
-            x-ref="input"
-        >
-        <ul
-            :id="$id('dropdown')"
-            aria-label="Colors"
-            aria-multiselectable="true"
-            role="listbox"
-            tabindex="-1"
-            x-ref="panel"
-            x-show="open || search.length > 0"
-        >
-            <template x-for="(item, index) in filteredItems" :key="item.id">
-                <li
-                    :aria-selected="item.selected"
-                    :class="{'highlighted': index === highlightedItemIndex}"
-                    :id="$id('list-item', item.id)"
-                    role="option"
-                    x-on:click="item.selected = ! item.selected"
+        <div class="combobox__selected-items">
+            <template x-for="(item, index) in selectedItems" :key="item.id">
+                <span
+                    class="combobox-item"
+                    x-show="item.selected"
                 >
                     <span x-text="item.label"></span>
-                    <span x-show="item.selected">
-                        {% svgIcon './src/img/icon/check.svg' %}
-                    </span>
-                </li>
+                    <button
+                        class="btn btn--primary btn--sm btn--icon"
+                        x-on:click="unselectItemById(item.id)"
+                    >
+                        {% svgIcon './src/img/icon/close.svg', 'btn__icon' %}
+                    </button>
+                </span>
             </template>
-            <li x-show="search !== '' && filteredItems().length === 0">
-                No results found.
-            </li>
-        </ul>
+        </div>
+        <div class="combobox__inner">
+            <input
+                :aria-activedescendant="highlightedItemId()"
+                :aria-controls="$id('dropdown')"
+                :aria-expanded="open"
+                aria-autocomplete="list"
+                class="form-control combobox__control"
+                id="colors"
+                placeholder="Search for a color"
+                role="combobox"
+                type="text"
+                x-model="search"
+                x-on:click="toggle()"
+                x-on:keyup.down="highlightNextItem"
+                x-on:keyup.enter="toggleFromKeyboard"
+                x-on:keyup.up="highlightPreviousItem"
+                x-ref="input"
+            >
+            <ul
+                :id="$id('dropdown')"
+                aria-label="Colors"
+                aria-multiselectable="true"
+                role="listbox"
+                tabindex="-1"
+                x-ref="panel"
+                x-show="open || search.length > 0"
+            >
+                <template x-for="(item, index) in filteredItems" :key="item.id">
+                    <li
+                        :aria-selected="item.selected"
+                        :class="{'highlighted': index === highlightedItemIndex}"
+                        :id="$id('list-item', item.id)"
+                        role="option"
+                        x-on:click="item.selected = ! item.selected"
+                    >
+                        <span x-text="item.label"></span>
+                        <span x-show="item.selected">
+                            {% svgIcon './src/img/icon/check.svg' %}
+                        </span>
+                    </li>
+                </template>
+                <li x-show="search !== '' && filteredItems().length === 0">
+                    No results found.
+                </li>
+            </ul>
+        </div>
+        <button
+            class="btn btn--outline-primary btn--sm combobox__reset"
+            x-show="selectedItems().length > 0"
+            x-on:click="deselectAllItems"
+        >
+            Deselect all item
+        </button>
     </div>
 </div>
 
@@ -114,19 +139,20 @@
                     "selected": false
                 }
             ],
-            open: false,
-            search: '',
-            highlightedItemIndex: null,
+            selectedItems() {
+                return this.items.filter(item => item.selected)
+            },
+            unselectItemById(id) {
+                this.items.find(item => item.id === id).selected = false
+            },
             filteredItems() {
                 return this.items.filter(item => {
                     return item.label.toLowerCase().includes(this.search.toLowerCase())
                 })
             },
-            placeholder() {
-                const selectedItems = this.items.filter(item => item.selected).map(item => item.label)
-
-                return selectedItems.length > 0 ? selectedItems.join(', ') : 'Search a color'
-            },
+            open: false,
+            search: '',
+            highlightedItemIndex: null,
             toggle() {
                 if (this.open) {
                     return this.close()
@@ -189,6 +215,9 @@
                 }
 
                 this.filteredItems()[this.highlightedItemIndex].selected = ! this.filteredItems()[this.highlightedItemIndex].selected
+            },
+            deselectAllItems() {
+                this.items.forEach(item => item.selected = false)
             }
         }
     }

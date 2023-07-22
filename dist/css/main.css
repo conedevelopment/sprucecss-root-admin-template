@@ -1738,7 +1738,7 @@ legend {
 [data-theme-mode=dark] {
   color-scheme: dark;
 }
-[data-theme-mode=dark] select.form-control:not([multiple]):not([size]) {
+[data-theme-mode=dark] select.form-control:not([multiple]):not([size]) { /* stylelint-disable-line */
   background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3e%3cpath d="M12,12.507l-3.816,-3.815c-0.171,-0.172 -0.45,-0.172 -0.622,-0l-0.933,0.933c-0.172,0.172 -0.172,0.451 0,0.623l5.06,5.06c0.172,0.172 0.45,0.172 0.622,0l5.06,-5.06c0.172,-0.172 0.172,-0.451 -0,-0.623l-0.933,-0.933c-0.172,-0.172 -0.451,-0.172 -0.622,-0l-3.816,3.815Z" style="fill:hsl%280, 0%, 100%%29;"/%3e%3c/svg%3e');
 }
 
@@ -2537,9 +2537,9 @@ legend {
   margin-block-start: 0;
 }
 .context-menu__item {
+  background: none;
   border: 0;
   border-radius: var(--spruce-border-radius-sm);
-  background: none;
   color: var(--spruce-base-color-text);
   cursor: pointer;
   display: flex;
@@ -2651,21 +2651,26 @@ legend {
 .combobox {
   --spruce-border-radius: 0.45rem;
   --spruce-border-width: 1px;
-  position: relative;
-  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .combobox__inner {
-  --spruce-padding: 0.5em;
-  align-items: center;
-  display: flex;
-  gap: 1rem;
-  justify-content: space-between;
   position: relative;
 }
+.combobox__selected-items {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 .combobox__toggle {
-  position: absolute;
   inset: 0 0 0 auto;
   pointer-events: none;
+  position: absolute;
+}
+.combobox__reset {
+  align-self: start;
 }
 .combobox [role=listbox] {
   list-style: none;
@@ -2723,6 +2728,23 @@ legend {
   inline-size: var(--dimension);
 }
 
+.combobox-item {
+  align-items: center;
+  background-color: var(--spruce-btn-color-light-background);
+  color: var(--spruce-btn-color-light-foreground);
+  border-radius: 1em;
+  display: flex;
+  font-size: var(--spruce-font-size-sm);
+  gap: 0.25rem;
+  line-height: 1;
+  padding-block: 0.25rem;
+  padding-inline: 0.5rem 0.25rem;
+}
+.combobox-item .btn--sm {
+  --spruce-icon-padding: 0.25em;
+  --spruce-border-radius: 1em;
+}
+
 .editor {
   --spruce-block-size: 18rem;
   transition-duration: var(--spruce-duration);
@@ -2761,9 +2783,9 @@ legend {
 .editor__body {
   flex: 1 1 auto;
   margin: 0.25rem;
-  padding: 1rem;
   overflow-x: hidden;
   overflow-y: auto;
+  padding: 1rem;
 }
 .editor__body::-webkit-scrollbar {
   block-size: 0.5rem;
@@ -2803,8 +2825,8 @@ legend {
   border-radius: var(--spruce-border-radius);
   display: flex;
   gap: 1.5rem;
-  padding: 1rem;
   overflow: hidden;
+  padding: 1rem;
 }
 @container file-group-container (inline-size < 30rem) {
   .file-group {
@@ -3208,8 +3230,8 @@ pre[class*=language-]::-webkit-scrollbar-track {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 0.5rem;
+  justify-content: center;
 }
 .range-group__inner {
   align-items: center;
@@ -3604,9 +3626,9 @@ pre[class*=language-]::-webkit-scrollbar-track {
   color: var(--spruce-btn-color-light-foreground-hover);
 }
 .btn--light.btn--active {
-  color: var(--spruce-btn-color-light-foreground-hover);
   background-color: var(--spruce-btn-color-light-background-hover);
   border-color: var(--spruce-btn-color-light-background-hover);
+  color: var(--spruce-btn-color-light-foreground-hover);
 }
 
 .btn--delete {
