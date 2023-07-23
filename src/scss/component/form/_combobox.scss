@@ -27,6 +27,10 @@
     align-self: start;
   }
 
+  &__no-results {
+    padding-inline: spacer('xs');
+  }
+
   [role="listbox"] {
     @include clear-list;
     @include scrollbar;
@@ -41,6 +45,7 @@
     overflow-y: auto;
     padding: spacer('xs');
     position: absolute;
+    z-index: 5;
 
     > * {
       margin-block-start: 0;
@@ -53,7 +58,7 @@
     display: flex;
     justify-content: space-between;
     padding-block: spacer('xxs');
-    padding-inline: spacer('s');
+    padding-inline: spacer('xs');
     user-select: none;
 
     &[aria-selected="true"] {
