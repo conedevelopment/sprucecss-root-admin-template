@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const { parse, stringify } = require('himalaya');
 const dateFilter = require('./src/filters/date-filter.js');
-const htmlMinTransform = require('./src/transforms/html-min-transform.js');
+const htmlValidateTransform = require('./src/transforms/html-validate-transform.js');
 const Image = require('@11ty/eleventy-img');
 const isProduction = process.env.NODE_ENV === 'production';
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -54,9 +54,7 @@ module.exports = config => {
     return stringify(svg);
   });
 
-  if (isProduction) {
-    config.addTransform('htmlmin', htmlMinTransform);
-  }
+  config.addTransform('htmlvalidate', htmlValidateTransform);
 
   return {
     markdownTemplateEngine: 'njk',
