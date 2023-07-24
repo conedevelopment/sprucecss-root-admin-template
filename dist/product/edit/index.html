@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <script src="/js/theme-detection.js?fc820953-79d1-40d5-9731-72cdda9a8caf"></script>
+    <script src="/js/theme-detection.js?153787c0-c20c-49f1-8d98-ee3bdb9a2f5b"></script>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -25,7 +25,7 @@
     <meta property="og:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <meta name="twitter:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/main.css?fc820953-79d1-40d5-9731-72cdda9a8caf">
+    <link rel="stylesheet" href="/css/main.css?153787c0-c20c-49f1-8d98-ee3bdb9a2f5b">
 </head>
 
 <body>
@@ -587,7 +587,7 @@
                                         </div>
                                         <div class="form-group--row">
                                             <label class="form-label" for="colors">Choose colors</label>
-                                            <div class="combobox" x-data="data()" x-id="['dropdown', 'list-item']" x-on:keydown.escape.prevent.stop="close($refs.input)">
+                                            <div class="combobox" x-data="data()" x-id="['dropdown', 'list-item']" x-on:focusin.window="! $refs.panel.contains($event.target) && close()" x-on:keydown.escape.prevent.stop="close($refs.input)">
                                                 <div class="combobox__selected-items" x-show="selectedItems().length > 0">
                                                     <template x-for="(item, index) in selectedItems" :key="item.id">
                                                         <span class="combobox-item" x-show="item.selected">
@@ -601,23 +601,25 @@
                                                         </span>
                                                     </template>
                                                 </div>
-                                                <div class="combobox__inner" @click.outside="close($refs.input)">
+                                                <div class="combobox__inner" @click.outside="close($refs.input)" x-ref="panel">
                                                     <input :aria-activedescendant="highlightedItemId()" :aria-controls="$id('dropdown')" :aria-expanded="open" @click="toggle()" aria-autocomplete="list" class="form-control combobox__control" id="colors" placeholder="Search for a color" role="combobox" type="text" x-model="search" x-on:keyup.down.prevent="highlightNextItem" x-on:keyup.enter.prevent="toggleFromKeyboard" x-on:keyup.up.prevent="highlightPreviousItem" x-on:keyup="if ($event.key !== 'Escape' && $event.key !== 'Tab' && $event.key !== 'Shift') { open = true }" x-ref="input">
-                                                    <ul :id="$id('dropdown')" aria-label="Colors" aria-multiselectable="true" role="listbox" tabindex="-1" x-ref="panel" x-show="open || search.length > 0">
-                                                        <template x-for="(item, index) in filteredItems" :key="item.id">
-                                                            <li :aria-selected="item.selected" :class="{'highlighted': index === highlightedItemIndex}" :id="$id('list-item', item.id)" @click="item.selected = ! item.selected" role="option">
-                                                                <span x-text="item.label"></span>
-                                                                <span x-show="item.selected">
-                                                                    <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='icon'>
-                                                                        <polyline points='20 6 9 17 4 12'></polyline>
-                                                                    </svg>
-                                                                </span>
+                                                    <div class="combobox__dropdown" x-show="open || search.length > 0">
+                                                        <ul :id="$id('dropdown')" aria-label="Colors" aria-multiselectable="true" role="listbox" tabindex="-1" x-ref="listbox">
+                                                            <template x-for="(item, index) in filteredItems" :key="item.id">
+                                                                <li :aria-selected="item.selected" :class="{'highlighted': index === highlightedItemIndex}" :id="$id('list-item', item.id)" @click.prevent="item.selected = ! item.selected; highlightedItemIndex = null;" role="option">
+                                                                    <span x-text="item.label"></span>
+                                                                    <span x-show="item.selected">
+                                                                        <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='icon'>
+                                                                            <polyline points='20 6 9 17 4 12'></polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </li>
+                                                            </template>
+                                                            <li class="combobox__no-results" x-show="search !== '' && filteredItems().length === 0">
+                                                                No results found.
                                                             </li>
-                                                        </template>
-                                                        <li class="combobox__no-results" x-show="search !== '' && filteredItems().length === 0">
-                                                            No results found.
-                                                        </li>
-                                                    </ul>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                                 <button @click="deselectAllItems" class="btn btn--outline-primary btn--sm combobox__reset" x-show="selectedItems().length > 0">
                                                     Deselect all colors
@@ -729,9 +731,7 @@
                                                             this.highlightedItemIndex = 0;
                                                         }
 
-                                                        this.$refs.panel.children[this.highlightedItemIndex + 1].focus();
-
-                                                        this.$refs.panel.children[this.highlightedItemIndex + 1].scrollIntoView({
+                                                        this.$refs.listbox.children[this.highlightedItemIndex + 1].scrollIntoView({
                                                             behavior: 'smooth',
                                                             block: 'nearest'
                                                         });
@@ -744,7 +744,7 @@
                                                             this.highlightedItemIndex = this.filteredItems().length - 1;
                                                         }
 
-                                                        this.$refs.panel.children[this.highlightedItemIndex + 1].scrollIntoView({
+                                                        this.$refs.listbox.children[this.highlightedItemIndex + 1].scrollIntoView({
                                                             behavior: 'smooth',
                                                             block: 'nearest'
                                                         });
@@ -990,16 +990,16 @@
         </main>
     </div>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="/js/theme-change-assets.js?fc820953-79d1-40d5-9731-72cdda9a8caf" defer></script>
-    <script src="/js/navigation.js?fc820953-79d1-40d5-9731-72cdda9a8caf" defer></script>
-    <script src="/js/navigation-block.js?fc820953-79d1-40d5-9731-72cdda9a8caf" defer></script>
-    <script src="/js/navigation-context.js?fc820953-79d1-40d5-9731-72cdda9a8caf" defer></script>
-    <script src="/js/accordion-card.js?fc820953-79d1-40d5-9731-72cdda9a8caf" defer></script>
-    <script src="/js/theme-switcher.js?fc820953-79d1-40d5-9731-72cdda9a8caf" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts?fc820953-79d1-40d5-9731-72cdda9a8caf" defer></script>
-    <script src="/js/charts.js?fc820953-79d1-40d5-9731-72cdda9a8caf" type="module" defer></script>
-    <script src="/js/range-group.js?fc820953-79d1-40d5-9731-72cdda9a8caf" type="module" defer></script>
-    <script src="/js/repeater.js?fc820953-79d1-40d5-9731-72cdda9a8caf" type="module" defer></script>
+    <script src="/js/theme-change-assets.js?153787c0-c20c-49f1-8d98-ee3bdb9a2f5b" defer></script>
+    <script src="/js/navigation.js?153787c0-c20c-49f1-8d98-ee3bdb9a2f5b" defer></script>
+    <script src="/js/navigation-block.js?153787c0-c20c-49f1-8d98-ee3bdb9a2f5b" defer></script>
+    <script src="/js/navigation-context.js?153787c0-c20c-49f1-8d98-ee3bdb9a2f5b" defer></script>
+    <script src="/js/accordion-card.js?153787c0-c20c-49f1-8d98-ee3bdb9a2f5b" defer></script>
+    <script src="/js/theme-switcher.js?153787c0-c20c-49f1-8d98-ee3bdb9a2f5b" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts?153787c0-c20c-49f1-8d98-ee3bdb9a2f5b" defer></script>
+    <script src="/js/charts.js?153787c0-c20c-49f1-8d98-ee3bdb9a2f5b" type="module" defer></script>
+    <script src="/js/range-group.js?153787c0-c20c-49f1-8d98-ee3bdb9a2f5b" type="module" defer></script>
+    <script src="/js/repeater.js?153787c0-c20c-49f1-8d98-ee3bdb9a2f5b" type="module" defer></script>
 </body>
 
 </html>

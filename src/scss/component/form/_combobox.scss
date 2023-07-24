@@ -31,21 +31,33 @@
     padding-inline: spacer('xs');
   }
 
-  [role="listbox"] {
-    @include clear-list;
-    @include scrollbar;
+  &__control {
+    @include field-icon(config('select', $form-icon, false), color('select-foreground', 'form', true));
+    background-position: center right config('icon-right-offset', $form-select, false);
+    background-repeat: no-repeat;
+    background-size: config('icon-inline-size', $form-select, false) auto;
+    padding-inline-end: config('padding-right', $form-select, false);
+  }
+
+  &__dropdown {
     background-color: color('background', 'form');
     border: config('border-width', $form-control) solid color('border', 'form');
     border-radius: config('border-radius', $form-control);
-    display: flex;
-    flex-direction: column;
-    gap: spacer('xs');
     inset: calc(100% + #{spacer('xs')}) 0 auto 0;
-    max-block-size: 10rem;
-    overflow-y: auto;
     padding: spacer('xs');
     position: absolute;
     z-index: 5;
+  }
+
+  [role="listbox"] {
+    @include clear-list;
+    @include scrollbar;
+    display: flex;
+    flex-direction: column;
+    gap: spacer('xs');
+    max-block-size: 10rem;
+    overflow-y: auto;
+    padding-inline-end: spacer('xs');
 
     > * {
       margin-block-start: 0;
