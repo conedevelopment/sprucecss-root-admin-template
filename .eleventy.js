@@ -2,9 +2,7 @@ require('dotenv').config();
 
 const { parse, stringify } = require('himalaya');
 const dateFilter = require('./src/filters/date-filter.js');
-const htmlValidateTransform = require('./src/transforms/html-validate-transform.js');
 const Image = require('@11ty/eleventy-img');
-const isProduction = process.env.NODE_ENV === 'production';
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const w3DateFilter = require('./src/filters/w3-date-filter.js');
 
@@ -53,8 +51,6 @@ module.exports = config => {
 
     return stringify(svg);
   });
-
-  config.addTransform('htmlvalidate', htmlValidateTransform);
 
   return {
     markdownTemplateEngine: 'njk',
