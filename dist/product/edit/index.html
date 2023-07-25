@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <script src="/js/theme-detection.js?a29d4f4c-a5ab-4e7e-bbf8-17eae7995566"></script>
+    <script src="/js/theme-detection.js?a80cadd8-bd29-4191-aea1-7e29dc876a3a"></script>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -25,7 +25,7 @@
     <meta property="og:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <meta name="twitter:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/main.css?a29d4f4c-a5ab-4e7e-bbf8-17eae7995566">
+    <link rel="stylesheet" href="/css/main.css?a80cadd8-bd29-4191-aea1-7e29dc876a3a">
 </head>
 
 <body>
@@ -767,6 +767,73 @@
                                             }
 
                                         </script>
+                                        <div class="form-group--row">
+                                            <span class="form-label">Modal</span>
+                                            <div x-data="{
+        open: false,
+        close() {
+            this.open = false;
+            $refs['modal-open-button'].focus();
+        }
+    }">
+                                                <button x-ref="modal-open-button" class="btn btn--primary" @click="open = true">
+                                                    Open modal
+                                                </button>
+                                                <template x-teleport="body">
+                                                    <div class="modal-backdrop" x-show="open" @keydown.escape="close">
+                                                        <div role="dialog" aria-modal="true" tabindex="0" class="modal" @click.away="close" x-trap.noscroll="open">
+                                                            <div class="modal__header">
+                                                                <div class="modal__header-caption">
+                                                                    <h2 class="modal__title">Notification settings</h2>
+                                                                    <p class="modal__subtitle">Set notifications for this post</p>
+                                                                </div>
+                                                                <button class="btn btn--icon btn--light" aria-label="Close modal" @click="close">
+                                                                    <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                        <line x1='18' y1='6' x2='6' y2='18'></line>
+                                                                        <line x1='6' y1='6' x2='18' y2='18'></line>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal__body">
+                                                                <fieldset>
+                                                                    <div class="form-group--row form-group--row:vertical-start" style="--spruce-gap: 1rem 3rem; --spruce-label-inline-size: 14rem;">
+                                                                        <legend>
+                                                                            Email notifications
+                                                                            <span class="form-description">Configure tools that integrate with Code Scanning to keep the quality of your code under control.</span>
+                                                                        </legend>
+                                                                        <div class="form-group form-group--vertical-check">
+                                                                            <label class="form-switch form-switch--vertical-start">
+                                                                                <input class="form-switch__control" type="checkbox" value="true" checked />
+                                                                                <span class="form-label form-switch__label">
+                                                                                    News and updates
+                                                                                    <span class="form-description">Quam at orci ullamcorper fringilla.</span>
+                                                                                </span>
+                                                                            </label>
+                                                                            <label class="form-switch form-switch--vertical-start">
+                                                                                <input class="form-switch__control" type="checkbox" value="true" checked />
+                                                                                <span class="form-label form-switch__label">Tips and tutorials</span>
+                                                                            </label>
+                                                                            <label class="form-switch form-switch--vertical-start">
+                                                                                <input class="form-switch__control" type="checkbox" value="true" />
+                                                                                <span class="form-label form-switch__label">Comments</span>
+                                                                            </label>
+                                                                            <label class="form-switch form-switch--vertical-start">
+                                                                                <input class="form-switch__control" type="checkbox" value="true" />
+                                                                                <span class="form-label form-switch__label">Reminders</span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </fieldset>
+                                                            </div>
+                                                            <div class="modal__footer">
+                                                                <button class="btn btn--outline-primary" @click="close">Cancel</button>
+                                                                <button class="btn btn--primary">Save</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -989,17 +1056,18 @@
             </footer>
         </main>
     </div>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="/js/theme-change-assets.js?a29d4f4c-a5ab-4e7e-bbf8-17eae7995566" defer></script>
-    <script src="/js/navigation.js?a29d4f4c-a5ab-4e7e-bbf8-17eae7995566" defer></script>
-    <script src="/js/navigation-block.js?a29d4f4c-a5ab-4e7e-bbf8-17eae7995566" defer></script>
-    <script src="/js/navigation-context.js?a29d4f4c-a5ab-4e7e-bbf8-17eae7995566" defer></script>
-    <script src="/js/accordion-card.js?a29d4f4c-a5ab-4e7e-bbf8-17eae7995566" defer></script>
-    <script src="/js/theme-switcher.js?a29d4f4c-a5ab-4e7e-bbf8-17eae7995566" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts?a29d4f4c-a5ab-4e7e-bbf8-17eae7995566" defer></script>
-    <script src="/js/charts.js?a29d4f4c-a5ab-4e7e-bbf8-17eae7995566" type="module" defer></script>
-    <script src="/js/range-group.js?a29d4f4c-a5ab-4e7e-bbf8-17eae7995566" type="module" defer></script>
-    <script src="/js/repeater.js?a29d4f4c-a5ab-4e7e-bbf8-17eae7995566" type="module" defer></script>
+    <script src="/js/theme-change-assets.js?a80cadd8-bd29-4191-aea1-7e29dc876a3a" defer></script>
+    <script src="/js/navigation.js?a80cadd8-bd29-4191-aea1-7e29dc876a3a" defer></script>
+    <script src="/js/navigation-block.js?a80cadd8-bd29-4191-aea1-7e29dc876a3a" defer></script>
+    <script src="/js/navigation-context.js?a80cadd8-bd29-4191-aea1-7e29dc876a3a" defer></script>
+    <script src="/js/accordion-card.js?a80cadd8-bd29-4191-aea1-7e29dc876a3a" defer></script>
+    <script src="/js/theme-switcher.js?a80cadd8-bd29-4191-aea1-7e29dc876a3a" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts?a80cadd8-bd29-4191-aea1-7e29dc876a3a" defer></script>
+    <script src="/js/charts.js?a80cadd8-bd29-4191-aea1-7e29dc876a3a" type="module" defer></script>
+    <script src="/js/range-group.js?a80cadd8-bd29-4191-aea1-7e29dc876a3a" type="module" defer></script>
+    <script src="/js/repeater.js?a80cadd8-bd29-4191-aea1-7e29dc876a3a" type="module" defer></script>
 </body>
 
 </html>
