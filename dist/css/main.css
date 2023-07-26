@@ -3834,6 +3834,10 @@ legend {
   --root-border-radius: clamp(1.5rem, 5vw, 3rem);
 }
 
+.required-marker {
+  color: var(--root-alert-color-danger);
+}
+
 @media (min-width: 32em) {
   .display--flex\:xs {
     display: flex !important;

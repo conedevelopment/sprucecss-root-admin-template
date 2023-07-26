@@ -20,3 +20,7 @@ legend {
     --border-radius: spacer-clamp('m', 'l')
   ));
 }
+
+.required-marker {
+  color: color('danger', 'alert');
+}
