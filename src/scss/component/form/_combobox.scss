@@ -95,9 +95,9 @@
 
 .combobox-item {
   align-items: center;
-  background-color: color('light-background', 'btn');
+  background-color: color('item-background', 'combobox');
   border-radius: 1em;
-  color: color('light-foreground', 'btn');
+  color: color('item-foreground', 'combobox');
   display: flex;
   font-size: config('font-size-sm', $typography);
   gap: spacer('xxs');

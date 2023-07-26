@@ -2,7 +2,7 @@
 
 .modal-backdrop {
   align-items: start;
-  background-color: hsl(210deg 60% 98% / 90%);
+  background-color: color('background', 'modal');
   display: flex;
   inset: 0;
   justify-content: center;

@@ -3,7 +3,7 @@
     <div class="repeater">
         <div class="repeater__heading">
             <div class="repeater__column">
-                <button class="btn btn--primary btn--sm btn--icon repeater__toggle" data-action="toggle" aria-label="Toggle section" aria-expanded="true" aria-describedby="repeater-item-1">
+                <button class="btn btn--primary btn--sm btn--icon repeater__toggle" data-action="toggle" aria-label="Toggle section" aria-expanded="false" aria-describedby="repeater-item-1">
                     {% svgIcon './src/img/icon/plus.svg', 'btn__icon' %}
                 </button>
                 <h3 id="repeater-item-1" class="repeater__title">
@@ -23,7 +23,7 @@
                 </button>
             </div>
         </div>
-        <div class="repeater__body">
+        <div class="repeater__body" hidden>
             <div class="form-group-stack form-group-stack--bordered form-group-container">
                 <div class="form-group--row">
                     <label class="form-label" for="youtube-title">Title</label>

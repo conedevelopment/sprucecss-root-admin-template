@@ -16,5 +16,7 @@ legend {
 }
 
 .form-control[type=color] {
-  --spruce-border-radius: 50%;
+  @include set-css-variable((
+    --border-radius: spacer-clamp('m', 'l')
+  ));
 }
