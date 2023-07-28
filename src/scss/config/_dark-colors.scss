@@ -1,6 +1,6 @@
 @use 'sass:color';
 
-$dark-color-black: hsl(240deg 19% 14%);
+$dark-color-black: hsl(240deg 30% 14%);
 $dark-color-danger: hsl(0deg 71% 51%);
 $dark-color-gray-dark: hsl(0deg 0% 100% / 4%);
 $dark-color-gray: hsl(0deg 0% 97%);
@@ -25,7 +25,7 @@ $colors: (
     'mark-foreground': $dark-color-black,
     'marker': $dark-color-primary,
     'primary': $dark-color-primary,
-    'primary-lightest': hsl(240deg 19% 16%),
+    'primary-lightest': hsl(240deg 30% 16%),
     'secondary': $dark-color-secondary,
     'text': $dark-color-gray,
   ),
@@ -41,7 +41,7 @@ $colors: (
     'dark-outline-foreground-hover': hsl(205deg 100% 2%),
     'dark-outline-background-hover': hsl(0deg 0% 100%),
     'dark-outline-focus-ring': hsl(0deg 0% 100%),
-    'light-background': hsl(240deg 19% 12%),
+    'light-background': hsl(240deg 30% 12%),
     'light-background-hover': $dark-color-primary,
     'light-focus-ring': $dark-color-primary,
     'light-foreground': $dark-color-primary,
@@ -59,7 +59,7 @@ $colors: (
     'background': $dark-color-black,
   ),
   'combobox': (
-    'item-background': hsl(240deg 19% 12%),
+    'item-background': hsl(240deg 30% 12%),
     'item-foreground': $dark-color-primary,
   ),
   'data-table': (
@@ -70,7 +70,7 @@ $colors: (
     'background-disabled': $dark-color-black,
     'border-disabled': $dark-color-gray-dark,
     'border-focus': $dark-color-primary,
-    'border': $dark-color-gray-dark,
+    'border': hsl(0deg 0% 100% / 12%),
     'check-background': $dark-color-primary,
     'check-foreground': $dark-color-black,
     'group-label-background': color.scale($dark-color-black, $lightness: 2.5%),
@@ -87,7 +87,7 @@ $colors: (
     'valid-shadow': color.adjust($dark-color-success, $alpha: -0.75),
   ),
   'header': (
-    'background': hsl(240deg 19% 12% / 95%),
+    'background': hsl(240deg 30% 12% / 95%),
   ),
   'navigation': (
     'arrow': hsl(0deg 0% 100% / 15%),
@@ -97,7 +97,7 @@ $colors: (
     'icon-foreground-hover': hsl(186deg 100% 5%),
   ),
   'main': (
-    'background': hsl(240deg 19% 13%),
+    'background': hsl(240deg 30% 13%),
   ),
   'modal': (
     'background': hsla(240, 3%, 7%, 0.9),
@@ -119,7 +119,7 @@ $colors: (
     'border': $dark-color-gray-dark,
     'caption': $dark-color-gray,
     'heading': $dark-color-white,
-    'hover': hsl(0deg 0% 100% / 5%),
+    'hover': hsl(0deg 0% 100% / 2%),
     'stripe': hsl(0deg 0% 100% / 2.5%),
     'text': $dark-color-gray,
   ),

@@ -19,16 +19,17 @@
         {% for block in navigation %}
             <div
                 class="block-navigation"
-                data-item="navigation-block"
+                x-data="{ open: {{ helpers.getLinkActiveParent(block, page.url) | safe }} }"
             >
                 {% if block.title %}
                     <h3 class="block-navigation__title">
                         {{ block.title }}
                         <button
                             class="btn btn--light btn--sm btn--icon block-navigation__toggle"
-                            aria-expanded="{{ helpers.getLinkActiveParent(block, page.url) | safe }}"
-                            aria-label="Toggle shop navigation"
-                            data-action="block-navigation-toggle"
+                            aria-label="Toggle navigation"
+                            :aria-expanded="open"
+                            @click="open = ! open"
+                            x-cloak
                         >
                             {% svgIcon './src/img/icon/chevron-up.svg', 'btn__icon' %}
                         </button>
@@ -37,6 +38,7 @@
                 <nav
                     class="block-navigation__menu block-navigation__menu--breakout"
                     data-state="{{ helpers.getLinkActiveParent(block, page.url, false) | safe }}"
+                    :data-state="open ? 'open' : 'closed'"
                 >
                     <ul>
                         {% for item in block.items %}
