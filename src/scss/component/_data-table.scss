@@ -38,6 +38,18 @@
   }
 }
 
+.data-table-alert {
+  border-width: 1px;
+  padding-inline-end: 0.65em;
+
+  &__actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacer('xs');
+  }
+}
+
 .data-table-sort {
   @include a11y-card-link('.data-table-sort__control', true);
   align-items: center;
