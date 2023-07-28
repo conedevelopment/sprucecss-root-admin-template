@@ -76,12 +76,12 @@
             </div>
         </div>
     </div>
-    <div class="btn-dropdown">
-        <button class="btn btn--primary btn--icon" aria-expanded="false" data-action="context" data-context-target="repeater">
+    <div class="btn-dropdown" x-data="{ open: false }" @click.outside="open = false">
+        <button class="btn btn--primary btn--icon" :aria-expanded="open" @click="open = ! open">
             Add section
             {% svgIcon './src/img/icon/chevron-down.svg', 'btn__icon' %}
         </button>
-        <ul class="context-menu context-menu--inline-start" data-state="closed" data-context-id="repeater">
+        <ul class="context-menu context-menu--inline-start" :data-state="open ? 'open' : 'closed'">
             <li>
                 <button class="context-menu__item">YouTube Video</button>
             </li>

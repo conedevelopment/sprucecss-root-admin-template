@@ -11,11 +11,11 @@
                     'controlClass': dataTable.searchControlClass
                 } %}
                 {% include "partial/search.html" %}
-                <div class="data-table-filter">
-                    <button class="btn btn--light btn--icon data-table-filter__toggle" aria-expanded="false" data-action="context" data-context-target="filter">
+                <div class="data-table-filter" x-data="{ open: false }" @click.outside="open = false">
+                    <button class="btn btn--light btn--icon data-table-filter__toggle" :aria-expanded="open" @click="open = ! open">
                         {% svgIcon './src/img/icon/filter.svg', 'btn__icon' %}
                     </button>
-                    <div class="context-menu context-menu--inline-end" data-state="closed" data-context-id="filter">
+                    <div class="context-menu context-menu--inline-end" :data-state="open ? 'open' : 'closed'">
                         <div class="form-group-stack form-group-stack--bordered form-group-container">
                             <div class="form-group">
                                 <label class="form-label" for="product-status">Status</label>
