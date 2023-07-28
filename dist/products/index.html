@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <script src="/js/theme-detection.js?f551d05e-b79d-4ed5-8aa5-3f67d3ba3b9e"></script>
+    <script src="/js/theme-detection.js?57013e3a-7da1-4e9b-870d-0546bfb2a8b8"></script>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -25,7 +25,7 @@
     <meta property="og:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <meta name="twitter:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/main.css?f551d05e-b79d-4ed5-8aa5-3f67d3ba3b9e">
+    <link rel="stylesheet" href="/css/main.css?57013e3a-7da1-4e9b-870d-0546bfb2a8b8">
 </head>
 
 <body>
@@ -436,10 +436,52 @@
                                         </svg>
                                     </button>
                                 </form>
+                                <div class="data-table-filter">
+                                    <button class="btn btn--light btn--icon data-table-filter__toggle" aria-expanded="false" data-action="context" data-context-target="filter">
+                                        <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                            <polygon points='22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3'></polygon>
+                                        </svg>
+                                    </button>
+                                    <div class="context-menu context-menu--inline-end" data-state="closed" data-context-id="filter">
+                                        <div class="form-group-stack form-group-stack--bordered form-group-container">
+                                            <div class="form-group">
+                                                <label class="form-label" for="product-status">Status</label>
+                                                <select class="form-control" id="product-status">
+                                                    <option value="in-stock">In stock</option>
+                                                    <option value="can-be-ordered">Can be ordered</option>
+                                                    <option value="not-available">Not available</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-switch form-switch--sm">
+                                                    <input class="form-switch__control" type="checkbox" value="true" checked />
+                                                    <span class="form-label form-switch__label">Visible</span>
+                                                </label>
+                                            </div>
+                                            <div class="data-table-filter__actions">
+                                                <button class="btn btn--primary btn--sm">Fitler</button>
+                                                <button class="btn btn--light btn--sm">Reset</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="app-card__body">
                             <div class="data-table">
+                                <div class="alert alert--info data-table-alert">
+                                    20 items selected.
+                                    <div class="data-table-alert__actions">
+                                        <button class="btn btn--primary btn--sm">Select all 100</button>
+                                        <button class="btn btn--primary btn--sm">Deselect all</button>
+                                        <select class="form-control form-control--sm" id="actions" aria-label="Actions">
+                                            <option value="bulk-edit">Bulk edit</option>
+                                            <option value="send-notification">Send notification</option>
+                                            <option value="publish">Publish</option>
+                                            <option value="delete">Delete</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="table-responsive">
                                     <table class="table table--hover">
                                         <thead>
@@ -1560,16 +1602,16 @@
     </div>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="/js/theme-change-assets.js?f551d05e-b79d-4ed5-8aa5-3f67d3ba3b9e" defer></script>
-    <script src="/js/navigation.js?f551d05e-b79d-4ed5-8aa5-3f67d3ba3b9e" defer></script>
-    <script src="/js/navigation-block.js?f551d05e-b79d-4ed5-8aa5-3f67d3ba3b9e" defer></script>
-    <script src="/js/navigation-context.js?f551d05e-b79d-4ed5-8aa5-3f67d3ba3b9e" defer></script>
-    <script src="/js/accordion-card.js?f551d05e-b79d-4ed5-8aa5-3f67d3ba3b9e" defer></script>
-    <script src="/js/theme-switcher.js?f551d05e-b79d-4ed5-8aa5-3f67d3ba3b9e" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts?f551d05e-b79d-4ed5-8aa5-3f67d3ba3b9e" defer></script>
-    <script src="/js/charts.js?f551d05e-b79d-4ed5-8aa5-3f67d3ba3b9e" type="module" defer></script>
-    <script src="/js/range-group.js?f551d05e-b79d-4ed5-8aa5-3f67d3ba3b9e" type="module" defer></script>
-    <script src="/js/repeater.js?f551d05e-b79d-4ed5-8aa5-3f67d3ba3b9e" type="module" defer></script>
+    <script src="/js/theme-change-assets.js?57013e3a-7da1-4e9b-870d-0546bfb2a8b8" defer></script>
+    <script src="/js/navigation.js?57013e3a-7da1-4e9b-870d-0546bfb2a8b8" defer></script>
+    <script src="/js/navigation-block.js?57013e3a-7da1-4e9b-870d-0546bfb2a8b8" defer></script>
+    <script src="/js/navigation-context.js?57013e3a-7da1-4e9b-870d-0546bfb2a8b8" defer></script>
+    <script src="/js/accordion-card.js?57013e3a-7da1-4e9b-870d-0546bfb2a8b8" defer></script>
+    <script src="/js/theme-switcher.js?57013e3a-7da1-4e9b-870d-0546bfb2a8b8" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts?57013e3a-7da1-4e9b-870d-0546bfb2a8b8" defer></script>
+    <script src="/js/charts.js?57013e3a-7da1-4e9b-870d-0546bfb2a8b8" type="module" defer></script>
+    <script src="/js/range-group.js?57013e3a-7da1-4e9b-870d-0546bfb2a8b8" type="module" defer></script>
+    <script src="/js/repeater.js?57013e3a-7da1-4e9b-870d-0546bfb2a8b8" type="module" defer></script>
 </body>
 
 </html>

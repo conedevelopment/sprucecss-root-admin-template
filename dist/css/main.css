@@ -2523,7 +2523,7 @@ legend {
 
 .context-menu {
   --inset-block-start: calc(100% + 1rem);
-  --width: 10rem;
+  --inline-size: 10rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -2534,11 +2534,12 @@ legend {
   border: 1px solid var(--root-base-color-border);
   border-radius: var(--root-border-radius-sm);
   box-shadow: 0 0 0.25rem hsla(201.15, 72.03%, 32.71%, 0.05);
-  inline-size: var(--width);
+  inline-size: var(--inline-size);
   opacity: 0;
   position: absolute;
   scale: 0.85;
   visibility: hidden;
+  z-index: 10;
 }
 .context-menu--inline-start {
   inset: var(--inset-block-start) auto auto 0;
@@ -2634,6 +2635,36 @@ legend {
 }
 .data-table__footer-column > * {
   margin-block: 0;
+}
+
+.data-table-alert {
+  border-width: 1px;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding-inline-end: 0.65em;
+}
+.data-table-alert__actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.data-table-alert__actions .form-control {
+  inline-size: auto;
+}
+
+.data-table-filter {
+  position: relative;
+}
+.data-table-filter__actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.data-table-filter .context-menu {
+  --inline-size: 16rem;
+  padding: 1rem;
 }
 
 .data-table-sort {
