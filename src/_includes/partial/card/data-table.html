@@ -12,8 +12,9 @@
                 } %}
                 {% include "partial/search.html" %}
                 <div class="data-table-filter" x-data="{ open: false }" @click.outside="open = false">
-                    <button class="btn btn--light btn--icon data-table-filter__toggle" :aria-expanded="open" @click="open = ! open">
+                    <button class="btn btn--light btn--icon btn--counter data-table-filter__toggle" :aria-expanded="open" @click="open = ! open" aria-label="Filters">
                         {% svgIcon './src/img/icon/filter.svg', 'btn__icon' %}
+                        <span class="btn__counter">2</span>
                     </button>
                     <div class="context-menu context-menu--inline-end" :data-state="open ? 'open' : 'closed'">
                         <div class="form-group-stack form-group-stack--bordered form-group-container">
@@ -47,14 +48,19 @@
             <div class="alert alert--info data-table-alert">
                 20 items selected.
                 <div class="data-table-alert__actions">
-                    <button class="btn btn--primary btn--sm">Select all 100</button>
-                    <button class="btn btn--primary btn--sm">Deselect all</button>
-                    <select class="form-control form-control--sm" id="actions" aria-label="Actions">
-                        <option value="bulk-edit">Bulk edit</option>
-                        <option value="send-notification">Send notification</option>
-                        <option value="publish">Publish</option>
-                        <option value="delete">Delete</option>
-                    </select>
+                    <div class="data-table-alert__column">
+                        <button class="btn btn--primary btn--sm">Select all 100</button>
+                        <button class="btn btn--primary btn--sm">Deselect all</button>
+                    </div>
+                    <div class="data-table-alert__column">
+                        <select class="form-control form-control--sm" id="actions" aria-label="Actions">
+                            <option value="bulk-edit">Bulk edit</option>
+                            <option value="send-notification">Send notification</option>
+                            <option value="publish">Publish</option>
+                            <option value="delete">Delete</option>
+                        </select>
+                        <button class="btn btn--primary btn--sm">Run</button>
+                    </div>
                 </div>
             </div>
             <div class="table-responsive">
@@ -91,7 +97,11 @@
                     </thead>
                     <tbody>
                         {% for data in dataTable.data %}
+                            {% if data.deleted == true %}
+                            <tr class="data-table-deleted">
+                            {% else %}
                             <tr>
+                            {% endif %}
                                 <td>
                                     <label class="form-check" aria-label="Select {{ data.name }}">
                                         <input class="form-check__control" type="checkbox" value="1" name="{{ data.id }}" />

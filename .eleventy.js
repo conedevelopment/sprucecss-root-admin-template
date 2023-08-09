@@ -1,10 +1,10 @@
 require('dotenv').config();
 
 const { parse, stringify } = require('himalaya');
-const dateFilter = require('./src/filters/date-filter.js');
+const dateFilter = require('./src/filters/date.js');
 const Image = require('@11ty/eleventy-img');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const w3DateFilter = require('./src/filters/w3-date-filter.js');
+const w3DateFilter = require('./src/filters/w3-date.js');
 
 function addPrefixToIdsAndUrls(str, prefix) {
   const regexId = /id=(["'])(.*?)\1/g;
@@ -23,8 +23,8 @@ function addPrefixToIdsAndUrls(str, prefix) {
 }
 
 module.exports = config => {
-  config.addFilter('dateFilter', dateFilter);
-  config.addFilter('w3DateFilter', w3DateFilter);
+  config.addFilter('date', dateFilter);
+  config.addFilter('w3Date', w3DateFilter);
 
   config.addPlugin(syntaxHighlight);
 

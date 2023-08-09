@@ -4,9 +4,9 @@
             <a class="app-header__logo" href="/" aria-label="{{ site.name }}">
                 {% svgIcon './src/img/root-logo.svg', 'icon', 'app-header-' %}
             </a>
-            <div class="app-header__actions app-header__actions--secondary">
+            <div class="app-header__actions app-header__actions--secondary display--none:md">
                 <button
-                    class="btn btn--outline-dark btn--sm btn--icon display--none:md"
+                    class="btn btn--outline-dark btn--sm btn--icon"
                     data-action="sidebar-open"
                     aria-label="Open navigation"
                     aria-expanded="false"
@@ -14,17 +14,17 @@
                     {% svgIcon './src/img/icon/menu-open.svg', 'btn__icon' %}
                 </button>
                 <button
-                    class="btn btn--outline-dark btn--sm btn--icon display--none:md"
+                    class="btn btn--outline-dark btn--sm btn--icon"
                     aria-label="Open search"
                 >
                     {% svgIcon './src/img/icon/search.svg', 'btn__icon' %}
                 </button>
-                {% include 'partial/theme-switcher.html' %}
             </div>
             {% set breadcrumbClass = 'app-header__breadcrumb' %}
             {% include 'partial/breadcrumb-list.html' %}
         </div>
         <div class="app-header__actions">
+            {% include 'partial/notifications.html' %}
             {% include 'partial/user-menu.html' %}
         </div>
     </div>

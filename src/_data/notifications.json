@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Important Weekly Team Meeting",
+    "timestamp": "2023-08-09T10:00:00Z",
+    "status": "unread",
+    "type": "info",
+    "icon": "./src/img/icon/shopping-cart.svg"
+  },
+  {
+    "title": "Upcoming Payment Deadline for Monthly Subscription",
+    "timestamp": "2023-08-10T15:30:00Z",
+    "status": "unread",
+    "type": "danger",
+    "icon": "./src/img/icon/trash.svg"
+  },
+  {
+    "title": "25th Wedding Anniversary Celebration at Grand Hotel",
+    "timestamp": "2023-08-15T18:00:00Z",
+    "status": "unread",
+    "type": "success",
+    "icon": "./src/img/icon/users.svg"
+  },
+  {
+    "title": "Exclusive Webinar: Unveiling the Latest Industry Trends",
+    "timestamp": "2023-08-20T09:30:00Z",
+    "status": "unread",
+    "type": "warning",
+    "icon": "./src/img/icon/alert-triangle.svg"
+  },
+  {
+    "title": "Final Submission Deadline for Project Proposal",
+    "timestamp": "2023-08-18T12:00:00Z",
+    "status": "read",
+    "type": "info",
+    "icon": "./src/img/icon/shopping-cart.svg"
+  },
+  {
+    "title": "Departure for Exciting Adventure: Traveling to Exotic Destinations",
+    "timestamp": "2023-08-25T08:00:00Z",
+    "status": "read",
+    "type": "info",
+    "icon": "./src/img/icon/shopping-cart.svg"
+  },
+  {
+    "title": "Highly Anticipated Product Release: Introducing InnovationX",
+    "timestamp": "2023-08-30T14:00:00Z",
+    "status": "read",
+    "type": "info",
+    "icon": "./src/img/icon/shopping-cart.svg"
+  }
+]

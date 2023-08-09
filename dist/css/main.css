@@ -2484,19 +2484,22 @@ legend {
   margin-block-start: 0;
 }
 .context-menu__item {
+  align-items: center;
   background: none;
+  block-size: 2.25rem;
   border: 0;
   border-radius: var(--root-border-radius-sm);
   color: var(--root-base-color-text);
   cursor: pointer;
   display: flex;
   line-height: var(--root-line-height-md);
+  justify-content: space-between;
   margin: 0.15em;
   padding-block: 0.25em;
   padding-inline: 0.6em;
   text-decoration: none;
 }
-.context-menu__item:hover:not([aria-current=page]) {
+.context-menu__item:hover:not([aria-current=page], :has(.theme-switcher)) {
   background-color: var(--root-base-color-primary-lightest);
 }
 .context-menu__item[aria-current=page] {
@@ -2570,10 +2573,16 @@ legend {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.5rem 1.5rem;
 }
 .data-table-alert__actions .form-control {
   inline-size: auto;
+}
+.data-table-alert__column {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .data-table-filter {
@@ -2617,6 +2626,10 @@ legend {
   block-size: var(--dimension);
   color: var(--root-data-table-color-icon);
   inline-size: var(--dimension);
+}
+
+.data-table-deleted {
+  color: var(--root-alert-color-danger);
 }
 
 .btn-dropdown {
@@ -3384,6 +3397,131 @@ pre[class*=language-]::-webkit-scrollbar-track {
   padding: clamp(1rem, 5vw, 1.5rem);
 }
 
+.app-notification {
+  position: relative;
+}
+.app-notification__header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+.app-notification__title {
+  font-size: clamp(0.996625rem, 2vw + 1rem, 1.1725rem);
+  font-weight: 600;
+  margin-block: 0;
+}
+.app-notification__list {
+  max-block-size: 25rem;
+  overflow-y: auto;
+}
+.app-notification__list::-webkit-scrollbar {
+  block-size: 0.5rem;
+  inline-size: 0.5rem;
+}
+.app-notification__list::-webkit-scrollbar-thumb {
+  background: var(--root-scrollbar-color-thumb-background);
+  border-radius: var(--root-border-radius-sm);
+}
+.app-notification__list::-webkit-scrollbar-thumb:hover {
+  background: var(--root-scrollbar-color-thumb-background-hover);
+}
+.app-notification__list::-webkit-scrollbar-track {
+  background: var(--root-scrollbar-color-track-background);
+  border-radius: var(--root-border-radius-sm);
+}
+.app-notification__list > * + * {
+  border-block-start: 1px solid var(--root-base-color-border);
+  margin-block-start: 1rem;
+  padding-block-start: 1rem;
+}
+.app-notification .context-menu {
+  --inline-size: 20rem;
+  display: flex;
+  flex-direction: column;
+  inset: var(--inset-block-start) -4.75rem auto auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+@media (min-width: 48em) {
+  .app-notification .context-menu {
+    inset: var(--inset-block-start) 0 auto auto;
+  }
+}
+@media (min-width: 64em) {
+  .app-notification .context-menu {
+    --inline-size: 26rem;
+  }
+}
+
+.notification-card {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+.notification-card__link::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.notification-card--read {
+  opacity: 0.5;
+}
+.notification-card__icon {
+  --size: 2.5rem;
+  align-items: center;
+  border-radius: var(--root-border-radius-sm);
+  block-size: var(--size);
+  display: flex;
+  flex-shrink: 0;
+  inline-size: var(--size);
+  justify-content: center;
+}
+.notification-card__icon--info {
+  background-color: #f0fbff;
+  color: var(--root-alert-color-info);
+}
+.notification-card__icon--warning {
+  background-color: #fefaec;
+  color: var(--root-alert-color-warning);
+}
+.notification-card__icon--danger {
+  background-color: #fdf4f4;
+  color: var(--root-alert-color-danger);
+}
+.notification-card__icon--success {
+  background-color: #ebfff5;
+  color: var(--root-alert-color-success);
+}
+.notification-card__icon svg {
+  --size: 1rem;
+  block-size: var(--size);
+  inline-size: var(--size);
+}
+.notification-card__caption {
+  line-height: var(--root-line-height-md);
+  padding-inline-end: 1rem;
+}
+.notification-card__caption > * {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+.notification-card__caption > * + * {
+  margin-block-start: 0.25rem;
+}
+.notification-card__title {
+  font-size: var(--root-font-size-base);
+}
+.notification-card__link {
+  color: var(--root-base-color-heading);
+  text-decoration: none;
+}
+.notification-card__link:hover, .notification-card__link:focus {
+  color: var(--root-base-color-link);
+}
+
 .app-widget {
   align-items: center;
   background-color: var(--root-base-color-background);
@@ -3728,6 +3866,21 @@ pre[class*=language-]::-webkit-scrollbar-track {
   background-color: var(--root-btn-color-dark-outline-background-hover);
   border-color: var(--root-btn-color-dark-outline-background-hover);
   color: var(--root-btn-color-dark-outline-foreground-hover);
+}
+
+.btn--counter {
+  position: relative;
+}
+.btn__counter {
+  background-color: var(--root-alert-color-danger);
+  border-radius: var(--root-border-radius-sm);
+  color: var(--root-btn-color-primary-foreground);
+  font-size: 0.6375rem;
+  inset: -0.5em -0.5em auto auto;
+  min-inline-size: 1.25rem;
+  padding: 0.45em;
+  position: absolute;
+  text-align: center;
 }
 
 .apexcharts-legend-series {

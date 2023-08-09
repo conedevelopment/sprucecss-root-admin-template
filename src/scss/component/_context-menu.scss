@@ -42,19 +42,22 @@
   }
 
   &__item {
+    align-items: center;
     background: none;
+    block-size: 2.25rem;
     border: 0;
     border-radius: config('border-radius-sm', $display);
     color: color('text');
     cursor: pointer;
     display: flex;
+    justify-content: space-between;
     line-height: config('line-height-md', $typography);
     margin: 0.15em;
     padding-block: 0.25em;
     padding-inline: 0.6em;
     text-decoration: none;
 
-    &:hover:not([aria-current='page']) {
+    &:hover:not([aria-current='page'], :has(.theme-switcher)) {
       background-color: color('primary-lightest');
     }
 

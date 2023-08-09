@@ -8,8 +8,18 @@
         {% svgIcon './src/img/icon/chevron-down.svg', 'open-search__icon' %}
     </button>
     <ul class="context-menu context-menu--inline-end" :data-state="open ? 'open' : 'closed'">
+        <li>
+            <span class="context-menu__item">
+                Theme
+                {% include 'partial/theme-switcher.html' %}
+            </span>
+        </li>
         {% for item in user %}
-            <li><a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }} class="context-menu__item">{{ item.title }}</a></li>
+            <li>
+                <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }} class="context-menu__item">
+                    {{ item.title }}
+                </a>
+            </li>
         {% endfor %}
     </ul>
 </div>

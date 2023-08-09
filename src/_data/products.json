@@ -7,7 +7,8 @@
     "qty": 10,
     "status": "In stock",
     "stock": 231,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "2",
@@ -17,7 +18,8 @@
     "qty": 5,
     "status": "In stock",
     "stock": 56,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "3",
@@ -27,7 +29,8 @@
     "qty": 2,
     "status": "Out of stock",
     "stock": 150,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "4",
@@ -37,7 +40,8 @@
     "qty": 15,
     "status": "In stock",
     "stock": 89,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": true
   },
   {
     "id": "5",
@@ -47,7 +51,8 @@
     "qty": 7,
     "status": "In stock",
     "stock": 43,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "6",
@@ -57,7 +62,8 @@
     "qty": 0,
     "status": "Out of stock",
     "stock": 30,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "7",
@@ -67,7 +73,8 @@
     "qty": 12,
     "status": "In stock",
     "stock": 432,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "8",
@@ -77,7 +84,8 @@
     "qty": 3,
     "status": "In stock",
     "stock": 123,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "9",
@@ -87,7 +95,8 @@
     "qty": 8,
     "status": "In stock",
     "stock": 34,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "10",
@@ -97,7 +106,8 @@
     "qty": 4,
     "status": "In stock",
     "stock": 65,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "11",
@@ -107,7 +117,8 @@
     "qty": 6,
     "status": "In stock",
     "stock": 214,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "12",
@@ -117,7 +128,8 @@
     "qty": 1,
     "status": "In stock",
     "stock": 12,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "13",
@@ -127,7 +139,8 @@
     "qty": 9,
     "status": "In stock",
     "stock": 34,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "14",
@@ -137,7 +150,8 @@
     "qty": 11,
     "status": "In stock",
     "stock": 53,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "15",
@@ -147,7 +161,8 @@
     "qty": 0,
     "status": "Out of stock",
     "stock": 65,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "16",
@@ -157,7 +172,8 @@
     "qty": 13,
     "status": "In stock",
     "stock": 40,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "17",
@@ -167,7 +183,8 @@
     "qty": 6,
     "status": "In stock",
     "stock": 89,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "18",
@@ -177,7 +194,8 @@
     "qty": 3,
     "status": "In stock",
     "stock": 45,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "19",
@@ -187,7 +205,8 @@
     "qty": 8,
     "status": "In stock",
     "stock": 10,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   },
   {
     "id": "20",
@@ -197,7 +216,7 @@
     "qty": 0,
     "status": "Out of stock",
     "stock": 5,
-    "image": "https://picsum.photos/80/80"
+    "image": "https://picsum.photos/80/80",
+    "deleted": false
   }
 ]
-

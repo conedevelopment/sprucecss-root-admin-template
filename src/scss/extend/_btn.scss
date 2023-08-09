@@ -26,3 +26,21 @@
 .btn--outline-dark {
   @include btn-variant-outline('dark');
 }
+
+.btn {
+  &--counter {
+    position: relative;
+  }
+
+  &__counter {
+    background-color: color('danger', 'alert');
+    border-radius: config('border-radius-sm', $display);
+    color: color('primary-foreground', 'btn');
+    font-size: 0.6375rem;
+    inset: -0.5em -0.5em auto auto;
+    min-inline-size: 1.25rem;
+    padding: 0.45em;
+    position: absolute;
+    text-align: center;
+  }
+}
