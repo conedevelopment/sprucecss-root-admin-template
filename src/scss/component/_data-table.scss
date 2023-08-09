@@ -49,11 +49,18 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    gap: spacer('xs');
+    gap: spacer('xs') spacer('m');
 
     .form-control {
       inline-size: auto;
     }
+  }
+
+  &__column {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacer('xs');
   }
 }
 
