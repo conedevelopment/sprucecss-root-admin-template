@@ -1,13 +1,7 @@
 <span class="form-label">Gallery</span>
 <div
     class="file-list"
-    x-data="{
-        open: false,
-        close() {
-            this.open = false;
-            $refs['modal-open-button'].focus();
-        }
-    }"
+    x-data="mediaData()"
 >
     <button
         x-ref="modal-open-button"
@@ -71,3 +65,107 @@
     </ul>
     {% include "partial/media-uploader.html" %}
 </div>
+
+<script>
+    function mediaData() {
+        return {
+            open: false,
+            items: [
+                {
+                    "id": 1,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 2,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 3,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 4,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 5,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 6,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 7,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 8,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 9,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 10,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 11,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 12,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 13,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 14,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 15,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 16,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 17,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                },
+                {
+                    "id": 18,
+                    "thumbnail": "https://picsum.photos/200/200",
+                    "selected": false
+                }
+            ],
+            close() {
+                this.open = false;
+                $refs['modal-open-button'].focus();
+            }
+        }
+    }
+</script>

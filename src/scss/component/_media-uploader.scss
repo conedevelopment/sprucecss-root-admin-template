@@ -1,0 +1,28 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.media-list {
+  @include clear-list;
+  @include layout-grid('m', 10rem);
+
+  > * + * {
+    margin-block-start: 0;
+  }
+}
+
+.media-item {
+  border-radius: config('border-radius-lg', $display);
+
+  img {
+    border-radius: config('border-radius-lg', $display);
+  }
+
+  &[aria-selected="true"] {
+    @include focus-ring(
+      $type: config('focus-ring-type', $btn, false),
+      $ring-color: color('primary-background', 'btn'),
+      $box-shadow-type: config('focus-ring-box-shadow-type', $btn, false),
+      $ring-size: 3px,
+      $ring-offset: 3px
+    );
+  }
+}

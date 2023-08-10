@@ -25,8 +25,18 @@
                 </button>
             </div>
             <div class="modal__body">
-
-                <div style="height: 200rem;"></div>
+                <ol class="media-list">
+                    <template x-for="(item, index) in items" :key="item.id">
+                        <li
+                            :aria-selected="item.selected"
+                            class="media-item"
+                            @click.prevent="item.selected = ! item.selected"
+                        >
+                            {{ item.thumbnail }}
+                            <img :src=`${item.thumbnail}?random=${index}` alt="Image" />
+                        </li>
+                    </template>
+                </ol>
             </div>
             <div class="modal__footer modal__footer--space-between">
                 <input class="form-file form-file" type="file" id="avatar" accept="image/png, image/jpeg"/>
