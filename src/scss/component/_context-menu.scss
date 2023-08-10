@@ -48,7 +48,6 @@
     border: 0;
     border-radius: config('border-radius-sm', $display);
     color: color('text');
-    cursor: pointer;
     display: flex;
     justify-content: space-between;
     line-height: config('line-height-md', $typography);

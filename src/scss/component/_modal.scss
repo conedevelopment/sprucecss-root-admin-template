@@ -12,6 +12,8 @@
 }
 
 .modal {
+  $this: &;
+
   @include set-css-variable((
     --inline-size: 34rem
   ));
@@ -22,6 +24,20 @@
   inline-size: get-css-variable(--inline-size);
   margin: spacer('m');
   max-inline-size: 100%;
+
+  &--media {
+    display: flex;
+    flex-direction: column;
+    inline-size: auto;
+    inset: 0;
+    position: fixed;
+
+    #{$this}__body {
+      @include scrollbar;
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+  }
 
   &__header {
     align-items: center;
@@ -56,5 +72,20 @@
     gap: spacer('s');
     justify-content: end;
     padding: spacer-clamp('s', 'm');
+
+    &--space-between {
+      justify-content: space-between;
+    }
+
+    input {
+      flex-grow: 1;
+    }
+  }
+
+  &__column {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacer('s');
   }
 }

@@ -1,6 +1,21 @@
 <span class="form-label">Gallery</span>
-<div class="file-list">
-    <button class="btn btn--primary btn--lg btn--block">Choose file(s)</button>
+<div
+    class="file-list"
+    x-data="{
+        open: false,
+        close() {
+            this.open = false;
+            $refs['modal-open-button'].focus();
+        }
+    }"
+>
+    <button
+        x-ref="modal-open-button"
+        class="btn btn--primary btn--lg btn--block"
+        @click="open = true"
+    >
+        Choose file(s)
+    </button>
     <ul class="file-list__items">
         <li class="file-list-item">
             <div class="file-list-item__column">
@@ -54,4 +69,5 @@
             </div>
         </li>
     </ul>
+    {% include "partial/media-uploader.html" %}
 </div>

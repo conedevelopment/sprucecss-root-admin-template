@@ -1,0 +1,40 @@
+<template x-teleport="body">
+    <div
+        class="modal-backdrop"
+        x-show="open"
+        @keydown.escape="close"
+    >
+        <div
+            role="dialog"
+            aria-modal="true"
+            tabindex="0"
+            class="modal modal--media"
+            @click.away="close"
+            x-trap.noscroll="open"
+        >
+            <div class="modal__header">
+                <div class="modal__header-caption">
+                    <h2 class="modal__title">Media</h2>
+                </div>
+                <button
+                    class="btn btn--sm btn--icon btn--light"
+                    aria-label="Close modal"
+                    @click="close"
+                >
+                    {% svgIcon './src/img/icon/close.svg', 'btn__icon' %}
+                </button>
+            </div>
+            <div class="modal__body">
+
+                <div style="height: 200rem;"></div>
+            </div>
+            <div class="modal__footer modal__footer--space-between">
+                <input class="form-file form-file" type="file" id="avatar" accept="image/png, image/jpeg"/>
+                <div class="modal__column">
+                    <button class="btn btn--outline-primary" @click="close">Cancel</button>
+                    <button class="btn btn--primary">Select</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
