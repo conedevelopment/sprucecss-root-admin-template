@@ -62,6 +62,10 @@ $color-danger: hsl(0deg 71% 51%);
     'main': (
       'background': $color-primary-lightest,
     ),
+    'media': (
+      'background': $color-primary-lightest,
+      'icon': $color-primary,
+    ),
     'modal': (
       'background': hsl(210deg 60% 98% / 90%),
     ),

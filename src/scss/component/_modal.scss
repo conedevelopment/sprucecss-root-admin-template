@@ -37,6 +37,29 @@
       flex-grow: 1;
       overflow-y: auto;
     }
+
+    #{$this}__header-caption {
+      order: 1;
+    }
+
+    #{$this}__close {
+      order: 2;
+
+      @include breakpoint('md') {
+        order: 3;
+      }
+    }
+
+    #{$this}__filter {
+      inline-size: 100%;
+      order: 3;
+
+      @include breakpoint('md') {
+        inline-size: auto;
+        margin-inline-start: auto;
+        order: 2;
+      }
+    }
   }
 
   &__header {
@@ -46,7 +69,7 @@
     flex-wrap: wrap;
     gap: spacer('s');
     justify-content: space-between;
-    padding: spacer-clamp('s', 'm');
+    padding: spacer('s') spacer-clamp('s', 'm');
 
     &-caption {
       @include layout-stack(0);
@@ -71,7 +94,7 @@
     flex-wrap: wrap;
     gap: spacer('s');
     justify-content: end;
-    padding: spacer-clamp('s', 'm');
+    padding: spacer('s') spacer-clamp('s', 'm');
 
     &--space-between {
       justify-content: space-between;
@@ -79,6 +102,34 @@
 
     input {
       flex-grow: 1;
+      max-inline-size: 25rem;
+    }
+  }
+
+  &__filter {
+    align-items: center;
+    display: flex;
+    gap: spacer('s');
+    margin-inline: calc(#{spacer('xs')} * -1);
+    -ms-overflow-style: none;
+    overflow-x: auto;
+    padding: spacer('xs');
+    scrollbar-width: none;
+
+    @include breakpoint('md') {
+      margin-inline: 0;
+      overflow: initial;
+      padding: 0;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    select,
+    input {
+      inline-size: auto;
+      min-inline-size: 10rem;
     }
   }
 

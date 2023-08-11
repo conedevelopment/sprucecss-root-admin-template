@@ -23,6 +23,7 @@
     @include scrollbar;
     max-block-size: 25rem;
     overflow-y: auto;
+    overscroll-behavior: contain;
 
     > * + * {
       border-block-start: 1px solid color('border');

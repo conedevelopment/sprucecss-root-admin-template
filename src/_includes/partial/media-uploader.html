@@ -16,8 +16,24 @@
                 <div class="modal__header-caption">
                     <h2 class="modal__title">Media</h2>
                 </div>
+                <div class="modal__filter">
+                    <select class="form-control">
+                        <option value="all">All media items</option>
+                        <option value="images">Images</option>
+                        <option value="video">Video</option>
+                        <option value="audio">Audio</option>
+                        <option value="documents">Documents</option>
+                    </select>
+                    <select class="form-control">
+                        <option value="all">All dates</option>
+                        <option value="july-2023">July 2023</option>
+                        <option value="juni-2023">Juni 2023</option>
+                        <option value="may-2023">May 2023</option>
+                    </select>
+                    {% include "partial/search.html" %}
+                </div>
                 <button
-                    class="btn btn--sm btn--icon btn--light"
+                    class="btn btn--icon btn--light modal__close"
                     aria-label="Close modal"
                     @click="close"
                 >
@@ -25,24 +41,40 @@
                 </button>
             </div>
             <div class="modal__body">
-                <ol class="media-list">
+                <ol
+                    class="media-list"
+                    tabindex="-1"
+                >
                     <template x-for="(item, index) in items" :key="item.id">
                         <li
-                            :aria-selected="item.selected"
+                            :aria-checked="item.selected"
                             class="media-item"
+                            role="checkbox"
+                            tabindex="0"
+                            @keydown.enter.prevent="item.selected = ! item.selected"
+                            @keydown.space.prevent="item.selected = ! item.selected"
                             @click.prevent="item.selected = ! item.selected"
                         >
-                            {{ item.thumbnail }}
-                            <img :src=`${item.thumbnail}?random=${index}` alt="Image" />
+                            <span x-show="item.selected" class="media-item__selected">
+                                {% svgIcon './src/img/icon/check.svg' %}
+                            </span>
+                            <span x-show="item.type === 'image'">
+                                {{ item.thumbnail }}
+                                <img :src=`${item.thumbnail}?random=${index}` :alt="item.name" />
+                            </span>
+                            <span x-show="item.type === 'document'" class="media-item__document">
+                                {% svgIcon './src/img/icon/archive.svg', 'media-item__icon' %}
+                                <span x-text="item.name" class="media-item__name"></span>
+                            </span>
                         </li>
                     </template>
                 </ol>
             </div>
             <div class="modal__footer modal__footer--space-between">
-                <input class="form-file form-file" type="file" id="avatar" accept="image/png, image/jpeg"/>
+                <input class="form-file" type="file" id="avatar" accept="image/png, image/jpeg"/>
                 <div class="modal__column">
                     <button class="btn btn--outline-primary" @click="close">Cancel</button>
-                    <button class="btn btn--primary">Select</button>
+                    <button class="btn btn--primary">Insert</button>
                 </div>
             </div>
         </div>
