@@ -85,6 +85,34 @@
   &__body {
     @include layout-stack('s');
     padding: spacer-clamp('s', 'm');
+    position: relative;
+
+    &--dropzone {
+      &::before {
+        background-color: color('dropzone-background', 'media');
+        border: 5px dashed color('dropzone-border', 'media');
+        content: '';
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+        z-index: 2;
+      }
+
+      &::after {
+        align-items: center;
+        color: hsl(0deg 0% 100%);
+        content: attr(data-dropzone);
+        display: flex;
+        font-size: font-size('h2');
+        inset: 0;
+        justify-content: center;
+        line-height: config('line-height-md', $typography);
+        padding: spacer('m');
+        position: absolute;
+        text-align: center;
+        z-index: 3;
+      }
+    }
   }
 
   &__footer {

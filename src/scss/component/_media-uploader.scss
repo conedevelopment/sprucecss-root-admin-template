@@ -4,6 +4,10 @@
   @include clear-list;
   @include layout-grid('m', 7.5rem);
 
+  @include breakpoint('md') {
+    @include layout-grid('m', 9rem);
+  }
+
   > * + * {
     margin-block-start: 0;
   }
@@ -32,7 +36,7 @@
     border-radius: config('border-radius-lg', $display);
     display: flex;
     flex-direction: column;
-    gap: spacer('xs');
+    gap: spacer('xxs');
     justify-content: center;
     padding: spacer('s');
   }
@@ -45,8 +49,9 @@
   }
 
   &__name {
-    @include text-ellipsis(1);
+    @include text-ellipsis(2);
     max-inline-size: 100%;
+    text-align: center;
   }
 
   &__selected {

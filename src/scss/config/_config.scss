@@ -64,6 +64,8 @@ $color-danger: hsl(0deg 71% 51%);
     ),
     'media': (
       'background': $color-primary-lightest,
+      'dropzone-background': hsl(214deg 98% 49% / 75%),
+      'dropzone-border': hsl(214deg 98% 40%),
       'icon': $color-primary,
     ),
     'modal': (
