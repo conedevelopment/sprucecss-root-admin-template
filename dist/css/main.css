@@ -3398,8 +3398,8 @@ pre[class*=language-]::-webkit-scrollbar-track {
   }
 }
 .modal--media .modal__filter {
-  order: 3;
   inline-size: 100%;
+  order: 3;
 }
 @media (min-width: 64em) {
   .modal--media .modal__filter {
@@ -3459,16 +3459,16 @@ pre[class*=language-]::-webkit-scrollbar-track {
   align-items: center;
   display: flex;
   gap: 1rem;
-  overflow-x: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  padding: 0.5rem;
   margin-inline: calc(0.5rem * -1);
+  -ms-overflow-style: none;
+  overflow-x: auto;
+  padding: 0.5rem;
+  scrollbar-width: none;
 }
 @media (min-width: 64em) {
   .modal__filter {
-    overflow: initial;
     margin-inline: 0;
+    overflow: initial;
     padding: 0;
   }
 }
@@ -3620,9 +3620,9 @@ pre[class*=language-]::-webkit-scrollbar-track {
   display: grid;
   gap: 1.5rem;
 }
-@supports (inline-size: min(9.5rem, 100%)) {
+@supports (inline-size: min(7.5rem, 100%)) {
   .media-list {
-    grid-template-columns: repeat(auto-fit, minmax(min(9.5rem, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(7.5rem, 100%), 1fr));
   }
 }
 .media-list > * + * {
@@ -3641,8 +3641,8 @@ pre[class*=language-]::-webkit-scrollbar-track {
 .media-item__document {
   align-items: center;
   aspect-ratio: 1;
-  border-radius: var(--root-border-radius-lg);
   background-color: var(--root-media-color-background);
+  border-radius: var(--root-border-radius-lg);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -3669,9 +3669,9 @@ pre[class*=language-]::-webkit-scrollbar-track {
   border-radius: var(--root-border-radius-sm);
   color: var(--root-btn-color-primary-foreground);
   display: flex;
-  justify-content: center;
   inline-size: var(--size);
   inset: 0.5rem 0.5rem auto auto;
+  justify-content: center;
   position: absolute;
 }
 .media-item__selected svg {

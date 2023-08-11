@@ -2,7 +2,7 @@
 
 .media-list {
   @include clear-list;
-  @include layout-grid('m', 9.5rem);
+  @include layout-grid('m', 7.5rem);
 
   > * + * {
     margin-block-start: 0;
