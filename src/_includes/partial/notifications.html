@@ -1,7 +1,7 @@
 <div class="app-notification" x-data="{ open: false }" @click.outside="open = false">
     <button class="btn btn--light btn--icon btn--counter app-notification__toggle" :aria-expanded="open" @click="open = ! open" aria-label="Notifications">
         {% svgIcon './src/img/icon/bell.svg', 'btn__icon' %}
-        <span class="btn__counter">2</span>
+        <span class="btn__counter">4</span>
     </button>
     <div class="context-menu" :data-state="open ? 'open' : 'closed'">
         <div class="app-notification__header">
