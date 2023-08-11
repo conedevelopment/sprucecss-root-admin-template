@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <script src="/js/theme-detection.js?f4c91e65-2cbc-4d6a-a480-ecaa077e8d2d"></script>
+    <script src="/js/theme-detection.js?e18820e6-1c58-4314-9186-69c2a6e0b8cf"></script>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -25,7 +25,7 @@
     <meta property="og:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <meta name="twitter:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/main.css?f4c91e65-2cbc-4d6a-a480-ecaa077e8d2d">
+    <link rel="stylesheet" href="/css/main.css?e18820e6-1c58-4314-9186-69c2a6e0b8cf">
 </head>
 
 <body>
@@ -743,7 +743,7 @@
                                                 </ul>
                                                 <template x-teleport="body">
                                                     <div class="modal-backdrop" x-show="open" @keydown.escape="close">
-                                                        <div role="dialog" aria-modal="true" tabindex="0" class="modal modal--media" @click.away="close" x-trap.noscroll="open">
+                                                        <div @click.away="close" aria-modal="true" class="modal modal--media" data-dropzone="Drag & drop your images and files here" role="dialog" tabindex="0" x-trap.noscroll="open">
                                                             <div class="modal__header">
                                                                 <div class="modal__header-caption">
                                                                     <h2 class="modal__title">Media</h2>
@@ -788,17 +788,19 @@
                                                                                     <polyline points='20 6 9 17 4 12'></polyline>
                                                                                 </svg>
                                                                             </span>
-                                                                            <span x-show="item.type === 'image'">
+                                                                            <template x-if="item.type === 'image'">
                                                                                 <img :src=`${item.thumbnail}?random=${index}` :alt="item.name" />
-                                                                            </span>
-                                                                            <span x-show="item.type === 'document'" class="media-item__document">
-                                                                                <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='media-item__icon'>
-                                                                                    <polyline points='21 8 21 21 3 21 3 8'></polyline>
-                                                                                    <rect x='1' y='3' width='22' height='5'></rect>
-                                                                                    <line x1='10' y1='12' x2='14' y2='12'></line>
-                                                                                </svg>
-                                                                                <span x-text="item.name" class="media-item__name"></span>
-                                                                            </span>
+                                                                            </template>
+                                                                            <template x-if="item.type === 'document'">
+                                                                                <span class="media-item__document">
+                                                                                    <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='media-item__icon'>
+                                                                                        <polyline points='21 8 21 21 3 21 3 8'></polyline>
+                                                                                        <rect x='1' y='3' width='22' height='5'></rect>
+                                                                                        <line x1='10' y1='12' x2='14' y2='12'></line>
+                                                                                    </svg>
+                                                                                    <span x-text="item.name" class="media-item__name"></span>
+                                                                                </span>
+                                                                            </template>
                                                                         </li>
                                                                     </template>
                                                                 </ol>
@@ -1426,13 +1428,13 @@
     </div>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="/js/theme-change-assets.js?f4c91e65-2cbc-4d6a-a480-ecaa077e8d2d" defer></script>
-    <script src="/js/navigation.js?f4c91e65-2cbc-4d6a-a480-ecaa077e8d2d" defer></script>
-    <script src="/js/theme-switcher.js?f4c91e65-2cbc-4d6a-a480-ecaa077e8d2d" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts?f4c91e65-2cbc-4d6a-a480-ecaa077e8d2d" defer></script>
-    <script src="/js/charts.js?f4c91e65-2cbc-4d6a-a480-ecaa077e8d2d" type="module" defer></script>
-    <script src="/js/range-group.js?f4c91e65-2cbc-4d6a-a480-ecaa077e8d2d" type="module" defer></script>
-    <script src="/js/repeater.js?f4c91e65-2cbc-4d6a-a480-ecaa077e8d2d" type="module" defer></script>
+    <script src="/js/theme-change-assets.js?e18820e6-1c58-4314-9186-69c2a6e0b8cf" defer></script>
+    <script src="/js/navigation.js?e18820e6-1c58-4314-9186-69c2a6e0b8cf" defer></script>
+    <script src="/js/theme-switcher.js?e18820e6-1c58-4314-9186-69c2a6e0b8cf" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts?e18820e6-1c58-4314-9186-69c2a6e0b8cf" defer></script>
+    <script src="/js/charts.js?e18820e6-1c58-4314-9186-69c2a6e0b8cf" type="module" defer></script>
+    <script src="/js/range-group.js?e18820e6-1c58-4314-9186-69c2a6e0b8cf" type="module" defer></script>
+    <script src="/js/repeater.js?e18820e6-1c58-4314-9186-69c2a6e0b8cf" type="module" defer></script>
 </body>
 
 </html>

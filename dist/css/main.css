@@ -477,6 +477,8 @@ template {
 
 :root {
   --root-media-color-background: hsl(210, 60%, 98%);
+  --root-media-color-dropzone-background: hsla(214, 98%, 49%, 0.75);
+  --root-media-color-dropzone-border: hsl(214, 98%, 40%);
   --root-media-color-icon: hsl(214, 98%, 49%);
 }
 
@@ -3359,6 +3361,7 @@ pre[class*=language-]::-webkit-scrollbar-track {
   inline-size: var(--root-inline-size);
   margin: 1.5rem;
   max-inline-size: 100%;
+  position: relative;
 }
 .modal--media {
   display: flex;
@@ -3407,6 +3410,30 @@ pre[class*=language-]::-webkit-scrollbar-track {
     margin-inline-start: auto;
     order: 2;
   }
+}
+.modal--dropzone::before {
+  background-color: var(--root-media-color-dropzone-background);
+  border: 2px solid var(--root-media-color-dropzone-border);
+  border-radius: var(--root-border-radius-sm);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+}
+.modal--dropzone::after {
+  align-items: center;
+  color: hsl(0, 0%, 100%);
+  content: attr(data-dropzone);
+  display: flex;
+  font-size: clamp(1.5572265625rem, 2vw + 1rem, 1.83203125rem);
+  inset: 0;
+  justify-content: center;
+  line-height: var(--root-line-height-md);
+  padding: 1.5rem;
+  position: absolute;
+  text-align: center;
+  z-index: 3;
 }
 .modal__header {
   align-items: center;
@@ -3625,6 +3652,17 @@ pre[class*=language-]::-webkit-scrollbar-track {
     grid-template-columns: repeat(auto-fit, minmax(min(7.5rem, 100%), 1fr));
   }
 }
+@media (min-width: 64em) {
+  .media-list {
+    display: grid;
+    gap: 1.5rem;
+  }
+  @supports (inline-size: min(9rem, 100%)) {
+    .media-list {
+      grid-template-columns: repeat(auto-fit, minmax(min(9rem, 100%), 1fr));
+    }
+  }
+}
 .media-list > * + * {
   margin-block-start: 0;
 }
@@ -3645,7 +3683,7 @@ pre[class*=language-]::-webkit-scrollbar-track {
   border-radius: var(--root-border-radius-lg);
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
   justify-content: center;
   padding: 1rem;
 }
@@ -3658,8 +3696,16 @@ pre[class*=language-]::-webkit-scrollbar-track {
 .media-item__name {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: inherit;
   max-inline-size: 100%;
+  text-align: center;
+}
+@supports (-webkit-line-clamp: 2) {
+  .media-item__name {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+  }
 }
 .media-item__selected {
   --size: 1.5rem;

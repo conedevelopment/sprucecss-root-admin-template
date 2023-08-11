@@ -5,11 +5,12 @@
         @keydown.escape="close"
     >
         <div
-            role="dialog"
-            aria-modal="true"
-            tabindex="0"
-            class="modal modal--media"
             @click.away="close"
+            aria-modal="true"
+            class="modal modal--media"
+            data-dropzone="Drag & drop your images and files here"
+            role="dialog"
+            tabindex="0"
             x-trap.noscroll="open"
         >
             <div class="modal__header">
@@ -40,7 +41,7 @@
                     {% svgIcon './src/img/icon/close.svg', 'btn__icon' %}
                 </button>
             </div>
-            <div class="modal__body" data-dropzone="Drag & drop your images and files here">
+            <div class="modal__body">
                 <ol
                     class="media-list"
                     tabindex="-1"
