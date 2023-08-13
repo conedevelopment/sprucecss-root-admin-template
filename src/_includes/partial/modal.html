@@ -3,12 +3,12 @@
         open: false,
         close() {
             this.open = false;
-            $refs['modal-open-button'].focus();
+            $refs.open.focus();
         }
     }"
 >
     <button
-        x-ref="modal-open-button"
+        x-ref="open"
         class="btn btn--primary"
         @click="open = true"
     >

@@ -1714,6 +1714,13 @@ legend {
 }
 
 :root[data-theme-mode=dark] {
+  --root-media-color-background: hsl(240, 30%, 12%);
+  --root-media-color-dropzone-background: hsla(214, 98%, 49%, 0.75);
+  --root-media-color-dropzone-border: hsl(214, 98%, 40%);
+  --root-media-color-icon: hsl(211, 99%, 46%);
+}
+
+:root[data-theme-mode=dark] {
   --root-modal-color-background: hsla(240, 3%, 7%, 0.9);
 }
 
@@ -3090,6 +3097,33 @@ legend {
   color: var(--root-btn-color-primary-foreground);
 }
 
+.preloader--circle {
+  --color: currentColor;
+  --border-width: 0.25em;
+  --size: 1.5rem;
+  --animation-duration: 1s;
+  block-size: var(--size);
+  inline-size: var(--size);
+}
+.preloader--circle::after {
+  animation: rotation var(--animation-duration) linear infinite;
+  block-size: var(--size);
+  border: var(--border-width) solid var(--color);
+  border-color: var(--color) transparent var(--color) transparent;
+  border-radius: 50%;
+  content: "";
+  display: flex;
+  inline-size: var(--size);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 code[class*=language-],
 pre[class*=language-] {
   border-radius: var(--root-border-radius-lg);
@@ -3676,7 +3710,7 @@ pre[class*=language-]::-webkit-scrollbar-track {
   outline: 3px solid var(--root-btn-color-primary-background);
   outline-offset: 3px;
 }
-.media-item__document {
+.media-item__background {
   align-items: center;
   aspect-ratio: 1;
   background-color: var(--root-media-color-background);

@@ -59,12 +59,17 @@
                             <span x-show="item.selected" class="media-item__selected">
                                 {% svgIcon './src/img/icon/check.svg' %}
                             </span>
+                            <template x-if="item.type === 'processing' || item.type === 'uploading'">
+                                <span class="media-item__background">
+                                    <span class="preloader--circle media-item__icon"></span>
+                                    <span x-text="item.name" class="media-item__name"></span>
+                                </span>
+                            </template>
                             <template x-if="item.type === 'image'">
-                                {{ item.thumbnail }}
-                                <img :src=`${item.thumbnail}?random=${index}` :alt="item.name" />
+                                <img :src=`${item.thumbnail}?random=${index}` :alt="item.name">
                             </template>
                             <template x-if="item.type === 'document'">
-                                <span class="media-item__document">
+                                <span class="media-item__background">
                                     {% svgIcon './src/img/icon/archive.svg', 'media-item__icon' %}
                                     <span x-text="item.name" class="media-item__name"></span>
                                 </span>
