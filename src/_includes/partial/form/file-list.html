@@ -1,12 +1,145 @@
 <span class="form-label">Gallery</span>
 <div
     class="file-list"
-    x-data="mediaData()"
+    x-data="{
+        open: false,
+        items: [
+            {
+                'id': 1,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'sunset_landscape.jpg',
+                'selected': false
+            },
+            {
+                'id': 2,
+                'type': 'document',
+                'name': 'my-cv-20asdfasdfasdfasdfasfdasdf23.jpg',
+                'selected': false
+            },
+            {
+                'id': 3,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'beach_vacation.jpg',
+                'selected': false
+            },
+            {
+                'id': 4,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'city_skyline.jpg',
+                'selected': false
+            },
+            {
+                'id': 5,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'forest_trail.jpg',
+                'selected': false
+            },
+            {
+                'id': 6,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'mountain_peak.jpg',
+                'selected': false
+            },
+            {
+                'id': 7,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'cute_puppies.jpg',
+                'selected': false
+            },
+            {
+                'id': 8,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'abstract_artwork.jpg',
+                'selected': false
+            },
+            {
+                'id': 9,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'vintage_car.jpg',
+                'selected': false
+            },
+            {
+                'id': 10,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'delicious_pizza.jpg',
+                'selected': false
+            },
+            {
+                'id': 11,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'space_nebula.jpg',
+                'selected': false
+            },
+            {
+                'id': 12,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'underwater_world.jpg',
+                'selected': false
+            },
+            {
+                'id': 13,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'cozy_cabin.jpg',
+                'selected': false
+            },
+            {
+                'id': 14,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'artistic_flowers.jpg',
+                'selected': false
+            },
+            {
+                'id': 15,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'urban_graffiti.jpg',
+                'selected': false
+            },
+            {
+                'id': 16,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'adorable_kittens.jpg',
+                'selected': false
+            },
+            {
+                'id': 17,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'serene_lake.jpg',
+                'selected': false
+            },
+            {
+                'id': 18,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'futuristic_cityscape.jpg',
+                'selected': false
+            }
+        ],
+        close() {
+            this.open = false;
+            $refs.open.focus();
+        }
+    }"
 >
     <button
-        x-ref="modal-open-button"
+        x-ref="open"
         class="btn btn--primary btn--lg btn--block"
-        @click="open = true;"
+        @click="open = true"
     >
         Choose file(s)
     </button>
@@ -65,142 +198,3 @@
     </ul>
     {% include "partial/media-uploader.html" %}
 </div>
-
-<script>
-    function mediaData() {
-        return {
-            open: false,
-            items: [
-                {
-                    "id": 1,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "sunset_landscape.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 2,
-                    "type": "document",
-                    "name": "my-cv-20asdfasdfasdfasdfasfdasdf23.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 3,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "beach_vacation.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 4,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "city_skyline.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 5,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "forest_trail.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 6,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "mountain_peak.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 7,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "cute_puppies.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 8,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "abstract_artwork.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 9,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "vintage_car.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 10,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "delicious_pizza.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 11,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "space_nebula.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 12,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "underwater_world.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 13,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "cozy_cabin.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 14,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "artistic_flowers.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 15,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "urban_graffiti.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 16,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "adorable_kittens.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 17,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "serene_lake.jpg",
-                    "selected": false
-                },
-                {
-                    "id": 18,
-                    "type": "image",
-                    "thumbnail": "https://picsum.photos/400/400",
-                    "name": "futuristic_cityscape.jpg",
-                    "selected": false
-                }
-            ],
-            close() {
-                this.open = false;
-                $refs['modal-open-button'].focus();
-            }
-        }
-    }
-</script>
