@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <script src="/js/theme-detection.js?e18820e6-1c58-4314-9186-69c2a6e0b8cf"></script>
+    <script src="/js/theme-detection.js?1c630539-9156-4691-95d1-82352baba39b"></script>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -25,7 +25,7 @@
     <meta property="og:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <meta name="twitter:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/main.css?e18820e6-1c58-4314-9186-69c2a6e0b8cf">
+    <link rel="stylesheet" href="/css/main.css?1c630539-9156-4691-95d1-82352baba39b">
 </head>
 
 <body>
@@ -663,8 +663,146 @@
                                         </div>
                                         <div class="form-group--row">
                                             <span class="form-label">Gallery</span>
-                                            <div class="file-list" x-data="mediaData()">
-                                                <button x-ref="modal-open-button" class="btn btn--primary btn--lg btn--block" @click="open = true;">
+                                            <div class="file-list" x-data="{
+        open: false,
+        items: [
+            {
+                'id': 0,
+                'type': 'uploading',
+                'name': 'Uploading...',
+                'selected': false
+            },
+            {
+                'id': 1,
+                'type': 'processing',
+                'name': 'Processing...',
+                'selected': false
+            },
+            {
+                'id': 2,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'mountain_peak.jpg',
+                'selected': false
+            },
+            {
+                'id': 3,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'beach_vacation.jpg',
+                'selected': false
+            },
+            {
+                'id': 4,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'sunset_landscape.jpg',
+                'selected': false
+            },
+            {
+                'id': 5,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'forest_trail.jpg',
+                'selected': false
+            },
+            {
+                'id': 6,
+                'type': 'document',
+                'name': 'my-cv-20asdfasdfasdfasdfasfdasdf23.jpg',
+                'selected': false
+            },
+            {
+                'id': 7,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'cute_puppies.jpg',
+                'selected': false
+            },
+            {
+                'id': 8,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'abstract_artwork.jpg',
+                'selected': false
+            },
+            {
+                'id': 9,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'vintage_car.jpg',
+                'selected': false
+            },
+            {
+                'id': 10,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'delicious_pizza.jpg',
+                'selected': false
+            },
+            {
+                'id': 11,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'space_nebula.jpg',
+                'selected': false
+            },
+            {
+                'id': 12,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'underwater_world.jpg',
+                'selected': false
+            },
+            {
+                'id': 13,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'cozy_cabin.jpg',
+                'selected': false
+            },
+            {
+                'id': 14,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'artistic_flowers.jpg',
+                'selected': false
+            },
+            {
+                'id': 15,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'urban_graffiti.jpg',
+                'selected': false
+            },
+            {
+                'id': 16,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'adorable_kittens.jpg',
+                'selected': false
+            },
+            {
+                'id': 17,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'serene_lake.jpg',
+                'selected': false
+            },
+            {
+                'id': 18,
+                'type': 'image',
+                'thumbnail': 'https://picsum.photos/400/400',
+                'name': 'futuristic_cityscape.jpg',
+                'selected': false
+            }
+        ],
+        close() {
+            this.open = false;
+            $refs.open.focus();
+        }
+    }">
+                                                <button x-ref="open" class="btn btn--primary btn--lg btn--block" @click="open = true">
                                                     Choose file(s)
                                                 </button>
                                                 <ul class="file-list__items">
@@ -788,11 +926,17 @@
                                                                                     <polyline points='20 6 9 17 4 12'></polyline>
                                                                                 </svg>
                                                                             </span>
+                                                                            <template x-if="item.type === 'processing' || item.type === 'uploading'">
+                                                                                <span class="media-item__background">
+                                                                                    <span class="preloader--circle media-item__icon"></span>
+                                                                                    <span x-text="item.name" class="media-item__name"></span>
+                                                                                </span>
+                                                                            </template>
                                                                             <template x-if="item.type === 'image'">
-                                                                                <img :src=`${item.thumbnail}?random=${index}` :alt="item.name" />
+                                                                                <img :src=`${item.thumbnail}?random=${index}` :alt="item.name">
                                                                             </template>
                                                                             <template x-if="item.type === 'document'">
-                                                                                <span class="media-item__document">
+                                                                                <span class="media-item__background">
                                                                                     <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='media-item__icon'>
                                                                                         <polyline points='21 8 21 21 3 21 3 8'></polyline>
                                                                                         <rect x='1' y='3' width='22' height='5'></rect>
@@ -816,144 +960,6 @@
                                                     </div>
                                                 </template>
                                             </div>
-                                            <script>
-                                                function mediaData() {
-                                                    return {
-                                                        open: false,
-                                                        items: [{
-                                                                "id": 1,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "sunset_landscape.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 2,
-                                                                "type": "document",
-                                                                "name": "my-cv-20asdfasdfasdfasdfasfdasdf23.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 3,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "beach_vacation.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 4,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "city_skyline.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 5,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "forest_trail.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 6,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "mountain_peak.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 7,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "cute_puppies.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 8,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "abstract_artwork.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 9,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "vintage_car.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 10,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "delicious_pizza.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 11,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "space_nebula.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 12,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "underwater_world.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 13,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "cozy_cabin.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 14,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "artistic_flowers.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 15,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "urban_graffiti.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 16,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "adorable_kittens.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 17,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "serene_lake.jpg",
-                                                                "selected": false
-                                                            },
-                                                            {
-                                                                "id": 18,
-                                                                "type": "image",
-                                                                "thumbnail": "https://picsum.photos/400/400",
-                                                                "name": "futuristic_cityscape.jpg",
-                                                                "selected": false
-                                                            }
-                                                        ],
-                                                        close() {
-                                                            this.open = false;
-                                                            $refs['modal-open-button'].focus();
-                                                        }
-                                                    }
-                                                }
-
-                                            </script>
                                         </div>
                                         <div class="form-group--row">
                                             <label class="form-label" for="colors">Choose colors</label>
@@ -1143,10 +1149,10 @@
         open: false,
         close() {
             this.open = false;
-            $refs['modal-open-button'].focus();
+            $refs.open.focus();
         }
     }">
-                                                <button x-ref="modal-open-button" class="btn btn--primary" @click="open = true">
+                                                <button x-ref="open" class="btn btn--primary" @click="open = true">
                                                     Open modal
                                                 </button>
                                                 <template x-teleport="body">
@@ -1428,13 +1434,13 @@
     </div>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="/js/theme-change-assets.js?e18820e6-1c58-4314-9186-69c2a6e0b8cf" defer></script>
-    <script src="/js/navigation.js?e18820e6-1c58-4314-9186-69c2a6e0b8cf" defer></script>
-    <script src="/js/theme-switcher.js?e18820e6-1c58-4314-9186-69c2a6e0b8cf" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts?e18820e6-1c58-4314-9186-69c2a6e0b8cf" defer></script>
-    <script src="/js/charts.js?e18820e6-1c58-4314-9186-69c2a6e0b8cf" type="module" defer></script>
-    <script src="/js/range-group.js?e18820e6-1c58-4314-9186-69c2a6e0b8cf" type="module" defer></script>
-    <script src="/js/repeater.js?e18820e6-1c58-4314-9186-69c2a6e0b8cf" type="module" defer></script>
+    <script src="/js/theme-change-assets.js?1c630539-9156-4691-95d1-82352baba39b" defer></script>
+    <script src="/js/navigation.js?1c630539-9156-4691-95d1-82352baba39b" defer></script>
+    <script src="/js/theme-switcher.js?1c630539-9156-4691-95d1-82352baba39b" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts?1c630539-9156-4691-95d1-82352baba39b" defer></script>
+    <script src="/js/charts.js?1c630539-9156-4691-95d1-82352baba39b" type="module" defer></script>
+    <script src="/js/range-group.js?1c630539-9156-4691-95d1-82352baba39b" type="module" defer></script>
+    <script src="/js/repeater.js?1c630539-9156-4691-95d1-82352baba39b" type="module" defer></script>
 </body>
 
 </html>
