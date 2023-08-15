@@ -12,7 +12,7 @@
     border-radius: config('border-radius', $form-control);
     padding: spacer('xs');
 
-    > * + * {
+    > li + li {
       border-block-start: config('border-width', $form-control) solid color('border');
       margin-block-start: spacer('xs');
       padding-block-start: spacer('xs');
