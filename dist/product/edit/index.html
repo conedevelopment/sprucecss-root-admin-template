@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <script src="/js/theme-detection.js?1c630539-9156-4691-95d1-82352baba39b"></script>
+    <script src="/js/theme-detection.js?fe2ee851-1a2c-4cdc-b5d5-0471d95c7be6"></script>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -25,7 +25,7 @@
     <meta property="og:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <meta name="twitter:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/main.css?1c630539-9156-4691-95d1-82352baba39b">
+    <link rel="stylesheet" href="/css/main.css?fe2ee851-1a2c-4cdc-b5d5-0471d95c7be6">
 </head>
 
 <body>
@@ -688,7 +688,7 @@
             {
                 'id': 3,
                 'type': 'image',
-                'thumbnail': 'https://picsum.photos/400/400',
+                'thumbnail': 'https://picsum.photos/400/600',
                 'name': 'beach_vacation.jpg',
                 'selected': false
             },
@@ -715,7 +715,7 @@
             {
                 'id': 7,
                 'type': 'image',
-                'thumbnail': 'https://picsum.photos/400/400',
+                'thumbnail': 'https://picsum.photos/600/400',
                 'name': 'cute_puppies.jpg',
                 'selected': false
             },
@@ -806,6 +806,7 @@
                                                     Choose file(s)
                                                 </button>
                                                 <ul class="file-list__items">
+                                                    <template></template>
                                                     <li class="file-list-item">
                                                         <div class="file-list-item__column">
                                                             <img class="file-list-item__thumbnail" src="https://picsum.photos/80/80" alt="">
@@ -823,6 +824,38 @@
                                                                 </svg>
                                                             </button>
                                                             <button class="btn btn--delete btn--sm btn--icon" aria-describedby="list-item-1" aria-label="Remove">
+                                                                <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                    <line x1='18' y1='6' x2='6' y2='18'></line>
+                                                                    <line x1='6' y1='6' x2='18' y2='18'></line>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </li>
+                                                    <li class="file-list-item">
+                                                        <div class="file-list-item__column">
+                                                            <span class="file-list-item__icon">
+                                                                <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='icon'>
+                                                                    <path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'></path>
+                                                                    <polyline points='14 2 14 8 20 8'></polyline>
+                                                                    <line x1='16' y1='13' x2='8' y2='13'></line>
+                                                                    <line x1='16' y1='17' x2='8' y2='17'></line>
+                                                                    <polyline points='10 9 9 9 8 9'></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <span id="list-item-2" class="file-list-item__name">document5678.pdf</span>
+                                                        </div>
+                                                        <div class="file-list-item__actions">
+                                                            <button class="btn btn--light btn--sm btn--icon" aria-describedby="list-item-2" aria-label="Move one up">
+                                                                <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                    <polyline points='18 15 12 9 6 15'></polyline>
+                                                                </svg>
+                                                            </button>
+                                                            <button class="btn btn--light btn--sm btn--icon" aria-describedby="list-item-2" aria-label="Move one down">
+                                                                <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                    <polyline points='6 9 12 15 18 9'></polyline>
+                                                                </svg>
+                                                            </button>
+                                                            <button class="btn btn--delete btn--sm btn--icon" aria-describedby="list-item-2" aria-label="Remove">
                                                                 <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                     <line x1='18' y1='6' x2='6' y2='18'></line>
                                                                     <line x1='6' y1='6' x2='18' y2='18'></line>
@@ -1434,13 +1467,13 @@
     </div>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="/js/theme-change-assets.js?1c630539-9156-4691-95d1-82352baba39b" defer></script>
-    <script src="/js/navigation.js?1c630539-9156-4691-95d1-82352baba39b" defer></script>
-    <script src="/js/theme-switcher.js?1c630539-9156-4691-95d1-82352baba39b" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts?1c630539-9156-4691-95d1-82352baba39b" defer></script>
-    <script src="/js/charts.js?1c630539-9156-4691-95d1-82352baba39b" type="module" defer></script>
-    <script src="/js/range-group.js?1c630539-9156-4691-95d1-82352baba39b" type="module" defer></script>
-    <script src="/js/repeater.js?1c630539-9156-4691-95d1-82352baba39b" type="module" defer></script>
+    <script src="/js/theme-change-assets.js?fe2ee851-1a2c-4cdc-b5d5-0471d95c7be6" defer></script>
+    <script src="/js/navigation.js?fe2ee851-1a2c-4cdc-b5d5-0471d95c7be6" defer></script>
+    <script src="/js/theme-switcher.js?fe2ee851-1a2c-4cdc-b5d5-0471d95c7be6" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts?fe2ee851-1a2c-4cdc-b5d5-0471d95c7be6" defer></script>
+    <script src="/js/charts.js?fe2ee851-1a2c-4cdc-b5d5-0471d95c7be6" type="module" defer></script>
+    <script src="/js/range-group.js?fe2ee851-1a2c-4cdc-b5d5-0471d95c7be6" type="module" defer></script>
+    <script src="/js/repeater.js?fe2ee851-1a2c-4cdc-b5d5-0471d95c7be6" type="module" defer></script>
 </body>
 
 </html>

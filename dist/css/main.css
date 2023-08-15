@@ -2931,7 +2931,7 @@ legend {
   border-radius: var(--root-border-radius);
   padding: 0.5rem;
 }
-.file-list__items > * + * {
+.file-list__items > li + li {
   border-block-start: var(--root-border-width) solid var(--root-base-color-border);
   margin-block-start: 0.5rem;
   padding-block-start: 0.5rem;
@@ -2942,6 +2942,21 @@ legend {
   display: flex;
   gap: 1rem;
   justify-content: space-between;
+}
+.file-list-item__icon {
+  align-items: center;
+  aspect-ratio: 1;
+  background-color: var(--root-media-color-background);
+  border-radius: var(--root-border-radius-sm);
+  display: flex;
+  inline-size: 2.5rem;
+  justify-content: center;
+}
+.file-list-item__icon svg {
+  --size: 1rem;
+  block-size: var(--size);
+  color: var(--root-media-color-icon);
+  inline-size: var(--size);
 }
 .file-list-item__column {
   align-items: center;
