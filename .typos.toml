@@ -1,0 +1,9 @@
+[files]
+extend-exclude = [
+    ".git/",
+    "dist/",
+    "src/css/",
+    # Lorem ipsum
+    "src/_includes/partial/form/editor.html",
+]
+ignore-hidden = false

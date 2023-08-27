@@ -29,3 +29,5 @@ jobs:
         with:
           eclint_args: |
             -exclude=css/*
+      - name: Search for misspellings
+        uses: crate-ci/typos@master
