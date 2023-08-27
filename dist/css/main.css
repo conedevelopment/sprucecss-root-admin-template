@@ -3690,26 +3690,32 @@ pre[class*=language-]::-webkit-scrollbar-track {
 }
 
 .media-list {
+  --column: 2;
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
   gap: 1.5rem;
+  grid-template-columns: repeat(var(--column), minmax(0, 1fr));
 }
-@supports (inline-size: min(7.5rem, 100%)) {
+@media (min-width: 32em) {
   .media-list {
-    grid-template-columns: repeat(auto-fit, minmax(min(7.5rem, 100%), 1fr));
+    --column: 3;
+  }
+}
+@media (min-width: 48em) {
+  .media-list {
+    --column: 4;
   }
 }
 @media (min-width: 64em) {
   .media-list {
-    display: grid;
-    gap: 1.5rem;
+    --column: 6;
   }
-  @supports (inline-size: min(9rem, 100%)) {
-    .media-list {
-      grid-template-columns: repeat(auto-fit, minmax(min(9rem, 100%), 1fr));
-    }
+}
+@media (min-width: 80em) {
+  .media-list {
+    --column: 8;
   }
 }
 .media-list > * + * {
