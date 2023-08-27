@@ -61,8 +61,7 @@
                             </span>
                             <template x-if="item.type === 'processing' || item.type === 'uploading'">
                                 <span class="media-item__background">
-                                    <span class="preloader--circle media-item__icon"></span>
-                                    <span x-text="item.name" class="media-item__name"></span>
+                                    {% include "partial/progressbar.html" %}
                                 </span>
                             </template>
                             <template x-if="item.type === 'image'">

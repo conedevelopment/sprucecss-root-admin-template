@@ -1,0 +1,6 @@
+<div class="progressbar">
+    <div class="progressbar__inner" role="progressbar" aria-labelledby="progressbar-label" aria-valuemin="0" aria-valuenow="68" aria-valuemax="100" aria-labelledby="progress-caption">
+        <div class="progressbar__indicator" :style="item.progress && { inlineSize: `${item.progress}%` }"></div>
+    </div>
+    <div id="progress-caption" class="progressbar__caption" x-text="item.name"></div>
+</div>

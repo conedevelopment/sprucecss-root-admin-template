@@ -74,6 +74,10 @@
     }
   }
 
+  .progressbar {
+    margin-block-start: spacer('s');
+  }
+
   img {
     aspect-ratio: 1;
     border-radius: config('border-radius-lg', $display);

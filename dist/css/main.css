@@ -3774,9 +3774,13 @@ pre[class*=language-]::-webkit-scrollbar-track {
   block-size: var(--size);
   inline-size: var(--size);
 }
+.media-item .progressbar {
+  margin-block-start: 1rem;
+}
 .media-item img {
   aspect-ratio: 1;
   border-radius: var(--root-border-radius-lg);
+  inline-size: 100%;
   object-fit: cover;
 }
 
@@ -4202,6 +4206,42 @@ legend {
   color: var(--root-alert-color-danger);
 }
 
+.progressbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  inline-size: 100%;
+}
+.progressbar__inner {
+  background-color: var(--root-form-color-background);
+  block-size: 0.5rem;
+  border-radius: var(--root-border-radius-sm);
+  box-shadow: inset 0 0 0 1px var(--root-form-color-border);
+  position: relative;
+}
+.progressbar__indicator {
+  background-color: var(--root-base-color-primary);
+  block-size: 100%;
+  border-radius: var(--root-border-radius-sm);
+  inset: 0 auto 0 0;
+  position: absolute;
+}
+.progressbar__indicator:not([style*=inline-size]) {
+  animation: 1s progress infinite linear alternate;
+  inline-size: 20%;
+}
+.progressbar__caption {
+  text-align: center;
+}
+
+@keyframes progress {
+  0% {
+    inset-inline-start: 0%;
+  }
+  100% {
+    inset-inline-start: 80%;
+  }
+}
 @media (min-width: 32em) {
   .display--flex\:xs {
     display: flex !important;
