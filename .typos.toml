@@ -1,0 +1,17 @@
+[files]
+extend-exclude = [
+    ".git/",
+    "dist/",
+    "src/css/",
+]
+ignore-hidden = false
+[default]
+extend-ignore-re = [
+    # Lorem ipsum
+    "<p>Lorem ipsum .*</p>",
+    "<p>Integer efficitur .*</p>",
+    "<li>Integer lacinia .*</li>",
+    "<li>Vestibulum non .*</li>",
+    "<li>Suspendisse mollis .*</li>",
+    "<li>Nam lacinia .*</li>",
+]
