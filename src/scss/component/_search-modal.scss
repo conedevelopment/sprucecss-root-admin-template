@@ -10,8 +10,8 @@
   @include scrollbar;
   @include clear-list;
   max-block-size: 20rem;
-  padding-inline-end: spacer('s');
   overflow-y: auto;
+  padding-inline-end: spacer('s');
 
   > li + li {
     border-block-start: 1px dashed color('border');

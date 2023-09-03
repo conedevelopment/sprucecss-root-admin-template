@@ -24,8 +24,8 @@
   inline-size: get-css-variable(--inline-size);
   margin: spacer('m');
   max-inline-size: 100%;
-  position: relative;
   outline: 0;
+  position: relative;
 
   &--media {
     display: flex;
