@@ -12,9 +12,40 @@
         <link rel="stylesheet" href="/css/main.css?{{ assetHash }}">
         <script>
             window.products = {{ products | dump | safe }};
+            window.search = {{ search | dump | safe }};
         </script>
     </head>
-    <body>
+    <body x-data="{
+            search: {
+                blank: false,
+                items: window.search,
+                open: false,
+                term: '',
+                show() {
+                    this.search.open = true;
+                    setTimeout(() => $focus.focus($refs.searchInput), 250);
+                },
+                close() {
+                    this.search.open = false;
+                    $refs.searchOpen.focus();
+                },
+                filteredItems() {
+                    if (this.search.term === '') {
+                        return this.search.items;
+                    }
+                    const result = this.search.items.filter((item) => {
+                        console.log(item.caption);
+                        return item.caption
+                            .replace(/ /g, '')
+                            .toLowerCase()
+                            .includes(this.search.term.replace(/ /g, '').toLowerCase());
+                    });
+                    this.search.blank = result.length === 0;
+                    return result;
+                }
+            }
+        }"
+    >
         <a class="btn btn--primary skip-link" href="#content">Skip to content</a>
 
         {% block content %}{% endblock %}

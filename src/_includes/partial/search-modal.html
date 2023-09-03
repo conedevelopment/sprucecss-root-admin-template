@@ -1,0 +1,51 @@
+<template x-teleport="body">
+    <div
+        class="modal-backdrop"
+        x-show="search.open"
+        @keydown.escape="search.close"
+    >
+        <div
+            role="dialog"
+            aria-modal="true"
+            tabindex="0"
+            class="modal modal--search"
+            @click.away="search.close"
+            x-trap.noscroll="search.open"
+        >
+            <div class="modal__body">
+                <div class="search-modal">
+                    {% include "partial/search.html" %}
+                    <ul class="search-results">
+                        <template x-for="item in search.filteredItems" :key="item.url">
+                            <li>
+                                <a :href="item.url" class="search-result-item">
+                                    <template x-if="item.icon" >
+                                        <svg
+                                            aria-hidden="true"
+                                            class="search-result-item__icon"
+                                            fill="none"
+                                            focusable="false"
+                                            height="24"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                            width="24"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            x-html="item.icon"
+                                        ></svg>
+                                    </template>
+                                    <span x-text="item.caption"></span>
+                                </a>
+                            </li>
+                        </template>
+                        <li x-show="search.blank">
+                            No results found for: <strong x-text="search.term"></strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

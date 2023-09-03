@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <script src="/js/theme-detection.js?eb0ce404-1920-461b-b09a-e0fec0598da9"></script>
+    <script src="/js/theme-detection.js?38e6f991-9acc-40d0-91cf-b5c44974f933"></script>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -25,7 +25,7 @@
     <meta property="og:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <meta name="twitter:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/main.css?eb0ce404-1920-461b-b09a-e0fec0598da9">
+    <link rel="stylesheet" href="/css/main.css?38e6f991-9acc-40d0-91cf-b5c44974f933">
     <script>
         window.products = [{
             "id": "1",
@@ -228,11 +228,65 @@
             "image": "https://picsum.photos/80/80",
             "deleted": false
         }];
+        window.search = [{
+            "caption": "Shop / Products",
+            "url": "/products/",
+            "icon": "<path d='M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z'></path><line x1='3' y1='6' x2='21' y2='6'></line><path d='M16 10a4 4 0 0 1-8 0'></path>"
+        }, {
+            "caption": "Shop / Orders",
+            "url": "/orders/",
+            "icon": "<circle cx='9' cy='21' r='1'></circle><circle cx='20' cy='21' r='1'></circle><path d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6'></path>"
+        }, {
+            "caption": "Shop / Customers",
+            "url": "/customers/",
+            "icon": "<path d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2'></path><circle cx='9' cy='7' r='4'></circle><path d='M23 21v-2a4 4 0 0 0-3-3.87'></path><path d='M16 3.13a4 4 0 0 1 0 7.75'></path>"
+        }, {
+            "caption": "Shop / Categories",
+            "url": "/categories/",
+            "icon": "<polyline points='21 8 21 21 3 21 3 8'></polyline><rect x='1' y='3' width='22' height='5'></rect><line x1='10' y1='12' x2='14' y2='12'></line>"
+        }, {
+            "caption": "Account",
+            "url": "/account/",
+            "icon": null
+        }, {
+            "caption": "Settings",
+            "url": "/settings/",
+            "icon": null
+        }];
 
     </script>
 </head>
 
-<body>
+<body x-data="{
+            search: {
+                blank: false,
+                items: window.search,
+                open: false,
+                term: '',
+                show() {
+                    this.search.open = true;
+                    setTimeout(() => $focus.focus($refs.searchInput), 250);
+                },
+                close() {
+                    this.search.open = false;
+                    $refs.searchOpen.focus();
+                },
+                filteredItems() {
+                    if (this.search.term === '') {
+                        return this.search.items;
+                    }
+                    const result = this.search.items.filter((item) => {
+                        console.log(item.caption);
+                        return item.caption
+                            .replace(/ /g, '')
+                            .toLowerCase()
+                            .includes(this.search.term.replace(/ /g, '').toLowerCase());
+                    });
+                    this.search.blank = result.length === 0;
+                    return result;
+                }
+            }
+        }">
     <a class="btn btn--primary skip-link" href="#content">Skip to content</a>
     <div class="l-main">
         <div class="l-main__sidebar" data-item="sidebar">
@@ -307,7 +361,7 @@
                                 <path d='M19.501,9.75c-0,2.152 -0.699,4.14 -1.875,5.752l5.935,5.94c0.585,0.586 0.585,1.537 -0,2.123c-0.586,0.586 -1.538,0.586 -2.124,0l-5.935,-5.939c-1.612,1.181 -3.6,1.875 -5.752,1.875c-5.386,-0 -9.75,-4.364 -9.75,-9.751c0,-5.386 4.364,-9.75 9.75,-9.75c5.387,-0 9.751,4.364 9.751,9.75Zm-9.751,6.751c3.704,-0 6.751,-3.047 6.751,-6.751c-0,-3.703 -3.047,-6.75 -6.751,-6.75c-3.703,0 -6.75,3.047 -6.75,6.75c0,3.704 3.047,6.751 6.75,6.751Z'></path>
                             </svg>
                             <span class="open-search__caption">Search</span>
-                            <button class="btn btn--outline-primary btn--sm open-search__btn" data-action="open-search">
+                            <button @click="search.show" @keydown.window.prevent.ctrl.k="search.show" class="btn btn--outline-primary btn--sm open-search__btn" data-action="open-search" x-ref="searchOpen">
                                 Ctrl K
                             </button>
                         </span>
@@ -497,7 +551,7 @@
                                     <path d='M1.016,20.13c-0.288,-0 -0.529,-0.098 -0.724,-0.294c-0.195,-0.196 -0.292,-0.439 -0.292,-0.729c0,-0.289 0.097,-0.53 0.292,-0.722c0.195,-0.192 0.436,-0.288 0.724,-0.288l15.582,0c0.288,0 0.529,0.098 0.724,0.294c0.195,0.196 0.292,0.439 0.292,0.728c0,0.29 -0.097,0.531 -0.292,0.723c-0.195,0.192 -0.436,0.288 -0.724,0.288l-15.582,-0Zm0,-7.182c-0.288,0 -0.529,-0.098 -0.724,-0.293c-0.195,-0.196 -0.292,-0.439 -0.292,-0.729c0,-0.289 0.097,-0.53 0.292,-0.722c0.195,-0.192 0.436,-0.288 0.724,-0.288l11.517,0c0.288,0 0.529,0.098 0.724,0.294c0.195,0.196 0.292,0.439 0.292,0.728c0,0.29 -0.097,0.531 -0.292,0.723c-0.195,0.191 -0.436,0.287 -0.724,0.287l-11.517,0Zm0,-7.045c-0.288,-0 -0.529,-0.098 -0.724,-0.294c-0.195,-0.196 -0.292,-0.439 -0.292,-0.728c0,-0.29 0.097,-0.531 0.292,-0.723c0.195,-0.192 0.436,-0.288 0.724,-0.288l15.582,0c0.288,0 0.529,0.098 0.724,0.294c0.195,0.196 0.292,0.439 0.292,0.729c0,0.289 -0.097,0.53 -0.292,0.722c-0.195,0.192 -0.436,0.288 -0.724,0.288l-15.582,-0Zm18.461,6.063l4.234,4.234c0.203,0.204 0.299,0.441 0.288,0.712c-0.011,0.271 -0.118,0.508 -0.322,0.711c-0.203,0.203 -0.446,0.305 -0.728,0.305c-0.282,-0 -0.525,-0.102 -0.728,-0.305l-4.946,-4.946c-0.203,-0.203 -0.305,-0.44 -0.305,-0.711c0,-0.271 0.102,-0.508 0.305,-0.711l4.946,-4.946c0.203,-0.203 0.446,-0.305 0.728,-0.305c0.282,0 0.525,0.102 0.728,0.305c0.204,0.204 0.305,0.446 0.305,0.729c0,0.282 -0.101,0.525 -0.305,0.728l-4.2,4.2Z'></path>
                                 </svg>
                             </button>
-                            <button class="btn btn--outline-dark btn--sm btn--icon" aria-label="Open search">
+                            <button class="btn btn--outline-dark btn--sm btn--icon" aria-label="Open search" x-ref="searchOpen" @click="search.open = true">
                                 <svg aria-hidden='true' focusable='false' height='24' role='img' style='fill: currentColor' viewBox='0 0 24 24' width='24' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                     <path d='M19.501,9.75c-0,2.152 -0.699,4.14 -1.875,5.752l5.935,5.94c0.585,0.586 0.585,1.537 -0,2.123c-0.586,0.586 -1.538,0.586 -2.124,0l-5.935,-5.939c-1.612,1.181 -3.6,1.875 -5.752,1.875c-5.386,-0 -9.75,-4.364 -9.75,-9.751c0,-5.386 4.364,-9.75 9.75,-9.75c5.387,-0 9.751,4.364 9.751,9.75Zm-9.751,6.751c3.704,-0 6.751,-3.047 6.751,-6.751c-0,-3.703 -3.047,-6.75 -6.751,-6.75c-3.703,0 -6.75,3.047 -6.75,6.75c0,3.704 3.047,6.751 6.75,6.751Z'></path>
                                 </svg>
@@ -709,6 +763,40 @@
                             </ul>
                         </div>
                     </div>
+                    <template x-teleport="body">
+                        <div class="modal-backdrop" x-show="search.open" @keydown.escape="search.close">
+                            <div role="dialog" aria-modal="true" tabindex="0" class="modal modal--search" @click.away="search.close" x-trap.noscroll="search.open">
+                                <div class="modal__body">
+                                    <div class="search-modal">
+                                        <form class="search-form ">
+                                            <input x-ref="searchInput" x-model="search.term" class="form-control  search-form__control" type="text" placeholder="Search..." title="Search" />
+                                            <button class="search-form__submit">
+                                                <span class="sr-only">Search</span>
+                                                <svg aria-hidden="true" class="search-form__icon" focusable="false" height="24" role="img" style="fill: currentColor" viewBox="0 0 24 24" width="24" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M19.501,9.75c-0,2.152 -0.699,4.14 -1.875,5.752l5.935,5.94c0.585,0.586 0.585,1.537 -0,2.123c-0.586,0.586 -1.538,0.586 -2.124,0l-5.935,-5.939c-1.612,1.181 -3.6,1.875 -5.752,1.875c-5.386,-0 -9.75,-4.364 -9.75,-9.751c0,-5.386 4.364,-9.75 9.75,-9.75c5.387,-0 9.751,4.364 9.751,9.75Zm-9.751,6.751c3.704,-0 6.751,-3.047 6.751,-6.751c-0,-3.703 -3.047,-6.75 -6.751,-6.75c-3.703,0 -6.75,3.047 -6.75,6.75c0,3.704 3.047,6.751 6.75,6.751Z"></path>
+                                                </svg>
+                                            </button>
+                                        </form>
+                                        <ul class="search-results">
+                                            <template x-for="item in search.filteredItems" :key="item.url">
+                                                <li>
+                                                    <a :href="item.url" class="search-result-item">
+                                                        <template x-if="item.icon">
+                                                            <svg aria-hidden="true" class="search-result-item__icon" fill="none" focusable="false" height="24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" x-html="item.icon"></svg>
+                                                        </template>
+                                                        <span x-text="item.caption"></span>
+                                                    </a>
+                                                </li>
+                                            </template>
+                                            <li x-show="search.blank">
+                                                No results found for: <strong x-text="search.term"></strong>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
                 </div>
             </header>
             <div class="app-heading">
@@ -735,7 +823,7 @@
                         <div class="app-card__header">
                             <div class="app-card__actions">
                                 <form class="search-form ">
-                                    <input class="form-control  search-form__control" type="text" placeholder="Search..." title="Search" />
+                                    <input x-ref="searchInput" x-model="search.term" class="form-control  search-form__control" type="text" placeholder="Search..." title="Search" />
                                     <button class="search-form__submit">
                                         <span class="sr-only">Search</span>
                                         <svg aria-hidden="true" class="search-form__icon" focusable="false" height="24" role="img" style="fill: currentColor" viewBox="0 0 24 24" width="24" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
@@ -838,12 +926,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -879,12 +961,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -920,12 +996,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -961,12 +1031,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1002,12 +1066,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1043,12 +1101,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1084,12 +1136,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1125,12 +1171,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1166,12 +1206,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1207,12 +1241,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1248,12 +1276,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1289,12 +1311,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1330,12 +1346,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1371,12 +1381,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1412,12 +1416,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1453,12 +1451,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1494,12 +1486,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1535,12 +1521,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1576,12 +1556,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1617,12 +1591,6 @@
                                                 </td>
                                                 <td>
                                                     <div class="data-table__actions">
-                                                        <a href="#" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                                            <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                                                <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                                                                <circle cx='12' cy='12' r='3'></circle>
-                                                            </svg>
-                                                        </a>
                                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                                                 <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
@@ -1702,13 +1670,13 @@
     </div>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="/js/theme-change-assets.js?eb0ce404-1920-461b-b09a-e0fec0598da9" defer></script>
-    <script src="/js/navigation.js?eb0ce404-1920-461b-b09a-e0fec0598da9" defer></script>
-    <script src="/js/theme-switcher.js?eb0ce404-1920-461b-b09a-e0fec0598da9" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts?eb0ce404-1920-461b-b09a-e0fec0598da9" defer></script>
-    <script src="/js/charts.js?eb0ce404-1920-461b-b09a-e0fec0598da9" type="module" defer></script>
-    <script src="/js/range-group.js?eb0ce404-1920-461b-b09a-e0fec0598da9" type="module" defer></script>
-    <script src="/js/repeater.js?eb0ce404-1920-461b-b09a-e0fec0598da9" type="module" defer></script>
+    <script src="/js/theme-change-assets.js?38e6f991-9acc-40d0-91cf-b5c44974f933" defer></script>
+    <script src="/js/navigation.js?38e6f991-9acc-40d0-91cf-b5c44974f933" defer></script>
+    <script src="/js/theme-switcher.js?38e6f991-9acc-40d0-91cf-b5c44974f933" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts?38e6f991-9acc-40d0-91cf-b5c44974f933" defer></script>
+    <script src="/js/charts.js?38e6f991-9acc-40d0-91cf-b5c44974f933" type="module" defer></script>
+    <script src="/js/range-group.js?38e6f991-9acc-40d0-91cf-b5c44974f933" type="module" defer></script>
+    <script src="/js/repeater.js?38e6f991-9acc-40d0-91cf-b5c44974f933" type="module" defer></script>
 </body>
 
 </html>

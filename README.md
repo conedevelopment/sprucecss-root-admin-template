@@ -1,13 +1,13 @@
 <p>
-  <a href="https://sprucecss.com/">
-    <br>
-    <picture>
-      <source media="(prefers-color-scheme: light)" srcset="./.github/spruce-logo-dark.svg">
-      <source media="(prefers-color-scheme: dark)" srcset="./.github/spruce-logo-light.svg">
-      <img alt="Spruce CSS" width="140" src="./.github/spruce-logo-dark.svg">
-    </picture>
-    <br>
-  </a>
+    <a href="https://sprucecss.com/">
+        <br>
+        <picture>
+            <source media="(prefers-color-scheme: light)" srcset="./.github/spruce-logo-dark.svg">
+            <source media="(prefers-color-scheme: dark)" srcset="./.github/spruce-logo-light.svg">
+            <img alt="Spruce CSS" width="140" src="./.github/spruce-logo-dark.svg">
+        </picture>
+        <br>
+    </a>
 </p>
 
 **This repository contains the static template of our Laravel admin named [Root](https://root.conedevelopment.com/).**

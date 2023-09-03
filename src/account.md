@@ -2,10 +2,12 @@
 title: "Account"
 layout: "layout/account.html"
 breadcrumbs:
-    - caption: "Dashboard"
-      url: "/"
-    - caption: "Account"
-      url: null
+-
+  caption: "Dashboard"
+  url: "/"
+-
+  caption: "Account"
+  url: null
 ---
 
 <div class="app-card app-card--info">

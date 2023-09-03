@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <script src="/js/theme-detection.js?587396c5-71f8-4665-bb01-ff9ac2a3ed00"></script>
+    <script src="/js/theme-detection.js?73e2b853-325d-410e-84e3-2618089ce154"></script>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-500.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/font/manrope-v14-latin-600.woff2" crossorigin>
@@ -25,7 +25,7 @@
     <meta property="og:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <meta name="twitter:image:alt" content="Page image for Spruce CSS Root Admin Template" />
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/main.css?587396c5-71f8-4665-bb01-ff9ac2a3ed00">
+    <link rel="stylesheet" href="/css/main.css?73e2b853-325d-410e-84e3-2618089ce154">
     <script>
         window.products = [{
             "id": "1",
@@ -228,11 +228,65 @@
             "image": "https://picsum.photos/80/80",
             "deleted": false
         }];
+        window.search = [{
+            "caption": "Shop / Products",
+            "url": "/products/",
+            "icon": "<path d='M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z'></path><line x1='3' y1='6' x2='21' y2='6'></line><path d='M16 10a4 4 0 0 1-8 0'></path>"
+        }, {
+            "caption": "Shop / Orders",
+            "url": "/orders/",
+            "icon": "<circle cx='9' cy='21' r='1'></circle><circle cx='20' cy='21' r='1'></circle><path d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6'></path>"
+        }, {
+            "caption": "Shop / Customers",
+            "url": "/customers/",
+            "icon": "<path d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2'></path><circle cx='9' cy='7' r='4'></circle><path d='M23 21v-2a4 4 0 0 0-3-3.87'></path><path d='M16 3.13a4 4 0 0 1 0 7.75'></path>"
+        }, {
+            "caption": "Shop / Categories",
+            "url": "/categories/",
+            "icon": "<polyline points='21 8 21 21 3 21 3 8'></polyline><rect x='1' y='3' width='22' height='5'></rect><line x1='10' y1='12' x2='14' y2='12'></line>"
+        }, {
+            "caption": "Account",
+            "url": "/account/",
+            "icon": null
+        }, {
+            "caption": "Settings",
+            "url": "/settings/",
+            "icon": null
+        }];
 
     </script>
 </head>
 
-<body>
+<body x-data="{
+            search: {
+                blank: false,
+                items: window.search,
+                open: false,
+                term: '',
+                show() {
+                    this.search.open = true;
+                    setTimeout(() => $focus.focus($refs.searchInput), 250);
+                },
+                close() {
+                    this.search.open = false;
+                    $refs.searchOpen.focus();
+                },
+                filteredItems() {
+                    if (this.search.term === '') {
+                        return this.search.items;
+                    }
+                    const result = this.search.items.filter((item) => {
+                        console.log(item.caption);
+                        return item.caption
+                            .replace(/ /g, '')
+                            .toLowerCase()
+                            .includes(this.search.term.replace(/ /g, '').toLowerCase());
+                    });
+                    this.search.blank = result.length === 0;
+                    return result;
+                }
+            }
+        }">
     <a class="btn btn--primary skip-link" href="#content">Skip to content</a>
     <main id="content" class="l-auth">
         <div class="l-auth__inner">
@@ -329,13 +383,13 @@
     </main>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="/js/theme-change-assets.js?587396c5-71f8-4665-bb01-ff9ac2a3ed00" defer></script>
-    <script src="/js/navigation.js?587396c5-71f8-4665-bb01-ff9ac2a3ed00" defer></script>
-    <script src="/js/theme-switcher.js?587396c5-71f8-4665-bb01-ff9ac2a3ed00" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts?587396c5-71f8-4665-bb01-ff9ac2a3ed00" defer></script>
-    <script src="/js/charts.js?587396c5-71f8-4665-bb01-ff9ac2a3ed00" type="module" defer></script>
-    <script src="/js/range-group.js?587396c5-71f8-4665-bb01-ff9ac2a3ed00" type="module" defer></script>
-    <script src="/js/repeater.js?587396c5-71f8-4665-bb01-ff9ac2a3ed00" type="module" defer></script>
+    <script src="/js/theme-change-assets.js?73e2b853-325d-410e-84e3-2618089ce154" defer></script>
+    <script src="/js/navigation.js?73e2b853-325d-410e-84e3-2618089ce154" defer></script>
+    <script src="/js/theme-switcher.js?73e2b853-325d-410e-84e3-2618089ce154" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts?73e2b853-325d-410e-84e3-2618089ce154" defer></script>
+    <script src="/js/charts.js?73e2b853-325d-410e-84e3-2618089ce154" type="module" defer></script>
+    <script src="/js/range-group.js?73e2b853-325d-410e-84e3-2618089ce154" type="module" defer></script>
+    <script src="/js/repeater.js?73e2b853-325d-410e-84e3-2618089ce154" type="module" defer></script>
 </body>
 
 </html>

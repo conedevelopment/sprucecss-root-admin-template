@@ -1,5 +1,5 @@
 <form class="search-form {{ search.class }}">
-    <input class="form-control {{ search.controlClass }} search-form__control" type="text" placeholder="Search..." title="Search" />
+    <input x-ref="searchInput" x-model="search.term" class="form-control {{ search.controlClass }} search-form__control" type="text" placeholder="Search..." title="Search" />
     <button class="search-form__submit">
         <span class="sr-only">Search</span>
         <svg

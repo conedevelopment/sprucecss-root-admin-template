@@ -16,6 +16,8 @@
                 <button
                     class="btn btn--outline-dark btn--sm btn--icon"
                     aria-label="Open search"
+                    x-ref="searchOpen"
+                    @click="search.open = true"
                 >
                     {% svgIcon './src/img/icon/search.svg', 'btn__icon' %}
                 </button>
@@ -27,5 +29,6 @@
             {% include 'partial/notifications.html' %}
             {% include 'partial/user-menu.html' %}
         </div>
+        {% include "partial/search-modal.html" %}
     </div>
 </header>
