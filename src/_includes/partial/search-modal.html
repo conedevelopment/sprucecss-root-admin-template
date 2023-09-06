@@ -14,7 +14,10 @@
         >
             <div class="modal__body">
                 <div class="search-modal">
-                    {% include "partial/search.html" %}
+                    {% set search = {
+                        'helper': true
+                    } %}
+                    {% include "partial/search-form.html" %}
                     <ul class="search-results">
                         <template x-for="item in search.filteredItems" :key="item.url">
                             <li>

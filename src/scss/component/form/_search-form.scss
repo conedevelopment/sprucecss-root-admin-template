@@ -2,42 +2,46 @@
 
 .search-form {
   $this: &;
-  position: relative;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 2.25rem 1fr 3.75rem;
 
-  &--sm {
+  &--helper {
     #{$this}__control {
-      padding-inline-start: 1.75em;
-    }
-
-    #{$this}__submit {
-      padding-inline: 0.6em;
-    }
-
-    #{$this}__icon {
-      --dimension: 0.75rem;
+      padding-inline: 2.25rem 3.75rem;
     }
   }
 
   &__control {
-    padding-inline-start: 2.15em;
-  }
-
-  &__submit {
-    align-items: center;
-    background: none;
-    border: 0;
-    color: color('border', 'form');
-    display: flex;
-    inset: 0 auto 0 0;
-    justify-content: center;
-    padding-block: 0;
-    padding-inline: 0.75em;
-    position: absolute;
+    grid-column: 1 / 4;
+    grid-row: 1;
+    padding-inline-start: 2.25rem;
   }
 
   &__icon {
-    --dimension: 0.9rem;
-    block-size: var(--dimension);
-    inline-size: var(--dimension);
+    color: color('border', 'form');
+    display: flex;
+    grid-column: 1 / 2;
+    grid-row: 1;
+    justify-content: center;
+
+    svg {
+      --dimension: 0.9rem;
+      block-size: var(--dimension);
+      inline-size: var(--dimension);
+    }
+  }
+
+  &__helper {
+    background-color: color('light-background', 'btn');
+    border-radius: config('border-radius', $form-control, false);
+    color: color('light-foreground', 'btn');
+    font-weight: config('font-weight', $btn, false);
+    grid-column: 3 / 4;
+    grid-row: 1;
+    justify-self: center;
+    line-height: 1;
+    padding: spacer('xxs') spacer('xs');
+    pointer-events: none;
   }
 }

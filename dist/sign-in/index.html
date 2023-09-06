@@ -260,6 +260,7 @@
 <body x-data="{
             search: {
                 blank: false,
+                count: window.search.length,
                 items: window.search,
                 open: false,
                 term: '',
@@ -276,13 +277,13 @@
                         return this.search.items;
                     }
                     const result = this.search.items.filter((item) => {
-                        console.log(item.caption);
                         return item.caption
                             .replace(/ /g, '')
                             .toLowerCase()
                             .includes(this.search.term.replace(/ /g, '').toLowerCase());
                     });
                     this.search.blank = result.length === 0;
+                    this.search.count = result.length;
                     return result;
                 }
             }

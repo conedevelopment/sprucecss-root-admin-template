@@ -7,10 +7,9 @@
             {% if dataTable.showSearch == true %}
             <div class="app-card__actions">
                 {% set search = {
-                    'class': dataTable.searchClass,
-                    'controlClass': dataTable.searchControlClass
+                    'helper': dataTable.searchHelper
                 } %}
-                {% include "partial/search.html" %}
+                {% include "partial/search-form.html" %}
                 <div class="data-table-filter" x-data="{ open: false }" @click.outside="open = false">
                     <button class="btn btn--light btn--icon btn--counter data-table-filter__toggle" :aria-expanded="open" @click="open = ! open" aria-label="Filters">
                         {% svgIcon './src/img/icon/filter.svg', 'btn__icon' %}
