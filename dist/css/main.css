@@ -3030,17 +3030,35 @@ legend {
 }
 
 .search-form {
+  --root-border-radius: 0.45rem;
+  --root-border-width: 1px;
+  --root-font-size: 0.938rem;
+  --root-line-height: 1.5;
+  --root-padding: 0.5em 0.75em;
+  transition-duration: var(--root-duration);
+  transition-property: all;
+  transition-timing-function: var(--root-timing-function);
   align-items: center;
-  display: grid;
-  grid-template-columns: 2.25rem 1fr 3.75rem;
+  background-color: var(--root-form-color-background);
+  border: var(--root-border-width) solid var(--root-form-color-border);
+  border-radius: var(--root-border-radius);
+  box-sizing: border-box;
+  display: flex;
+  gap: 0.5rem;
+  padding: var(--root-padding);
 }
-.search-form--helper .search-form__control {
-  padding-inline: 2.25rem 3.75rem;
+.search-form:focus-within {
+  border-color: var(--root-form-color-border-focus);
+  box-shadow: 0 0 0 0.25rem var(--root-form-color-ring-focus);
+  outline: 2px solid transparent;
 }
 .search-form__control {
-  grid-column: 1/4;
-  grid-row: 1;
-  padding-inline-start: 2.25rem;
+  border: 0;
+  color: var(--root-form-color-text);
+  flex-grow: 2;
+  font-size: var(--root-font-size);
+  line-height: var(--root-line-height);
+  outline: 0;
 }
 .search-form__icon {
   color: var(--root-form-color-border);
@@ -3059,8 +3077,6 @@ legend {
   border-radius: 0.45rem;
   color: var(--root-btn-color-light-foreground);
   font-weight: 600;
-  grid-column: 3/4;
-  grid-row: 1;
   justify-self: center;
   line-height: 1;
   padding: 0.25rem 0.5rem;
