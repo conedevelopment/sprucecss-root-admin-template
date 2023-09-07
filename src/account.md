@@ -31,7 +31,7 @@ breadcrumbs:
             </div>
             <div class="data-group">
                 <p class="data-group__title">Phone</p>
-                <p class="data-group__content">+00 36 555 66 44</p>
+                <p class="data-group__content">+36 555 66 44</p>
             </div>
             <div class="data-group">
                 <p class="data-group__title">Bio</p>
