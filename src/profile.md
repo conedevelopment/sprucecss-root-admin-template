@@ -30,7 +30,7 @@ breadcrumbs:
     </div>
     <div class="form-group--row">
         <label class="form-label" for="your-phone">Phone</label>
-        <input class="form-control" id="your-phone" name="your-phone" type="text" value="+00 36 555 66 44" />
+        <input class="form-control" id="your-phone" name="your-phone" type="text" value="+36 555 66 44" />
     </div>
     <div class="form-group--row">
         <label class="form-label" for="your-bio">Bio</label>
