@@ -3054,6 +3054,7 @@ legend {
 }
 .search-form__control {
   border: 0;
+  background-color: transparent;
   color: var(--root-form-color-text);
   flex-grow: 2;
   font-size: var(--root-font-size);

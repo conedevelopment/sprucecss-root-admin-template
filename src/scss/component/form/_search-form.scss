@@ -1,7 +1,6 @@
 @use 'sprucecss/scss/spruce' as *;
 
 .search-form {
-  $this: &;
   @include generate-variables($form-control, ('focus-', 'textarea-'));
   @include transition($property: all);
   align-items: center;
@@ -26,6 +25,7 @@
 
   &__control {
     border: 0;
+    background-color: transparent;
     color: color('text', 'form');
     flex-grow: 2;
     font-size: config('font-size', $form-control);
