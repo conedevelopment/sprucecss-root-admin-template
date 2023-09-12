@@ -21,6 +21,7 @@ module.exports = {
 
     return response;
   },
+
   /**
    * Return a boolean or a string value based on an active descandant element.
    * @param {Object} block
@@ -42,6 +43,6 @@ module.exports = {
       return response = found ? 'open' : 'closed';
     }
 
-    return response = found ? true : false;
+    return response = found;
   },
 };
