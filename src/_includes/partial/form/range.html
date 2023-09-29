@@ -1,0 +1,35 @@
+<label class="form-label" for="{{ range.id }}">{{ range.label }}</label>
+<div class="range-group" x-data="{
+    value: {{ range.value }}
+}">
+    <div class="range-group__inner">
+        <button
+            type="button"
+            class="btn btn--primary btn--sm btn--icon"
+            aria-label="Decrement"
+            x-on:click="value--"
+            x-bind:disabled="value <= {{ range.min }}"
+        >
+            {% svgIcon './src/img/icon/minus.svg', 'btn__icon' %}
+        </button>
+        <input type="range" id="{{ range.id }}" class="form-range range-group__control" value="{{ range.value }}" x-model="value" min="{{ range.min }}" max="{{ range.max }}" step="{{ range.step }}">
+        <button
+            type="button"
+            class="btn btn--primary btn--sm btn--icon"
+            aria-label="Increment"
+            x-on:click="value++"
+            x-bind:disabled="value >= {{ range.max }}"
+        >
+            {% svgIcon './src/img/icon/plus.svg', 'btn__icon' %}
+        </button>
+    </div>
+    <span class="form-label">
+        {% if range.prefix %}
+            <span class="form-label__prefix">{{ range.prefix }}</span>
+        {% endif %}
+        <span class="form-label__value" x-text="value">{{ $value }}</span>
+        {% if range.suffix %}
+            <span class="form-label__suffix">{{ range.suffix }}</span>
+        {% endif %}
+    </span>
+</div>
