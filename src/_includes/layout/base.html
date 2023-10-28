@@ -8,10 +8,6 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         {% include "partial/meta.html" %}
         <link rel="stylesheet" href="/css/main.css">
-        <script>
-            window.products = {{ products | dump | safe }};
-            window.search = {{ search | dump | safe }};
-        </script>
     </head>
     <body x-data="{
             search: {
@@ -49,13 +45,15 @@
 
         {% block content %}{% endblock %}
 
+        <script defer src="/js/data.js"></script>
+        <script defer src="/js/data-table.js"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-        <script src="/js/theme-change-assets.js" defer></script>
-        <script src="/js/navigation.js" defer></script>
-        <script src="/js/theme-switcher.js" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
-        <script src="/js/charts.js" type="module" defer></script>
-        <script src="/js/repeater.js" type="module" defer></script>
+        <script defer src="/js/theme-change-assets.js"></script>
+        <script defer src="/js/navigation.js"></script>
+        <script defer src="/js/theme-switcher.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script defer src="/js/charts.js" type="module"></script>
+        <script defer src="/js/repeater.js" type="module"></script>
     </body>
 </html>

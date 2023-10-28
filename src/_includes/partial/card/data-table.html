@@ -43,13 +43,29 @@
         </div>
     {% endif %}
     <div class="app-card__body">
-        <div class="data-table">
-            <div class="alert alert--info data-table-alert">
-                20 items selected.
+        <div
+            class="data-table"
+            x-data="dataTable()"
+            x-cloak
+        >
+            <div
+                class="alert alert--info data-table-alert"
+                x-show="selectedItems.length"
+            >
+                <span x-text="`${selectedItems.length} items are selected`"></span>
                 <div class="data-table-alert__actions">
                     <div class="data-table-alert__column">
-                        <button class="btn btn--primary btn--sm">Select all 100</button>
-                        <button class="btn btn--primary btn--sm">Deselect all</button>
+                        <button
+                            @click="selectAllCheckbox($event);"
+                            class="btn btn--primary btn--sm"
+                            x-text="`Select all ${items.length}`"
+                        ></button>
+                        <button
+                            @click="deselectAllCheckbox($event);"
+                            class="btn btn--primary btn--sm"
+                        >
+                            Deselect all
+                        </button>
                     </div>
                     <div class="data-table-alert__column">
                         <select class="form-control form-control--sm" id="actions" aria-label="Actions">
@@ -68,80 +84,82 @@
                         <tr>
                             <th style="inline-size: 3.25rem;">
                                 <span class="sr-only">Select</span>
-                                <label class="form-check" aria-label="Select all item">
-                                    <input class="form-check__control" type="checkbox" value="1" name="select-all" />
+                                <label
+                                    @click="toggleAllCheckbox($event);"
+                                    aria-label="Select all item"
+                                    class="form-check"
+                                >
+                                    <input
+                                        class="form-check__control"
+                                        type="checkbox"
+                                        value="1"
+                                        name="select-all"
+                                        x-model="selectAll"
+                                     />
                                 </label>
                             </th>
-                            {% for heading in dataTable.headings %}
-                                {% if heading == "Actions" %}
-                                    <th scope="col">
-                                        <span class="sr-only">{{ heading }}</span>
-                                    </th>
-                                {% else %}
-                                    <th scope="col">
-                                        {% if (heading == "First Name") or (heading == "Last Name") or (heading == "Price") or (heading == "Qty") or (heading == "Status") %}
-                                            <div class="data-table-sort">
-                                                {{ heading }}
-                                                <button class="data-table-sort__control" type="button" aria-label="Sort ascending">
-                                                    {% svgIcon "./src/img/icon/chevron-up-down.svg", "data-table-sort__icon" %}
-                                                </button>
-                                            </div>
-                                        {% else %}
-                                            {{ heading }}
-                                        {% endif %}
-                                    </th>
-                                {% endif %}
-                            {% endfor %}
+                            <th>Image</th>
+                            <th>
+                                <button
+                                    @click="sort('name')"
+                                    class="sort-btn"
+                                    type="button"
+                                >
+                                    Name
+                                    <span class="sr-only">Sort</span>
+                                    {% svgIcon "./src/img/icon/chevron-up-down.svg", "sort-btn__icon" %}
+                                </button>
+                            </th>
+                            <th>
+                                <button
+                                    @click="sort('price')"
+                                    class="sort-btn"
+                                    type="button"
+                                >
+                                    Price
+                                    <span class="sr-only">Sort</span>
+                                    {% svgIcon "./src/img/icon/chevron-up-down.svg", "sort-btn__icon" %}
+                                </button>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for data in dataTable.data %}
-                            {% if data.deleted == true %}
-                            <tr class="data-table-deleted">
-                            {% else %}
+                        <template x-if="!items">
+                          <tr><td colspan="4"><i>Loading...</i></td></tr>
+                        </template>
+                        <template x-for="(item, index) in pagedItems" :key="item.id">
                             <tr>
-                            {% endif %}
                                 <td>
-                                    <label class="form-check" aria-label="Select {{ data.name }}">
-                                        <input class="form-check__control" type="checkbox" value="1" name="{{ data.id }}" />
+                                    <label class="form-check" :aria-label=`Select ${item.name}`>
+                                        <input
+                                            :name="item.id"
+                                            class="form-check__control"
+                                            type="checkbox"
+                                            value="1"
+                                            x-model="item.selected"
+                                        />
                                     </label>
                                 </td>
-                                {% for heading in dataTable.headings %}
-                                    {% if heading == 'Actions' %}
-                                    <td>
-                                        <div class="data-table__actions">
-                                            <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
-                                                {% svgIcon './src/img/icon/edit.svg', 'btn__icon' %}
-                                            </a>
-                                            <a href="#" class="btn btn--delete btn--sm btn--icon" aria-label="Delete">
-                                                {% svgIcon './src/img/icon/trash.svg', 'btn__icon' %}
-                                            </a>
-                                        </div>
-                                    </td>
-                                    {% elseif heading == 'Image' %}
-                                        <td>
-                                            <img class="data-table__image" src="{{ data.image }}?random={{ data.id }}" alt="{{ data.name }}">
-                                        </td>
-                                    {% elseif heading == 'Status' %}
-                                        <td>
-                                            {% set value = heading.toLowerCase().split(' ').join('_') %}
-                                            {% set status = data[value].toLowerCase().split(' ').join('-') %}
-
-                                            {% if status == 'out-of-stock' %}
-                                                <span class="status status--danger">{{ data[value] }}</span>
-                                            {% elseif status == 'in-stock' %}
-                                                <span class="status status--success">{{ data[value] }}</span>
-                                            {% endif %}
-                                        </td>
-                                    {% else %}
-                                        <td>
-                                            {% if (heading == 'Price') or (heading == 'Order Total') %}$ {% endif %}
-                                            {{ data[heading.toLowerCase().split(' ').join('_')] }}
-                                        </td>
-                                    {% endif %}
-                                {% endfor %}
-                            </tr>
-                        {% endfor %}
+                                <td>
+                                    <img class="data-table__image" :src="`${item.image}?random=${item.id}`" alt="{{ item.name }}">
+                                </td>
+                                <td x-text="item.name"></td>
+                                <td x-text="`$ ${item.price}`"></td>
+                                <td x-text="item.sku"></td>
+                                <td x-text="item.qty"></td>
+                                <td x-text="item.status"></td>
+                                <td>
+                                    <div class="data-table__actions">
+                                        <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                            {% svgIcon './src/img/icon/edit.svg', 'btn__icon' %}
+                                        </a>
+                                        <a href="#" class="btn btn--delete btn--sm btn--icon" aria-label="Delete">
+                                            {% svgIcon './src/img/icon/trash.svg', 'btn__icon' %}
+                                        </a>
+                                    </div>
+                                </td>
+                              </tr>
+                        </template>
                     </tbody>
                 </table>
             </div>
@@ -157,8 +175,9 @@
                                 <option value="100">100</option>
                             </select>
                         </div>
-                        <p>Showing 1 to 20 of 100 results</p>
+                        <p x-text="resultsCount"></p>
                     </div>
+                    <button @click="previousPage">Previous</button> <button @click="nextPage">Next</button>
                     {% include "partial/pagination.html" %}
                 </div>
             {% endif %}

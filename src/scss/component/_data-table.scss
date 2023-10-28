@@ -80,16 +80,12 @@
   }
 }
 
-.data-table-sort {
-  @include a11y-card-link('.data-table-sort__control', true);
+.sort-btn {
+  @include clear-btn;
   align-items: center;
   display: flex;
   gap: spacer('xs');
   white-space: nowrap;
-
-  &__control {
-    @include clear-btn;
-  }
 
   svg {
     --dimension: 0.85em;
