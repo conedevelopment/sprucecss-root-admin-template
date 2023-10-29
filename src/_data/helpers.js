@@ -21,15 +21,15 @@ module.exports = {
 
     return response;
   },
+
   /**
-   * Return a boolean or a string value based on an active descandant element.
+   * Return a boolean or a string value based on an active descendant element.
    * @param {Object} block
    * @param {String} pageUrl
    * @param {Boolean} logical
    * @returns
    */
   getLinkActiveParent(block, pageUrl, logical = true) {
-    let response = '';
     let found = false;
 
     found = block.items.find(element => element.url === pageUrl);
@@ -39,9 +39,9 @@ module.exports = {
     }
 
     if (!logical) {
-      return response = found ? 'open' : 'closed';
+      return found ? 'open' : 'closed';
     }
 
-    return response = found ? true : false;
+    return found;
   },
 };
