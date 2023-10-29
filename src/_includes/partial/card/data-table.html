@@ -1,4 +1,8 @@
-<div class="app-card">
+<div
+    class="app-card"
+    x-data="dataTable('products', ['name', 'status'])"
+    x-cloak
+>
     {% if dataTable.showHeader == true %}
         <div class="app-card__header">
             {% if dataTable.title %}
@@ -6,10 +10,18 @@
             {% endif %}
             {% if dataTable.showSearch == true %}
             <div class="app-card__actions">
-                {% set search = {
-                    'helper': dataTable.searchHelper
-                } %}
-                {% include "partial/search-form.html" %}
+                <form class="search-form">
+                    <span class="search-form__icon">
+                        {% svgIcon "./src/img/icon/search.svg" %}
+                    </span>
+                    <input
+                        x-model="search"
+                        class="search-form__control"
+                        type="text"
+                        placeholder="Search..."
+                        title="Search"
+                    />
+                </form>
                 <div class="data-table-filter" x-data="{ open: false }" @click.outside="open = false">
                     <button class="btn btn--light btn--icon btn--counter data-table-filter__toggle" :aria-expanded="open" @click="open = ! open" aria-label="Filters">
                         {% svgIcon './src/img/icon/filter.svg', 'btn__icon' %}
@@ -43,11 +55,7 @@
         </div>
     {% endif %}
     <div class="app-card__body">
-        <div
-            class="data-table"
-            x-data="dataTable()"
-            x-cloak
-        >
+        <div class="data-table">
             <div
                 class="alert alert--info data-table-alert"
                 x-show="selectedItems.length"
@@ -106,7 +114,6 @@
                                     type="button"
                                 >
                                     Name
-                                    <span class="sr-only">Sort</span>
                                     {% svgIcon "./src/img/icon/chevron-up-down.svg", "sort-btn__icon" %}
                                 </button>
                             </th>
@@ -117,10 +124,13 @@
                                     type="button"
                                 >
                                     Price
-                                    <span class="sr-only">Sort</span>
                                     {% svgIcon "./src/img/icon/chevron-up-down.svg", "sort-btn__icon" %}
                                 </button>
                             </th>
+                            <th>SKU</th>
+                            <th>Qty</th>
+                            <th>Status</th>
+                            <th>&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -164,19 +174,33 @@
                 </table>
             </div>
             {% if dataTable.showFooter == true %}
-                <div class="data-table__footer">
+                <div class="data-table__footer" x-show="search.length < 3">
                     <div class="data-table__footer-column">
                         <div class="form-group">
                             <label class="sr-only" for="number-of-results">Number of results</label>
-                            <select class="form-control form-control--sm" id="number-of-results">
+                            <select
+                                class="form-control form-control--sm"
+                                id="number-of-results"
+                                x-model="pageSize"
+                            >
+                                <option value="5" selected>5</option>
                                 <option value="10">10</option>
-                                <option value="20" selected>20</option>
+                                <option value="20">20</option>
                                 <option value="50">50</option>
                                 <option value="100">100</option>
                             </select>
                         </div>
                         <p x-text="resultsCount"></p>
                     </div>
+                    <template x-for="(page,index) in pages()" :key="index">
+                        <button
+                          class="px-3 py-2 rounded"
+                          type="button"
+                          x-on:click="viewPage(index)"
+                        >
+                          <span x-text="index+1"></span>
+                        </button>
+                    </template>
                     <button @click="previousPage">Previous</button> <button @click="nextPage">Next</button>
                     {% include "partial/pagination.html" %}
                 </div>
