@@ -30,6 +30,7 @@ module.exports = {
    * @returns
    */
   getLinkActiveParent(block, pageUrl, logical = true) {
+    let response = '';
     let found = false;
 
     found = block.items.find(element => element.url === pageUrl);
@@ -39,9 +40,9 @@ module.exports = {
     }
 
     if (!logical) {
-      return found ? 'open' : 'closed';
+      return response = found ? 'open' : 'closed';
     }
 
-    return found;
+    return response = found ? true : false;
   },
 };
