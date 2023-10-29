@@ -107,8 +107,7 @@
                                         type="checkbox"
                                         value="1"
                                         name="select-all"
-                                        x-model="selectAll"
-                                     />
+                                        x-model="selectAll" />
                                 </label>
                             </th>
                             <th>Image</th>
@@ -140,7 +139,9 @@
                     </thead>
                     <tbody>
                         <template x-if="!items">
-                          <tr><td colspan="4"><i>Loading...</i></td></tr>
+                            <tr>
+                                <td colspan="4">Loading...</td>
+                            </tr>
                         </template>
                         <template x-for="(item, index) in pagedItems" :key="item.id">
                             <tr>
@@ -173,7 +174,7 @@
                                         </a>
                                     </div>
                                 </td>
-                              </tr>
+                            </tr>
                         </template>
                     </tbody>
                 </table>
