@@ -19,5 +19,5 @@
     "no-param-reassign": 0,
     "no-shadow": "off",
     "no-new": "off"
-  },
+  }
 }
