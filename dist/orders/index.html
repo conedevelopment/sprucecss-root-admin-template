@@ -591,7 +591,7 @@
             </div>
             <div class="container">
                 <div class="app-body">
-                    <div class="app-card" x-data="dataTable('products', ['name', 'status'])" x-cloak>
+                    <div class="app-card" x-data="dataTable('orders', ['name'])" x-cloak>
                         <div class="app-card__header">
                             <div class="app-card__actions">
                                 <form class="search-form" @submit.prevent>
@@ -602,30 +602,6 @@
                                     </span>
                                     <input x-model="search" class="search-form__control" type="text" placeholder="Search..." title="Search" />
                                 </form>
-                                <div class="data-table-filter" x-data="{ open: false }" @click.outside="open = false">
-                                    <button class="btn btn--light btn--icon btn--counter data-table-filter__toggle" :aria-expanded="open" @click="open = ! open" aria-label="Filters">
-                                        <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                            <polygon points='22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3'></polygon>
-                                        </svg>
-                                        <span class="btn__counter" x-show="filters.length > 0" x-text="filters.length">2</span>
-                                    </button>
-                                    <div class="context-menu context-menu--inline-end" :data-state="open ? 'open' : 'closed'">
-                                        <form @submit.prevent="submitForm(formData)" class="form-group-stack form-group-stack--bordered form-group-container">
-                                            <div class="form-group">
-                                                <label class="form-label" for="status">Status</label>
-                                                <select class="form-control" id="status" x-model="formData.status">
-                                                    <option>All</option>
-                                                    <option>In stock</option>
-                                                    <option>Out of stock</option>
-                                                </select>
-                                            </div>
-                                            <div class="data-table-filter__actions">
-                                                <button class="btn btn--primary btn--sm">Filter</button>
-                                                <button @click="filters = []" type="reset" class="btn btn--light btn--sm">Reset</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="app-card__body">
@@ -660,52 +636,36 @@
                                                         <input class="form-check__control" type="checkbox" value="1" name="select-all" x-model="selectAll" />
                                                     </label>
                                                 </th>
-                                                <th>Image</th>
+                                                <th>ID</th>
                                                 <th>
-                                                    <button @click="sort('name')" class="sort-btn" type="button">
-                                                        Name
+                                                    <button @click="sort('total')" class="sort-btn" type="button">
+                                                        Total
                                                         <svg aria-hidden='true' focusable='false' height='100%' viewBox='0 0 24 24' width='100%' xmlns='http://www.w3.org/2000/svg' class='sort-btn__icon'>
                                                             <path d='M6,15l6,6l6,-6' style='fill:none;fill-rule:nonzero;stroke:currentColor;stroke-width:3px;'></path>
                                                             <path d='M18,9l-6,-6l-6,6' style='fill:none;fill-rule:nonzero;stroke:currentColor;stroke-width:3px;'></path>
                                                         </svg>
                                                     </button>
                                                 </th>
-                                                <th>
-                                                    <button @click="sort('price')" class="sort-btn" type="button">
-                                                        Price
-                                                        <svg aria-hidden='true' focusable='false' height='100%' viewBox='0 0 24 24' width='100%' xmlns='http://www.w3.org/2000/svg' class='sort-btn__icon'>
-                                                            <path d='M6,15l6,6l6,-6' style='fill:none;fill-rule:nonzero;stroke:currentColor;stroke-width:3px;'></path>
-                                                            <path d='M18,9l-6,-6l-6,6' style='fill:none;fill-rule:nonzero;stroke:currentColor;stroke-width:3px;'></path>
-                                                        </svg>
-                                                    </button>
-                                                </th>
-                                                <th>SKU</th>
-                                                <th>Qty</th>
-                                                <th>Status</th>
+                                                <th>Name</th>
                                                 <th>&nbsp;</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <template x-if="!items">
+                                            <template x-if="pagedItems.length === 0">
                                                 <tr>
                                                     <td colspan="4">Loading...</td>
                                                 </tr>
                                             </template>
-                                            <template x-for="(item, index) in pagedItems" :key="item.id">
+                                            <template x-for="(item, index) in pagedItems" :key="item.orderId">
                                                 <tr>
                                                     <td>
                                                         <label class="form-check" :aria-label="`Select ${item.name}`">
-                                                            <input :name="item.id" class="form-check__control" type="checkbox" value="1" x-model="item.selected" :change="updateSelectAllStatus()" />
+                                                            <input :name="item.orderId" class="form-check__control" type="checkbox" value="1" x-model="item.selected" :change="updateSelectAllStatus()" />
                                                         </label>
                                                     </td>
-                                                    <td>
-                                                        <img class="data-table__image" :src="`${item.image}?random=${item.id}`" alt="">
-                                                    </td>
+                                                    <td x-text="item.orderId"></td>
+                                                    <td x-text="`$ ${item.total}`"></td>
                                                     <td x-text="item.name"></td>
-                                                    <td x-text="`$ ${item.price}`"></td>
-                                                    <td x-text="item.sku"></td>
-                                                    <td x-text="item.qty"></td>
-                                                    <td x-text="item.status"></td>
                                                     <td>
                                                         <div class="data-table__actions">
                                                             <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">

@@ -1,0 +1,49 @@
+<div class="data-table__footer">
+    <div class="data-table__footer-column">
+        <div class="form-group">
+            <label class="sr-only" for="number-of-results">Number of results</label>
+            <select
+                class="form-control form-control--sm"
+                id="number-of-results"
+                x-model="pageSize"
+            >
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+        <p x-text="resultsCount"></p>
+    </div>
+    <nav x-show="pages().length > 1" class="pagination" aria-label="Posts pagination">
+        <ul class="pagination__links">
+            <li>
+                <button
+                    @click="previousPage"
+                    class="btn btn--sm btn--outline-primary"
+                    x-show="curPage > 1"
+                >Previous</button>
+            </li>
+            <template x-for="(page,index) in pages()" :key="index">
+                <li>
+                    <button
+                        @click="viewPage(index + 1)"
+                        class="btn btn--sm btn--outline-primary"
+                        type="button"
+                        :aria-current="curPage === index + 1 ? 'page' : null"
+                    >
+                        <span x-text="index+1"></span>
+                    </button>
+                </li>
+            </template>
+            <li>
+                <button
+                    @click="nextPage"
+                    class="btn btn--sm btn--outline-primary"
+                    x-show="curPage < pages().length"
+                >Next</button>
+            </li>
+        </ul>
+    </nav>
+</div>

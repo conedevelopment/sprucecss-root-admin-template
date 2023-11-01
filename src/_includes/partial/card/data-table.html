@@ -9,53 +9,53 @@
                 <h2 class="app-card__title">{{ dataTable.title }}</h2>
             {% endif %}
             {% if dataTable.showSearch == true %}
-            <div class="app-card__actions">
-                <form class="search-form" @submit.prevent>
-                    <span class="search-form__icon">
-                        {% svgIcon "./src/img/icon/search.svg" %}
-                    </span>
-                    <input
-                        x-model="search"
-                        class="search-form__control"
-                        type="text"
-                        placeholder="Search..."
-                        title="Search"
-                    />
-                </form>
-                <div class="data-table-filter" x-data="{ open: false }" @click.outside="open = false">
-                    <button class="btn btn--light btn--icon btn--counter data-table-filter__toggle" :aria-expanded="open" @click="open = ! open" aria-label="Filters">
-                        {% svgIcon './src/img/icon/filter.svg', 'btn__icon' %}
-                        <span
-                            class="btn__counter"
-                            x-show="filters.length > 0"
-                            x-text="filters.length"
-                        >2</span>
-                    </button>
-                    <div class="context-menu context-menu--inline-end" :data-state="open ? 'open' : 'closed'">
-                        <form
-                            @submit.prevent="submitForm(formData)"
-                            class="form-group-stack form-group-stack--bordered form-group-container"
-                        >
-                            <div class="form-group">
-                                <label class="form-label" for="status">Status</label>
-                                <select class="form-control" id="status" x-model="formData.status">
-                                    <option>All</option>
-                                    <option>In stock</option>
-                                    <option>Out of stock</option>
-                                </select>
-                            </div>
-                            <div class="data-table-filter__actions">
-                                <button class="btn btn--primary btn--sm">Filter</button>
-                                <button
-                                    @click="filters = []"
-                                    type="reset"
-                                    class="btn btn--light btn--sm"
-                                >Reset</button>
-                            </div>
-                        </form>
+                <div class="app-card__actions">
+                    <form class="search-form" @submit.prevent>
+                        <span class="search-form__icon">
+                            {% svgIcon "./src/img/icon/search.svg" %}
+                        </span>
+                        <input
+                            x-model="search"
+                            class="search-form__control"
+                            type="text"
+                            placeholder="Search..."
+                            title="Search"
+                        />
+                    </form>
+                    <div class="data-table-filter" x-data="{ open: false }" @click.outside="open = false">
+                        <button class="btn btn--light btn--icon btn--counter data-table-filter__toggle" :aria-expanded="open" @click="open = ! open" aria-label="Filters">
+                            {% svgIcon './src/img/icon/filter.svg', 'btn__icon' %}
+                            <span
+                                class="btn__counter"
+                                x-show="filters.length > 0"
+                                x-text="filters.length"
+                            >2</span>
+                        </button>
+                        <div class="context-menu context-menu--inline-end" :data-state="open ? 'open' : 'closed'">
+                            <form
+                                @submit.prevent="submitForm(formData)"
+                                class="form-group-stack form-group-stack--bordered form-group-container"
+                            >
+                                <div class="form-group">
+                                    <label class="form-label" for="status">Status</label>
+                                    <select class="form-control" id="status" x-model="formData.status">
+                                        <option>All</option>
+                                        <option>In stock</option>
+                                        <option>Out of stock</option>
+                                    </select>
+                                </div>
+                                <div class="data-table-filter__actions">
+                                    <button class="btn btn--primary btn--sm">Filter</button>
+                                    <button
+                                        @click="filters = []"
+                                        type="reset"
+                                        class="btn btn--light btn--sm"
+                                    >Reset</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
             {% endif %}
         </div>
     {% endif %}
@@ -164,7 +164,19 @@
                                 <td x-text="`$ ${item.price}`"></td>
                                 <td x-text="item.sku"></td>
                                 <td x-text="item.qty"></td>
-                                <td x-text="item.status"></td>
+                                <td>
+                                    <template x-if="item.status === 'In stock'">
+                                        <span
+                                            class="status status--success"
+                                            x-text="item.status"></span>
+                                    </template>
+
+                                    <template x-if="item.status === 'Out of stock'">
+                                        <span
+                                            class="status status--danger"
+                                            x-text="item.status"></span>
+                                    </template>
+                                </td>
                                 <td>
                                     <div class="data-table__actions">
                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
@@ -181,55 +193,7 @@
                 </table>
             </div>
             {% if dataTable.showFooter == true %}
-                <div class="data-table__footer">
-                    <div class="data-table__footer-column">
-                        <div class="form-group">
-                            <label class="sr-only" for="number-of-results">Number of results</label>
-                            <select
-                                class="form-control form-control--sm"
-                                id="number-of-results"
-                                x-model="pageSize"
-                            >
-                                <option value="5">5</option>
-                                <option value="10" selected>10</option>
-                                <option value="20">20</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                            </select>
-                        </div>
-                        <p x-text="resultsCount"></p>
-                    </div>
-                    <nav x-show="pages().length > 1" class="pagination" aria-label="Posts pagination">
-                        <ul class="pagination__links">
-                            <li>
-                                <button
-                                    @click="previousPage"
-                                    class="btn btn--sm btn--outline-primary"
-                                    x-show="curPage > 1"
-                                >Previous</button>
-                            </li>
-                            <template x-for="(page,index) in pages()" :key="index">
-                                <li>
-                                    <button
-                                        @click="viewPage(index + 1)"
-                                        class="btn btn--sm btn--outline-primary"
-                                        type="button"
-                                        :aria-current="curPage === index + 1 ? 'page' : null"
-                                    >
-                                        <span x-text="index+1"></span>
-                                    </button>
-                                </li>
-                            </template>
-                            <li>
-                                <button
-                                    @click="nextPage"
-                                    class="btn btn--sm btn--outline-primary"
-                                    x-show="curPage < pages().length"
-                                >Next</button>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                {% include "partial/card/data-table-footer.html" %}
             {% endif %}
         </div>
     </div>

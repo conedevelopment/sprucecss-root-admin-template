@@ -669,7 +669,14 @@
                                                     <td x-text="`$ ${item.price}`"></td>
                                                     <td x-text="item.sku"></td>
                                                     <td x-text="item.qty"></td>
-                                                    <td x-text="item.status"></td>
+                                                    <td>
+                                                        <template x-if="item.status === 'In stock'">
+                                                            <span class="status status--success" x-text="item.status"></span>
+                                                        </template>
+                                                        <template x-if="item.status === 'Out of stock'">
+                                                            <span class="status status--danger" x-text="item.status"></span>
+                                                        </template>
+                                                    </td>
                                                     <td>
                                                         <div class="data-table__actions">
                                                             <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">

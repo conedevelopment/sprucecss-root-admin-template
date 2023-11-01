@@ -54,15 +54,6 @@
                         {% include 'partial/card/orders-chart.html' %}
                         {% include 'partial/card/active-users-chart.html' %}
                     </div>
-                    {% set dataTable = {
-                        'title': 'Latest Products',
-                        'headings': ['Image', 'Name', 'Price', 'SKU', 'Qty', 'Status', 'Actions'],
-                        'data': products.slice(0, 6),
-                        'showHeader': true,
-                        'showFooter': false,
-                        'showSearch': false
-                    } %}
-                    {% include 'partial/card/data-table.html' %}
                 </div>
             </div>
             {% include "partial/footer.html" %}
