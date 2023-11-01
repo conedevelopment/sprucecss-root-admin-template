@@ -683,10 +683,10 @@
                         <div class="app-card__body">
                             <div class="data-table">
                                 <div class="alert alert--info data-table-alert" x-show="selectedItems.length">
-                                    <span x-text="`${selectedItems.length} items are selected`"></span>
+                                    <span x-text="`${selectedItems.length > total ? total : selectedItems.length} items are selected`"></span>
                                     <div class="data-table-alert__actions">
                                         <div class="data-table-alert__column">
-                                            <button @click="selectAllCheckbox($event);" class="btn btn--primary btn--sm" x-text="`Select all ${items.length}`"></button>
+                                            <button @click="selectAllCheckbox($event);" class="btn btn--primary btn--sm" x-text="`Select all ${items.length > total ? total : items.length}`"></button>
                                             <button @click="deselectAllCheckbox($event);" class="btn btn--primary btn--sm">
                                                 Deselect all
                                             </button>
@@ -740,16 +740,14 @@
                                         <tbody>
                                             <template x-if="!items">
                                                 <tr>
-                                                    <td colspan="4">
-                                                        <i>Loading...</i>
-                                                    </td>
+                                                    <td colspan="4">Loading...</td>
                                                 </tr>
                                             </template>
                                             <template x-for="(item, index) in pagedItems" :key="item.id">
                                                 <tr>
                                                     <td>
-                                                        <label class="form-check" :aria-label=`Select ${item.name}`>
-                                                            <input :name="item.id" class="form-check__control" type="checkbox" value="1" x-model="item.selected" />
+                                                        <label class="form-check" :aria-label="`Select ${item.name}`">
+                                                            <input :name="item.id" class="form-check__control" type="checkbox" value="1" x-model="item.selected" :change="updateSelectAllStatus()" />
                                                         </label>
                                                     </td>
                                                     <td>

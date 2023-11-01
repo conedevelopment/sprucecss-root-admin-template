@@ -1,16 +1,19 @@
-function dataTable(dataSource, filterParams) {
+function dataTable(
+  dataSource,
+  filterParams
+) {
   return {
-    items: null,
-    sortCol: null,
-    sortAsc: false,
-    pageSize: 10,
     curPage: 1,
-    total: '',
-    formData: {},
     filters: [],
+    formData: {},
+    items: null,
+    pageSize: 10,
+    resultsCount: null,
     search: '',
     selectAll: false,
-    resultsCount: null,
+    sortAsc: false,
+    sortCol: null,
+    total: null,
 
     async init() {
       let data = window[dataSource];
@@ -53,12 +56,20 @@ function dataTable(dataSource, filterParams) {
       });
     },
 
+    updateSelectAllStatus() {
+      this.selectAll = this.selectedItems.length === this.items.length;
+    },
+
     toggleAllCheckbox() {
       let filteredItems = this.filtered(this.items);
+
       if (filteredItems.length === this.selectedItems.length) {
-        return filteredItems.map((item) => (item.selected = false));
+        filteredItems.forEach((item) => (item.selected = false));
+      } else {
+        filteredItems.forEach((item) => (item.selected = true));
       }
-      filteredItems.map((item) => (item.selected = true));
+
+      this.updateSelectAllStatus();
     },
 
     selectAllCheckbox() {
@@ -100,6 +111,9 @@ function dataTable(dataSource, filterParams) {
     },
 
     submitForm(formData) {
+      this.deselectAllCheckbox();
+      this.curPage = 1;
+
       for (let key in formData) {
         if (formData.hasOwnProperty(key)) {
           let existingFieldIndex = this.filters.findIndex(item => item.name === key);
@@ -125,7 +139,6 @@ function dataTable(dataSource, filterParams) {
 
       if (this.search.length > 2) {
         filteredItems = this.filtered(filteredItems, ...filterParams);
-        this.curPage = 1;
       }
 
       if (this.filters.length) {
@@ -142,8 +155,6 @@ function dataTable(dataSource, filterParams) {
 
           return true;
         });
-
-        this.curPage = 1;
       }
 
       this.total = filteredItems.length;
