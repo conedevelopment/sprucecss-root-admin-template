@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="l-main">
-        <div class="l-main__sidebar" data-item="sidebar">
+        <div class="l-main__sidebar" :class="{ 'l-main__sidebar--open': sidebarOpen }">
             {% include "partial/sidebar.html" %}
         </div>
         <main id="content" class="l-main__body" data-item="body">

@@ -1,4 +1,8 @@
-<aside class="app-sidebar">
+<aside
+    @keyup.escape.window="sidebarOpen = false"
+    class="app-sidebar"
+    x-trap.noscroll="sidebarOpen"
+>
     <div class="app-sidebar__header">
         <a class="app-sidebar__logo" href="/" aria-label="{{ site.name }}">
             {% svgIcon './src/img/root-logo.svg' %}
@@ -7,10 +11,10 @@
             {% include "partial/search-toggle.html" %}
         </div>
         <button
-            class="btn btn--outline-dark btn--sm btn--icon display--none:md"
-            data-action="sidebar-close"
+            :aria-expanded="sidebarOpen"
+            @click="sidebarOpen = false"
             aria-label="Close navigation"
-            aria-expanded="false"
+            class="btn btn--outline-dark btn--sm btn--icon display--none:md"
         >
             {% svgIcon './src/img/icon/close.svg', 'btn__icon' %}
         </button>

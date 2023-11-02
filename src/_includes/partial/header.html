@@ -6,10 +6,11 @@
             </a>
             <div class="app-header__actions app-header__actions--secondary display--none:md">
                 <button
+                    :aria-expanded="sidebarOpen"
+                    @click="sidebarOpen = ! sidebarOpen"
+                    aria-label="Open navigation"
                     class="btn btn--outline-dark btn--sm btn--icon"
                     data-action="sidebar-open"
-                    aria-label="Open navigation"
-                    aria-expanded="false"
                 >
                     {% svgIcon './src/img/icon/menu-open.svg', 'btn__icon' %}
                 </button>
