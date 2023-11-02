@@ -739,9 +739,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <template x-if="!items">
+                                            <template x-if="pagedItems.length === 0">
                                                 <tr>
-                                                    <td colspan="4">Loading...</td>
+                                                    <td class="data-table__no-results" colspan="8">No results were found.</td>
                                                 </tr>
                                             </template>
                                             <template x-for="(item, index) in pagedItems" :key="item.id">

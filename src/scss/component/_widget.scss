@@ -33,6 +33,7 @@
   }
 
   &--summary {
+    block-size: 100%;
     gap: spacer('m');
     justify-content: start;
     padding: spacer('m');

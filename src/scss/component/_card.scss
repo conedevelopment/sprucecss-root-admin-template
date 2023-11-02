@@ -89,13 +89,17 @@
   }
 
   &__body {
-    padding: spacer('s');
+    padding-block: spacer('s');
 
     &--plain {
       align-items: center;
       display: flex;
       justify-content: space-between;
       padding: 0;
+    }
+
+    > * {
+      padding-inline: spacer('s');
     }
   }
 }
