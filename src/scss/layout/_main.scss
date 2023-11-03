@@ -25,7 +25,7 @@
   &__body {
     background-color: color('background', 'main');
     inline-size: 100%;
-    min-block-size: 100lvh;
+    min-block-size: calc(100lvh + 1rem);
 
     @include breakpoint('md') {
       inline-size: calc(100% - #{get-css-variable(--sidebar-inline-size)});

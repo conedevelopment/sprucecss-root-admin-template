@@ -1951,7 +1951,7 @@ legend {
 .l-main__body {
   background-color: var(--root-main-color-background);
   inline-size: 100%;
-  min-block-size: 100lvh;
+  min-block-size: calc(100lvh + 1rem);
 }
 @media (min-width: 64em) {
   .l-main__body {
