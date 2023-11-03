@@ -4,14 +4,14 @@ layout: "layout/account.html"
 permalink: "account/password/"
 breadcrumbs:
 -
-  caption: "Dashboard"
-  url: "/"
+    caption: "Dashboard"
+    url: "/"
 -
-  caption: "Account"
-  url: "/account/"
+    caption: "Account"
+    url: "/account/"
 -
-  caption: "Password"
-  url: null
+    caption: "Password"
+    url: null
 ---
 
 <h3>Set up a new password</h3>
