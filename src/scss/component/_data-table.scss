@@ -6,10 +6,10 @@
   position: relative;
 
   &__image {
-    --dimension: 2.25rem;
-    block-size: var(--dimension);
+    --size: 2.25rem;
+    block-size: var(--size);
     border-radius: 50%;
-    inline-size: var(--dimension);
+    inline-size: var(--size);
   }
 
   &__actions {
@@ -92,10 +92,10 @@
   white-space: nowrap;
 
   svg {
-    --dimension: 0.85em;
-    block-size: var(--dimension);
+    --size: 0.85em;
+    block-size: var(--size);
     color: color('icon', 'data-table');
-    inline-size: var(--dimension);
+    inline-size: var(--size);
   }
 }
 

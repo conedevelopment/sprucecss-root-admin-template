@@ -17,11 +17,11 @@
   }
 
   &::before {
-    --dimension: 0.55em;
-    block-size: var(--dimension);
+    --size: 0.55em;
+    block-size: var(--size);
     border-radius: 50%;
     content: '';
     flex-shrink: 0;
-    inline-size: var(--dimension);
+    inline-size: var(--size);
   }
 }

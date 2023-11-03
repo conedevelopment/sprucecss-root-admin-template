@@ -86,9 +86,9 @@
     }
 
     svg {
-      --dimension: 0.85em;
-      block-size: var(--dimension);
-      inline-size: var(--dimension);
+      --size: 0.85em;
+      block-size: var(--size);
+      inline-size: var(--size);
     }
   }
 }

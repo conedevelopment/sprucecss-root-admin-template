@@ -38,15 +38,15 @@
   }
 
   &__close {
-    --dimension: 1.5rem;
+    --size: 1.5rem;
     @include clear-btn;
     @include transition;
     align-items: center;
-    block-size: var(--dimension);
+    block-size: var(--size);
     border-radius: config('border-radius-sm', $display);
     display: flex;
     flex-shrink: 0;
-    inline-size: var(--dimension);
+    inline-size: var(--size);
     justify-content: center;
 
     &:hover,
@@ -55,9 +55,9 @@
     }
 
     svg {
-      --dimension: 0.85rem;
-      block-size: var(--dimension);
-      inline-size: var(--dimension);
+      --size: 0.85rem;
+      block-size: var(--size);
+      inline-size: var(--size);
     }
   }
 }

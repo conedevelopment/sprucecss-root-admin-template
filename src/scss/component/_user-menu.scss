@@ -8,10 +8,10 @@
   position: relative;
 
   &__avatar {
-    --dimension: 2.1rem;
-    block-size: var(--dimension);
+    --size: 2.1rem;
+    block-size: var(--size);
     border-radius: 50%;
-    inline-size: var(--dimension);
+    inline-size: var(--size);
   }
 
   &__caption {
@@ -43,9 +43,9 @@
     padding: 0;
 
     svg {
-      --dimension: 1em;
-      block-size: var(--dimension);
-      inline-size: var(--dimension);
+      --size: 1em;
+      block-size: var(--size);
+      inline-size: var(--size);
     }
   }
 }

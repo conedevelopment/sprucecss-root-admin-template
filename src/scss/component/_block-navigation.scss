@@ -81,10 +81,10 @@
       }
 
       svg {
-        --dimension: 1.15em;
-        block-size: var(--dimension);
+        --size: 1.15em;
+        block-size: var(--size);
         color: color('primary');
-        inline-size: var(--dimension);
+        inline-size: var(--size);
       }
     }
 

@@ -2123,7 +2123,7 @@ legend {
   margin-block-start: 0.25rem;
 }
 .alert__close {
-  --dimension: 1.5rem;
+  --size: 1.5rem;
   background: none;
   border: 0;
   color: inherit;
@@ -2135,20 +2135,20 @@ legend {
   transition-property: all;
   transition-timing-function: var(--root-timing-function);
   align-items: center;
-  block-size: var(--dimension);
+  block-size: var(--size);
   border-radius: var(--root-border-radius-sm);
   display: flex;
   flex-shrink: 0;
-  inline-size: var(--dimension);
+  inline-size: var(--size);
   justify-content: center;
 }
 .alert__close:hover, .alert__close:focus {
   opacity: 0.75;
 }
 .alert__close svg {
-  --dimension: 0.85rem;
-  block-size: var(--dimension);
-  inline-size: var(--dimension);
+  --size: 0.85rem;
+  block-size: var(--size);
+  inline-size: var(--size);
 }
 
 .auth-form {
@@ -2203,9 +2203,9 @@ legend {
   color: #c92222;
 }
 .trending__icon {
-  --dimension: 0.95em;
-  block-size: var(--dimension);
-  inline-size: var(--dimension);
+  --size: 0.95em;
+  block-size: var(--size);
+  inline-size: var(--size);
 }
 
 .status {
@@ -2229,12 +2229,12 @@ legend {
   background-color: var(--root-alert-color-warning);
 }
 .status::before {
-  --dimension: 0.55em;
-  block-size: var(--dimension);
+  --size: 0.55em;
+  block-size: var(--size);
   border-radius: 50%;
   content: "";
   flex-shrink: 0;
-  inline-size: var(--dimension);
+  inline-size: var(--size);
 }
 
 .block-navigation {
@@ -2308,10 +2308,10 @@ legend {
   color: hsl(0, 0%, 100%);
 }
 .block-navigation__menu a svg {
-  --dimension: 1.15em;
-  block-size: var(--dimension);
+  --size: 1.15em;
+  block-size: var(--size);
   color: var(--root-base-color-primary);
-  inline-size: var(--dimension);
+  inline-size: var(--size);
 }
 .block-navigation__menu--breakout a {
   padding-block: 0.35em;
@@ -2552,10 +2552,10 @@ legend {
   position: relative;
 }
 .data-table__image {
-  --dimension: 2.25rem;
-  block-size: var(--dimension);
+  --size: 2.25rem;
+  block-size: var(--size);
   border-radius: 50%;
-  inline-size: var(--dimension);
+  inline-size: var(--size);
 }
 .data-table__actions {
   align-items: center;
@@ -2633,10 +2633,10 @@ legend {
   white-space: nowrap;
 }
 .sort-btn svg {
-  --dimension: 0.85em;
-  block-size: var(--dimension);
+  --size: 0.85em;
+  block-size: var(--size);
   color: var(--root-data-table-color-icon);
-  inline-size: var(--dimension);
+  inline-size: var(--size);
 }
 
 .data-table-deleted {
@@ -2739,9 +2739,9 @@ legend {
   color: var(--root-btn-color-primary-foreground);
 }
 .combobox [role=option] svg {
-  --dimension: 0.85em;
-  block-size: var(--dimension);
-  inline-size: var(--dimension);
+  --size: 0.85em;
+  block-size: var(--size);
+  inline-size: var(--size);
 }
 
 .combobox-item {
@@ -2884,10 +2884,10 @@ legend {
   margin-block: 0;
 }
 .file-group__icon {
-  --dimension: 2rem;
-  block-size: var(--dimension);
+  --size: 2rem;
+  block-size: var(--size);
   color: var(--root-base-color-primary);
-  inline-size: var(--dimension);
+  inline-size: var(--size);
 }
 .file-group__title {
   color: var(--root-base-color-heading);
@@ -3067,9 +3067,9 @@ legend {
   justify-content: center;
 }
 .search-form__icon svg {
-  --dimension: 0.9rem;
-  block-size: var(--dimension);
-  inline-size: var(--dimension);
+  --size: 0.9rem;
+  block-size: var(--size);
+  inline-size: var(--size);
 }
 .search-form__helper {
   background-color: var(--root-btn-color-light-background);
@@ -3095,10 +3095,10 @@ legend {
 }
 
 .open-search__icon {
-  --dimension: 1rem;
-  block-size: var(--dimension);
+  --size: 1rem;
+  block-size: var(--size);
   color: var(--root-search-color-icon);
-  inline-size: var(--dimension);
+  inline-size: var(--size);
 }
 
 .or-separator {
@@ -3373,10 +3373,10 @@ pre[class*=language-]::-webkit-scrollbar-track {
 }
 
 .user-menu__avatar {
-  --dimension: 2.1rem;
-  block-size: var(--dimension);
+  --size: 2.1rem;
+  block-size: var(--size);
   border-radius: 50%;
-  inline-size: var(--dimension);
+  inline-size: var(--size);
 }
 .user-menu__caption {
   display: none;
@@ -3405,9 +3405,9 @@ pre[class*=language-]::-webkit-scrollbar-track {
   padding: 0;
 }
 .user-menu__toggle svg {
-  --dimension: 1em;
-  block-size: var(--dimension);
-  inline-size: var(--dimension);
+  --size: 1em;
+  block-size: var(--size);
+  inline-size: var(--size);
 }
 
 .modal-backdrop {
@@ -3899,21 +3899,21 @@ pre[class*=language-]::-webkit-scrollbar-track {
   font-size: clamp(0.996625rem, 2vw + 1rem, 1.1725rem);
 }
 .app-widget__icon {
-  --dimension: 4rem;
+  --size: 4rem;
   align-items: center;
   background-color: var(--root-widget-color-icon-background);
-  block-size: var(--dimension);
+  block-size: var(--size);
   border-radius: var(--root-border-radius-lg);
   color: var(--root-base-color-primary);
   display: flex;
   flex-shrink: 0;
-  inline-size: var(--dimension);
+  inline-size: var(--size);
   justify-content: center;
 }
 .app-widget__icon svg {
-  --dimension: 1.5rem;
-  block-size: var(--dimension);
-  inline-size: var(--dimension);
+  --size: 1.5rem;
+  block-size: var(--size);
+  inline-size: var(--size);
 }
 .app-widget__title {
   font-size: 0.938rem;

@@ -23,8 +23,8 @@
   }
 
   &__icon {
-    --dimension: 0.95em;
-    block-size: var(--dimension);
-    inline-size: var(--dimension);
+    --size: 0.95em;
+    block-size: var(--size);
+    inline-size: var(--size);
   }
 }

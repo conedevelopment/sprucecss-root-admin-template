@@ -7,9 +7,9 @@
   gap: spacer('xs');
 
   &__icon {
-    --dimension: 1rem;
-    block-size: var(--dimension);
+    --size: 1rem;
+    block-size: var(--size);
     color: color('icon', 'search');
-    inline-size: var(--dimension);
+    inline-size: var(--size);
   }
 }

@@ -42,9 +42,9 @@
     justify-content: center;
 
     svg {
-      --dimension: 0.9rem;
-      block-size: var(--dimension);
-      inline-size: var(--dimension);
+      --size: 0.9rem;
+      block-size: var(--size);
+      inline-size: var(--size);
     }
   }
 

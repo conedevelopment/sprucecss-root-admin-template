@@ -60,10 +60,10 @@
   }
 
   &__icon {
-    --dimension: 2rem;
-    block-size: var(--dimension);
+    --size: 2rem;
+    block-size: var(--size);
     color: color('primary');
-    inline-size: var(--dimension);
+    inline-size: var(--size);
   }
 
   &__title {
