@@ -1,0 +1,142 @@
+<div
+    class="app-card"
+    x-data="dataTable('customers', ['firstName', 'lastName'])"
+    x-cloak
+>
+    <div class="app-card__header">
+        <div class="app-card__actions">
+            <form class="search-form" @submit.prevent>
+                <span class="search-form__icon">
+                    {% svgIcon "./src/img/icon/search.svg" %}
+                </span>
+                <input
+                    x-model="search"
+                    class="search-form__control"
+                    type="text"
+                    placeholder="Search..."
+                    title="Search"
+                />
+            </form>
+        </div>
+    </div>
+    <div class="app-card__body">
+        <div class="data-table">
+            <div
+                class="alert alert--info data-table-alert"
+                x-show="selectedItems.length"
+            >
+                <span x-text="`${selectedItems.length > total ? total : selectedItems.length} items are selected`"></span>
+                <div class="data-table-alert__actions">
+                    <div class="data-table-alert__column">
+                        <button
+                            @click="selectAllCheckbox($event);"
+                            class="btn btn--primary btn--sm"
+                            x-text="`Select all ${items.length > total ? total : items.length}`"
+                        ></button>
+                        <button
+                            @click="deselectAllCheckbox($event);"
+                            class="btn btn--primary btn--sm"
+                        >
+                            Deselect all
+                        </button>
+                    </div>
+                    <div class="data-table-alert__column">
+                        <select class="form-control form-control--sm" id="actions" aria-label="Actions">
+                            <option value="bulk-edit">Bulk edit</option>
+                            <option value="send-notification">Send notification</option>
+                            <option value="publish">Publish</option>
+                            <option value="delete">Delete</option>
+                        </select>
+                        <button class="btn btn--primary btn--sm">Run</button>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table--hover">
+                    <thead>
+                        <tr>
+                            <th style="inline-size: 3.25rem;">
+                                <span class="sr-only">Select</span>
+                                <label
+                                    @click="toggleAllCheckbox($event);"
+                                    aria-label="Select all item"
+                                    class="form-check"
+                                >
+                                    <input
+                                        class="form-check__control"
+                                        type="checkbox"
+                                        value="1"
+                                        name="select-all"
+                                        x-model="selectAll" />
+                                </label>
+                            </th>
+                            <th>Image</th>
+                            <th>
+                                <button
+                                    @click="sort('firstName')"
+                                    class="sort-btn"
+                                    type="button"
+                                >
+                                    First Name
+                                    {% svgIcon "./src/img/icon/chevron-up-down.svg", "sort-btn__icon" %}
+                                </button>
+                            </th>
+                            <th>
+                                <button
+                                    @click="sort('lastName')"
+                                    class="sort-btn"
+                                    type="button"
+                                >
+                                    Last Name
+                                    {% svgIcon "./src/img/icon/chevron-up-down.svg", "sort-btn__icon" %}
+                                </button>
+                            </th>
+                            <th>Email</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template x-if="pagedItems.length === 0">
+                            <tr>
+                                <td class="data-table__no-results" colspan="6">No results were found.</td>
+                            </tr>
+                        </template>
+                        <template x-for="(item, index) in pagedItems" :key="item.id">
+                            <tr>
+                                <td>
+                                    <label class="form-check" :aria-label="`Select ${item.customer}`">
+                                        <input
+                                            :name="item.id"
+                                            class="form-check__control"
+                                            type="checkbox"
+                                            value="1"
+                                            x-model="item.selected"
+                                            :change="updateSelectAllStatus()"
+                                        />
+                                    </label>
+                                </td>
+                                <td>
+                                    <img class="data-table__image" :src="`${item.image}?random=${item.id}`" alt="{{ item.firstName }} {{ item.lastName }}">
+                                </td>
+                                <td x-text="item.firstName"></td>
+                                <td x-text="item.lastName"></td>
+                                <td x-text="item.email"></td>
+                                <td>
+                                    <div class="data-table__actions">
+                                        <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                            {% svgIcon './src/img/icon/edit.svg', 'btn__icon' %}
+                                        </a>
+                                        <a href="#" class="btn btn--delete btn--sm btn--icon" aria-label="Delete">
+                                            {% svgIcon './src/img/icon/trash.svg', 'btn__icon' %}
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+            {% include "partial/card/data-table-footer.html" %}
+        </div>
+    </div>
+</div>
