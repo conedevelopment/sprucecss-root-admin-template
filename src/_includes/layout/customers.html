@@ -18,14 +18,7 @@
             {% include "partial/heading.html" %}
             <div class="container">
                 <div class="app-body">
-                    {% set dataTable = {
-                        'headings': ['Image', 'First Name', 'Last Name', 'Email', 'Postal Code', 'Actions'],
-                        'data': customers.slice(0, 20),
-                        'showHeader': true,
-                        'showFooter': true,
-                        'showSearch': true
-                    } %}
-                    {% include 'partial/card/data-table.html' %}
+                    [data-table]
                 </div>
             </div>
             {% include "partial/footer.html" %}
