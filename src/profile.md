@@ -4,14 +4,14 @@ layout: "layout/account.html"
 permalink: "account/profile/"
 breadcrumbs:
 -
-  caption: "Dashboard"
-  url: "/"
+    caption: "Dashboard"
+    url: "/"
 -
-  caption: "Account"
-  url: "/account/"
+    caption: "Account"
+    url: "/account/"
 -
-  caption: "Profile"
-  url: null
+    caption: "Profile"
+    url: null
 ---
 
 <h3>Personal Information</h3>
