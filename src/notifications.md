@@ -4,14 +4,14 @@ layout: "layout/account.html"
 permalink: "account/notifications/"
 breadcrumbs:
 -
-  caption: "Dashboard"
-  url: "/"
+    caption: "Dashboard"
+    url: "/"
 -
-  caption: "Account"
-  url: "/account/"
+    caption: "Account"
+    url: "/account/"
 -
-  caption: "Notifications"
-  url: null
+    caption: "Notifications"
+    url: null
 ---
 
 <h3>Notifications</h3>

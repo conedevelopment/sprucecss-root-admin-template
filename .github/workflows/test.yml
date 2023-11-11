@@ -1,35 +1,68 @@
 name: Test
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    push:
+        branches: [ main ]
+    pull_request:
+        branches: [ main ]
 
-  workflow_dispatch:
+    workflow_dispatch:
 
 jobs:
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
+    lint:
+        name: Lint
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 'lts/*'
-      - name: Install dependencies
-        run: npm ci
-      - name: Run linter
-        run: npm run sass:lint
-      - name: Check EditorConfig configuration
-        run: test -f .editorconfig
-      - name: Check adherence to EditorConfig
-        uses: greut/eclint-action@v0
-        with:
-          eclint_args: |
-            -exclude=css/*
-      - name: Search for misspellings
-        uses: crate-ci/typos@master
+        steps:
+        -
+            name: Checkout repository
+            uses: actions/checkout@v3
+        -
+            name: Set up Node.js
+            uses: actions/setup-node@v3
+            with:
+                node-version: 'lts/*'
+        -
+            name: Install dependencies
+            run: npm ci
+        -
+            name: Run linter
+            run: npm run sass:lint
+        -
+            name: Check EditorConfig configuration
+            run: test -f .editorconfig
+        -
+            name: Check adherence to EditorConfig
+            uses: greut/eclint-action@v0
+            with:
+                eclint_args: |
+                    -exclude=css/*
+        -
+            name: Search for misspellings
+            uses: crate-ci/typos@master
+
+    lint_front_matter:
+        name: Lint Front Matter
+        runs-on: ubuntu-latest
+
+        steps:
+        -
+            name: Checkout repository
+            uses: actions/checkout@v3
+        -
+            name: Cache pip
+            uses: actions/cache@v3
+            with:
+                path: '~/.cache/pip'
+                key: '${{ runner.os }}-pip-yamllint'
+        -
+            name: Install yamllint
+            run: pip install --user yamllint
+        -
+            name: Remove document contents
+            run: |
+                git ls-files -z -- 'src/**.md' | xargs -0 -n 1 -- sed -i -e 'N;P;/---\n$/Q;D'
+        -
+            name: Check Front Matter
+            run: |
+                git ls-files -z -- 'src/**.md' | xargs -0 -n 1 -- python -m yamllint
