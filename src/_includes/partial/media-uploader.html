@@ -31,7 +31,10 @@
                         <option value="june-2023">June 2023</option>
                         <option value="may-2023">May 2023</option>
                     </select>
-                    {% include "partial/search-form.html" %}
+                    <form class="search-form">
+                        {% svgIcon './src/img/icon/search.svg', 'search-form__icon' %}
+                        <input class="search-form__control" type="text" placeholder="Search..." title="Search" />
+                    </form>
                 </div>
                 <button
                     class="btn btn--icon btn--light modal__close"

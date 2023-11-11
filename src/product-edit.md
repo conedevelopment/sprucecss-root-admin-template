@@ -1,5 +1,5 @@
 ---
-title: "Edit Product"
+title: "Add/Edit Item"
 layout: "layout/product-edit.html"
 permalink: "product/edit/"
 breadcrumbs:

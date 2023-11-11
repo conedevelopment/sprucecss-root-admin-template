@@ -14,10 +14,11 @@
         >
             <div class="modal__body">
                 <div class="search-modal">
-                    {% set search = {
-                        'helper': 'ESC'
-                    } %}
-                    {% include "partial/search-form.html" %}
+                    <form class="search-form">
+                        {% svgIcon './src/img/icon/search.svg', 'search-form__icon' %}
+                        <input x-ref="searchInput" x-model="search.term" class="search-form__control" type="text" placeholder="Search..." title="Search" />
+                        <span class="search-form__helper">ESC</span>
+                    </form>
                     <ul class="search-results">
                         <template x-for="item in search.filteredItems" :key="item.url">
                             <li>
