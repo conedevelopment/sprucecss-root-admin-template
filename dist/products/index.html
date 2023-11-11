@@ -542,11 +542,9 @@
                                 <div class="modal__body">
                                     <div class="search-modal">
                                         <form class="search-form">
-                                            <span class="search-form__icon">
-                                                <svg aria-hidden="true" focusable="false" height="24" role="img" style="fill: currentColor" viewBox="0 0 24 24" width="24" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M19.501,9.75c-0,2.152 -0.699,4.14 -1.875,5.752l5.935,5.94c0.585,0.586 0.585,1.537 -0,2.123c-0.586,0.586 -1.538,0.586 -2.124,0l-5.935,-5.939c-1.612,1.181 -3.6,1.875 -5.752,1.875c-5.386,-0 -9.75,-4.364 -9.75,-9.751c0,-5.386 4.364,-9.75 9.75,-9.75c5.387,-0 9.751,4.364 9.751,9.75Zm-9.751,6.751c3.704,-0 6.751,-3.047 6.751,-6.751c-0,-3.703 -3.047,-6.75 -6.751,-6.75c-3.703,0 -6.75,3.047 -6.75,6.75c0,3.704 3.047,6.751 6.75,6.751Z"></path>
-                                                </svg>
-                                            </span>
+                                            <svg aria-hidden='true' focusable='false' height='24' role='img' style='fill: currentColor' viewBox='0 0 24 24' width='24' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' class='search-form__icon'>
+                                                <path d='M19.501,9.75c-0,2.152 -0.699,4.14 -1.875,5.752l5.935,5.94c0.585,0.586 0.585,1.537 -0,2.123c-0.586,0.586 -1.538,0.586 -2.124,0l-5.935,-5.939c-1.612,1.181 -3.6,1.875 -5.752,1.875c-5.386,-0 -9.75,-4.364 -9.75,-9.751c0,-5.386 4.364,-9.75 9.75,-9.75c5.387,-0 9.751,4.364 9.751,9.75Zm-9.751,6.751c3.704,-0 6.751,-3.047 6.751,-6.751c-0,-3.703 -3.047,-6.75 -6.751,-6.75c-3.703,0 -6.75,3.047 -6.75,6.75c0,3.704 3.047,6.751 6.75,6.751Z'></path>
+                                            </svg>
                                             <input x-ref="searchInput" x-model="search.term" class="search-form__control" type="text" placeholder="Search..." title="Search" />
                                             <span class="search-form__helper">ESC</span>
                                         </form>
@@ -801,7 +799,7 @@
                                                 <option value="100">100</option>
                                             </select>
                                         </div>
-                                        <p x-text="resultsCount"></p>
+                                        <p x-show="pagedItems.length > 0" x-text="resultsCount"></p>
                                     </div>
                                     <nav x-show="pages().length > 1" class="pagination" aria-label="Posts pagination">
                                         <ul class="pagination__links">
@@ -841,6 +839,7 @@
     <script defer src="/js/data/orders.js"></script>
     <script defer src="/js/data/products.js"></script>
     <script defer src="/js/data/customers.js"></script>
+    <script defer src="/js/data/categories.js"></script>
     <script defer src="/js/data-table.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>

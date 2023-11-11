@@ -14,7 +14,7 @@
                 <option value="100">100</option>
             </select>
         </div>
-        <p x-text="resultsCount"></p>
+        <p x-show="pagedItems.length > 0" x-text="resultsCount"></p>
     </div>
     <nav x-show="pages().length > 1" class="pagination" aria-label="Posts pagination">
         <ul class="pagination__links">
