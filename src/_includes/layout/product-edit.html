@@ -8,7 +8,13 @@
         <main id="content" class="l-main__body" data-item="body">
             {% include "partial/header.html" %}
             {% set heading = {
-                'title': title
+                'title': title,
+                'actions': [{
+                    'label': 'View item',
+                    'link': '/product/view/',
+                    'icon': './src/img/icon/eye.svg',
+                    'class': 'btn btn--primary btn--icon'
+                }]
             } %}
             {% include "partial/heading.html" %}
             <div class="container">

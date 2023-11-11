@@ -1,57 +1,8 @@
 <div
     class="app-card"
-    x-data="dataTable('products', ['name', 'status'])"
+    x-data="dataTable('categories', ['name'])"
     x-cloak
 >
-    <div class="app-card__header">
-        <div class="app-card__actions">
-            <form class="search-form" @submit.prevent>
-                <span class="search-form__icon">
-                    {% svgIcon "./src/img/icon/search.svg" %}
-                </span>
-                <input
-                    x-model="search"
-                    class="search-form__control"
-                    type="text"
-                    placeholder="Search..."
-                    title="Search"
-                />
-            </form>
-            <div class="data-table-filter" x-data="{ open: false }" @click.outside="open = false">
-                <button class="btn btn--light btn--icon btn--counter data-table-filter__toggle" :aria-expanded="open" @click="open = ! open" aria-label="Filters">
-                    {% svgIcon './src/img/icon/filter.svg', 'btn__icon' %}
-                    <span
-                        class="btn__counter"
-                        x-show="filters.length > 0"
-                        x-text="filters.length"
-                    >2</span>
-                </button>
-                <div class="context-menu context-menu--inline-end" :data-state="open ? 'open' : 'closed'">
-                    <form
-                        @submit.prevent="submitForm(formData)"
-                        class="form-group-stack form-group-stack--bordered form-group-container"
-                    >
-                        <div class="form-group">
-                            <label class="form-label" for="status">Status</label>
-                            <select class="form-control" id="status" x-model="formData.status">
-                                <option>All</option>
-                                <option>In stock</option>
-                                <option>Out of stock</option>
-                            </select>
-                        </div>
-                        <div class="data-table-filter__actions">
-                            <button class="btn btn--primary btn--sm">Filter</button>
-                            <button
-                                @click="filters = []"
-                                type="reset"
-                                class="btn btn--light btn--sm"
-                            >Reset</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="app-card__body">
         <div class="data-table">
             <div
@@ -103,7 +54,6 @@
                                         x-model="selectAll" />
                                 </label>
                             </th>
-                            <th>Image</th>
                             <th>
                                 <button
                                     @click="sort('name')"
@@ -114,32 +64,20 @@
                                     {% svgIcon "./src/img/icon/chevron-up-down.svg", "sort-btn__icon" %}
                                 </button>
                             </th>
-                            <th>
-                                <button
-                                    @click="sort('price')"
-                                    class="sort-btn"
-                                    type="button"
-                                >
-                                    Price
-                                    {% svgIcon "./src/img/icon/chevron-up-down.svg", "sort-btn__icon" %}
-                                </button>
-                            </th>
-                            <th>SKU</th>
-                            <th>Qty</th>
-                            <th>Status</th>
+                            <th>Description</th>
                             <th>&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody>
                         <template x-if="pagedItems.length === 0">
                             <tr>
-                                <td class="data-table__no-results" colspan="8">No results were found.</td>
+                                <td class="data-table__no-results" colspan="4">No results were found.</td>
                             </tr>
                         </template>
                         <template x-for="(item, index) in pagedItems" :key="item.id">
                             <tr>
                                 <td>
-                                    <label class="form-check" :aria-label="`Select ${item.name}`">
+                                    <label class="form-check" :aria-label="`Select ${item.customer}`">
                                         <input
                                             :name="item.id"
                                             class="form-check__control"
@@ -150,30 +88,10 @@
                                         />
                                     </label>
                                 </td>
-                                <td>
-                                    <img class="data-table__image" :src="`${item.image}?random=${item.id}`" alt="{{ item.name }}">
-                                </td>
                                 <td x-text="item.name"></td>
-                                <td x-text="`$ ${item.price}`"></td>
-                                <td x-text="item.sku"></td>
-                                <td x-text="item.qty"></td>
-                                <td>
-                                    <template x-if="item.status === 'In stock'">
-                                        <span
-                                            class="status status--success"
-                                            x-text="item.status"></span>
-                                    </template>
-                                    <template x-if="item.status === 'Out of stock'">
-                                        <span
-                                            class="status status--danger"
-                                            x-text="item.status"></span>
-                                    </template>
-                                </td>
+                                <td x-text="item.description"></td>
                                 <td>
                                     <div class="data-table__actions">
-                                        <a href="/product/view/" class="btn btn--light btn--sm btn--icon" aria-label="View">
-                                            {% svgIcon './src/img/icon/eye.svg', 'btn__icon' %}
-                                        </a>
                                         <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                             {% svgIcon './src/img/icon/edit.svg', 'btn__icon' %}
                                         </a>

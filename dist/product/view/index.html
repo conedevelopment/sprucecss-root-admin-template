@@ -12,13 +12,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Account - Spruce CSS Root Admin Template</title>
-    <link rel="canonical" href="https://root-admin.sprucecss.com/account/profile/" />
+    <title>View Item - Spruce CSS Root Admin Template</title>
+    <link rel="canonical" href="https://root-admin.sprucecss.com/product/view/" />
     <meta name="generator" content="Eleventy v2.0.1" />
     <meta property="og:site_name" content="Spruce CSS Root Admin Template" />
-    <meta property="og:title" content="Account - Spruce CSS Root Admin Template" />
+    <meta property="og:title" content="View Item - Spruce CSS Root Admin Template" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://root-admin.sprucecss.com/account/profile/" />
+    <meta property="og:url" content="https://root-admin.sprucecss.com/product/view/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:image" content="https://root-admin.sprucecss.com/img/social-share.png" />
     <meta name="twitter:image" content="https://root-admin.sprucecss.com/img/social-share.png" />
@@ -162,7 +162,7 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="block-navigation" x-data="{ open: false }">
+                    <div class="block-navigation" x-data="{ open: true }">
                         <h3 class="block-navigation__title">
                             Shop
                             <button class="btn btn--light btn--sm btn--icon block-navigation__toggle" aria-label="Toggle navigation" :aria-expanded="open" @click="open = ! open" x-cloak>
@@ -171,7 +171,7 @@
                                 </svg>
                             </button>
                         </h3>
-                        <nav class="block-navigation__menu block-navigation__menu--breakout" data-state="closed" :data-state="open ? 'open' : 'closed'">
+                        <nav class="block-navigation__menu block-navigation__menu--breakout" data-state="open" :data-state="open ? 'open' : 'closed'">
                             <ul>
                                 <li>
                                     <a href="/products/">
@@ -333,10 +333,10 @@
                                 <a href="/">Dashboard</a>
                             </li>
                             <li>
-                                <a href="/account/">Account</a>
+                                <a href="/products/">Products</a>
                             </li>
                             <li>
-                                <span aria-current="page">Profile</span>
+                                <span aria-current="page">View</span>
                             </li>
                         </ol>
                     </div>
@@ -520,7 +520,7 @@
                                     </span>
                                 </li>
                                 <li>
-                                    <a href="/account/" data-state="active" class="context-menu__item">
+                                    <a href="/account/" class="context-menu__item">
                                         Account
                                     </a>
                                 </li>
@@ -575,79 +575,102 @@
                 <div class="container">
                     <div class="app-heading__inner">
                         <div class="app-heading__caption">
-                            <h1 class="app-heading__title">Account</h1>
+                            <h1 class="app-heading__title">View Item</h1>
+                        </div>
+                        <div class="app-heading__actions">
+                            <a href="/product/edit/" class="btn btn--primary btn--icon">
+                                <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                    <path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
+                                    <path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
+                                </svg>
+                                Edit item
+                            </a>
+                            <a href="#" class="btn btn--delete">
+                                Delete
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div class="app-body">
-                    <div class="app-card app-card--sidebar">
-                        <div class="app-card__sidebar">
-                            <div class="block-navigation">
-                                <nav class="block-navigation__menu" data-state="open">
-                                    <ul>
-                                        <li>
-                                            <a href="/account/profile/" aria-current="page" data-state="active">
-                                                Profile
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/account/notifications/">
-                                                Notifications
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/account/password/">
-                                                Password
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="app-card__body">
-                            <h3>Personal Information</h3>
-                            <div class="form-group-stack form-group-stack--bordered form-group-container">
-                                <div class="form-group--row">
-                                    <label class="form-label" for="your-first-name">First Name</label>
-                                    <input class="form-control" id="your-first-name" name="your-first-name" type="text" value="Adam" />
+                    <div class="l-row">
+                        <div class="l-row__column">
+                            <div class="app-card">
+                                <div class="app-card__body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <tr>
+                                                <th>ID</th>
+                                                <td>1</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Name</th>
+                                                <td>LuminoTech LED Desk Lamp</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Price</th>
+                                                <td>$ 19.99</td>
+                                            </tr>
+                                            <tr>
+                                                <th>SKU</th>
+                                                <td>SKU001</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Quantity</th>
+                                                <td>10</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Status</th>
+                                                <td>
+                                                    <span class="status status--success">In stock</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Description</th>
+                                                <td>LuminoTech LED Desk Lamp provides bright and energy-efficient lighting for your workspace.</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Product Image</th>
+                                                <td>
+                                                    <img src="https://picsum.photos/250/250?random=1" alt="Product Image" style="max-inline-size: 15rem;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Manufacturer</th>
+                                                <td>XYZ Electronics</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Weight</th>
+                                                <td>1.5 kg</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Dimensions</th>
+                                                <td>20 x 15 x 5 inches</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Color</th>
+                                                <td>Black</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Power Source</th>
+                                                <td>Electric</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Warranty</th>
+                                                <td>1 year</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Product Type</th>
+                                                <td>Desk Accessories</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Material</th>
+                                                <td>Plastic</td>
+                                            </tr>
+                                        </table>
+                                    </div>
                                 </div>
-                                <div class="form-group--row">
-                                    <label class="form-label" for="your-last-name">Last Name</label>
-                                    <input class="form-control" id="your-last-name" name="your-last-name" type="text" value="Laki" />
-                                </div>
-                                <div class="form-group--row">
-                                    <label class="form-label" for="your-email">Email</label>
-                                    <input class="form-control" id="your-email" name="your-email" type="email" value="info@adamlaki.com" />
-                                </div>
-                                <div class="form-group--row">
-                                    <label class="form-label" for="your-phone">Phone</label>
-                                    <input class="form-control" id="your-phone" name="your-phone" type="text" value="+36 555 66 44" />
-                                </div>
-                                <div class="form-group--row">
-                                    <label class="form-label" for="your-bio">Bio</label>
-                                    <textarea class="form-control" id="your-bio" name="your-bio" rows="4">Hey, I’m Adam! I’m a passionate, accessibility-focused front-end developer. I develop with Gatsby, 11ty, and WordPress. I like to learn and try out new things in my field.</textarea>
-                                </div>
-                            </div>
-                            <h3>Address</h3>
-                            <div class="form-group-stack form-group-stack--bordered form-group-container">
-                                <div class="form-group--row">
-                                    <label class="form-label" for="your-country">Country</label>
-                                    <input class="form-control" id="your-country" name="your-country" type="text" value="Hungary" />
-                                </div>
-                                <div class="form-group--row">
-                                    <label class="form-label" for="your-city">City/State</label>
-                                    <input class="form-control" id="your-city" name="your-city" type="text" value="Budapest" />
-                                </div>
-                                <div class="form-group--row">
-                                    <label class="form-label" for="your-postal-code">Postal Code</label>
-                                    <input class="form-control" id="your-postal-code" name="your-postal-code" type="text" value="H-1900" />
-                                </div>
-                            </div>
-                            <div class="app-actions">
-                                <button class="btn btn--primary">Save</button>
-                                <button class="btn btn--light">Cancel</button>
                             </div>
                         </div>
                     </div>

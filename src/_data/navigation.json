@@ -27,6 +27,12 @@
         "visible": false
       },
       {
+        "caption": "Product View",
+        "url": "/product/view/",
+        "icon": null,
+        "visible": false
+      },
+      {
         "caption": "Orders",
         "url": "/orders/",
         "icon": "./src/img/icon/shopping-cart.svg",

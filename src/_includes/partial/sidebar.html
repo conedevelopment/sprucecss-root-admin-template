@@ -46,16 +46,16 @@
                 >
                     <ul>
                         {% for item in block.items %}
-                        <li>
                             {% if item.visible %}
-                                <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
-                                    {% if item.icon %}
-                                        {% svgIcon item.icon %}
-                                    {% endif %}
-                                    {{ item.caption }}
-                                </a>
+                                <li>
+                                    <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+                                        {% if item.icon %}
+                                            {% svgIcon item.icon %}
+                                        {% endif %}
+                                        {{ item.caption }}
+                                    </a>
+                                </li>
                             {% endif %}
-                        </li>
                         {% endfor %}
                     </ul>
                 </nav>

@@ -13,7 +13,9 @@
                 <div class="app-heading__actions">
                     {% for action in heading.actions %}
                         <a href="{{ action.link }}" class="{{ action.class }}">
-                            {% svgIcon action.icon, 'btn__icon' %}
+                            {% if action.icon %}
+                                {% svgIcon action.icon, 'btn__icon' %}
+                            {% endif %}
                             {{ action.label }}
                         </a>
                     {% endfor %}
