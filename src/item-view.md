@@ -1,6 +1,6 @@
 ---
 title: "View Item"
-layout: "layout/Item-view.html"
+layout: "layout/item-view.html"
 permalink: "item/view/"
 breadcrumbs:
 -
