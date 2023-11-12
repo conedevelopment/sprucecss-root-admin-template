@@ -17,14 +17,22 @@
     }
 
     #{$this}__body {
-      padding: spacer('m');
+      padding-block: spacer('m');
+
+      > * {
+        padding-inline: spacer('m');
+      }
     }
   }
 
   &--setting {
     #{$this}__body {
       @include layout-stack(0.75rem);
-      padding: spacer('m');
+      padding-block: spacer('m');
+
+      > * {
+        padding-inline: spacer('m');
+      }
     }
 
     #{$this}__content {
@@ -59,7 +67,11 @@
     }
 
     #{$this}__body {
-      padding: spacer('m');
+      padding-block: spacer('m');
+
+      > * {
+        padding-inline: spacer('m');
+      }
     }
   }
 
