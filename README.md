@@ -22,10 +22,11 @@ Right now, you can access the following views:
 
 - [Dashboard](https://root-admin.sprucecss.com/)
 - [Product List](https://root-admin.sprucecss.com/products/)
-- [Product Edit](https://root-admin.sprucecss.com/product-edit/)
 - [Order List](https://root-admin.sprucecss.com/orders/)
 - [Customer List](https://root-admin.sprucecss.com/customers/)
 - [Category List](https://root-admin.sprucecss.com/categories/)
+- [Item Edit](https://root-admin.sprucecss.com/item-edit/)
+- [Item View](https://root-admin.sprucecss.com/item-view/)
 - [Settings](https://root-admin.sprucecss.com/settings/)
 - [Sign In](https://root-admin.sprucecss.com/sign-in/)
 - [Sign Up](https://root-admin.sprucecss.com/sign-up/)
