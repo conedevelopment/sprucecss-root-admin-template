@@ -21,12 +21,12 @@ export default function getDonutData(series, labels, colors) {
     },
     states: {
       hover: {
-        filter: 'none'
-      }
+        filter: 'none',
+      },
     },
-    colors: colors,
-    series: series,
-    labels: labels,
+    colors,
+    series,
+    labels,
     legend: {
       position: 'bottom',
       markers: {

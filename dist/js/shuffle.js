@@ -1,4 +1,4 @@
-export default function randomize (arg) {
+export default function randomize(arg) {
   const array = arg.slice();
   let currentIndex = array.length; let temporaryValue; let
     randomIndex;

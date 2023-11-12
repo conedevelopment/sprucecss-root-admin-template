@@ -29,6 +29,9 @@ jobs:
             name: Run linter
             run: npm run sass:lint
         -
+            name: Run eslint
+            run: npm run js:lint
+        -
             name: Check EditorConfig configuration
             run: test -f .editorconfig
         -

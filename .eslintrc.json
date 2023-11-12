@@ -18,6 +18,10 @@
   "rules": {
     "no-param-reassign": 0,
     "no-shadow": "off",
-    "no-new": "off"
-  },
+    "no-new": "off",
+    "import/extensions": "off",
+    "no-continue": "off",
+    "no-restricted-syntax": "off",
+    "no-prototype-builtins": "off"
+  }
 }

@@ -9,25 +9,27 @@ const optionsWidgetOptions03 = getMinimalData(['#026df7']);
 const optionsDonutOptions01 = getDonutData(
   [21, 23, 19, 14],
   ['Accepted (188 - 56%)', 'Anonym (70 - 21%)', 'Declined (48 - 15%)', 'N/A (21 - 6%'],
-  ['#00D8B6', '#008FFB', '#FEB019', '#FF4560']
+  ['#00D8B6', '#008FFB', '#FEB019', '#FF4560'],
 );
-const optionsBarOptions01 = getBarData([{
+const optionsBarOptions01 = getBarData(
+  [{
     name: 'Net Profit',
     data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
   }, {
     name: 'Revenue',
     data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
   }],
-  ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct']
+  ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
 );
-const optionsAreaOptions01 = getAreaData([{
+const optionsAreaOptions01 = getAreaData(
+  [{
     name: 'Yesterday',
     data: [31, 40, 28, 51, 42, 109, 100],
   }, {
     name: 'Today',
     data: [11, 32, 45, 32, 34, 52, 41],
   }],
-  ['2023-05-19T00:00:00.000Z', '2023-05-19T01:30:00.000Z', '2023-05-19T02:30:00.000Z', '2023-05-19T03:30:00.000Z', '2023-05-19T04:30:00.000Z', '2023-05-19T05:30:00.000Z', '2023-05-19T06:30:00.000Z']
+  ['2023-05-19T00:00:00.000Z', '2023-05-19T01:30:00.000Z', '2023-05-19T02:30:00.000Z', '2023-05-19T03:30:00.000Z', '2023-05-19T04:30:00.000Z', '2023-05-19T05:30:00.000Z', '2023-05-19T06:30:00.000Z'],
 );
 
 if (document.querySelector('#chart01')) {

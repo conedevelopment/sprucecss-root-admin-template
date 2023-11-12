@@ -1,6 +1,6 @@
-function dataTable(
+function dataTable( // eslint-disable-line
   dataSource,
-  filterParams
+  filterParams,
 ) {
   return {
     curPage: 1,
@@ -16,8 +16,8 @@ function dataTable(
     total: null,
 
     async init() {
-      let data = window[dataSource];
-      data.forEach((d,i) => d.id = i);
+      const data = window[dataSource];
+      data.forEach((d, i) => d.id = i); // eslint-disable-line
       this.items = data;
       this.total = data.length;
       this.resultsCount = `Showing 1 to ${Math.min(this.pageSize, data.length)} of ${data.length} results`;
@@ -31,12 +31,12 @@ function dataTable(
     },
 
     nextPage() {
-      if ((this.curPage * this.pageSize) < this.items.length) this.curPage++;
+      if ((this.curPage * this.pageSize) < this.items.length) this.curPage += 1;
       this.updateResultsCount();
     },
 
     previousPage() {
-      if (this.curPage > 1) this.curPage--;
+      if (this.curPage > 1) this.curPage -= 1;
       this.updateResultsCount();
     },
 
@@ -47,11 +47,11 @@ function dataTable(
     },
 
     sort(col) {
-      if(this.sortCol === col) this.sortAsc = !this.sortAsc;
+      if (this.sortCol === col) this.sortAsc = !this.sortAsc;
       this.sortCol = col;
       this.items.sort((a, b) => {
-        if(a[this.sortCol] < b[this.sortCol]) return this.sortAsc?1:-1;
-        if(a[this.sortCol] > b[this.sortCol]) return this.sortAsc?-1:1;
+        if (a[this.sortCol] < b[this.sortCol]) return this.sortAsc ? 1 : -1;
+        if (a[this.sortCol] > b[this.sortCol]) return this.sortAsc ? -1 : 1;
         return 0;
       });
     },
@@ -61,12 +61,12 @@ function dataTable(
     },
 
     toggleAllCheckbox() {
-      let filteredItems = this.filtered(this.items);
+      const filteredItems = this.filtered(this.items);
 
       if (filteredItems.length === this.selectedItems.length) {
-        filteredItems.forEach((item) => (item.selected = false));
+        filteredItems.forEach((item) => (item.selected = false)); // eslint-disable-line
       } else {
-        filteredItems.forEach((item) => (item.selected = true));
+        filteredItems.forEach((item) => (item.selected = true)); // eslint-disable-line
       }
 
       this.updateSelectAllStatus();
@@ -74,14 +74,14 @@ function dataTable(
 
     selectAllCheckbox() {
       this.selectAll = true;
-      let filteredItems = this.filtered(this.items);
-      filteredItems.map((item) => (item.selected = true));
+      const filteredItems = this.filtered(this.items);
+      filteredItems.map((item) => (item.selected = true)); // eslint-disable-line
     },
 
     deselectAllCheckbox() {
       this.selectAll = false;
-      let filteredItems = this.filtered(this.items);
-      filteredItems.map((item) => (item.selected = false));
+      const filteredItems = this.filtered(this.items);
+      filteredItems.map((item) => (item.selected = false)); // eslint-disable-line
     },
 
     updateResultsCount() {
@@ -92,19 +92,19 @@ function dataTable(
     },
 
     filtered(...items) {
-      values = items.shift();
-      props = items.length ? items : null;
+      const values = items.shift();
+      const props = items.length ? items : null;
 
       return values.filter((i) => {
-        y = Object.assign({}, i);
-        delete y['userId'];
+        const y = { ...i };
+        delete y.userId;
 
         if (props) {
-          okeys = Object.keys(y).filter((b) => !props.includes(b));
+          const okeys = Object.keys(y).filter((b) => !props.includes(b));
           okeys.map((d) => delete y[d]);
         }
 
-        itemToSearch = Object.values(y).join();
+        const itemToSearch = Object.values(y).join();
 
         return itemToSearch.toLowerCase().includes(this.search.toLowerCase());
       });
@@ -114,9 +114,9 @@ function dataTable(
       this.deselectAllCheckbox();
       this.curPage = 1;
 
-      for (let key in formData) {
+      for (const key in formData) {
         if (formData.hasOwnProperty(key)) {
-          let existingFieldIndex = this.filters.findIndex(item => item.name === key);
+          const existingFieldIndex = this.filters.findIndex((item) => item.name === key);
 
           if (formData[key] === 'All') {
             if (existingFieldIndex !== -1) {
@@ -126,9 +126,9 @@ function dataTable(
           }
 
           if (existingFieldIndex !== -1) {
-              this.filters[existingFieldIndex].value = formData[key];
+            this.filters[existingFieldIndex].value = formData[key];
           } else {
-              this.filters.push({ name: key, value: formData[key] });
+            this.filters.push({ name: key, value: formData[key] });
           }
         }
       }
@@ -143,7 +143,7 @@ function dataTable(
 
       if (this.filters.length) {
         filteredItems = filteredItems.filter((item) => {
-          for (var key in this.filters) {
+          for (const key in this.filters) {
             if (this.filters[key].value === '') {
               continue;
             }
@@ -161,15 +161,17 @@ function dataTable(
       this.updateResultsCount();
 
       return filteredItems.filter((row, index) => {
-        let start = (this.curPage - 1) * this.pageSize;
-        let end = this.curPage * this.pageSize;
+        const start = (this.curPage - 1) * this.pageSize;
+        const end = this.curPage * this.pageSize;
 
         if (index >= start && index < end) return true;
+
+        return false;
       });
     },
 
     get selectedItems() {
       return this.items.filter((item) => item.selected);
     },
-  }
+  };
 }
