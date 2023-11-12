@@ -13,12 +13,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Add/Edit Item - Spruce CSS Root Admin Template</title>
-    <link rel="canonical" href="https://root-admin.sprucecss.com/product/edit/" />
+    <link rel="canonical" href="https://root-admin.sprucecss.com/item/edit/" />
     <meta name="generator" content="Eleventy v2.0.1" />
     <meta property="og:site_name" content="Spruce CSS Root Admin Template" />
     <meta property="og:title" content="Add/Edit Item - Spruce CSS Root Admin Template" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://root-admin.sprucecss.com/product/edit/" />
+    <meta property="og:url" content="https://root-admin.sprucecss.com/item/edit/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:image" content="https://root-admin.sprucecss.com/img/social-share.png" />
     <meta name="twitter:image" content="https://root-admin.sprucecss.com/img/social-share.png" />
@@ -538,7 +538,7 @@
                         </div>
                     </div>
                     <template x-teleport="body">
-                        <div class="modal-backdrop" x-show="search.open" @keydown.escape="search.close">
+                        <div class="modal-backdrop" x-show="search.open" x-transition @keydown.escape="search.close">
                             <div role="dialog" aria-modal="true" tabindex="0" class="modal modal--search" @click.away="search.close" x-trap.noscroll="search.open">
                                 <div class="modal__body">
                                     <div class="search-modal">
@@ -578,7 +578,7 @@
                             <h1 class="app-heading__title">Add/Edit Item</h1>
                         </div>
                         <div class="app-heading__actions">
-                            <a href="/product/view/" class="btn btn--primary btn--icon">
+                            <a href="/item/view/" class="btn btn--primary btn--icon">
                                 <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
                                     <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
                                     <circle cx='12' cy='12' r='3'></circle>
@@ -1045,7 +1045,7 @@
                                                     </li>
                                                 </ul>
                                                 <template x-teleport="body">
-                                                    <div class="modal-backdrop" x-show="open" @keydown.escape="close">
+                                                    <div class="modal-backdrop" x-show="open" x-transition @keydown.escape="close">
                                                         <div @click.away="close" aria-modal="true" class="modal modal--media" data-dropzone="Drag & drop your images and files here" role="dialog" tabindex="0" x-trap.noscroll="open">
                                                             <div class="modal__header">
                                                                 <div class="modal__header-caption">
@@ -1322,7 +1322,7 @@
                                                     Open modal
                                                 </button>
                                                 <template x-teleport="body">
-                                                    <div class="modal-backdrop" x-show="open" @keydown.escape="close">
+                                                    <div class="modal-backdrop" x-show="open" x-transition @keydown.escape="close">
                                                         <div role="dialog" aria-modal="true" tabindex="0" class="modal" @click.away="close" x-trap.noscroll="open">
                                                             <div class="modal__header">
                                                                 <div class="modal__header-caption">
@@ -1608,8 +1608,8 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script defer src="/js/theme-switcher.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script defer src="/js/charts.js" type="module"></script>
-    <script defer src="/js/repeater.js" type="module"></script>
+    <script src="/js/charts.js" type="module"></script>
+    <script src="/js/repeater.js" type="module"></script>
 </body>
 
 </html>

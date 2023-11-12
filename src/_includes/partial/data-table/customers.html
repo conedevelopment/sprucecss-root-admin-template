@@ -6,9 +6,7 @@
     <div class="app-card__header">
         <div class="app-card__actions">
             <form class="search-form" @submit.prevent>
-                <span class="search-form__icon">
-                    {% svgIcon "./src/img/icon/search.svg" %}
-                </span>
+                {% svgIcon "./src/img/icon/search.svg", "search-form__icon" %}
                 <input
                     x-model="search"
                     class="search-form__control"
@@ -123,7 +121,7 @@
                                 <td x-text="item.email"></td>
                                 <td>
                                     <div class="data-table__actions">
-                                        <a href="/product/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
+                                        <a href="/item/edit/" class="btn btn--light btn--sm btn--icon" aria-label="Edit">
                                             {% svgIcon './src/img/icon/edit.svg', 'btn__icon' %}
                                         </a>
                                         <a href="#" class="btn btn--delete btn--sm btn--icon" aria-label="Delete">

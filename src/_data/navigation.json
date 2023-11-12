@@ -21,14 +21,14 @@
         "visible": true
       },
       {
-        "caption": "Product Edit",
-        "url": "/product/edit/",
+        "caption": "Item Edit",
+        "url": "/item/edit/",
         "icon": null,
         "visible": false
       },
       {
-        "caption": "Product View",
-        "url": "/product/view/",
+        "caption": "Item View",
+        "url": "/item/view/",
         "icon": null,
         "visible": false
       },

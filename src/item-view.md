@@ -1,7 +1,7 @@
 ---
-title: "Add/Edit Item"
-layout: "layout/product-edit.html"
-permalink: "product/edit/"
+title: "View Item"
+layout: "layout/Item-view.html"
+permalink: "item/view/"
 breadcrumbs:
 -
     caption: "Dashboard"
@@ -10,6 +10,6 @@ breadcrumbs:
     caption: "Products"
     url: "/products/"
 -
-    caption: "Edit"
+    caption: "View"
     url: null
 ---

@@ -527,7 +527,7 @@
                         </div>
                     </div>
                     <template x-teleport="body">
-                        <div class="modal-backdrop" x-show="search.open" @keydown.escape="search.close">
+                        <div class="modal-backdrop" x-show="search.open" x-transition @keydown.escape="search.close">
                             <div role="dialog" aria-modal="true" tabindex="0" class="modal modal--search" @click.away="search.close" x-trap.noscroll="search.open">
                                 <div class="modal__body">
                                     <div class="search-modal">
@@ -570,13 +570,13 @@
                             </div>
                         </div>
                         <div class="app-heading__actions">
-                            <a href="" class="btn btn--outline-primary btn--icon">
-                                <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
-                                    <line x1='12' y1='20' x2='12' y2='10'></line>
-                                    <line x1='18' y1='20' x2='18' y2='4'></line>
-                                    <line x1='6' y1='20' x2='6' y2='16'></line>
+                            <a href="/orders/" class="btn btn--outline-primary btn--icon">
+                                <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                    <circle cx='9' cy='21' r='1'></circle>
+                                    <circle cx='20' cy='21' r='1'></circle>
+                                    <path d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6'></path>
                                 </svg>
-                                Statistics
+                                Orders
                             </a>
                         </div>
                     </div>
@@ -683,8 +683,8 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script defer src="/js/theme-switcher.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script defer src="/js/charts.js" type="module"></script>
-    <script defer src="/js/repeater.js" type="module"></script>
+    <script src="/js/charts.js" type="module"></script>
+    <script src="/js/repeater.js" type="module"></script>
 </body>
 
 </html>
