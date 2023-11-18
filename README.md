@@ -14,11 +14,13 @@
 
 The template is built with Eleventy for our sanity and easier management. You can grab the content from the Nunjucks template files or the compiled `dist` folder.
 
-<img src="./.github/cover-v3.png" alt="Beta version">
+The template will probably change regularly in the future because of the Laravel package development.
 
-It is in **BETA** and will be in it probably for the next two months. Making a complex admin theme is quite a task.
+## What You Get
 
-Right now, you can access the following views:
+We used [Alpine.js](https://alpinejs.dev/) to handle the JS code. Although there are some quite complete JS behaviors, this template is still static HTML/CSS, so you have to do the interactive part.
+
+**Right now, you can grab the following views or layouts:**
 
 - [Dashboard](https://root-admin.sprucecss.com/)
 - [Product List](https://root-admin.sprucecss.com/products/)
@@ -32,13 +34,15 @@ Right now, you can access the following views:
 - [Sign Up](https://root-admin.sprucecss.com/sign-up/)
 - [Password Reset](https://root-admin.sprucecss.com/password-reset/)
 
-## Table of Contents
+**There are a lot of admin-specific components:**
 
-- [Table of Contents](#table-of-contents)
-- [Get Up and Running](#get-up-and-running)
-- [SCSS](#scss)
-- [Other Scripts](#other-scripts)
-- [License](#license)
+- Modal window with customizations.
+- Data table block with search and filter support.
+- Simple search.
+- Various drop-down menus.
+- Widget cards.
+- Media handler modal.
+- Combobox.
 
 ## Get Up and Running
 

@@ -57,7 +57,11 @@
 
   &__name {
     @include text-ellipsis(1);
-    max-inline-size: 25ch;
+    max-inline-size: 10ch;
+
+    @include breakpoint('xs') {
+      max-inline-size: 25ch;
+    }
   }
 
   &__actions {

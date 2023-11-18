@@ -1,6 +1,6 @@
 {
   "name": "sprucecss-root-admin-template",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Cone (https://sprucecss.com)",
   "babel": {
     "presets": [

@@ -113,5 +113,8 @@
     > * {
       padding-inline: spacer('s');
     }
+    img {
+      border-radius: config('border-radius-sm', $display);
+    }
   }
 }

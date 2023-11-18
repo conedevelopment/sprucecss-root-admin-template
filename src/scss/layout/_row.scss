@@ -1,10 +1,14 @@
 @use 'sprucecss/scss/spruce' as *;
 
 .l-row {
-  align-items: stretch;
+  align-items: start;
   display: grid;
   gap: spacer('m');
   grid-template-columns: minmax(0, 1fr);
+
+  &--stretch {
+    align-items: stretch;
+  }
 
   @each $name, $breakpoint in $breakpoints {
     @for $i from 1 through 4 {
