@@ -24,7 +24,6 @@
   }
 
   &__control {
-    appearance: none;
     background-color: transparent;
     border: 0;
     color: color('text', 'form');
@@ -33,6 +32,7 @@
     font-weight: config('font-weight', $form-control);
     line-height: config('line-height', $form-control);
     outline: 0;
+    padding: 0;
   }
 
   &__icon {

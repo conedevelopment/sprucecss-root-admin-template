@@ -3071,7 +3071,6 @@ legend {
   outline: 2px solid transparent;
 }
 .search-form__control {
-  appearance: none;
   background-color: transparent;
   border: 0;
   color: var(--root-form-color-text);
@@ -3079,6 +3078,7 @@ legend {
   font-size: var(--root-font-size);
   line-height: var(--root-line-height);
   outline: 0;
+  padding: 0;
 }
 .search-form__icon {
   --size: 0.9rem;
