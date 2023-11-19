@@ -12,7 +12,7 @@
 
 **This repository contains the static template of our Laravel admin named [Root](https://root.conedevelopment.com/).**
 
-![The preview image of the template.](./.github/root-preview-mockup.png)
+![The preview image of the template.](./.github/root-preview-mockup-2.png)
 
 The template is built with Eleventy for our sanity and easier management. You can grab the content from the Nunjucks template files or the compiled `dist` folder.
 

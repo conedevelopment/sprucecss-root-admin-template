@@ -24,6 +24,7 @@
   }
 
   &__control {
+    appearance: none;
     background-color: transparent;
     border: 0;
     color: color('text', 'form');
