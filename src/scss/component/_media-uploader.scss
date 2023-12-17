@@ -29,7 +29,7 @@
 }
 
 .media-item {
-  border-radius: config('border-radius-lg', $display);
+  border-radius: config('border-radius-sm', $display);
   line-height: config('line-height-md', $typography);
   position: relative;
 
@@ -48,7 +48,7 @@
     align-items: center;
     aspect-ratio: 1;
     background-color: color('background', 'media');
-    border-radius: config('border-radius-lg', $display);
+    border-radius: config('border-radius-sm', $display);
     display: flex;
     flex-direction: column;
     gap: spacer('xxs');
@@ -95,7 +95,7 @@
 
   img {
     aspect-ratio: 1;
-    border-radius: config('border-radius-lg', $display);
+    border-radius: config('border-radius-sm', $display);
     inline-size: 100%;
     object-fit: cover;
   }

@@ -53,7 +53,7 @@
     align-items: center;
     background-color: color('icon-background', 'widget');
     block-size: var(--size);
-    border-radius: config('border-radius-lg', $display);
+    border-radius: config('border-radius-sm', $display);
     color: color('primary');
     display: flex;
     flex-shrink: 0;

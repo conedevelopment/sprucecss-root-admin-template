@@ -370,6 +370,7 @@ template {
   --root-base-color-marker: hsl(214, 98%, 49%);
   --root-base-color-primary: hsl(214, 98%, 49%);
   --root-base-color-secondary: hsl(160, 89%, 46%);
+  --root-base-color-strong: hsl(205, 100%, 2%);
   --root-base-color-text: hsl(208, 9%, 42%);
   --root-base-color-primary-lightest: hsl(210, 60%, 98%);
 }
@@ -509,6 +510,7 @@ template {
 }
 
 :root {
+  --root-border-radius: 0.45rem;
   --root-font-family-base: Open Sans, sans-serif;
   --root-font-family-cursive: ui-monospace, Cascadia Code, Source Code Pro, Menlo, Consolas, DejaVu Sans Mono, monospace;
   --root-font-family-heading: Manrope, sans-serif;
@@ -518,14 +520,13 @@ template {
   --root-font-size-ratio: 1.25;
   --root-font-size-sm: 0.875rem;
   --root-font-weight-heading: 600;
-  --root-inline-border-radius: 0.45rem;
   --root-inline-padding: 0.1em 0.3em;
   --root-line-height-base: 1.8;
   --root-line-height-heading: calc(2px + 2ex + 2px);
   --root-line-height-lg: 1.8;
   --root-line-height-md: 1.5;
   --root-line-height-sm: 1.2;
-  --root-border-radius-lg: 0.725rem;
+  --root-border-radius-lg: 0.925rem;
   --root-border-radius-sm: 0.45rem;
   --root-container-inline-size: 84rem;
   --root-page-margin: 2cm;
@@ -830,7 +831,7 @@ abbr[title] {
 
 mark {
   background-color: var(--root-base-color-mark-background);
-  border-radius: var(--root-inline-border-radius);
+  border-radius: var(--root-border-radius);
   color: var(--root-base-color-mark-foreground);
   padding: var(--root-inline-padding);
 }
@@ -839,9 +840,13 @@ code,
 kbd,
 samp {
   background-color: var(--root-base-color-code-background);
-  border-radius: var(--root-inline-border-radius);
+  border-radius: var(--root-border-radius);
   color: var(--root-base-color-code-foreground);
   padding: var(--root-inline-padding);
+}
+
+strong {
+  color: var(--root-base-color-strong);
 }
 
 .lead {
@@ -1779,6 +1784,7 @@ legend {
 .container {
   --inline-size: var(--root-container-inline-size);
   --gap: var(--root-container-gap);
+  inline-size: 100%;
   margin-inline: auto;
   max-inline-size: var(--inline-size);
   padding-inline: var(--gap);
@@ -3180,7 +3186,7 @@ legend {
 }
 code[class*=language-],
 pre[class*=language-] {
-  border-radius: var(--root-border-radius-lg);
+  border-radius: var(--root-border-radius-sm);
   color: var(--root-prism-color-color);
   font-family: var(--root-font-family-cursive);
   font-size: var(--root-font-size-base);
@@ -3763,7 +3769,7 @@ pre[class*=language-]::-webkit-scrollbar-track {
 }
 
 .media-item {
-  border-radius: var(--root-border-radius-lg);
+  border-radius: var(--root-border-radius-sm);
   line-height: var(--root-line-height-md);
   position: relative;
 }
@@ -3775,7 +3781,7 @@ pre[class*=language-]::-webkit-scrollbar-track {
   align-items: center;
   aspect-ratio: 1;
   background-color: var(--root-media-color-background);
-  border-radius: var(--root-border-radius-lg);
+  border-radius: var(--root-border-radius-sm);
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -3825,7 +3831,7 @@ pre[class*=language-]::-webkit-scrollbar-track {
 }
 .media-item img {
   aspect-ratio: 1;
-  border-radius: var(--root-border-radius-lg);
+  border-radius: var(--root-border-radius-sm);
   inline-size: 100%;
   object-fit: cover;
 }
@@ -3921,7 +3927,7 @@ pre[class*=language-]::-webkit-scrollbar-track {
   align-items: center;
   background-color: var(--root-widget-color-icon-background);
   block-size: var(--size);
-  border-radius: var(--root-border-radius-lg);
+  border-radius: var(--root-border-radius-sm);
   color: var(--root-base-color-primary);
   display: flex;
   flex-shrink: 0;

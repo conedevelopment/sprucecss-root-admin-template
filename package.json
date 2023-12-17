@@ -1,6 +1,6 @@
 {
   "name": "sprucecss-root-admin-template",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Cone (https://sprucecss.com)",
   "babel": {
     "presets": [
@@ -24,22 +24,22 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-img": "^3.1.0",
+    "@11ty/eleventy-img": "^3.1.8",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "del-cli": "^5.0.0",
-    "dotenv": "^16.1.1",
-    "eslint": "^8.41.0",
+    "del-cli": "^5.1.0",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-import": "^2.29.1",
     "himalaya": "^1.1.0",
-    "js-beautify": "^1.14.8",
+    "js-beautify": "^1.14.11",
     "moment": "^2.29.4",
     "npm-run-all": "^4.1.5",
-    "sass": "^1.62.1",
-    "sprucecss": "^2.2.1",
-    "stylelint": "^15.6.2",
+    "sass": "^1.69.5",
+    "sprucecss": "^2.3.0",
+    "stylelint": "^16.0.2",
     "stylelint-config-sass-guidelines": "^10.0.0",
-    "stylelint-order": "^6.0.3"
+    "stylelint-order": "^6.0.4"
   },
   "engines": {
     "node": "^18.12",
