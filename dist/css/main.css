@@ -387,11 +387,12 @@ template {
   --root-btn-color-dark-background: hsl(205, 100%, 2%);
   --root-btn-color-dark-background-hover: hsl(205, 100%, 5%);
   --root-btn-color-dark-foreground: hsl(0, 0%, 100%);
+  --root-btn-color-dark-outline-background-hover: hsl(205, 100%, 2%);
   --root-btn-color-dark-outline-border: hsl(260, 4%, 70%);
   --root-btn-color-dark-outline-foreground: hsl(205, 100%, 2%);
   --root-btn-color-dark-outline-foreground-hover: hsl(0, 0%, 100%);
-  --root-btn-color-dark-outline-background-hover: hsl(205, 100%, 2%);
   --root-btn-color-dark-outline-focus-ring: hsl(205, 100%, 2%);
+  --root-btn-color-dark-shadow: hsla(205, 100%, 2%, 0.05);
   --root-btn-color-light-background: hsl(210, 60%, 98%);
   --root-btn-color-light-background-hover: hsl(214, 98%, 49%);
   --root-btn-color-light-focus-ring: hsl(214, 98%, 49%);
@@ -2375,7 +2376,7 @@ legend {
   background-color: var(--root-base-color-background);
   border: 1px solid var(--root-base-color-border);
   border-radius: var(--root-border-radius-sm);
-  box-shadow: 0 0 0.25rem hsla(201.15, 72.03%, 32.71%, 0.05);
+  box-shadow: 0 0 0.25rem hsla(201, 72%, 32%, 0.05);
 }
 .app-card:focus-within {
   z-index: 5;
@@ -2479,7 +2480,7 @@ legend {
 .app-card__body > * {
   padding-inline: 1rem;
 }
-.app-card__body img {
+.app-card__body img:not(.data-table__image) {
   border-radius: var(--root-border-radius-sm);
 }
 
@@ -2495,7 +2496,7 @@ legend {
   background-color: var(--root-base-color-background);
   border: 1px solid var(--root-base-color-border);
   border-radius: var(--root-border-radius-sm);
-  box-shadow: 0 0 0.25rem hsla(201.15, 72.03%, 32.71%, 0.05);
+  box-shadow: 0 0 0.25rem hsla(201, 72%, 32%, 0.05);
   inline-size: var(--inline-size);
   opacity: 0;
   position: absolute;
@@ -3451,7 +3452,7 @@ pre[class*=language-]::-webkit-scrollbar-track {
   background-color: var(--root-base-color-background);
   border: 1px solid var(--root-base-color-border);
   border-radius: var(--root-border-radius-sm);
-  box-shadow: 0 0 0.25rem hsla(201.15, 72.03%, 32.71%, 0.05);
+  box-shadow: 0 0 0.25rem hsla(201, 72%, 32%, 0.05);
   inline-size: var(--root-inline-size);
   margin: 1.5rem;
   max-inline-size: 100%;
@@ -3609,8 +3610,30 @@ pre[class*=language-]::-webkit-scrollbar-track {
   gap: 1rem;
 }
 
-.app-notification {
-  position: relative;
+.app-notification__drawer {
+  transition-duration: var(--root-duration);
+  transition-property: all;
+  transition-timing-function: var(--root-timing-function);
+  background-color: var(--root-base-color-background);
+  box-shadow: 0 0 0.25rem hsla(201, 72%, 32%, 0.05);
+  block-size: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  inline-size: 100%;
+  inset: 0 0 0 auto;
+  padding: 1.5rem;
+  position: fixed;
+  z-index: 50;
+  transform: translateX(100%);
+}
+.app-notification__drawer[data-state=open] {
+  transform: translateX(0);
+}
+@media (min-width: 32em) {
+  .app-notification__drawer {
+    inline-size: 26rem;
+  }
 }
 .app-notification__header {
   align-items: center;
@@ -3625,7 +3648,6 @@ pre[class*=language-]::-webkit-scrollbar-track {
   margin-block: 0;
 }
 .app-notification__list {
-  max-block-size: 25rem;
   overflow-y: auto;
   overscroll-behavior: contain;
 }
@@ -3649,29 +3671,11 @@ pre[class*=language-]::-webkit-scrollbar-track {
   margin-block-start: 1rem;
   padding-block-start: 1rem;
 }
-.app-notification .context-menu {
-  --inline-size: 20rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  inset: var(--inset-block-start) -4.75rem auto auto;
-  padding: 1rem;
-}
-@media (min-width: 48em) {
-  .app-notification .context-menu {
-    inset: var(--inset-block-start) 0 auto auto;
-  }
-}
-@media (min-width: 64em) {
-  .app-notification .context-menu {
-    --inline-size: 26rem;
-  }
-}
 
 .notification-card {
+  --icon-size: 2.5rem;
   position: relative;
-  display: flex;
-  gap: 1rem;
+  padding-inline-end: 1rem;
 }
 .notification-card__link::before {
   content: "";
@@ -3682,14 +3686,24 @@ pre[class*=language-]::-webkit-scrollbar-track {
 .notification-card--read {
   opacity: 0.5;
 }
+.notification-card--open .notification-card__control svg {
+  rotate: 90deg;
+}
+.notification-card--open .notification-card__control .horizontal-line {
+  opacity: 0;
+}
+.notification-card__header {
+  align-items: start;
+  display: flex;
+  gap: 1rem;
+}
 .notification-card__icon {
-  --size: 2.5rem;
   align-items: center;
-  block-size: var(--size);
+  block-size: var(--icon-size);
   border-radius: var(--root-border-radius-sm);
   display: flex;
   flex-shrink: 0;
-  inline-size: var(--size);
+  inline-size: var(--icon-size);
   justify-content: center;
 }
 .notification-card__icon--info {
@@ -3715,7 +3729,6 @@ pre[class*=language-]::-webkit-scrollbar-track {
 }
 .notification-card__caption {
   line-height: var(--root-line-height-md);
-  padding-inline-end: 1rem;
 }
 .notification-card__caption > * {
   margin-block-end: 0;
@@ -3733,6 +3746,41 @@ pre[class*=language-]::-webkit-scrollbar-track {
 }
 .notification-card__link:hover, .notification-card__link:focus {
   color: var(--root-base-color-link);
+}
+.notification-card__control {
+  flex-shrink: 0;
+  margin-inline-start: auto;
+}
+.notification-card__control svg {
+  transition-duration: var(--root-duration);
+  transition-property: all;
+  transition-timing-function: var(--root-timing-function);
+}
+.notification-card__body {
+  transition-duration: var(--root-duration);
+  transition-property: all;
+  transition-timing-function: var(--root-timing-function);
+  display: grid;
+  border-inline-start: 1px solid var(--root-base-color-border);
+  margin-inline-start: calc(var(--icon-size) / 2);
+  padding-inline-start: calc(var(--icon-size) / 2);
+}
+.notification-card__body[aria-hidden=true] {
+  grid-template-rows: 0fr;
+}
+.notification-card__body[aria-hidden=false] {
+  grid-template-rows: 1fr;
+  margin-block-start: 1rem;
+}
+.notification-card__body > div {
+  overflow: hidden;
+}
+.notification-card__body > div > * {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+.notification-card__body > div > * + * {
+  margin-block-start: 0.5rem;
 }
 
 .media-list {
@@ -3891,7 +3939,7 @@ pre[class*=language-]::-webkit-scrollbar-track {
   background-color: var(--root-base-color-background);
   border: 1px solid var(--root-base-color-border);
   border-radius: var(--root-border-radius-sm);
-  box-shadow: 0 0 0.25rem hsla(201.15, 72.03%, 32.71%, 0.05);
+  box-shadow: 0 0 0.25rem hsla(201, 72%, 32%, 0.05);
   display: flex;
   justify-content: space-between;
 }
@@ -4201,6 +4249,9 @@ pre[class*=language-]::-webkit-scrollbar-track {
   border-color: var(--root-btn-color-dark-background-hover);
   color: var(--root-btn-color-dark-foreground);
 }
+.btn--dark-shadow {
+  box-shadow: 0 0.55em 1em -0.2em var(--root-btn-color-dark-shadow), 0 0.15em 0.35em -0.185em var(--root-btn-color-dark-shadow);
+}
 
 .btn--outline-dark {
   background-color: transparent;
@@ -4398,6 +4449,10 @@ legend {
   --root-sidebar-inline-size: 20rem;
   --root-header-block-size: 4.5rem;
   --root-container-gap: clamp(1.5rem, 5vw, 3rem);
+}
+
+body {
+  overflow-x: hidden;
 }
 
 [x-cloak] {

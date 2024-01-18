@@ -20,7 +20,7 @@
   background-color: color('background');
   border: 1px solid color('border');
   border-radius: config('border-radius-sm', $display);
-  box-shadow: 0 0 spacer('xxs') hsl(201.15deg 72.03% 32.71% / 5%);
+  box-shadow: 0 0 spacer('xxs') hsl(201deg 72% 32% / 5%);
   inline-size: get-css-variable(--inline-size);
   margin: spacer('m');
   max-inline-size: 100%;

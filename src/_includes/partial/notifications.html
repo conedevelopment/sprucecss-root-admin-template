@@ -1,9 +1,18 @@
 <div class="app-notification" x-data="{ open: false }" @click.outside="open = false">
-    <button class="btn btn--light btn--icon btn--counter app-notification__toggle" :aria-expanded="open" @click="open = ! open" aria-label="Notifications">
+    <button
+        :aria-expanded="open"
+        @click="open = ! open;"
+        aria-label="Notifications"
+        class="btn btn--light btn--icon btn--counter app-notification__toggle"
+    >
         {% svgIcon './src/img/icon/bell.svg', 'btn__icon' %}
         <span class="btn__counter">4</span>
     </button>
-    <div class="context-menu" :data-state="open ? 'open' : 'closed'">
+    <div
+        :data-state="open ? 'open' : 'closed'"
+        class="app-notification__drawer"
+        x-transition
+    >
         <div class="app-notification__header">
             <h2 class="app-notification__title">Notifications</h2>
             <button
@@ -16,18 +25,39 @@
         </div>
         <div class="app-notification__list">
             {% for notification in notifications %}
-                <div class="notification-card notification-card--{{ notification.status }}">
-                    <div class="notification-card__icon notification-card__icon--{{ notification.type }}">
-                        {% svgIcon notification.icon %}
-                    </div>
-                    <div class="notification-card__caption">
-                        <h3 class="notification-card__title">
-                            <a href="#" class="notification-card__link">
+                <div
+                    :class="open ? 'notification-card--open' : ''"
+                    class="notification-card notification-card--{{ notification.status }}"
+                    x-data="{ open: false }"
+                >
+                    <div class="notification-card__header">
+                        <div class="notification-card__icon notification-card__icon--{{ notification.type }}">
+                            {% svgIcon notification.icon %}
+                        </div>
+                        <div class="notification-card__caption">
+                            <h3 id="notification-{{ loop.index }}" class="notification-card__title">
                                 {{ notification.title }}
-                            </a>
-                        </h3>
-                        <p>{{ notification.timestamp | date }}</p>
+                            </h3>
+                            <p>{{ notification.timestamp | date }}</p>
+                        </div>
+                        {% if notification.body %}
+                            <button
+                                @click="open = ! open"
+                                aria-label="Toggle notification"
+                                aria-describedby="notification-{{ loop.index }}"
+                                class="btn btn--primary btn--sm btn--icon notification-card__control"
+                            >
+                                {% svgIcon './src/img/icon/plus.svg', 'btn__icon' %}
+                            </button>
+                        {% endif %}
                     </div>
+                    {% if notification.body %}
+                        <div class="notification-card__body" :aria-hidden="open ? 'false' : 'true'">
+                            <div>
+                                {{ notification.body | safe }}
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
             {% endfor %}
         </div>

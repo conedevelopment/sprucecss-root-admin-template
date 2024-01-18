@@ -4,7 +4,8 @@
     "timestamp": "2023-08-09T10:00:00Z",
     "status": "unread",
     "type": "info",
-    "icon": "./src/img/icon/shopping-cart.svg"
+    "icon": "./src/img/icon/shopping-cart.svg",
+    "body": "<p>Maecenas ornare diam id ante lacinia volutpat. Sed in aliquam lorem. Praesent venenatis, purus eu dictum fringilla, mauris nisl lacinia nulla, et tempus purus magna a purus.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue est quis justo tempor vulputate.</p><p>Nullam scelerisque lectus at felis gravida pretium. Integer eget ullamcorper ipsum. Vestibulum dignissim bibendum velit id tincidunt.</p>"
   },
   {
     "title": "Upcoming Payment Deadline for Monthly Subscription",
@@ -18,7 +19,8 @@
     "timestamp": "2023-08-15T18:00:00Z",
     "status": "unread",
     "type": "success",
-    "icon": "./src/img/icon/users.svg"
+    "icon": "./src/img/icon/users.svg",
+    "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue est quis justo tempor vulputate.</p><p>Nullam scelerisque lectus at felis gravida pretium. Integer eget ullamcorper ipsum. Vestibulum dignissim bibendum velit id tincidunt.</p>"
   },
   {
     "title": "Exclusive Webinar: Unveiling the Latest Industry Trends",
