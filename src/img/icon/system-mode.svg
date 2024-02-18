@@ -3,7 +3,7 @@
     focusable="false"
     height="24"
     role="img"
-    style="fill: currentColor"
+    style="fill:currentColor;overflow:visible;"
     viewBox="0 0 24 24"
     width="24"
     xmlns:xlink="http://www.w3.org/1999/xlink"

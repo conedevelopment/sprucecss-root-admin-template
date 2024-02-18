@@ -1,4 +1,10 @@
 <div class="app-notification" x-data="{ open: false }" @click.outside="open = false">
+    <div
+        @click="open = ! open;"
+        class="app-notification__backdrop"
+        x-transition
+        x-show="open"
+    ></div>
     <button
         :aria-expanded="open"
         @click="open = ! open;"
