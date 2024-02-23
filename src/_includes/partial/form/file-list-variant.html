@@ -1,0 +1,34 @@
+<label class="form-label" for="avatar">Files</label>
+<div class="file-list">
+    <div class="form-group">
+      <input class="form-file" type="file" id="avatar" accept="image/png, image/jpeg"/>
+    </div>
+    <ul class="file-list__items">
+        <li class="file-list-item">
+            <div class="file-list-item__column">
+                <span class="file-list-item__icon">
+                    {% svgIcon './src/img/icon/file-text.svg' %}
+                </span>
+                <span id="list-item-1" class="file-list-item__name">document1234.pdf</span>
+            </div>
+            <div class="file-list-item__actions">
+                <button class="btn btn--delete btn--sm btn--icon" aria-describedby="list-item-1" aria-label="Remove">
+                    {% svgIcon './src/img/icon/close.svg', 'btn__icon' %}
+                </button>
+            </div>
+        </li>
+        <li class="file-list-item">
+            <div class="file-list-item__column">
+                <span class="file-list-item__icon">
+                    {% svgIcon './src/img/icon/file-text.svg' %}
+                </span>
+                <span id="list-item-2" class="file-list-item__name">document5678.pdf</span>
+            </div>
+            <div class="file-list-item__actions">
+                <button class="btn btn--delete btn--sm btn--icon" aria-describedby="list-item-2" aria-label="Remove">
+                    {% svgIcon './src/img/icon/close.svg', 'btn__icon' %}
+                </button>
+            </div>
+        </li>
+    </ul>
+</div>

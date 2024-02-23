@@ -1000,6 +1000,60 @@
                                             </div>
                                         </div>
                                         <div class="form-group--row">
+                                            <label class="form-label" for="avatar">Files</label>
+                                            <div class="file-list">
+                                                <div class="form-group">
+                                                    <input class="form-file" type="file" id="avatar" accept="image/png, image/jpeg" />
+                                                </div>
+                                                <ul class="file-list__items">
+                                                    <li class="file-list-item">
+                                                        <div class="file-list-item__column">
+                                                            <span class="file-list-item__icon">
+                                                                <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='icon'>
+                                                                    <path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'></path>
+                                                                    <polyline points='14 2 14 8 20 8'></polyline>
+                                                                    <line x1='16' y1='13' x2='8' y2='13'></line>
+                                                                    <line x1='16' y1='17' x2='8' y2='17'></line>
+                                                                    <polyline points='10 9 9 9 8 9'></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <span id="list-item-1" class="file-list-item__name">document1234.pdf</span>
+                                                        </div>
+                                                        <div class="file-list-item__actions">
+                                                            <button class="btn btn--delete btn--sm btn--icon" aria-describedby="list-item-1" aria-label="Remove">
+                                                                <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                    <line x1='18' y1='6' x2='6' y2='18'></line>
+                                                                    <line x1='6' y1='6' x2='18' y2='18'></line>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </li>
+                                                    <li class="file-list-item">
+                                                        <div class="file-list-item__column">
+                                                            <span class="file-list-item__icon">
+                                                                <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='icon'>
+                                                                    <path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'></path>
+                                                                    <polyline points='14 2 14 8 20 8'></polyline>
+                                                                    <line x1='16' y1='13' x2='8' y2='13'></line>
+                                                                    <line x1='16' y1='17' x2='8' y2='17'></line>
+                                                                    <polyline points='10 9 9 9 8 9'></polyline>
+                                                                </svg>
+                                                            </span>
+                                                            <span id="list-item-2" class="file-list-item__name">document5678.pdf</span>
+                                                        </div>
+                                                        <div class="file-list-item__actions">
+                                                            <button class="btn btn--delete btn--sm btn--icon" aria-describedby="list-item-2" aria-label="Remove">
+                                                                <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='btn__icon'>
+                                                                    <line x1='18' y1='6' x2='6' y2='18'></line>
+                                                                    <line x1='6' y1='6' x2='18' y2='18'></line>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="form-group--row">
                                             <label class="form-label" for="colors">Choose colors</label>
                                             <div class="combobox" x-data="data()" x-id="['dropdown', 'list-item']" x-on:focusin.window="! $refs.panel.contains($event.target) && close()" x-on:keydown.escape.prevent.stop="close($refs.input)">
                                                 <div class="combobox__selected-items" x-show="selectedItems().length > 0">
