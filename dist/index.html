@@ -604,7 +604,7 @@
         </main>
     </div>
     <div class="app-notification" x-cloak>
-        <div @click="notificationOpen = ! notificationOpen;" class="app-notification__backdrop" x-transition x-show="notificationOpen"></div>
+        <div @click="notificationOpen = ! notificationOpen;" @keyup.escape.window="notificationOpen = false" class="app-notification__backdrop" x-transition x-show="notificationOpen"></div>
         <div :data-state="notificationOpen ? 'open' : 'closed'" class="app-notification__drawer" x-transition x-trap="notificationOpen">
             <div class="app-notification__header">
                 <h2 class="app-notification__title">Notifications</h2>

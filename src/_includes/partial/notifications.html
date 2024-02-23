@@ -1,6 +1,7 @@
 <div class="app-notification" x-cloak>
     <div
         @click="notificationOpen = ! notificationOpen;"
+        @keyup.escape.window="notificationOpen = false"
         class="app-notification__backdrop"
         x-transition
         x-show="notificationOpen"
