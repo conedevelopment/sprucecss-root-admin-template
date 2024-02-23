@@ -1,0 +1,23 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+    <div class="l-main">
+        <div class="l-main__sidebar" :class="{ 'l-main__sidebar--open': sidebarOpen }">
+            {% include "partial/sidebar.html" %}
+        </div>
+        <main id="content" class="l-main__body" data-item="body">
+            {% include "partial/header.html" %}
+            {% set heading = {
+                'title': title,
+                'description': 'Hey Adam, welcome back!'
+            } %}
+            {% include "partial/heading.html" %}
+            <div class="container">
+                <div class="app-body">
+                    {% include 'partial/widget/welcome.html' %}
+                </div>
+            </div>
+            {% include "partial/footer.html" %}
+        </main>
+    </div>
+{% endblock %}

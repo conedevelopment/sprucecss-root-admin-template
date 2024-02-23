@@ -17,11 +17,15 @@
     display: grid;
     grid-template-columns: repeat(var(--column), minmax(0, 1fr));
 
+    > * {
+      block-size: 100%;
+    }
+
     > * + * {
       border-block-start: 1px solid color('border');
     }
 
-    @include breakpoint('md') {
+    @include breakpoint('lg') {
       --column: 2;
 
       > * {

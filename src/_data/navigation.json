@@ -3,6 +3,12 @@
     "expanded": true,
     "items": [
       {
+        "caption": "Welcome",
+        "url": "/welcome/",
+        "icon": "./src/img/icon/welcome.svg",
+        "visible": true
+      },
+      {
         "caption": "Dashboard",
         "url": "/",
         "icon": "./src/img/icon/home.svg",
