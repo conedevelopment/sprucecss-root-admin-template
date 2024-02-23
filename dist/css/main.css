@@ -2484,6 +2484,55 @@ legend {
   border-radius: var(--root-border-radius-sm);
 }
 
+.welcome-card {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 5vw, 2rem);
+}
+.welcome-card__link::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.welcome-card__icon {
+  --size: 3rem;
+  align-items: center;
+  background-color: var(--root-widget-color-icon-background);
+  block-size: var(--size);
+  border-radius: var(--root-border-radius-sm);
+  color: var(--root-base-color-primary);
+  display: flex;
+  flex-shrink: 0;
+  inline-size: var(--size);
+  justify-content: center;
+}
+.welcome-card__icon svg {
+  --size: 1.25rem;
+  block-size: var(--size);
+  inline-size: var(--size);
+}
+.welcome-card__title {
+  font-size: clamp(0.996625rem, 2vw + 1rem, 1.1725rem);
+  font-weight: 600;
+  margin-block: 0;
+}
+.welcome-card__link {
+  color: var(--root-base-color-heading);
+  text-decoration: none;
+}
+.welcome-card__link:hover, .welcome-card__link:focus {
+  color: var(--root-base-color-heading);
+}
+.welcome-card__body > * {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+.welcome-card__body > * + * {
+  margin-block-start: 0.5rem;
+}
+
 .context-menu {
   --inset-block-start: calc(100% + 1rem);
   --inline-size: 10rem;
@@ -3657,6 +3706,7 @@ pre[class*=language-]::-webkit-scrollbar-track {
 .app-notification__list {
   overflow-y: auto;
   overscroll-behavior: contain;
+  padding-block: 0.5rem;
 }
 .app-notification__list::-webkit-scrollbar {
   block-size: 0.5rem;
@@ -3949,6 +3999,28 @@ pre[class*=language-]::-webkit-scrollbar-track {
   box-shadow: 0 0 0.25rem hsla(201, 72%, 32%, 0.05);
   display: flex;
   justify-content: space-between;
+}
+.app-widget--welcome {
+  --column: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--column), minmax(0, 1fr));
+}
+.app-widget--welcome > * + * {
+  border-block-start: 1px solid var(--root-base-color-border);
+}
+@media (min-width: 64em) {
+  .app-widget--welcome {
+    --column: 2;
+  }
+  .app-widget--welcome > * {
+    border-block-start: none;
+  }
+  .app-widget--welcome > *:not(:nth-last-of-type(1), :nth-last-of-type(2)) {
+    border-block-end: 1px solid var(--root-base-color-border);
+  }
+  .app-widget--welcome > *:nth-of-type(even) {
+    border-inline-start: 1px solid var(--root-base-color-border);
+  }
 }
 .app-widget--primary {
   background-color: var(--root-base-color-primary);
@@ -4450,6 +4522,10 @@ legend {
 
 .m-block\:0 {
   margin-block: 0 !important;
+}
+
+.vertical-align\:top {
+  vertical-align: top !important;
 }
 
 :root {

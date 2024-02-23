@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="/css/main.css">
     </head>
     <body x-data="{
+            notificationOpen: false,
             sidebarOpen: false,
             search: {
                 blank: false,
@@ -45,6 +46,8 @@
         <a class="btn btn--primary skip-link" href="#content">Skip to content</a>
 
         {% block content %}{% endblock %}
+
+        {% include 'partial/notifications.html' %}
 
         <script defer src="/js/data/search.js"></script>
         <script defer src="/js/data/orders.js"></script>

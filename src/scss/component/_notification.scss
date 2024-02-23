@@ -53,6 +53,7 @@
     @include scrollbar;
     overflow-y: auto;
     overscroll-behavior: contain;
+    padding-block: spacer('xs');
 
     > * + * {
       border-block-start: 1px solid color('border');

@@ -27,7 +27,15 @@
             {% include 'partial/breadcrumb-list.html' %}
         </div>
         <div class="app-header__actions">
-            {% include 'partial/notifications.html' %}
+            <button
+                :aria-expanded="notificationOpen"
+                @click="notificationOpen = ! notificationOpen;"
+                aria-label="Notifications"
+                class="btn btn--light btn--icon btn--counter app-notification__toggle"
+            >
+                {% svgIcon './src/img/icon/bell.svg', 'btn__icon' %}
+                <span class="btn__counter">4</span>
+            </button>
             {% include 'partial/user-menu.html' %}
         </div>
         {% include "partial/search-modal.html" %}
