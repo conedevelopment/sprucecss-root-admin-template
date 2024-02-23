@@ -34,6 +34,9 @@
                         </div>
                         <div class="notification-card__caption">
                             <h3 id="notification-{{ loop.index }}" class="notification-card__title">
+                                {% if  notification.status == 'unread' %}
+                                    <span class="notification-dot"></span>
+                                {% endif %}
                                 {{ notification.title }}
                             </h3>
                             <p>{{ notification.timestamp | date }}</p>

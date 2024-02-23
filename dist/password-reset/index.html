@@ -179,6 +179,7 @@
                         </div>
                         <div class="notification-card__caption">
                             <h3 id="notification-1" class="notification-card__title">
+                                <span class="notification-dot"></span>
                                 Important Weekly Team Meeting
                             </h3>
                             <p>August 9, 2023 12:00</p>
@@ -210,13 +211,14 @@
                         </div>
                         <div class="notification-card__caption">
                             <h3 id="notification-2" class="notification-card__title">
+                                <span class="notification-dot"></span>
                                 Upcoming Payment Deadline for Monthly Subscription
                             </h3>
                             <p>August 10, 2023 17:30</p>
                         </div>
                     </div>
                 </div>
-                <div :class="notificationOpen ? 'notification-card--open' : ''" class="notification-card notification-card--unread" x-data="{ notificationOpen: false }">
+                <div :class="notificationOpen ? 'notification-card--open' : ''" class="notification-card notification-card--read" x-data="{ notificationOpen: false }">
                     <div class="notification-card__header">
                         <div class="notification-card__icon notification-card__icon--success">
                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='icon'>
@@ -246,7 +248,7 @@
                         </div>
                     </div>
                 </div>
-                <div :class="notificationOpen ? 'notification-card--open' : ''" class="notification-card notification-card--unread" x-data="{ notificationOpen: false }">
+                <div :class="notificationOpen ? 'notification-card--open' : ''" class="notification-card notification-card--read" x-data="{ notificationOpen: false }">
                     <div class="notification-card__header">
                         <div class="notification-card__icon notification-card__icon--warning">
                             <svg aria-hidden='true' fill='none' focusable='false' height='24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' stroke='currentColor' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg' class='icon'>
